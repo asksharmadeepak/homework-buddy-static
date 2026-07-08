@@ -1,24 +1,29 @@
 # Homework Buddy — Static website
 
-Marketing and legal pages for the Homework Buddy app.
+Marketing and legal pages for the Homework Buddy app (version **1.0.4**).
 
 ## Pages
 
-- `index.html` — landing page with features and app screen gallery
+- `index.html` — landing page with features, how-it-works flow, and Google Play download
 - `privacy.html` — privacy policy (for Play Store / App Store)
 
-## App screenshots
+## Assets
 
-Add PNG or JPG files under `assets/screens/` and update `index.html`:
+| File | Purpose |
+|------|---------|
+| `assets/logo.png` | App icon (favicon + header) |
+| `assets/wordmark.png` | Homework Buddy wordmark in header |
+| `assets/features-infographic.png` | Why Homework Buddy — 5 feature columns + trust bar |
+| `assets/screens/splash.png` | Welcome / get started |
+| `assets/screens/home.png` | Home — class, activity, time |
+| `assets/screens/create-activity.png` | Theme & difficulty picker |
+| `assets/screens/preview.png` | Worksheet preview before PDF |
 
-| Slot | Suggested filename |
-|------|-------------------|
-| Home | `home.png` |
-| Preview | `preview.png` |
-| Paywall | `paywall.png` |
-| Worksheet | `worksheet.png` |
+Add real phone screenshots as you ship updates (`home.png`, `saved.png`, `profile.png`) and swap flow cards in `index.html` for `<img>` tags.
 
-Replace placeholder cards by copying the structure of existing filled cards (e.g. splash, activity-ready).
+## Google Play
+
+https://play.google.com/store/apps/details?id=com.homeworkbuddy.app
 
 ## Local preview
 
@@ -36,4 +41,5 @@ Host on GitHub Pages, Cloudflare Pages, Netlify, or any static host. Point your 
 ## Customize
 
 - Update contact emails in `index.html` and `privacy.html`
-- Replace `assets/logo.png` if you have a final brand asset
+- Replace screenshots in `assets/screens/` when you capture new app builds
+- Bump version badge in `index.html` footer when releasing

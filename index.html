@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Homework Buddy helps busy parents create calm, printable learning activities for children from Nursery to Class 3."
+      content="Homework Buddy helps busy parents create calm, printable learning activities for children from Nursery to Class 3. Download on Google Play — version 1.0.4."
     />
     <title>Homework Buddy — Printable learning activities for your child</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,12 +22,25 @@
       <div class="container inner">
         <a class="brand" href="index.html">
           <img src="assets/logo.png" alt="" width="44" height="44" />
-          Homework Buddy
+          <img
+            class="brand-wordmark"
+            src="assets/wordmark.png"
+            alt="Homework Buddy"
+            width="140"
+            height="40"
+          />
         </a>
         <nav class="nav" aria-label="Main">
           <a href="#features">Features</a>
-          <a href="#screens">App screens</a>
+          <a href="#screens">How it works</a>
           <a href="privacy.html">Privacy</a>
+          <a
+            class="btn btn-primary btn-sm"
+            href="https://play.google.com/store/apps/details?id=com.homeworkbuddy.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Get the app</a
+          >
         </nav>
       </div>
     </header>
@@ -36,23 +49,29 @@
       <section class="hero">
         <div class="container hero-grid">
           <div>
-            <span class="badge">7 days premium free · No card required</span>
-            <h1>Calm, printable activities for busy parents</h1>
+            <span class="badge">Version 1.0.4 · 7 days premium free</span>
+            <h1>Make learning <span class="accent">fun &amp; easy</span></h1>
             <p class="lead">
-              Homework Buddy helps you create meaningful learning PDFs for children from Nursery to
-              Class 3 — ready to print and share in minutes.
+              Generate creative, printable activities in seconds for children from Nursery to Class 3
+              — ready to print, save, and share.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#screens">See the app</a>
-              <a class="btn btn-outline" href="privacy.html">Privacy policy</a>
+              <a
+                class="btn btn-primary"
+                href="https://play.google.com/store/apps/details?id=com.homeworkbuddy.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Download on Google Play</a
+              >
+              <a class="btn btn-outline" href="#screens">See how it works</a>
             </div>
           </div>
           <div class="hero-visual">
             <img
-              src="assets/screens/splash.png"
-              alt="Homework Buddy splash screen"
+              src="assets/hero_boy.png"
+              alt="Child drawing in a workbook"
               width="400"
-              height="800"
+              height="400"
             />
           </div>
         </div>
@@ -64,100 +83,77 @@
           <p class="section-sub">
             Quick themes, class-level activities, and printable worksheets — without the stress.
           </p>
-          <div class="feature-grid">
+          <div class="feature-grid feature-grid-4">
+            <article class="feature-card">
+              <div class="icon" aria-hidden="true">🏠</div>
+              <h3>Redesigned home</h3>
+              <p>Pick class, activity, and time on one calm screen.</p>
+            </article>
             <article class="feature-card">
               <div class="icon" aria-hidden="true">📄</div>
               <h3>Printable PDFs</h3>
-              <p>Generate story, writing, and creative corners tailored to your child’s class.</p>
+              <p>Story, writing, maths, and coloring — print-ready in seconds.</p>
+            </article>
+            <article class="feature-card">
+              <div class="icon" aria-hidden="true">💾</div>
+              <h3>Saved activities</h3>
+              <p>Save worksheets and open them anytime to print or download.</p>
             </article>
             <article class="feature-card">
               <div class="icon" aria-hidden="true">🌈</div>
               <h3>Themes kids love</h3>
-              <p>Animals, space, transport, festivals, and more — fresh activities every time.</p>
-            </article>
-            <article class="feature-card">
-              <div class="icon" aria-hidden="true">⏱️</div>
-              <h3>10–30 minute activities</h3>
-              <p>Pick a duration that fits your evening — calm learning, not homework battles.</p>
-            </article>
-            <article class="feature-card">
-              <div class="icon" aria-hidden="true">💜</div>
-              <h3>Share with parent groups</h3>
-              <p>Every PDF includes “Created with Homework Buddy ❤️” — easy to share on WhatsApp.</p>
+              <p>Animals, space, festivals, and more — fresh every time.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="screens">
+      <section id="screens" class="screens-section">
         <div class="container">
           <h2 class="section-title">App screens</h2>
           <p class="section-sub">
-            A peek at Homework Buddy. Replace placeholder slots with new screenshots as you ship
-            updates — drop images into <code>assets/screens/</code> and update this page.
+            From welcome to printable PDF in a few taps — real screenshots from Homework Buddy 1.0.4.
           </p>
 
           <div class="screens-grid">
             <figure class="screen-card">
               <div class="frame">
-                <img src="assets/screens/splash.png" alt="Splash and get started screen" loading="lazy" />
+                <img src="assets/screens/splash.png" alt="Homework Buddy welcome screen" loading="lazy" />
               </div>
-              <figcaption>Splash &amp; onboarding</figcaption>
-            </figure>
-
-            <figure class="screen-card placeholder">
-              <div class="frame">
-                <div class="frame-inner">
-                  <span>📱</span>
-                  Add screenshot<br />
-                  <small>home.png</small>
-                </div>
-              </div>
-              <figcaption>Home — choose class &amp; activity</figcaption>
-            </figure>
-
-            <figure class="screen-card placeholder">
-              <div class="frame">
-                <div class="frame-inner">
-                  <span>📱</span>
-                  Add screenshot<br />
-                  <small>preview.png</small>
-                </div>
-              </div>
-              <figcaption>Activity preview</figcaption>
+              <figcaption>Welcome &amp; get started</figcaption>
             </figure>
 
             <figure class="screen-card">
               <div class="frame">
                 <img
-                  src="assets/screens/activity-ready.png"
-                  alt="Activity ready success screen"
+                  src="assets/screens/home.png"
+                  alt="Home screen — choose class, activity, and duration"
                   loading="lazy"
                 />
               </div>
-              <figcaption>Ready to download &amp; share</figcaption>
+              <figcaption>Home — pick class &amp; activity</figcaption>
             </figure>
 
-            <figure class="screen-card placeholder">
+            <figure class="screen-card">
               <div class="frame">
-                <div class="frame-inner">
-                  <span>📱</span>
-                  Add screenshot<br />
-                  <small>paywall.png</small>
-                </div>
+                <img
+                  src="assets/screens/create-activity.png"
+                  alt="Create activity — choose theme and difficulty"
+                  loading="lazy"
+                />
               </div>
-              <figcaption>Premium &amp; UPI upgrade</figcaption>
+              <figcaption>Create — theme &amp; difficulty</figcaption>
             </figure>
 
-            <figure class="screen-card placeholder">
+            <figure class="screen-card">
               <div class="frame">
-                <div class="frame-inner">
-                  <span>📱</span>
-                  Add screenshot<br />
-                  <small>worksheet.png</small>
-                </div>
+                <img
+                  src="assets/screens/preview.png"
+                  alt="Preview worksheet before download"
+                  loading="lazy"
+                />
               </div>
-              <figcaption>Sample worksheet PDF</figcaption>
+              <figcaption>Preview — check before you print</figcaption>
             </figure>
           </div>
         </div>
@@ -168,10 +164,19 @@
           <div class="cta">
             <h2>Learning that fits your evening</h2>
             <p>
-              Homework Buddy is built for working parents in India — printable, shareable, and
-              gentle on everyone’s time.
+              Homework Buddy is built for working parents in India — printable, shareable, and gentle
+              on everyone’s time. Available now on Google Play.
             </p>
-            <a class="btn" href="mailto:support@homeworkbuddy.app">Contact us</a>
+            <div class="cta-actions">
+              <a
+                class="btn"
+                href="https://play.google.com/store/apps/details?id=com.homeworkbuddy.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Get Homework Buddy on Play Store</a
+              >
+              <a class="btn btn-ghost" href="mailto:support@homeworkbuddy.app">Contact support</a>
+            </div>
           </div>
         </div>
       </section>
@@ -179,10 +184,16 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>© <span id="year"></span> Homework Buddy. All rights reserved.</p>
+        <p>© <span id="year"></span> Homework Buddy · Version 1.0.4</p>
         <div class="footer-links">
           <a href="privacy.html">Privacy policy</a>
           <a href="mailto:support@homeworkbuddy.app">support@homeworkbuddy.app</a>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.homeworkbuddy.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Google Play</a
+          >
         </div>
       </div>
     </footer>
