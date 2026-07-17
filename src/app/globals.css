@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fffbf6;
+  --foreground: #24212c;
+  --primary: #7b5cd6;
+  --accent: #e85d75;
+  --muted: #7d7788;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-nunito);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-nunito), system-ui, sans-serif;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
