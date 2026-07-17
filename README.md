@@ -1,8 +1,6 @@
 # Homework Buddy — SEO content platform
 
-Next.js App Router site for **https://www.easyhomeworkactivity.com**
-
-Content-first educational platform for printable worksheets & easy homework activities (Nursery–Class 3). The Homework Buddy Android app is the product; this site is the organic acquisition + authority channel.
+Next.js App Router site for **https://easyhomeworkactivity.com**
 
 ## Develop
 
@@ -19,21 +17,27 @@ npm run build
 npm start
 ```
 
-## Key paths
+## Deploy (Netlify)
 
-- `src/lib/site.ts` — domain, Play Store, nav
-- `src/lib/taxonomy.ts` — classes, activities, themes, cross-hubs, guides, tools, worksheet seeds
-- `src/lib/seo.ts` — metadata + JSON-LD helpers
-- `app/sitemap.ts` / `app/robots.ts` — only published URLs
+This site is hosted on **Netlify**. Next.js needs the official plugin — not a static `public/` publish folder.
 
-## Env
+1. Push these changes to `main`
+2. In Netlify → **Site configuration → Build & deploy**:
+   - **Build command:** `npm run build` (or rely on `netlify.toml`)
+   - **Publish directory:** leave empty / `.next` — **do not use `public`**
+3. `@netlify/plugin-nextjs` is configured in `netlify.toml`
+4. Trigger **Clear cache and deploy site**
+5. Confirm `https://easyhomeworkactivity.com/` returns 200
 
-Optional:
+Optional env:
 
 ```
 NEXT_PUBLIC_GA_ID=G-XXXXXXXX
 ```
 
-## Deploy
+## Key paths
 
-Point `www.easyhomeworkactivity.com` at the Next.js build (Vercel / Netlify / Cloudflare). Do not push or deploy until asked.
+- `src/lib/site.ts` — domain, Play Store, nav
+- `src/lib/taxonomy.ts` — content clusters
+- `src/lib/seo.ts` — metadata + JSON-LD
+- `netlify.toml` — Netlify + Next.js plugin

@@ -3,7 +3,7 @@ export const site = {
   tagline: "Printable worksheets & easy homework activities for Nursery to Class 3",
   description:
     "India's parent-friendly platform for printable worksheets, homework activities, and AI-generated learning material for Nursery to Class 3. Download the Homework Buddy app on Google Play.",
-  url: "https://www.easyhomeworkactivity.com",
+  url: "https://easyhomeworkactivity.com",
   playStoreUrl:
     "https://play.google.com/store/apps/details?id=com.homeworkbuddy.app",
   playStoreId: "com.homeworkbuddy.app",

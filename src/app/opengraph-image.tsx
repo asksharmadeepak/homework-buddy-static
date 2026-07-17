@@ -1,6 +1,5 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -23,7 +22,7 @@ export default function OpenGraphImage() {
           Printable worksheets for Nursery to Class 3
         </div>
         <div style={{ marginTop: 28, fontSize: 28, fontWeight: 700, color: "#7D7788" }}>
-          www.easyhomeworkactivity.com
+          easyhomeworkactivity.com
         </div>
       </div>
     ),
