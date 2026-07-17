@@ -1,20 +1,17 @@
-# https://docs.netlify.com/frameworks/next-js/overview/
-# https://answers.netlify.com/t/support-guide-i-ve-deployed-my-site-but-i-still-see-page-not-found/125
+# Static Next.js export → publish the `out/` folder.
+# Do NOT set Publish directory to `public` (no index.html there → 404).
 #
-# Root cause of the current 404: Netlify is not serving the Next.js app
-# (often Publish directory = "public", which has no index.html).
-#
-# In Netlify UI → Site configuration → Build & deploy → Continuous deployment:
-#   - Build command: npm run build   (or leave blank; this file wins)
-#   - Publish directory: CLEAR THIS FIELD (do not use "public" or "out")
+# In Netlify UI → Site configuration → Build & deploy:
+#   - Build command: npm run build  (or leave blank; this file wins)
+#   - Publish directory: out
 # Then: Deploys → Trigger deploy → Clear cache and deploy site
 
 [build]
   command = "npm run build"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+  publish = "out"
 
 [build.environment]
   NODE_VERSION = "22"
   NEXT_TELEMETRY_DISABLED = "1"
+  # Cap parallelism if Netlify memory is tight on larger rebuilds
+  NODE_OPTIONS = "--max-old-space-size=4096"

@@ -19,15 +19,14 @@ npm start
 
 ## Deploy (Netlify)
 
-This site is hosted on **Netlify**. Next.js needs the official plugin — not a static `public/` publish folder.
+This site builds as a **static export** (`out/`). No Next.js runtime plugin required.
 
-1. Push these changes to `main`
+1. Push to `main`
 2. In Netlify → **Site configuration → Build & deploy**:
-   - **Build command:** `npm run build` (or rely on `netlify.toml`)
-   - **Publish directory:** leave empty / `.next` — **do not use `public`**
-3. `@netlify/plugin-nextjs` is configured in `netlify.toml`
-4. Trigger **Clear cache and deploy site**
-5. Confirm `https://easyhomeworkactivity.com/` returns 200
+   - **Build command:** `npm run build`
+   - **Publish directory:** `out` (**not** `public`)
+3. Trigger **Clear cache and deploy site**
+4. Confirm `https://easyhomeworkactivity.com/` returns 200
 
 Optional env:
 
@@ -40,4 +39,4 @@ NEXT_PUBLIC_GA_ID=G-XXXXXXXX
 - `src/lib/site.ts` — domain, Play Store, nav
 - `src/lib/taxonomy.ts` — content clusters
 - `src/lib/seo.ts` — metadata + JSON-LD
-- `netlify.toml` — Netlify + Next.js plugin
+- `netlify.toml` — build command + publish `out/`

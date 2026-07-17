@@ -1,6 +1,8 @@
 import { site } from "@/lib/site";
 import { guides, publishedOnly } from "@/lib/taxonomy";
 
+export const dynamic = "force-static";
+
 export async function GET() {
   const items = publishedOnly(guides);
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
