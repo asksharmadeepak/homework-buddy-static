@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { SoftCta } from "@/components/SoftCta";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
@@ -39,6 +40,13 @@ export default function DownloadPage() {
       >
         Get it on Google Play
       </a>
+      <p className="mt-4 text-sm font-semibold text-[#7D7788]">
+        App not fully live on Play yet?{" "}
+        <Link href="/beta" className="font-extrabold text-[#7B5CD6]">
+          Join the beta
+        </Link>{" "}
+        and we&apos;ll send you a testing invite.
+      </p>
       <div className="mt-12 grid gap-4 sm:grid-cols-2">
         {["/screens/home.png", "/screens/preview.png"].map((src) => (
           <Image key={src} src={src} alt="Homework Buddy app screen" width={320} height={640} className="mx-auto rounded-3xl border border-[#ebe4f7] shadow" />

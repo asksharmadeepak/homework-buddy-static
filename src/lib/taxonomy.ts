@@ -1262,6 +1262,7 @@ export function allPublishedPaths(): string[] {
     "/",
     "/features",
     "/download",
+    "/beta",
     "/faq",
     "/about",
     "/privacy",

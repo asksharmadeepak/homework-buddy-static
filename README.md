@@ -32,7 +32,10 @@ Optional env (also set in `netlify.toml` for production builds):
 
 ```
 NEXT_PUBLIC_GA_ID=G-N7P5CLP7BW
+NEXT_PUBLIC_PLAY_BETA_JOIN_URL=https://play.google.com/apps/testing/com.homeworkbuddy.app
 ```
+
+Leave `NEXT_PUBLIC_PLAY_BETA_JOIN_URL` empty until you have a Play Console closed-testing join link. Beta emails are collected via Netlify Forms (`beta-testers`) on `/beta`.
 
 ## Key paths
 

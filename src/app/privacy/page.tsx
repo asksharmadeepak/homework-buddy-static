@@ -13,7 +13,7 @@ export default function PrivacyPage() {
     <div className="mx-auto max-w-3xl px-4 py-10">
       <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Privacy", path: "/privacy" }]} />
       <h1 className="text-4xl font-black text-[#24212C]">Privacy Policy</h1>
-      <p className="mt-2 text-sm font-semibold text-[#7D7788]">Last updated: 17 July 2026</p>
+      <p className="mt-2 text-sm font-semibold text-[#7D7788]">Last updated: 20 July 2026</p>
       <div className="mt-8 space-y-4 text-base font-semibold leading-relaxed text-[#3d3848]">
         <p>
           This Privacy Policy explains how Homework Buddy (&quot;we&quot;, &quot;us&quot;) handles information in the
@@ -25,10 +25,17 @@ export default function PrivacyPage() {
           device information needed to run the service, and optional analytics data that helps us improve
           reliability and features.
         </p>
+        <h2 className="pt-4 text-2xl font-black text-[#24212C]">Beta tester signups</h2>
+        <p>
+          If you join our Android beta via the website, we collect the email address (and optional name) you
+          submit so we can send you a Google Play testing invite and related beta product updates. We do not
+          sell these details or use them for unrelated marketing.
+        </p>
         <h2 className="pt-4 text-2xl font-black text-[#24212C]">How we use information</h2>
         <p>
           We use information to provide printable activity features, improve the product, respond to support
-          requests, and maintain security. We do not sell children&apos;s personal information.
+          requests, run closed testing, and maintain security. We do not sell children&apos;s personal
+          information.
         </p>
         <h2 className="pt-4 text-2xl font-black text-[#24212C]">Analytics & cookies</h2>
         <p>
