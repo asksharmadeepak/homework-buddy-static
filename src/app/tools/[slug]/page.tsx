@@ -42,14 +42,12 @@ export default async function ToolPage({ params }: Props) {
           Homework Buddy lets you choose class, activity, theme, and time, then download a print-ready PDF.
           This web page explains the approach; generation happens in the app today.
         </p>
-        <a
-          href={site.playStoreUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href={site.appCtaPath}
           className="mt-4 inline-block rounded-full bg-[#7B5CD6] px-5 py-3 text-sm font-extrabold text-white"
         >
-          Open Homework Buddy on Google Play
-        </a>
+          Join the Homework Buddy beta
+        </Link>
       </section>
       <p className="mt-8 text-sm font-semibold">
         Other tools:{" "}

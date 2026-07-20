@@ -29,14 +29,12 @@ export function WorksheetDownload({
         >
           Download free PDF
         </a>
-        <a
-          href={site.playStoreUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href={site.appCtaPath}
           className="rounded-full border-2 border-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-[#7B5CD6]"
         >
           Generate more in the app
-        </a>
+        </Link>
         <Link
           href="/download"
           className="rounded-full px-4 py-3 text-sm font-bold text-[#7D7788] underline-offset-2 hover:text-[#7B5CD6] hover:underline"

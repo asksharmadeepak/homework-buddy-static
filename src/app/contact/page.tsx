@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -31,9 +32,9 @@ export default function ContactPage() {
         </li>
         <li>
           App:{" "}
-          <a className="text-[#7B5CD6]" href={site.playStoreUrl} target="_blank" rel="noopener noreferrer">
-            Google Play listing
-          </a>
+          <Link className="text-[#7B5CD6]" href={site.appCtaPath}>
+            Join the Android beta
+          </Link>
         </li>
       </ul>
     </div>

@@ -11,9 +11,9 @@ export function SiteFooter() {
           <p className="mt-2 text-sm font-semibold text-[#7D7788]">{site.tagline}</p>
           <p className="mt-4 text-sm text-[#7D7788]">
             Version {site.version} ·{" "}
-            <a className="font-bold text-[#7B5CD6]" href={site.playStoreUrl} target="_blank" rel="noopener noreferrer">
-              Google Play
-            </a>
+            <Link className="font-bold text-[#7B5CD6]" href={site.appCtaPath}>
+              Join the beta
+            </Link>
           </p>
         </div>
         {(

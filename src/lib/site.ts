@@ -7,6 +7,8 @@ export const site = {
   playStoreUrl:
     "https://play.google.com/store/apps/details?id=com.homeworkbuddy.app",
   playStoreId: "com.homeworkbuddy.app",
+  /** Where “Get the app” / download CTAs go while the app is in closed testing. */
+  appCtaPath: "/beta",
   /** Play Console closed-testing join link; leave empty until you have one. */
   playBetaJoinUrl: process.env.NEXT_PUBLIC_PLAY_BETA_JOIN_URL ?? "",
   supportEmail: "support@homeworkbuddy.app",
@@ -34,8 +36,7 @@ export const navFooter = {
   ],
   product: [
     { href: "/features", label: "Features" },
-    { href: "/download", label: "Download" },
-    { href: "/beta", label: "Join beta" },
+    { href: "/beta", label: "Get the app" },
     { href: "/faq", label: "FAQ" },
     { href: "/about", label: "About" },
   ],

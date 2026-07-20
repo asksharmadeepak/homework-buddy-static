@@ -81,22 +81,13 @@ export function BetaSignupForm() {
       </p>
 
       <label className="block text-sm font-extrabold text-[#24212C]">
-        Name <span className="font-semibold text-[#7D7788]">(optional)</span>
-        <input
-          type="text"
-          name="name"
-          autoComplete="name"
-          className="mt-2 w-full rounded-2xl border border-[#ebe4f7] bg-white px-4 py-3 text-base font-semibold text-[#24212C] outline-none focus:border-[#7B5CD6]"
-        />
-      </label>
-
-      <label className="mt-4 block text-sm font-extrabold text-[#24212C]">
         Email
         <input
           type="email"
           name="email"
           required
           autoComplete="email"
+          placeholder="you@email.com"
           className="mt-2 w-full rounded-2xl border border-[#ebe4f7] bg-white px-4 py-3 text-base font-semibold text-[#24212C] outline-none focus:border-[#7B5CD6]"
         />
       </label>

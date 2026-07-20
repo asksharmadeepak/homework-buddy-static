@@ -27,9 +27,9 @@ export default function PrivacyPage() {
         </p>
         <h2 className="pt-4 text-2xl font-black text-[#24212C]">Beta tester signups</h2>
         <p>
-          If you join our Android beta via the website, we collect the email address (and optional name) you
-          submit so we can send you a Google Play testing invite and related beta product updates. We do not
-          sell these details or use them for unrelated marketing.
+          If you join our Android beta via the website, we collect the email address you submit so we can
+          send you a Google Play testing invite and related beta product updates. We do not sell these
+          details or use them for unrelated marketing.
         </p>
         <h2 className="pt-4 text-2xl font-black text-[#24212C]">How we use information</h2>
         <p>

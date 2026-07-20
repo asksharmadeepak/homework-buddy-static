@@ -6,9 +6,9 @@ import { buildMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 export const metadata = buildMetadata({
-  title: "Download Homework Buddy on Google Play",
+  title: "Download Homework Buddy — join the Android beta",
   description:
-    "Download Homework Buddy for Android — printable worksheets and learning activities for Nursery to Class 3.",
+    "Get Homework Buddy for Android via closed beta. Printable worksheets and learning activities for Nursery to Class 3.",
   path: "/download",
 });
 
@@ -30,29 +30,31 @@ export default function DownloadPage() {
       />
       <h1 className="mt-6 text-4xl font-black text-[#24212C]">Download Homework Buddy</h1>
       <p className="mt-4 text-lg font-semibold text-[#7D7788]">
-        Create printable learning activities in seconds. Version {site.version} on Google Play.
+        The app is in closed testing on Google Play. Join the beta with your email and we&apos;ll send
+        you an invite. Version {site.version}.
       </p>
-      <a
-        href={site.playStoreUrl}
-        target="_blank"
-        rel="noopener noreferrer"
+      <Link
+        href={site.appCtaPath}
         className="mt-8 inline-block rounded-full bg-[#7B5CD6] px-8 py-4 text-base font-extrabold text-white"
       >
-        Get it on Google Play
-      </a>
-      <p className="mt-4 text-sm font-semibold text-[#7D7788]">
-        App not fully live on Play yet?{" "}
-        <Link href="/beta" className="font-extrabold text-[#7B5CD6]">
-          Join the beta
-        </Link>{" "}
-        and we&apos;ll send you a testing invite.
-      </p>
+        Join the beta
+      </Link>
       <div className="mt-12 grid gap-4 sm:grid-cols-2">
         {["/screens/home.png", "/screens/preview.png"].map((src) => (
-          <Image key={src} src={src} alt="Homework Buddy app screen" width={320} height={640} className="mx-auto rounded-3xl border border-[#ebe4f7] shadow" />
+          <Image
+            key={src}
+            src={src}
+            alt="Homework Buddy app screen"
+            width={320}
+            height={640}
+            className="mx-auto rounded-3xl border border-[#ebe4f7] shadow"
+          />
         ))}
       </div>
-      <SoftCta title="Prefer to explore first?" body="Browse printable worksheet hubs, then download when you are ready." />
+      <SoftCta
+        title="Prefer to explore first?"
+        body="Browse printable worksheet hubs, then join the beta when you are ready to try the app."
+      />
     </div>
   );
 }

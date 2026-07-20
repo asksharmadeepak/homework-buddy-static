@@ -68,14 +68,12 @@ export default function WorksheetsIndexPage() {
             </li>
           ))}
         </ul>
-        <a
-          href={site.playStoreUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href={site.appCtaPath}
           className="mt-6 inline-block rounded-full bg-[#7B5CD6] px-5 py-3 text-sm font-extrabold text-white"
         >
           Generate more in the app
-        </a>
+        </Link>
       </section>
 
       <h2 className="mt-12 text-2xl font-black text-[#24212C]">Browse by class</h2>

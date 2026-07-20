@@ -30,9 +30,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <Link
-          href={site.playStoreUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={site.appCtaPath}
           className="rounded-full bg-[#7B5CD6] px-4 py-2 text-sm font-extrabold text-white shadow-sm hover:bg-[#6a4ec4]"
         >
           Get the app
