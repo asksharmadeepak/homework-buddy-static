@@ -28,10 +28,10 @@ This site builds as a **static export** (`out/`). No Next.js runtime plugin requ
 3. Trigger **Clear cache and deploy site**
 4. Confirm `https://easyhomeworkactivity.com/` returns 200
 
-Optional env:
+Optional env (also set in `netlify.toml` for production builds):
 
 ```
-NEXT_PUBLIC_GA_ID=G-XXXXXXXX
+NEXT_PUBLIC_GA_ID=G-N7P5CLP7BW
 ```
 
 ## Key paths
