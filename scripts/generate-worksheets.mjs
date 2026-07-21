@@ -6,6 +6,10 @@ import { mkdirSync, readFileSync, writeFileSync } from "fs";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
+// fontkit's Indic shaper (needed to render Devanagari matras correctly)
+// relies on the regeneratorRuntime global.
+import "regenerator-runtime/runtime.js";
+import fontkit from "@pdf-lib/fontkit";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
@@ -14,6 +18,9 @@ const artDir = join(outDir, "art");
 
 const logoBytes = readFileSync(join(root, "public/brand/pdf-logo.png"));
 const wordmarkBytes = readFileSync(join(root, "public/brand/pdf-wordmark.png"));
+const devanagariBytes = readFileSync(
+  join(__dirname, "fonts/NotoSansDevanagari-Regular.ttf"),
+);
 
 const C = {
   purple: rgb(0.482, 0.361, 0.839),
@@ -829,6 +836,349 @@ async function buildMonsoonLifeSkills() {
   return doc.save();
 }
 
+/** Nursery Hindi Swar Tracing */
+async function buildHindiSwarTracing() {
+  const doc = await PDFDocument.create();
+  doc.registerFontkit(fontkit);
+  const page = doc.addPage([595.28, 841.89]);
+  const font = await doc.embedFont(StandardFonts.Helvetica);
+  const fontBold = await doc.embedFont(StandardFonts.HelveticaBold);
+  const deva = await doc.embedFont(devanagariBytes, { subset: true });
+  const margin = 42;
+  let y = await drawBrandHeader(doc, page, font, fontBold);
+
+  page.drawText("Hindi Swar Tracing", {
+    x: margin,
+    y,
+    size: 20,
+    font: fontBold,
+    color: C.text,
+  });
+  page.drawText("(स्वर अभ्यास)", {
+    x: margin + 205,
+    y,
+    size: 16,
+    font: deva,
+    color: C.purple,
+  });
+  y -= 16;
+  page.drawText("Nursery · Hindi Varnamala · Swar  ·  Say each swar aloud, then trace.", {
+    x: margin,
+    y,
+    size: 10,
+    font,
+    color: C.muted,
+  });
+  y -= 14;
+  page.drawLine({
+    start: { x: margin, y },
+    end: { x: 555, y },
+    thickness: 1.5,
+    color: C.purple,
+  });
+  y -= 20;
+
+  // Swar showcase card
+  page.drawRectangle({
+    x: margin,
+    y: y - 72,
+    width: 510,
+    height: 80,
+    color: C.soft,
+    borderColor: C.purple,
+    borderWidth: 1,
+  });
+  page.drawText("आज के स्वर", {
+    x: margin + 16,
+    y: y - 22,
+    size: 12,
+    font: deva,
+    color: C.purple,
+  });
+  page.drawText("(Today's vowels)", {
+    x: margin + 16 + deva.widthOfTextAtSize("आज के स्वर", 12) + 8,
+    y: y - 22,
+    size: 11,
+    font: fontBold,
+    color: C.purple,
+  });
+  const swarRow = "अ  आ  इ  ई  उ  ऊ  ए  ऐ  ओ  औ";
+  page.drawText(swarRow, {
+    x: margin + 16,
+    y: y - 56,
+    size: 24,
+    font: deva,
+    color: C.text,
+  });
+  y -= 94;
+
+  y = sectionTitle(page, "Part 1 — Trace each swar (darker first, then the grey ones)", margin, y, fontBold);
+  const traceLetters = ["अ", "आ", "इ", "ई", "उ", "ऊ"];
+  const grey = rgb(0.78, 0.75, 0.85);
+  for (const letter of traceLetters) {
+    page.drawRectangle({
+      x: margin,
+      y: y - 40,
+      width: 510,
+      height: 46,
+      borderColor: C.line,
+      borderWidth: 1,
+      color: C.white,
+    });
+    page.drawText(letter, {
+      x: margin + 18,
+      y: y - 28,
+      size: 26,
+      font: deva,
+      color: C.purple,
+    });
+    for (let i = 0; i < 6; i++) {
+      page.drawText(letter, {
+        x: margin + 90 + i * 70,
+        y: y - 28,
+        size: 26,
+        font: deva,
+        color: grey,
+      });
+    }
+    y -= 52;
+  }
+  y -= 8;
+
+  y = sectionTitle(page, "Part 2 — Circle every", margin, y, fontBold);
+  page.drawText("अ", {
+    x: margin + 152,
+    y: y + 18,
+    size: 15,
+    font: deva,
+    color: C.purple,
+  });
+  page.drawText("in this row", {
+    x: margin + 172,
+    y: y + 18,
+    size: 13,
+    font: fontBold,
+    color: C.purple,
+  });
+  page.drawText("आ    अ    इ    अ    ई    अ    उ    आ    अ", {
+    x: margin + 4,
+    y: y - 10,
+    size: 22,
+    font: deva,
+    color: C.text,
+  });
+  y -= 44;
+
+  y = sectionTitle(page, "Part 3 — Colour the star when you finish!", margin, y, fontBold);
+  const star = await doc.embedPng(loadArt("cut_star.png"));
+  page.drawRectangle({
+    x: margin,
+    y: Math.max(88, y - 78),
+    width: 510,
+    height: 74,
+    borderColor: C.purple,
+    borderWidth: 1.5,
+    color: C.white,
+  });
+  page.drawImage(star, { x: margin + 20, y: Math.max(94, y - 72), width: 62, height: 62 });
+  const cheerY = Math.max(118, y - 46);
+  page.drawText("शाबाश!", {
+    x: margin + 100,
+    y: cheerY,
+    size: 14,
+    font: deva,
+    color: C.purple,
+  });
+  page.drawText("Well done! Say all ten swars once more to a grown-up.", {
+    x: margin + 100 + deva.widthOfTextAtSize("शाबाश!", 14) + 10,
+    y: cheerY,
+    size: 11,
+    font,
+    color: C.text,
+  });
+
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, "Hindi Swar Tracing");
+  return doc.save();
+}
+
+/** Class 1 Hindi Vyanjan Practice */
+async function buildHindiVyanjanPractice() {
+  const doc = await PDFDocument.create();
+  doc.registerFontkit(fontkit);
+  const page = doc.addPage([595.28, 841.89]);
+  const font = await doc.embedFont(StandardFonts.Helvetica);
+  const fontBold = await doc.embedFont(StandardFonts.HelveticaBold);
+  const deva = await doc.embedFont(devanagariBytes, { subset: true });
+  const margin = 42;
+  let y = await drawBrandHeader(doc, page, font, fontBold);
+
+  page.drawText("Hindi Vyanjan Practice", {
+    x: margin,
+    y,
+    size: 20,
+    font: fontBold,
+    color: C.text,
+  });
+  page.drawText("(व्यंजन अभ्यास)", {
+    x: margin + 235,
+    y,
+    size: 16,
+    font: deva,
+    color: C.purple,
+  });
+  y -= 16;
+  page.drawText("Class 1 · Hindi Varnamala · Vyanjan  ·  Read, match, and write.", {
+    x: margin,
+    y,
+    size: 10,
+    font,
+    color: C.muted,
+  });
+  y -= 14;
+  page.drawLine({
+    start: { x: margin, y },
+    end: { x: 555, y },
+    thickness: 1.5,
+    color: C.purple,
+  });
+  y -= 20;
+
+  // Vyanjan showcase card
+  page.drawRectangle({
+    x: margin,
+    y: y - 72,
+    width: 510,
+    height: 80,
+    color: C.peach,
+    borderColor: C.purple,
+    borderWidth: 1,
+  });
+  page.drawText("आज के व्यंजन", {
+    x: margin + 16,
+    y: y - 22,
+    size: 12,
+    font: deva,
+    color: C.purple,
+  });
+  page.drawText("(Today's consonants)", {
+    x: margin + 16 + deva.widthOfTextAtSize("आज के व्यंजन", 12) + 8,
+    y: y - 22,
+    size: 11,
+    font: fontBold,
+    color: C.purple,
+  });
+  page.drawText("क  ख  ग  घ    च  छ  ज  झ    ट  ठ", {
+    x: margin + 16,
+    y: y - 56,
+    size: 24,
+    font: deva,
+    color: C.text,
+  });
+  y -= 94;
+
+  y = sectionTitle(page, "Part 1 — Match the letter to its picture (draw a line)", margin, y, fontBold);
+  const rabbit = await doc.embedPng(loadArt("cut_rabbit.png"));
+  const lion = await doc.embedPng(loadArt("cut_lion.png"));
+  const elephant = await doc.embedPng(loadArt("cut_elephant.png"));
+  const parrot = await doc.embedPng(loadArt("cut_parrot.png"));
+  // Letters on the left; pictures on the right in a shuffled order.
+  const pairs = [
+    { letter: "ख", word: "खरगोश" },
+    { letter: "श", word: "शेर" },
+    { letter: "ह", word: "हाथी" },
+    { letter: "त", word: "तोता" },
+  ];
+  const shuffledArt = [lion, parrot, rabbit, elephant];
+  const rowH = 64;
+  for (let i = 0; i < pairs.length; i++) {
+    const ry = y - 6 - i * rowH;
+    page.drawText(pairs[i].letter, {
+      x: margin + 20,
+      y: ry - 34,
+      size: 28,
+      font: deva,
+      color: C.purple,
+    });
+    page.drawText(pairs[i].word, {
+      x: margin + 70,
+      y: ry - 28,
+      size: 13,
+      font: deva,
+      color: C.muted,
+    });
+    page.drawCircle({
+      x: margin + 190,
+      y: ry - 24,
+      size: 4,
+      color: C.purple,
+    });
+    page.drawCircle({
+      x: margin + 380,
+      y: ry - 24,
+      size: 4,
+      color: C.purple,
+    });
+    page.drawImage(shuffledArt[i], {
+      x: margin + 410,
+      y: ry - 52,
+      width: 56,
+      height: 56,
+    });
+  }
+  y -= 6 + pairs.length * rowH + 8;
+
+  y = sectionTitle(page, "Part 2 — Write the missing letter", margin, y, fontBold);
+  const sequences = ["क  ख  ___  घ", "च  छ  ज  ___", "___  ठ"];
+  let sx = margin;
+  for (const seq of sequences) {
+    page.drawText(seq, { x: sx, y: y - 12, size: 20, font: deva, color: C.text });
+    sx += 175;
+  }
+  y -= 48;
+
+  y = sectionTitle(page, "Part 3 — Trace and write", margin, y, fontBold);
+  const grey = rgb(0.78, 0.75, 0.85);
+  const traceRow = ["क", "ख", "ग", "घ"];
+  for (let i = 0; i < traceRow.length; i++) {
+    const bx = margin + i * 128;
+    page.drawRectangle({
+      x: bx,
+      y: Math.max(88, y - 60),
+      width: 118,
+      height: 56,
+      borderColor: C.line,
+      borderWidth: 1,
+      color: C.white,
+    });
+    page.drawText(traceRow[i], {
+      x: bx + 14,
+      y: Math.max(102, y - 46),
+      size: 26,
+      font: deva,
+      color: C.purple,
+    });
+    page.drawText(traceRow[i], {
+      x: bx + 56,
+      y: Math.max(102, y - 46),
+      size: 26,
+      font: deva,
+      color: grey,
+    });
+    page.drawText("__", {
+      x: bx + 92,
+      y: Math.max(102, y - 46),
+      size: 16,
+      font: fontBold,
+      color: C.muted,
+    });
+  }
+
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, "Hindi Vyanjan Practice");
+  return doc.save();
+}
+
 const builders = [
   ["class-1-animals-reading-adventure.pdf", buildAnimalsReading],
   ["nursery-festival-coloring-fun.pdf", buildFestivalColoring],
@@ -836,6 +1186,8 @@ const builders = [
   ["class-2-space-creative-prompt.pdf", buildSpaceCreative],
   ["jr-kg-fruits-writing-words.pdf", buildFruitsWriting],
   ["class-3-monsoon-life-skills.pdf", buildMonsoonLifeSkills],
+  ["nursery-hindi-swar-tracing.pdf", buildHindiSwarTracing],
+  ["class-1-hindi-vyanjan-practice.pdf", buildHindiVyanjanPractice],
 ];
 
 mkdirSync(outDir, { recursive: true });

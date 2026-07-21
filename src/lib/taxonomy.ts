@@ -421,6 +421,46 @@ export const activities: HubEntity[] = [
     relatedThemeSlugs: ["space", "stories", "professions"],
   },
   {
+    slug: "hindi",
+    name: "Hindi Fun",
+    title: "Hindi worksheets for kids — printable varnamala, swar & vyanjan practice",
+    description:
+      "Printable Hindi worksheets for Nursery to Class 3: swar (अ आ इ ई) tracing, vyanjan (क ख ग) practice, and varnamala activities for home.",
+    icon: "/activities/hindi.png",
+    status: "published",
+    intro: [
+      "Hindi worksheets help children learn the varnamala — swar (स्वर) like अ, आ, इ, ई and vyanjan (व्यंजन) like क, ख, ग — through tracing, matching, and picture words such as ख से खरगोश and त से तोता.",
+      "Many parents search for Hindi worksheets for Nursery, LKG, UKG, or Class 1 and find only dense photocopied pages. Good Hindi printables keep letters large, add friendly pictures, and finish in one short sitting.",
+      "Start with swar tracing for Nursery, move to vyanjan recognition in KG, and mix both (varnamala mix) by Class 1. Saying each letter aloud while tracing builds sound-letter links faster than silent copying.",
+      ...sharedParentTips,
+    ],
+    howTo: [
+      "Say the letter aloud together before tracing it.",
+      "Practise 4–6 letters per session, not the whole varnamala.",
+      "Connect letters to familiar words: अ से अनार, क से कमल.",
+      "Revisit yesterday's letters for one minute before new ones.",
+    ],
+    faqs: [
+      {
+        question: "At what age should children start Hindi varnamala worksheets?",
+        answer:
+          "Most children enjoy swar tracing from Nursery age (3–4) with large letters. Vyanjan practice and matching fit Jr KG onwards.",
+      },
+      {
+        question: "Should I teach swar or vyanjan first?",
+        answer:
+          "Swar (अ to अः) usually come first — there are fewer of them and they map to sounds children already use. Vyanjan follow naturally.",
+      },
+      {
+        question: "Where can I get printable Hindi worksheets in PDF?",
+        answer:
+          "Download the free samples on this site, or generate fresh swar, vyanjan, and varnamala-mix worksheets anytime in the Homework Buddy app.",
+      },
+    ],
+    relatedClassSlugs: ["nursery", "jr-kg", "sr-kg", "class-1"],
+    relatedThemeSlugs: ["hindi-varnamala", "animals", "stories"],
+  },
+  {
     slug: "life-skills",
     name: "Life Skills",
     title: "Life skills worksheets for children",
@@ -660,6 +700,41 @@ export const themes: HubEntity[] = [
     ],
     relatedClassSlugs: ["class-1", "class-2", "class-3"],
     relatedActivitySlugs: ["reading", "life-skills", "creative-thinking"],
+  },
+  {
+    slug: "hindi-varnamala",
+    name: "Hindi Varnamala",
+    title: "Hindi varnamala worksheets — printable swar & vyanjan for kids",
+    description:
+      "Varnamala-themed printable worksheets: swar tracing (अ आ इ ई), vyanjan practice (क ख ग घ), and letter-picture matching for young learners.",
+    icon: "/themes/hindi_varnamala.png",
+    status: "published",
+    intro: [
+      "The Hindi varnamala — 13 swar and 33+ vyanjan — is easiest to learn a few letters at a time with big print and pictures. Varnamala worksheets turn अ, आ, इ into tracing games and क, ख, ग into matching puzzles.",
+      "Parents searching for हिंदी वर्णमाला worksheets or swar-vyanjan practice PDFs usually need tonight's printable, not a textbook. Keep each session to one sheet: trace, say aloud, and connect letters to words like शेर, हाथी, and तोता.",
+      "Mother-tongue letter practice also strengthens English phonics — children who map sounds to symbols in one script transfer that skill to the other.",
+      ...sharedParentTips,
+    ],
+    howTo: [
+      "Trace with a finger first, then with a pencil.",
+      "Pair every letter with a spoken word (ख से खरगोश).",
+      "Keep a varnamala chart visible at home for quick revision.",
+      "Celebrate completing each letter group (क–घ, च–झ) before moving on.",
+    ],
+    faqs: [
+      {
+        question: "What is the difference between swar and vyanjan worksheets?",
+        answer:
+          "Swar sheets practise the vowels (अ to अः) — usually tracing and recognition. Vyanjan sheets cover consonants (क onwards) and often add letter-picture matching.",
+      },
+      {
+        question: "Are these useful for children in English-medium schools?",
+        answer:
+          "Yes. Most Indian schools teach Hindi as a second language from early years, and home varnamala practice keeps it enjoyable instead of stressful.",
+      },
+    ],
+    relatedClassSlugs: ["nursery", "jr-kg", "class-1"],
+    relatedActivitySlugs: ["hindi", "writing", "coloring"],
   },
   {
     slug: "professions",
@@ -1203,6 +1278,64 @@ export const worksheetSeeds: WorksheetSeed[] = [
         question: "My child writes letters backwards. Is that okay?",
         answer:
           "Common at this age. Model the correct form calmly and try again tomorrow — avoid harsh correction.",
+      },
+    ],
+  },
+  {
+    slug: "hindi-swar-tracing",
+    classSlug: "nursery",
+    name: "Hindi Swar Tracing",
+    title: "Nursery Hindi swar worksheet — printable अ आ इ ई tracing PDF",
+    description:
+      "Free printable Hindi swar tracing worksheet for Nursery: trace अ आ इ ई उ ऊ with big friendly letters, plus a find-the-letter game.",
+    activitySlug: "hindi",
+    themeSlug: "hindi-varnamala",
+    status: "published",
+    pdfPath: "/worksheets/nursery-hindi-swar-tracing.pdf",
+    intro: [
+      "This Nursery Hindi worksheet introduces the first swar of the varnamala — अ, आ, इ, ई, उ, ऊ — with large trace-over letters and a circle-the-letter game. Say each swar aloud together before tracing.",
+      "स्वर अभ्यास works best in short, happy sessions: one sheet, six letters, lots of praise. For fresh swar, vyanjan, and varnamala-mix sheets every day, generate them in the Homework Buddy app.",
+      ...sharedParentTips,
+    ],
+    faqs: [
+      {
+        question: "Which swar should my child learn first?",
+        answer:
+          "Start with अ and आ — they are visually distinct and begin familiar words like अनार and आम. This sheet covers the first six swar in order.",
+      },
+      {
+        question: "Is this Hindi worksheet free to print?",
+        answer:
+          "Yes — download the PDF and print it on A4. The Homework Buddy app can generate unlimited fresh Hindi varnamala worksheets.",
+      },
+    ],
+  },
+  {
+    slug: "hindi-vyanjan-practice",
+    classSlug: "class-1",
+    name: "Hindi Vyanjan Practice",
+    title: "Class 1 Hindi vyanjan worksheet — printable क ख ग matching PDF",
+    description:
+      "Free printable Class 1 Hindi vyanjan worksheet: match letters to pictures (ख से खरगोश), fill missing letters, and trace क ख ग घ.",
+    activitySlug: "hindi",
+    themeSlug: "hindi-varnamala",
+    status: "published",
+    pdfPath: "/worksheets/class-1-hindi-vyanjan-practice.pdf",
+    intro: [
+      "This Class 1 Hindi worksheet practises vyanjan three ways: matching letters to pictures (ख से खरगोश, श से शेर, ह से हाथी, त से तोता), filling missing letters in the क–ठ sequence, and tracing.",
+      "व्यंजन अभ्यास sticks when children say the letter and its word aloud while drawing the matching line. One sheet a day keeps varnamala practice light and consistent.",
+      ...sharedParentTips,
+    ],
+    faqs: [
+      {
+        question: "My child confuses ख and श. Is that normal?",
+        answer:
+          "Very normal — several vyanjan look similar at first. Picture words (खरगोश vs शेर) and slow tracing help the shapes settle in.",
+      },
+      {
+        question: "Can Jr KG or Sr KG children use this sheet?",
+        answer:
+          "Yes, with help. Sr KG children can usually manage the matching; the missing-letter section suits Class 1 best.",
       },
     ],
   },
