@@ -7,15 +7,15 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Join the Homework Buddy beta",
   description:
-    "Become a free Android beta tester for Homework Buddy. Submit your email to get a Google Play invite and help improve printable worksheets for Nursery to Class 3.",
+    "Join the Homework Buddy beta on Android, or register interest for the iPhone app. Submit your email for printable worksheets for Nursery to Class 3.",
   path: "/beta",
 });
 
 const steps = [
-  "Submit your email below",
-  "Accept the Google Play testing invite we send you",
-  "Install Homework Buddy and open it at least once",
-  "Use it for about two weeks — short worksheet sessions are enough",
+  "Submit your email and choose Android, iPhone, or both",
+  "Android testers: accept the Google Play invite we send you",
+  "Install the app and open it at least once",
+  "iPhone interest: we will email you when iOS beta opens",
 ];
 
 export default function BetaPage() {
@@ -24,8 +24,9 @@ export default function BetaPage() {
       <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Beta", path: "/beta" }]} />
       <h1 className="text-4xl font-black text-[#24212C]">Join the Homework Buddy beta</h1>
       <p className="mt-4 text-lg font-semibold text-[#7D7788]">
-        Help us improve printable worksheets and homework activities for Indian parents of Nursery to
-        Class 3 children. Free early access on Android — no payment required.
+        Help us improve printable worksheets and homework activities for Nursery to Class 3. Android
+        beta is open now. Prefer iPhone? Leave your email and we&apos;ll notify you when iOS is ready —
+        free, no payment required.
       </p>
 
       <ol className="mt-8 space-y-3 text-base font-semibold text-[#3d3848]">
@@ -57,7 +58,7 @@ export default function BetaPage() {
 
       <SoftCta
         title="Already exploring worksheets?"
-        body="Browse printable hubs on the site, then join the beta when you are ready to try the app."
+        body="Browse printable hubs on the site, then join the list when you are ready to try the app."
       />
     </div>
   );

@@ -33,7 +33,7 @@ export default function ContactPage() {
         <li>
           App:{" "}
           <Link className="text-[#7B5CD6]" href={site.appCtaPath}>
-            Join the Android beta
+            Join the beta / iPhone waitlist
           </Link>
         </li>
       </ul>

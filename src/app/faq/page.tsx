@@ -33,7 +33,7 @@ const faqs: FaqItem[] = [
   {
     question: "Is there an iOS version?",
     answer:
-      "Homework Buddy is currently available on Google Play for Android. Check the download page for the latest availability.",
+      "Android beta is open now on Google Play. If you want the iPhone app, join the waitlist on our beta page and we will email you when iOS testing starts.",
   },
   {
     question: "How do I contact support?",
