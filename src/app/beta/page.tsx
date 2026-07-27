@@ -5,43 +5,31 @@ import { SoftCta } from "@/components/SoftCta";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Join the Homework Buddy beta",
+  title: "Get printable worksheets — free early access",
   description:
-    "Join the Homework Buddy beta on Android, or register interest for the iPhone app. Submit your email for printable worksheets for Nursery to Class 3.",
+    "Get printable worksheets in the Homework Buddy app. Free early access for Nursery to Class 3 — Android beta open now, iPhone waitlist available.",
   path: "/beta",
 });
-
-const steps = [
-  "Submit your email and choose Android, iPhone, or both",
-  "Android testers: accept the Google Play invite we send you",
-  "Install the app and open it at least once",
-  "iPhone interest: we will email you when iOS beta opens",
-];
 
 export default function BetaPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-10">
       <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Beta", path: "/beta" }]} />
-      <h1 className="text-4xl font-black text-[#24212C]">Join the Homework Buddy beta</h1>
+      <h1 className="text-4xl font-black text-[#24212C]">
+        Get printable worksheets in the app
+      </h1>
       <p className="mt-4 text-lg font-semibold text-[#7D7788]">
-        Help us improve printable worksheets and homework activities for Nursery to Class 3. Android
-        beta is open now. Prefer iPhone? Leave your email and we&apos;ll notify you when iOS is ready —
-        free, no payment required.
+        Free early access for Nursery to Class 3. Android beta is open now; iPhone waitlist available.
       </p>
 
-      <ol className="mt-8 space-y-3 text-base font-semibold text-[#3d3848]">
-        {steps.map((step, index) => (
-          <li key={step} className="flex gap-3">
-            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#7B5CD6] text-sm font-extrabold text-white">
-              {index + 1}
-            </span>
-            <span className="pt-0.5">{step}</span>
-          </li>
-        ))}
-      </ol>
-
-      <div className="mt-10">
+      <div className="mt-8">
         <BetaSignupForm />
+      </div>
+
+      <div className="mt-8 space-y-2 text-sm font-semibold text-[#7D7788]">
+        <p className="font-extrabold text-[#24212C]">How it works</p>
+        <p>Android: we email a Play invite — install when you&apos;re ready.</p>
+        <p>iPhone: we notify you when iOS early access opens.</p>
       </div>
 
       <p className="mt-8 text-sm font-semibold text-[#7D7788]">
@@ -58,7 +46,7 @@ export default function BetaPage() {
 
       <SoftCta
         title="Already exploring worksheets?"
-        body="Browse printable hubs on the site, then join the list when you are ready to try the app."
+        body="Browse printable hubs on the site, then get early access when you are ready to try the app."
       />
     </div>
   );
