@@ -16,3 +16,10 @@
   NEXT_PUBLIC_GA_ID = "G-N7P5CLP7BW"
   # Cap parallelism if Netlify memory is tight on larger rebuilds
   NODE_OPTIONS = "--max-old-space-size=4096"
+
+# Canonical host is apex (matches site.url / metadataBase). Consolidate www signals.
+[[redirects]]
+  from = "https://www.easyhomeworkactivity.com/*"
+  to = "https://easyhomeworkactivity.com/:splat"
+  status = 301
+  force = true

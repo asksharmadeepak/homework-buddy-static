@@ -43,3 +43,18 @@ Leave `NEXT_PUBLIC_PLAY_BETA_JOIN_URL` empty until you have a Play Console close
 - `src/lib/taxonomy.ts` — content clusters
 - `src/lib/seo.ts` — metadata + JSON-LD
 - `netlify.toml` — build command + publish `out/`
+
+## GSC weekly watchlist
+
+Early GSC signal: **India** leads impressions; **`/worksheets/jr-kg`** is the strongest page; mobile impressions slightly outpace desktop. Prefer the apex host (`easyhomeworkactivity.com` — www redirects there).
+
+In Google Search Console → Performance, enable **Average position** and check these queries weekly (priority order):
+
+| Query | Page to watch | Act when |
+|-------|---------------|----------|
+| junior kg homework / jr kg homework | `/worksheets/jr-kg` | Top 10 **and** 50+ impressions |
+| nursery homework | `/worksheets/nursery` | Top 10 **and** 50+ impressions |
+| easy homework | `/`, `/guides/easy-homework-ideas` | Top 10 **and** 50+ impressions |
+| homework class 2 / homework for class 2 | `/worksheets/class-2` | Top 10 **and** 50+ impressions |
+
+Until a row hits that bar: no new hubs. Then deepen that one page (FAQ, internal links, richer H1) — start with Jr KG if it clears first. Ignore one-off queries like competitor brand names. Growth for beta signups still comes from `/beta` and distribution, not organic alone.

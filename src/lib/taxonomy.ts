@@ -76,9 +76,9 @@ export const classes: HubEntity[] = [
   {
     slug: "nursery",
     name: "Nursery",
-    title: "Nursery printable worksheets & easy homework activities",
+    title: "Nursery homework — printable worksheets & easy activities",
     description:
-      "Gentle Nursery worksheets for tracing, colours, matching, and early listening — printable PDFs for Indian preschool parents.",
+      "Nursery homework printable worksheets for tracing, colours, matching, and early listening — free easy PDFs for Indian preschool parents.",
     icon: "/classes/nursery.png",
     status: "published",
     intro: [
@@ -116,9 +116,9 @@ export const classes: HubEntity[] = [
   {
     slug: "jr-kg",
     name: "Jr KG",
-    title: "Jr KG worksheets — printable homework for junior kindergarten",
+    title: "Junior KG homework — printable Jr KG worksheets",
     description:
-      "Jr KG printable worksheets for letters, numbers, patterns, and early reading readiness for busy parents.",
+      "Jr KG and junior kindergarten homework worksheets for letters, numbers, patterns, and early reading — printable PDFs for busy parents.",
     icon: "/classes/jr_kg.png",
     status: "published",
     intro: [
@@ -219,9 +219,9 @@ export const classes: HubEntity[] = [
   {
     slug: "class-2",
     name: "Class 2",
-    title: "Class 2 worksheets — printable homework activities",
+    title: "Homework for Class 2 — printable worksheets",
     description:
-      "Class 2 printable worksheets for reading passages, writing paragraphs, and maths practice at home.",
+      "Homework for Class 2 with printable reading passages, writing practice, and maths worksheets parents can use at home.",
     icon: "/classes/class2.png",
     status: "published",
     intro: [
