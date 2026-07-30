@@ -23,7 +23,7 @@ export function SiteFooter() {
                 rel="noopener noreferrer"
                 className="font-bold text-[#7B5CD6]"
               >
-                Instagram
+                DM us on Instagram for queries
               </a>
             </p>
           ) : null}

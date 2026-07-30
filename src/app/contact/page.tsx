@@ -24,6 +24,19 @@ export default function ContactPage() {
             {site.supportEmail}
           </a>
         </li>
+        {site.instagramUrl ? (
+          <li>
+            Instagram:{" "}
+            <a
+              className="text-[#7B5CD6]"
+              href={site.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              DM us on Instagram for queries
+            </a>
+          </li>
+        ) : null}
         <li>
           Privacy:{" "}
           <a className="text-[#7B5CD6]" href={`mailto:${site.privacyEmail}`}>
@@ -33,7 +46,7 @@ export default function ContactPage() {
         <li>
           App:{" "}
           <Link className="text-[#7B5CD6]" href={site.appCtaPath}>
-            Join the beta / iPhone waitlist
+            Get early access / iPhone waitlist
           </Link>
         </li>
       </ul>
