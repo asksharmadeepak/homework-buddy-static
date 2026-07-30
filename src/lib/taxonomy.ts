@@ -61,6 +61,10 @@ export type WorksheetSeed = {
   status: "published" | "draft";
   /** Public path to free sample PDF, e.g. /worksheets/class-1-....pdf */
   pdfPath: string;
+  /** On-page / OG preview image for Image SEO (PNG/JPEG under public/) */
+  previewImagePath?: string;
+  /** Descriptive alt for the preview (include query language when relevant) */
+  previewImageAlt?: string;
   intro: string[];
   faqs: FaqItem[];
 };
@@ -213,8 +217,8 @@ export const classes: HubEntity[] = [
           "Number sense, addition within 20, subtraction stories, and simple word problems with pictures.",
       },
     ],
-    relatedActivitySlugs: ["reading", "writing", "maths", "creative-thinking"],
-    relatedThemeSlugs: ["animals", "festivals", "stories"],
+    relatedActivitySlugs: ["reading", "writing", "maths", "creative-thinking", "hindi"],
+    relatedThemeSlugs: ["animals", "festivals", "stories", "hindi-varnamala"],
   },
   {
     slug: "class-2",
@@ -1292,6 +1296,9 @@ export const worksheetSeeds: WorksheetSeed[] = [
     themeSlug: "hindi-varnamala",
     status: "published",
     pdfPath: "/worksheets/nursery-hindi-swar-tracing.pdf",
+    previewImagePath: "/worksheets/previews/nursery-hindi-swar-tracing.png",
+    previewImageAlt:
+      "Nursery Hindi swar worksheet — printable अ आ इ ई tracing practice sheet",
     intro: [
       "This Nursery Hindi worksheet introduces the first swar of the varnamala — अ, आ, इ, ई, उ, ऊ — with large trace-over letters and a circle-the-letter game. Say each swar aloud together before tracing.",
       "स्वर अभ्यास works best in short, happy sessions: one sheet, six letters, lots of praise. For fresh swar, vyanjan, and varnamala-mix sheets every day, generate them in the Homework Buddy app.",
@@ -1321,12 +1328,20 @@ export const worksheetSeeds: WorksheetSeed[] = [
     themeSlug: "hindi-varnamala",
     status: "published",
     pdfPath: "/worksheets/class-1-hindi-vyanjan-practice.pdf",
+    previewImagePath: "/worksheets/previews/class-1-hindi-vyanjan-practice.png",
+    previewImageAlt:
+      "Class 1 Hindi vyanjan worksheet — match क ख ग to pictures, missing letters, and tracing PDF preview",
     intro: [
       "This Class 1 Hindi worksheet practises vyanjan three ways: matching letters to pictures (ख से खरगोश, श से शेर, ह से हाथी, त से तोता), filling missing letters in the क–ठ sequence, and tracing.",
       "व्यंजन अभ्यास sticks when children say the letter and its word aloud while drawing the matching line. One sheet a day keeps varnamala practice light and consistent.",
       ...sharedParentTips,
     ],
     faqs: [
+      {
+        question: "Where can I get a free Hindi vyanjan worksheet for Class 1?",
+        answer:
+          "Download the printable PDF on this page — it includes letter-picture matching, missing vyanjan, and tracing for क ख ग घ. Generate fresh Class 1 Hindi sheets in the Homework Buddy app anytime.",
+      },
       {
         question: "My child confuses ख and श. Is that normal?",
         answer:

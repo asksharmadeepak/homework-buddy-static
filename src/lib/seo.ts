@@ -58,6 +58,7 @@ export function jsonLdScript(data: Record<string, unknown> | Record<string, unkn
 }
 
 export function organizationJsonLd() {
+  const sameAs = [site.playStoreUrl, site.instagramUrl].filter(Boolean);
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -65,7 +66,45 @@ export function organizationJsonLd() {
     url: site.url,
     logo: absoluteUrl("/brand/app_icon.png"),
     email: site.supportEmail,
-    sameAs: [site.playStoreUrl],
+    sameAs,
+  };
+}
+
+/** Worksheet sample as CreativeWork + ImageObject for Image SEO / rich results. */
+export function worksheetCreativeWorkJsonLd(input: {
+  name: string;
+  description: string;
+  path: string;
+  pdfPath: string;
+  imagePath: string;
+  imageAlt: string;
+}) {
+  const pageUrl = absoluteUrl(input.path);
+  const imageUrl = absoluteUrl(input.imagePath);
+  return {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: input.name,
+    description: input.description,
+    url: pageUrl,
+    encodingFormat: "application/pdf",
+    associatedMedia: {
+      "@type": "MediaObject",
+      contentUrl: absoluteUrl(input.pdfPath),
+      encodingFormat: "application/pdf",
+    },
+    image: {
+      "@type": "ImageObject",
+      contentUrl: imageUrl,
+      url: imageUrl,
+      description: input.imageAlt,
+      name: input.imageAlt,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: site.name,
+      logo: { "@type": "ImageObject", url: absoluteUrl("/brand/app_icon.png") },
+    },
   };
 }
 

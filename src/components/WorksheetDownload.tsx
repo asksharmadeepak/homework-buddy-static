@@ -1,12 +1,17 @@
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 
 export function WorksheetDownload({
   pdfPath,
   worksheetName,
+  previewImagePath,
+  previewImageAlt,
 }: {
   pdfPath: string;
   worksheetName: string;
+  previewImagePath?: string;
+  previewImageAlt?: string;
 }) {
   return (
     <section className="my-10 overflow-hidden rounded-3xl border border-[#7B5CD6]/25 bg-gradient-to-br from-[#F0EBFF] to-[#FFFBF6] p-6 md:p-8">
@@ -21,6 +26,20 @@ export function WorksheetDownload({
         required. When you want unlimited class + theme combinations, generate fresh worksheets in the
         Homework Buddy app.
       </p>
+
+      {previewImagePath ? (
+        <div className="mt-6 overflow-hidden rounded-2xl border border-[#ebe4f7] bg-white shadow-sm">
+          <Image
+            src={previewImagePath}
+            alt={previewImageAlt || `${worksheetName} printable worksheet preview`}
+            width={1131}
+            height={1600}
+            className="mx-auto h-auto w-full max-w-lg object-contain"
+            priority
+          />
+        </div>
+      ) : null}
+
       <div className="mt-6 flex flex-wrap gap-3">
         <a
           href={pdfPath}

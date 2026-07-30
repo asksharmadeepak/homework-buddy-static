@@ -12,9 +12,21 @@ export function SiteFooter() {
           <p className="mt-4 text-sm text-[#7D7788]">
             Version {site.version} ·{" "}
             <Link className="font-bold text-[#7B5CD6]" href={site.appCtaPath}>
-              Join the beta
+              Get early access
             </Link>
           </p>
+          {site.instagramUrl ? (
+            <p className="mt-3 text-sm font-semibold text-[#7D7788]">
+              <a
+                href={site.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-[#7B5CD6]"
+              >
+                Instagram
+              </a>
+            </p>
+          ) : null}
         </div>
         {(
           [
