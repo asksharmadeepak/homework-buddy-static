@@ -14,6 +14,7 @@
   NODE_VERSION = "22"
   NEXT_TELEMETRY_DISABLED = "1"
   NEXT_PUBLIC_GA_ID = "G-N7P5CLP7BW"
+  NEXT_PUBLIC_INSTAGRAM_URL = "https://www.instagram.com/homeworkbuddyapp"
   # Cap parallelism if Netlify memory is tight on larger rebuilds
   NODE_OPTIONS = "--max-old-space-size=4096"
 

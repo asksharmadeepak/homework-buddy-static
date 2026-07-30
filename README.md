@@ -33,12 +33,12 @@ Optional env (also set in `netlify.toml` for production builds):
 ```
 NEXT_PUBLIC_GA_ID=G-N7P5CLP7BW
 NEXT_PUBLIC_PLAY_BETA_JOIN_URL=https://play.google.com/apps/testing/com.homeworkbuddy.app
-NEXT_PUBLIC_INSTAGRAM_URL=https://www.instagram.com/yourhandle
+NEXT_PUBLIC_INSTAGRAM_URL=https://www.instagram.com/homeworkbuddyapp
 ```
 
 Leave `NEXT_PUBLIC_PLAY_BETA_JOIN_URL` empty until you have a Play Console closed-testing join link. Beta emails are collected via Netlify Forms (`beta-testers`) on `/beta`.
 
-Leave `NEXT_PUBLIC_INSTAGRAM_URL` empty until the Instagram account is live. When set, it appears in the footer and Organization `sameAs` JSON-LD. Post 2–3×/week using the same worksheet preview PNGs under `public/worksheets/previews/` (worksheet tip + app CTA). Instagram helps discovery/trust; on-site preview images are what feed Google Images.
+Instagram is **`@homeworkbuddyapp`** (`https://www.instagram.com/homeworkbuddyapp`) — wired in footer + Organization `sameAs` by default. Override with `NEXT_PUBLIC_INSTAGRAM_URL` only if the handle changes. Post 2–3×/week using worksheet preview PNGs under `public/worksheets/previews/` (worksheet tip + app CTA).
 
 ## Email (beta vs app)
 

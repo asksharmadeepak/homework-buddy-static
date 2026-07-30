@@ -12,10 +12,11 @@ export const site = {
   /** Play Console closed-testing join link; leave empty until you have one. */
   playBetaJoinUrl: process.env.NEXT_PUBLIC_PLAY_BETA_JOIN_URL ?? "",
   /**
-   * Instagram profile URL. Leave empty until the account is live, then set e.g.
-   * https://www.instagram.com/homeworkbuddy — also used in Organization sameAs + footer.
+   * Instagram profile. Override with NEXT_PUBLIC_INSTAGRAM_URL if needed.
+   * Used in Organization sameAs + footer.
    */
-  instagramUrl: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "",
+  instagramUrl:
+    process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "https://www.instagram.com/homeworkbuddyapp",
   supportEmail: "support@homeworkbuddy.app",
   privacyEmail: "privacy@homeworkbuddy.app",
   version: "1.0.4",
