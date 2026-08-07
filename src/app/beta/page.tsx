@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SoftCta } from "@/components/SoftCta";
 import { buildMetadata } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { playStoreUrlWithUtm } from "@/lib/site";
 
 export const metadata = buildMetadata({
   title: "Get Homework Buddy — Android on Google Play",
@@ -23,7 +23,7 @@ export default function BetaPage() {
       </p>
       <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
         <a
-          href={site.playStoreUrl}
+          href={playStoreUrlWithUtm("beta_legacy")}
           target="_blank"
           rel="noopener noreferrer"
           className="rounded-full bg-[#7B5CD6] px-8 py-4 text-base font-extrabold text-white"

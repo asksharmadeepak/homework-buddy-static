@@ -21,6 +21,16 @@ export const site = {
   locale: "en_IN",
 } as const;
 
+/** Play Store URL with UTM params for organic→install attribution. */
+export function playStoreUrlWithUtm(content: string, medium = "organic") {
+  const url = new URL(site.playStoreUrl);
+  url.searchParams.set("utm_source", "website");
+  url.searchParams.set("utm_medium", medium);
+  url.searchParams.set("utm_campaign", "app_download");
+  url.searchParams.set("utm_content", content);
+  return url.toString();
+}
+
 export const navMain = [
   { href: "/worksheets", label: "Worksheets" },
   { href: "/activities", label: "Activities" },

@@ -4,7 +4,7 @@ import { SoftCta } from "@/components/SoftCta";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { IphoneWaitlistForm } from "@/components/IphoneWaitlistForm";
 import { buildMetadata } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { playStoreUrlWithUtm, site } from "@/lib/site";
 
 export const metadata = buildMetadata({
   title: "Download Homework Buddy — get the app on Google Play",
@@ -14,6 +14,8 @@ export const metadata = buildMetadata({
 });
 
 export default function DownloadPage() {
+  const playUrl = playStoreUrlWithUtm("download_hero");
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-10">
       <Breadcrumbs
@@ -35,12 +37,20 @@ export default function DownloadPage() {
           Printable worksheets for Nursery to Class 3 — now on Google Play. Version {site.version}.
         </p>
         <a
-          href={site.playStoreUrl}
+          href={playUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 inline-block rounded-full bg-[#7B5CD6] px-8 py-4 text-base font-extrabold text-white"
+          className="mt-8 inline-block"
+          aria-label="Get it on Google Play"
         >
-          Get the app on Google Play
+          <Image
+            src="/brand/google-play-badge.png"
+            alt="Get it on Google Play"
+            width={215}
+            height={83}
+            className="mx-auto h-auto w-[215px]"
+            priority
+          />
         </a>
         <p className="mt-4 text-sm font-semibold text-[#7D7788]">
           Prefer iPhone? Join the waitlist below.
@@ -65,7 +75,8 @@ export default function DownloadPage() {
 
       <SoftCta
         title="Prefer to explore first?"
-        body="Browse printable worksheet hubs, then get the app when you are ready."
+        body="Browse printable worksheet hubs on the site — then come back here when you are ready to install."
+        browseOnly
       />
       <p className="mt-6 text-center text-sm font-semibold text-[#7D7788]">
         Looking for worksheets on the site?{" "}

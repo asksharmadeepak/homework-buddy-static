@@ -12,7 +12,7 @@ import {
   themes,
   worksheetSeeds,
 } from "@/lib/taxonomy";
-import { site } from "@/lib/site";
+import { playStoreUrlWithUtm } from "@/lib/site";
 
 export const metadata = buildMetadata({
   title: "Printable worksheets for Nursery to Class 3",
@@ -115,7 +115,7 @@ export default function WorksheetsIndexPage() {
             ))}
           </div>
           <a
-            href={site.playStoreUrl}
+            href={playStoreUrlWithUtm("worksheets_samples")}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-6 inline-block rounded-full bg-[#7B5CD6] px-5 py-3 text-sm font-extrabold text-white"

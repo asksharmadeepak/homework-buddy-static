@@ -132,8 +132,16 @@ export function softwareAppJsonLd() {
       priceCurrency: "INR",
     },
     downloadUrl: site.playStoreUrl,
+    installUrl: site.playStoreUrl,
     url: absoluteUrl("/download"),
     description: site.description,
+    image: absoluteUrl("/brand/app_icon.png"),
+    screenshot: [
+      absoluteUrl("/screens/home.png"),
+      absoluteUrl("/screens/create-activity.png"),
+      absoluteUrl("/screens/preview.png"),
+      absoluteUrl("/screens/activity-ready.png"),
+    ],
   };
 }
 

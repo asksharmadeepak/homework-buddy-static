@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { site } from "@/lib/site";
+import { playStoreUrlWithUtm } from "@/lib/site";
 
 export function WorksheetDownload({
   pdfPath,
@@ -48,12 +48,14 @@ export function WorksheetDownload({
         >
           Download free PDF
         </a>
-        <Link
-          href={site.appCtaPath}
+        <a
+          href={playStoreUrlWithUtm("worksheet_detail")}
+          target="_blank"
+          rel="noopener noreferrer"
           className="rounded-full border-2 border-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-[#7B5CD6]"
         >
           Generate more in the app
-        </Link>
+        </a>
         <Link
           href="/download"
           className="rounded-full px-4 py-3 text-sm font-bold text-[#7D7788] underline-offset-2 hover:text-[#7B5CD6] hover:underline"

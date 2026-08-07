@@ -35,7 +35,18 @@ NEXT_PUBLIC_GA_ID=G-N7P5CLP7BW
 NEXT_PUBLIC_INSTAGRAM_URL=https://www.instagram.com/homeworkbuddyapp
 ```
 
-**Get the app:** CTAs go to `/download` (Google Play + iPhone waitlist). Legacy `/beta` **301 → `/download`**. iPhone emails still use Netlify Forms (`beta-testers`).
+**Get the app:** Header/nav → `/download` (badge + iPhone waitlist). In-content CTAs (SoftCta, worksheet samples, sheet pages) → Google Play with UTMs via `playStoreUrlWithUtm()`. Legacy `/beta` **301 → `/download`**.
+
+**Play UTMs** (for GA / Play Console attribution):
+
+| `utm_content` | Where |
+|---|---|
+| `soft_cta` | SoftCta “Get the app” |
+| `download_hero` | `/download` Play badge |
+| `worksheets_samples` | `/worksheets` sample strip |
+| `worksheet_detail` | Sheet page “Generate more in the app” |
+
+After deploy: GA4 → mark outbound Play clicks as a key event / explore by `utm_content`.
 
 Instagram is **`@homeworkbuddyapp`** — footer + Organization `sameAs`. Post 2–3×/week using worksheet preview PNGs under `public/worksheets/previews/`.
 
@@ -46,11 +57,21 @@ Instagram is **`@homeworkbuddyapp`** — footer + Organization `sameAs`. Post 2�
 
 ## Key paths
 
-- `src/lib/site.ts` — domain, Play Store, Instagram URL, nav
+- `src/lib/site.ts` — domain, Play Store + `playStoreUrlWithUtm`, Instagram URL, nav
 - `src/lib/taxonomy.ts` — content clusters
-- `src/lib/seo.ts` — metadata + JSON-LD
+- `src/lib/seo.ts` — metadata + JSON-LD (incl. MobileApplication screenshots)
 - `public/worksheets/previews/` — worksheet preview PNGs for Image SEO
+- `public/brand/google-play-badge.png` — official Play badge on `/download`
 - `netlify.toml` — build command + publish `out/`
+
+## After each deploy (GSC)
+
+URL Inspection → Request indexing for:
+
+1. `https://easyhomeworkactivity.com/download`
+2. `https://easyhomeworkactivity.com/worksheets`
+3. `https://easyhomeworkactivity.com/worksheets/jr-kg`
+4. `https://easyhomeworkactivity.com/worksheets/class-1/hindi-vyanjan-practice`
 
 ## GSC weekly watchlist
 
