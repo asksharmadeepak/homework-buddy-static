@@ -13,12 +13,14 @@ export function SoftCta({
       <h2 className="text-xl font-black text-[#24212C] md:text-2xl">{title}</h2>
       <p className="mx-auto mt-3 max-w-2xl text-sm font-semibold text-[#7D7788] md:text-base">{body}</p>
       <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-        <Link
-          href={site.appCtaPath}
+        <a
+          href={site.playStoreUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="rounded-full bg-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-white"
         >
           Get the app
-        </Link>
+        </a>
         <Link
           href="/worksheets"
           className="rounded-full border-2 border-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-[#7B5CD6]"

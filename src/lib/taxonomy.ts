@@ -1182,6 +1182,8 @@ export const worksheetSeeds: WorksheetSeed[] = [
     themeSlug: "animals",
     status: "published",
     pdfPath: "/worksheets/class-1-animals-reading-adventure.pdf",
+    previewImagePath: "/worksheets/previews/class-1-animals-reading-adventure.png",
+    previewImageAlt: "Class 1 animals reading worksheet printable preview",
     intro: [
       "This Class 1 animals reading worksheet is designed for a single calm sitting. Read together, talk about the animals, then answer a few questions.",
       "Parents can print it as easy homework after school or generate similar themed reading PDFs in Homework Buddy.",
@@ -1206,6 +1208,8 @@ export const worksheetSeeds: WorksheetSeed[] = [
     themeSlug: "festivals",
     status: "published",
     pdfPath: "/worksheets/nursery-festival-coloring-fun.pdf",
+    previewImagePath: "/worksheets/previews/nursery-festival-coloring-fun.png",
+    previewImageAlt: "Nursery festival colouring worksheet printable preview",
     intro: [
       "Festival colouring gives Nursery children a joyful fine-motor task. Talk about colours and celebration while they work.",
       ...sharedParentTips,
@@ -1228,6 +1232,8 @@ export const worksheetSeeds: WorksheetSeed[] = [
     themeSlug: "transport",
     status: "published",
     pdfPath: "/worksheets/class-1-transport-maths-count.pdf",
+    previewImagePath: "/worksheets/previews/class-1-transport-maths-count.png",
+    previewImageAlt: "Class 1 transport maths counting worksheet printable preview",
     intro: [
       "Vehicles make counting concrete. Use this transport maths worksheet for Class 1 number practice in one short session.",
       ...sharedParentTips,
@@ -1251,6 +1257,8 @@ export const worksheetSeeds: WorksheetSeed[] = [
     themeSlug: "space",
     status: "published",
     pdfPath: "/worksheets/class-2-space-creative-prompt.pdf",
+    previewImagePath: "/worksheets/previews/class-2-space-creative-prompt.png",
+    previewImageAlt: "Class 2 space creative thinking worksheet printable preview",
     intro: [
       "Invite your Class 2 learner to imagine a trip to the stars. Creative prompts build language and confidence.",
       ...sharedParentTips,
@@ -1273,6 +1281,8 @@ export const worksheetSeeds: WorksheetSeed[] = [
     themeSlug: "fruits",
     status: "published",
     pdfPath: "/worksheets/jr-kg-fruits-writing-words.pdf",
+    previewImagePath: "/worksheets/previews/jr-kg-fruits-writing-words.png",
+    previewImageAlt: "Jr KG fruits writing worksheet printable preview",
     intro: [
       "Fruit words are short and friendly for Jr KG writers. Keep tracing large and praise every letter.",
       ...sharedParentTips,
@@ -1365,6 +1375,8 @@ export const worksheetSeeds: WorksheetSeed[] = [
     themeSlug: "monsoon",
     status: "published",
     pdfPath: "/worksheets/class-3-monsoon-life-skills.pdf",
+    previewImagePath: "/worksheets/previews/class-3-monsoon-life-skills.png",
+    previewImageAlt: "Class 3 monsoon life skills worksheet printable preview",
     intro: [
       "Monsoon season is a natural time to talk about safety, empathy, and routines. This Class 3 sheet sparks discussion.",
       ...sharedParentTips,

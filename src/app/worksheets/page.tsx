@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { HubCard } from "@/components/HubCard";
 import { SoftCta } from "@/components/SoftCta";
@@ -48,32 +49,80 @@ export default function WorksheetsIndexPage() {
       </p>
 
       <section className="mt-12 rounded-3xl border border-[#7B5CD6]/20 bg-[#F0EBFF]/60 p-6 md:p-8">
-        <h2 className="text-2xl font-black text-[#24212C]">Free downloadable sample PDFs</h2>
+        <h2 className="text-2xl font-black text-[#24212C]">Free sample worksheets — see before you print</h2>
         <p className="mt-2 max-w-3xl text-sm font-semibold text-[#7D7788]">
-          Print tonight with no signup. Want unlimited themed sheets afterward? Generate them in Homework Buddy.
+          These are real printables (same style the app generates). Preview the page, download free, then create
+          unlimited fresh sheets in Homework Buddy.
         </p>
-        <ul className="mt-6 grid gap-3 md:grid-cols-2">
+
+        <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {freePdfs.map((s) => (
-            <li key={s.slug} className="rounded-2xl bg-white p-4 shadow-sm">
-              <p className="font-extrabold text-[#24212C]">{s.name}</p>
-              <p className="mt-1 text-xs font-semibold text-[#7D7788]">{s.description}</p>
-              <div className="mt-3 flex flex-wrap gap-3 text-sm font-bold">
-                <a href={s.pdfPath} download className="text-[#7B5CD6] hover:underline">
-                  Download PDF
-                </a>
-                <Link href={`/worksheets/${s.classSlug}/${s.slug}`} className="text-[#7D7788] hover:text-[#7B5CD6]">
-                  Open page
+            <li
+              key={s.slug}
+              className="overflow-hidden rounded-2xl border border-[#ebe4f7] bg-white shadow-sm"
+            >
+              {s.previewImagePath ? (
+                <Link href={`/worksheets/${s.classSlug}/${s.slug}`} className="block bg-[#FFFBF6]">
+                  <Image
+                    src={s.previewImagePath}
+                    alt={s.previewImageAlt || `${s.name} worksheet preview`}
+                    width={600}
+                    height={850}
+                    className="h-48 w-full object-cover object-top"
+                  />
                 </Link>
+              ) : null}
+              <div className="p-4">
+                <p className="font-extrabold text-[#24212C]">{s.name}</p>
+                <p className="mt-1 text-xs font-semibold text-[#7D7788]">{s.description}</p>
+                <div className="mt-3 flex flex-wrap gap-3 text-sm font-bold">
+                  <a href={s.pdfPath} download className="text-[#7B5CD6] hover:underline">
+                    Download PDF
+                  </a>
+                  <Link
+                    href={`/worksheets/${s.classSlug}/${s.slug}`}
+                    className="text-[#7D7788] hover:text-[#7B5CD6]"
+                  >
+                    Full preview
+                  </Link>
+                </div>
               </div>
             </li>
           ))}
         </ul>
-        <Link
-          href={site.appCtaPath}
-          className="mt-6 inline-block rounded-full bg-[#7B5CD6] px-5 py-3 text-sm font-extrabold text-white"
-        >
-          Generate more in the app
-        </Link>
+
+        <div className="mt-10 rounded-2xl bg-white p-5 md:p-6">
+          <h3 className="text-lg font-black text-[#24212C]">How the app creates sheets like these</h3>
+          <p className="mt-2 text-sm font-semibold text-[#7D7788]">
+            Pick class → activity → theme → generate → print. Same quality as the free samples above.
+          </p>
+          <div className="mt-4 grid grid-cols-3 gap-3">
+            {[
+              { src: "/screens/create-activity.png", label: "1. Create" },
+              { src: "/screens/preview.png", label: "2. Preview" },
+              { src: "/screens/activity-ready.png", label: "3. Ready to print" },
+            ].map((shot) => (
+              <div key={shot.src} className="text-center">
+                <Image
+                  src={shot.src}
+                  alt={shot.label}
+                  width={200}
+                  height={400}
+                  className="mx-auto h-auto w-full max-w-[140px] rounded-xl border border-[#ebe4f7] shadow-sm"
+                />
+                <p className="mt-2 text-xs font-extrabold text-[#7B5CD6]">{shot.label}</p>
+              </div>
+            ))}
+          </div>
+          <a
+            href={site.playStoreUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-block rounded-full bg-[#7B5CD6] px-5 py-3 text-sm font-extrabold text-white"
+          >
+            Generate more in the app
+          </a>
+        </div>
       </section>
 
       <h2 className="mt-12 text-2xl font-black text-[#24212C]">Browse by class</h2>
