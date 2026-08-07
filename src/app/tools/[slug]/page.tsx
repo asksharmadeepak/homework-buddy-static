@@ -46,7 +46,7 @@ export default async function ToolPage({ params }: Props) {
           href={site.appCtaPath}
           className="mt-4 inline-block rounded-full bg-[#7B5CD6] px-5 py-3 text-sm font-extrabold text-white"
         >
-          Join the Homework Buddy beta
+          Get the app
         </Link>
       </section>
       <p className="mt-8 text-sm font-semibold">

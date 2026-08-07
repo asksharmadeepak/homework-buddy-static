@@ -1,52 +1,45 @@
 import Link from "next/link";
-import { BetaSignupForm } from "@/components/BetaSignupForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SoftCta } from "@/components/SoftCta";
 import { buildMetadata } from "@/lib/seo";
+import { site } from "@/lib/site";
 
 export const metadata = buildMetadata({
-  title: "Get printable worksheets — free early access",
+  title: "Get Homework Buddy — Android on Google Play",
   description:
-    "Get printable worksheets in the Homework Buddy app. Free early access for Nursery to Class 3 — Android beta open now, iPhone waitlist available.",
+    "Homework Buddy is available on Google Play. Get printable worksheets for Nursery to Class 3. iPhone waitlist on the download page.",
   path: "/beta",
 });
 
+/** Legacy /beta URL kept for old links; points people to production download. */
 export default function BetaPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10">
-      <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Beta", path: "/beta" }]} />
-      <h1 className="text-4xl font-black text-[#24212C]">
-        Get printable worksheets in the app
-      </h1>
+    <div className="mx-auto max-w-3xl px-4 py-10 text-center">
+      <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Get the app", path: "/download" }]} />
+      <h1 className="text-4xl font-black text-[#24212C]">Homework Buddy is live on Android</h1>
       <p className="mt-4 text-lg font-semibold text-[#7D7788]">
-        Free early access for Nursery to Class 3. Android beta is open now; iPhone waitlist available.
+        The beta invite step is no longer needed. Get the app on Google Play, or join the iPhone waitlist
+        on our download page.
       </p>
-
-      <div className="mt-8">
-        <BetaSignupForm />
-      </div>
-
-      <div className="mt-8 space-y-2 text-sm font-semibold text-[#7D7788]">
-        <p className="font-extrabold text-[#24212C]">How it works</p>
-        <p>Android: we email a Play invite — install when you&apos;re ready.</p>
-        <p>iPhone: we notify you when iOS early access opens.</p>
-      </div>
-
-      <p className="mt-8 text-sm font-semibold text-[#7D7788]">
-        Prefer to browse first?{" "}
-        <Link href="/worksheets" className="text-[#7B5CD6]">
-          Free printable worksheets
-        </Link>{" "}
-        or see{" "}
-        <Link href="/download" className="text-[#7B5CD6]">
-          download details
+      <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <a
+          href={site.playStoreUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full bg-[#7B5CD6] px-8 py-4 text-base font-extrabold text-white"
+        >
+          Get the app on Google Play
+        </a>
+        <Link
+          href="/download"
+          className="rounded-full border-2 border-[#7B5CD6] px-8 py-4 text-base font-extrabold text-[#7B5CD6]"
+        >
+          Download page &amp; iPhone waitlist
         </Link>
-        .
-      </p>
-
+      </div>
       <SoftCta
-        title="Already exploring worksheets?"
-        body="Browse printable hubs on the site, then get early access when you are ready to try the app."
+        title="Want printable worksheets tonight?"
+        body="Browse free hubs on the site, or open the app to generate a fresh PDF."
       />
     </div>
   );

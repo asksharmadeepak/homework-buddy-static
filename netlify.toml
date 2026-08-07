@@ -24,3 +24,10 @@
   to = "https://easyhomeworkactivity.com/:splat"
   status = 301
   force = true
+
+# Old beta signup URL → Get the app + iPhone waitlist
+[[redirects]]
+  from = "/beta"
+  to = "/download"
+  status = 301
+  force = true

@@ -46,7 +46,7 @@ export default function ContactPage() {
         <li>
           App:{" "}
           <Link className="text-[#7B5CD6]" href={site.appCtaPath}>
-            Get early access / iPhone waitlist
+            Get the app / iPhone waitlist
           </Link>
         </li>
       </ul>

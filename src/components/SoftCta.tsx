@@ -3,7 +3,7 @@ import { site } from "@/lib/site";
 
 export function SoftCta({
   title = "Generate worksheets instantly with Homework Buddy",
-  body = "Pick class, activity, theme, and time — then download a print-ready PDF. Get free early access to try the app.",
+  body = "Pick class, activity, theme, and time — then download a print-ready PDF. Get the app on Google Play.",
 }: {
   title?: string;
   body?: string;
@@ -17,7 +17,7 @@ export function SoftCta({
           href={site.appCtaPath}
           className="rounded-full bg-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-white"
         >
-          Get early access
+          Get the app
         </Link>
         <Link
           href="/worksheets"

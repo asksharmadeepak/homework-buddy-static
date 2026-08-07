@@ -25,17 +25,16 @@ export default function PrivacyPage() {
           device information needed to run the service, and optional analytics data that helps us improve
           reliability and features.
         </p>
-        <h2 className="pt-4 text-2xl font-black text-[#24212C]">Beta tester signups</h2>
+        <h2 className="pt-4 text-2xl font-black text-[#24212C]">iPhone waitlist signups</h2>
         <p>
-          If you join our beta via the website, we collect the email address you submit so we can send
-          Google Play testing invites, notify you about an upcoming iPhone / iOS version, and share related
-          beta product updates. We do not sell these details or use them for unrelated marketing.
+          If you join the iPhone waitlist on the website, we collect the email address you submit so we can
+          notify you when an iOS version is available and share related product updates. We do not sell these
+          details or use them for unrelated marketing.
         </p>
         <h2 className="pt-4 text-2xl font-black text-[#24212C]">How we use information</h2>
         <p>
           We use information to provide printable activity features, improve the product, respond to support
-          requests, run closed testing, and maintain security. We do not sell children&apos;s personal
-          information.
+          requests, and maintain security. We do not sell children&apos;s personal information.
         </p>
         <h2 className="pt-4 text-2xl font-black text-[#24212C]">Analytics & cookies</h2>
         <p>

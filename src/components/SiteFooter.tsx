@@ -12,7 +12,7 @@ export function SiteFooter() {
           <p className="mt-4 text-sm text-[#7D7788]">
             Version {site.version} ·{" "}
             <Link className="font-bold text-[#7B5CD6]" href={site.appCtaPath}>
-              Get early access
+              Get the app
             </Link>
           </p>
           {site.instagramUrl ? (

@@ -301,7 +301,7 @@ export default function HomePage() {
             </Link>
             , pick an activity, or{" "}
             <Link href={site.appCtaPath} className="text-[#7B5CD6]">
-              join the Homework Buddy beta
+              get the Homework Buddy app
             </Link>{" "}
             and generate one calm printable for tonight.
           </p>

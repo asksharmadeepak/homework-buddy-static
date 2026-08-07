@@ -32,18 +32,17 @@ Optional env (also set in `netlify.toml` for production builds):
 
 ```
 NEXT_PUBLIC_GA_ID=G-N7P5CLP7BW
-NEXT_PUBLIC_PLAY_BETA_JOIN_URL=https://play.google.com/apps/testing/com.homeworkbuddy.app
 NEXT_PUBLIC_INSTAGRAM_URL=https://www.instagram.com/homeworkbuddyapp
 ```
 
-Leave `NEXT_PUBLIC_PLAY_BETA_JOIN_URL` empty until you have a Play Console closed-testing join link. Beta emails are collected via Netlify Forms (`beta-testers`) on `/beta`.
+**Get the app:** CTAs go to `/download` (Google Play + iPhone waitlist). Legacy `/beta` **301 → `/download`**. iPhone emails still use Netlify Forms (`beta-testers`).
 
-Instagram is **`@homeworkbuddyapp`** (`https://www.instagram.com/homeworkbuddyapp`) — wired in footer + Organization `sameAs` by default. Override with `NEXT_PUBLIC_INSTAGRAM_URL` only if the handle changes. Post 2–3×/week using worksheet preview PNGs under `public/worksheets/previews/` (worksheet tip + app CTA).
+Instagram is **`@homeworkbuddyapp`** — footer + Organization `sameAs`. Post 2–3×/week using worksheet preview PNGs under `public/worksheets/previews/`.
 
-## Email (beta vs app)
+## Email
 
-- **Marketing site:** Netlify Forms + manual/Play Console invites are enough. Do **not** build Resend/SMTP just to match competitors.
-- **App transactional email:** Keep deferred while beta volume is low. Near-term flow = add email in Play Console + short personal invite (and the site Play invite link when configured). Revisit automation (welcome / iOS waitlist blast) only when signup volume justifies it.
+- **iPhone waitlist:** Netlify Forms on `/download` — no custom SMTP needed.
+- **App transactional email:** Defer until volume justifies automation.
 
 ## Key paths
 
@@ -69,4 +68,4 @@ In Google Search Console → Performance, enable **Average position** and check 
 | homework class 2 / homework for class 2 | `/worksheets/class-2` | Top 10 **and** 50+ impressions |
 | hindi vyanjan worksheet for class 1 | `/worksheets/class-1/hindi-vyanjan-practice` | Top 10 **and** 50+ impressions (or Images pack entry) |
 
-Until a row hits that bar: no new hubs. Then deepen that one page (FAQ, internal links, richer H1) — start with Jr KG if it clears first. Ignore one-off queries like competitor brand names. Growth for beta signups still comes from `/beta` and distribution, not organic alone.
+Until a row hits that bar: no new hubs. Then deepen that one page (FAQ, internal links, richer H1) — start with Jr KG if it clears first. Ignore one-off queries like competitor brand names. App downloads come from Google Play via `/download` and distribution (Instagram/Reels), not organic alone.
