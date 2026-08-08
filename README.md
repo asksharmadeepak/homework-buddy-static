@@ -66,12 +66,21 @@ Instagram is **`@homeworkbuddyapp`** — footer + Organization `sameAs`. Post 2�
 
 ## After each deploy (GSC)
 
-URL Inspection → Request indexing for:
+URL Inspection → Request indexing for deepened / key URLs:
 
-1. `https://easyhomeworkactivity.com/download`
-2. `https://easyhomeworkactivity.com/worksheets`
-3. `https://easyhomeworkactivity.com/worksheets/jr-kg`
-4. `https://easyhomeworkactivity.com/worksheets/class-1/hindi-vyanjan-practice`
+1. `https://easyhomeworkactivity.com/worksheets/jr-kg`
+2. `https://easyhomeworkactivity.com/worksheets/nursery`
+3. `https://easyhomeworkactivity.com/worksheets/class-1/hindi-vyanjan-practice`
+4. `https://easyhomeworkactivity.com/guides/easy-homework-ideas`
+5. `https://easyhomeworkactivity.com/guides/homework-routine`
+6. `https://easyhomeworkactivity.com/guides/printable-worksheets-guide`
+7. `https://easyhomeworkactivity.com/guides/class-1-reading-at-home`
+8. `https://easyhomeworkactivity.com/download`
+9. `https://easyhomeworkactivity.com/worksheets`
+
+## AdSense
+
+Site was rejected for **low value content**. Do **not** request review until deepened Jr KG / Nursery / Hindi / guides pages have been live **2–4 weeks**. Do not place AdSense units yet (hurts download UX). Focus KPI: organic rankings + Play clicks (`utm_content`), not ads revenue.
 
 ## GSC weekly watchlist
 

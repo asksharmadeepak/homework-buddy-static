@@ -86,16 +86,22 @@ export const classes: HubEntity[] = [
     icon: "/classes/nursery.png",
     status: "published",
     intro: [
-      "Nursery learning should feel like play with a little structure. Parents searching for easy homework for preschool usually need short printable sheets that build pencil grip, listening, and confidence — not exam pressure.",
-      "This Nursery hub gathers printable worksheet ideas and homework activity patterns that fit 10–15 minute evenings. Focus on tracing lines, colour recognition, simple matching, and picture talk.",
-      "Use themes your child already loves — animals, fruits, or festivals — so practice feels familiar. Pair any sheet with a warm conversation: “What do you see?” beats rushing to finish every box.",
-      ...sharedParentTips,
+      "Nursery homework should feel like play with a little structure. When parents search for nursery homework or easy preschool worksheets in India, they usually need a short printable that builds pencil grip, listening, and confidence — not exam pressure or long packs of photocopies.",
+      "At Nursery age (roughly 3–4), children are still learning how to sit with a page, hold a crayon, and follow a simple instruction. The best nursery printable worksheets use large lines, clear pictures, and one skill at a time: tracing paths, colour recognition, matching pairs, or picture talk (“What do you see?”).",
+      "This Nursery hub is written for busy evenings after school or playgroup. Aim for 10–15 minutes. One sheet is enough. If your child is tired, stop and try again tomorrow — a happy unfinished page beats a tearful finished one.",
+      "Choose themes your child already loves — animals, fruits, festivals, or monsoon — so the worksheet feels familiar. Pair every printable with conversation. Naming colours and animals aloud builds vocabulary as much as filling boxes.",
+      "Avoid dense grids and tiny letters. Nursery sheets should leave generous white space. Prefer A4 PDFs you can preview on your phone before printing, so you do not waste ink on the wrong difficulty.",
+      "A calm Nursery homework rhythm might look like this: snack, one tracing or colouring sheet, five minutes of free play praise, then dinner. Three to four short sessions a week plus outdoor play is healthier than daily drills.",
+      "When you want a fresh theme without hunting another random PDF, generate a Nursery printable in the Homework Buddy Android app — same calm style as the free samples on this site, ready to print tonight.",
+      "Nursery tip: sit beside your child for the first two minutes, then step back if they are engaged. Celebrate effort (“You held the crayon carefully”) more than speed. Keep a small folder of favourite nursery worksheets so Sunday nights are not a scramble.",
     ],
     howTo: [
-      "Pick one skill for the day: tracing, colours, or matching.",
-      "Print a single sheet and sit beside your child for the first few minutes.",
+      "Pick one skill for the day: tracing, colours, or matching — not all three.",
+      "Print a single A4 sheet and preview it on screen first.",
+      "Sit beside your child for the first few minutes, then praise and pause.",
       "Stop while energy is still good; save the rest for tomorrow.",
-      "Rotate themes weekly so Nursery practice stays fresh.",
+      "Rotate themes weekly (animals → fruits → festivals) so practice stays fresh.",
+      "When favourites feel stale, generate a new Nursery sheet in Homework Buddy.",
     ],
     faqs: [
       {
@@ -106,12 +112,27 @@ export const classes: HubEntity[] = [
       {
         question: "Do Nursery children need daily worksheets?",
         answer:
-          "Not every day. Three to four short printable sessions a week plus free play is a healthy rhythm for most Nursery kids.",
+          "Not every day. Three to four short printable sessions a week plus free play is a healthy rhythm for most Nursery kids in India.",
       },
       {
         question: "What printable worksheets work best for Nursery?",
         answer:
-          "Large-line tracing, colour-and-say sheets, simple matching, and picture-based listening activities work well.",
+          "Large-line tracing, colour-and-say sheets, simple matching, festival colouring, and picture-based listening activities work well.",
+      },
+      {
+        question: "Is Nursery homework the same as LKG homework?",
+        answer:
+          "Schools use different labels (Nursery, Playgroup, LKG). Focus on age and attention span: if letters are still huge and play-based, Nursery-style sheets are a better fit than Class 1 pages.",
+      },
+      {
+        question: "Where can I get free Nursery homework PDFs?",
+        answer:
+          "Download the free Nursery samples on this site (including festival colouring and Hindi swar tracing), then generate more themed sheets in the Homework Buddy app on Google Play.",
+      },
+      {
+        question: "My Nursery child refuses worksheets. What should I do?",
+        answer:
+          "Switch to colouring or oral picture talk for a few days. Offer choice (“animals or fruits?”), keep sessions tiny, and never use worksheets as punishment.",
       },
     ],
     relatedActivitySlugs: ["coloring", "reading", "life-skills"],
@@ -126,27 +147,53 @@ export const classes: HubEntity[] = [
     icon: "/classes/jr_kg.png",
     status: "published",
     intro: [
-      "Junior KG sits between playful Nursery work and more structured Class 1 expectations. Parents often look for easy homework for kindergarten that still feels kind and age-appropriate.",
-      "Jr KG printable worksheets can cover letter recognition, counting to 20, patterns, and beginning sounds without turning evenings into tuition class.",
-      "Keep instructions visual. If a sheet needs a long paragraph of adult explanation, simplify it or swap for a clearer printable.",
-      ...sharedParentTips,
+      "Junior KG (Jr KG) sits between playful Nursery work and more structured Class 1 expectations. Parents searching for junior kg homework or jr kg worksheets often want printable PDFs that teach letters and numbers without turning the evening into a tuition class.",
+      "Jr KG children (roughly 4–5) can usually handle clearer letter recognition, counting toward 20, simple patterns, and beginning sounds — still with large writing space and warm pictures. Instructions should be visual. If a sheet needs a long adult explanation, simplify it or choose another printable.",
+      "This Jr KG hub focuses on easy kindergarten homework you can finish in one calm sitting: letter and number practice, fruit or animal themes, and short writing strokes. Keep sessions around 15 minutes. One skill per night works better than mixing reading, maths, and handwriting every evening.",
+      "In many Indian schools, Jr KG overlaps with LKG or Prep labels. Ignore the brand name and match difficulty to your child: if they can spot letters but tire quickly on writing lines, stay with recognition and tracing before full words.",
+      "A practical Jr KG week might look like: Monday letters, Wednesday numbers, Friday a themed writing or reading warm-up, and the other days reserved for school homework or free play. Review yesterday’s sheet for one minute before starting a new one — it builds memory without pressure.",
+      "Print on A4, use a quiet corner with good light, and praise formation over speed. Backwards letters are common at this age; model the correct shape calmly and try again tomorrow.",
+      "When you need a fresh Jr KG printable with a new theme (transport, nature, fruits), generate one in the Homework Buddy Android app. It is built for Nursery to Class 3 parents who want print-ready PDFs without scrolling for hours.",
+      "Jr KG tip: alternate pencil work with oral practice — say five letter sounds or count toys aloud — so homework does not feel like only sitting and writing.",
     ],
     howTo: [
       "Choose letter or number focus for the week — not both every night.",
-      "Use one printable plus five minutes of oral practice.",
-      "Add a theme (animals, transport) to keep motivation high.",
+      "Print one Jr KG worksheet and preview difficulty before your child sits down.",
+      "Use one printable plus five minutes of oral practice (sounds or counting).",
+      "Add a theme (animals, transport, fruits) to keep motivation high.",
       "Review yesterday’s sheet briefly before starting a new one.",
+      "Generate a fresh Jr KG sheet in Homework Buddy when the folder feels stale.",
     ],
     faqs: [
       {
         question: "What is the difference between Nursery and Jr KG worksheets?",
         answer:
-          "Jr KG sheets usually introduce clearer letter and number practice while still staying playful and short.",
+          "Jr KG sheets usually introduce clearer letter and number practice while still staying playful and short. Nursery sheets emphasise tracing, colours, and matching with even larger space.",
       },
       {
         question: "Should Jr KG homework include writing lines?",
         answer:
-          "Yes, but keep lines large and limit writing volume. Quality of formation matters more than filling a page.",
+          "Yes, but keep lines large and limit writing volume. Quality of letter formation matters more than filling a whole page.",
+      },
+      {
+        question: "How long should junior KG homework take?",
+        answer:
+          "About 15 minutes of focused work is enough for most Jr KG children. Stop earlier if frustration rises.",
+      },
+      {
+        question: "Are Jr KG and LKG worksheets the same?",
+        answer:
+          "Often similar in age band. Use the sheet that matches your child’s attention and pencil control, whether the school calls it Jr KG, LKG, or Prep.",
+      },
+      {
+        question: "Where can I download free Jr KG worksheets?",
+        answer:
+          "Start with the free Jr KG sample on this site (fruits writing), browse related activities, then create more printable Jr KG homework in the Homework Buddy app on Google Play.",
+      },
+      {
+        question: "My child mixes b and d in Jr KG. Is that okay?",
+        answer:
+          "Very common. Slow down, use picture cues, and practise a few letters at a time. Avoid harsh correction — confidence matters as much as accuracy at this stage.",
       },
     ],
     relatedActivitySlugs: ["writing", "maths", "reading"],
@@ -1027,28 +1074,39 @@ export const guides: GuideEntity[] = [
     description:
       "A practical parent guide to evening homework routines for Nursery to Class 3 — timing, printables, and kindness.",
     datePublished: "2026-07-01",
-    dateModified: "2026-07-17",
+    dateModified: "2026-08-08",
     status: "published",
     sections: [
       {
         heading: "Why routines beat random worksheets",
         paragraphs: [
-          "Children feel safer when evenings are predictable. A simple routine — snack, short printable, free play — reduces battles more effectively than buying more books.",
-          "Parents in India often juggle office hours, tuition, and dinner. A 15-minute homework window is realistic; a 90-minute grind is not.",
+          "Children feel safer when evenings are predictable. A simple routine — snack, short printable, free play — reduces battles more effectively than buying another stack of books or downloading five random PDFs at 9 p.m.",
+          "Parents in India often juggle office hours, traffic, tuition, and dinner. A 15-minute homework window is realistic for Nursery to Class 3; a 90-minute grind usually ends in tears for everyone.",
+          "A routine is not a rigid timetable. It is a small sequence your child can recognise: wash hands, snack, one calm activity, then play or rest. When the sequence is familiar, you spend less energy negotiating and more energy encouraging.",
         ],
       },
       {
-        heading: "A sample weekly rhythm",
+        heading: "Choose a realistic homework window",
         paragraphs: [
-          "Monday: reading worksheet. Tuesday: rest or school homework only. Wednesday: maths printable. Thursday: writing or creative thinking. Friday: colouring or life skills. Weekend: optional theme project.",
-          "Adjust freely. The point is fewer decisions at 8 p.m., not perfection.",
+          "Start after a break from school — not the moment the bag hits the floor. Many families find early evening (before late TV or late dinner) works better than after 9 p.m.",
+          "Match length to class: Nursery 10–15 minutes, Jr/Sr KG about 15 minutes, Class 1–2 about 15–20 minutes, Class 3 up to 20–25 minutes if energy is good. Stop earlier if frustration rises.",
+          "Protect sleep. A half-finished worksheet and a calm bedtime beat a finished worksheet and a meltdown. Learning lives in consistent short practice, not in covering every blank tonight.",
+        ],
+      },
+      {
+        heading: "A sample weekly rhythm (Nursery to Class 3)",
+        paragraphs: [
+          "Monday: reading or picture talk. Tuesday: school homework only or rest. Wednesday: maths printable or oral counting. Thursday: writing, Hindi letters, or creative thinking. Friday: colouring or life skills. Weekend: optional theme project if everyone is willing.",
+          "Adjust freely for festivals, guests, illness, or heavy school work. The point is fewer decisions at 8 p.m., not perfection on a chart.",
+          "Keep a thin folder labelled by class (Nursery, Jr KG, Class 1…) with three favourite printables. When the week is chaotic, open the folder instead of opening ten browser tabs.",
         ],
       },
       {
         heading: "Using printable worksheets without pressure",
         paragraphs: [
-          "Print one sheet, not five. Sit nearby. Stop early if needed. Save progress so your child sees growth.",
-          "Homework Buddy can generate fresh printable activities when you need variety without more scrolling.",
+          "Print one sheet, not five. Preview on your phone so the difficulty matches today’s mood. Sit nearby for the first minutes, then step back if your child is engaged.",
+          "Celebrate effort (“You sounded out a new word”) more than speed. Save completed pages so children can see progress — a small stack of finished sheets builds pride.",
+          "When favourites feel stale, generate a fresh printable in the Homework Buddy Android app: pick class, activity, and theme, then print. Variety without another late-night search spiral.",
         ],
       },
     ],
@@ -1056,11 +1114,21 @@ export const guides: GuideEntity[] = [
       {
         question: "What time should homework start?",
         answer:
-          "After a snack and a short break from school — often early evening works better than late night.",
+          "After a snack and a short break from school — often early evening works better than late night for Nursery to Class 3.",
       },
       {
         question: "How long should homework last for Class 1?",
         answer: "About 15–20 focused minutes is enough for many Class 1 children.",
+      },
+      {
+        question: "What if tuition already fills the evening?",
+        answer:
+          "Skip optional printables on heavy tuition days. Use oral practice (five spellings, five sums) or rest. Consistency over weeks matters more than daily volume.",
+      },
+      {
+        question: "Should weekends include homework?",
+        answer:
+          "Optional. A light theme activity or outdoor play often helps more than another worksheet. Use weekends to catch up only if school work was missed — not to double the load.",
       },
     ],
   },
@@ -1070,27 +1138,39 @@ export const guides: GuideEntity[] = [
     description:
       "Everything Indian parents need to know about printable worksheets — choosing, printing, and using them well.",
     datePublished: "2026-07-01",
-    dateModified: "2026-07-17",
+    dateModified: "2026-08-08",
     status: "published",
     sections: [
       {
         heading: "What makes a worksheet worth printing",
         paragraphs: [
-          "Clear instructions, age-fit difficulty, readable layout, and a finishable length. Fancy graphics mean nothing if the task overwhelms your child.",
-          "Prefer PDFs designed for A4 home printers. Preview on screen before you waste ink.",
+          "Clear instructions, age-fit difficulty, readable layout, and a finishable length. Fancy graphics mean nothing if the task overwhelms your child or needs a paragraph of adult explanation.",
+          "Prefer PDFs designed for A4 home printers with generous margins. Preview on screen before you waste ink — especially for Hindi letters, small fonts, or dark colouring pages.",
+          "A good printable worksheet for Nursery to Class 3 usually focuses on one skill (tracing, one maths idea, one short passage) rather than cramming an entire textbook chapter onto one page.",
         ],
       },
       {
-        heading: "Match worksheets to search intent — and to your child",
+        heading: "Match the sheet to your child — not only to the search bar",
         paragraphs: [
           "If you searched for Class 1 maths worksheets, stay on maths for Class 1. Mixing Class 3 reading into a tired Class 1 evening helps nobody.",
-          "Browse class hubs and activity hubs on this site to stay organised.",
+          "School labels vary (LKG, Jr KG, Prep). Match pencil control and attention span: large tracing for Nursery, letter/number practice for Jr KG, short passages for Class 1, richer reasoning for Class 2–3.",
+          "Browse class hubs and activity hubs on this site (reading, writing, maths, Hindi, colouring) so you stay organised instead of collecting random files named “worksheet1.pdf”.",
+        ],
+      },
+      {
+        heading: "Printing and home setup tips",
+        paragraphs: [
+          "Use plain A4 paper and a calm corner with good light. Keep crayons or a pencil ready before you call your child — friction starts fights.",
+          "Print single-sided when children erase a lot. Store finished sheets in a dated folder; children love flipping back to see how letters improved.",
+          "If ink is expensive, prioritise black-and-white line worksheets for daily practice and save heavy colour pages for weekends.",
         ],
       },
       {
         heading: "From static PDFs to generated practice",
         paragraphs: [
-          "Libraries of static worksheets are useful. Generators add freshness. Use both: keep favourites, generate new themes when curiosity fades.",
+          "Libraries of static worksheets are useful for favourites you know work. Generators add freshness when curiosity fades or you need a new theme tonight.",
+          "Use both: keep three proven printables per class, then generate new animals, festivals, or Hindi practice in Homework Buddy when you need variety without another hour of scrolling.",
+          "Always preview generated pages the same way you preview downloads — age fit and clarity first, then print.",
         ],
       },
     ],
@@ -1098,7 +1178,22 @@ export const guides: GuideEntity[] = [
       {
         question: "Are free printable worksheets good enough?",
         answer:
-          "Many are. Always preview for accuracy, language, and age fit. Free does not automatically mean appropriate.",
+          "Many are. Always preview for accuracy, language, and age fit. Free does not automatically mean appropriate — and paid does not automatically mean better.",
+      },
+      {
+        question: "How many worksheets should I print per week?",
+        answer:
+          "For Nursery to Class 3, three to five short printables a week plus school homework is plenty for most families.",
+      },
+      {
+        question: "Colour or black-and-white PDFs?",
+        answer:
+          "Black-and-white is fine for daily tracing, maths, and writing. Use colour pages when the goal is calm fine-motor practice or festival fun.",
+      },
+      {
+        question: "Where do I start on this website?",
+        answer:
+          "Open your child’s class hub under Worksheets, pick an activity, download a free sample PDF, then generate more in the Homework Buddy app when you want a fresh theme.",
       },
     ],
   },
@@ -1108,25 +1203,39 @@ export const guides: GuideEntity[] = [
     description:
       "Help your Class 1 child read at home with short passages, printable worksheets, and confidence-building tips.",
     datePublished: "2026-07-05",
-    dateModified: "2026-07-17",
+    dateModified: "2026-08-08",
     status: "published",
     sections: [
       {
         heading: "Start smaller than you think",
         paragraphs: [
-          "One short passage done happily beats three pages of struggle. Class 1 reading grows through repetition and encouragement.",
+          "One short passage done happily beats three pages of struggle. Class 1 reading grows through repetition, pointing to words, and encouragement — not through racing the clock.",
+          "If your child guesses from pictures, slow down. Point under each word, praise sounding out, and choose an easier passage for a few days to rebuild confidence.",
+          "Ten to fifteen minutes of calm reading practice after a snack is enough for many Class 1 evenings in India, especially when school already sent notebook work.",
         ],
       },
       {
-        heading: "Use themes your child loves",
+        heading: "What a good Class 1 reading worksheet looks like",
         paragraphs: [
-          "Animals, festivals, and school stories keep motivation high. Pair reading worksheets with conversation and picture walks.",
+          "Short sentences, familiar vocabulary, a clear question or two, and space to answer without tiny boxes. Themes like animals, school, festivals, or family keep motivation high.",
+          "Pair the printable with conversation: “Which animal was kind?” Picture walks before reading help children predict words and stay engaged.",
+          "Avoid dense paragraphs meant for older classes. If your child finishes early and still has energy, re-read the same passage for fluency instead of printing a harder sheet.",
+        ],
+      },
+      {
+        heading: "A simple weekly reading rhythm",
+        paragraphs: [
+          "Two or three reading nights per week work well: one printable passage, one oral retell of a school story, and one shared picture book if you have time.",
+          "On heavy homework days, skip the printable and do a five-minute oral read of labels around the house (milk packet, spice box) — real print still counts.",
+          "Keep a small stack of Class 1 reading sheets you already know fit. Rotate themes so practice does not feel like the same page forever.",
         ],
       },
       {
         heading: "When to try a worksheet generator",
         paragraphs: [
-          "If your printed stash feels stale, generate a fresh Class 1 reading activity in Homework Buddy and preview before printing.",
+          "If your printed stash feels stale, generate a fresh Class 1 reading activity in the Homework Buddy Android app, preview the PDF, then print one page.",
+          "Generators help when you want a new animal or festival theme without hunting websites at night. They do not replace sitting with your child — they just remove the search spiral.",
+          "Use the free Class 1 animals reading sample on this site as a model of length and tone, then create variations in the app when you need more.",
         ],
       },
     ],
@@ -1136,6 +1245,21 @@ export const guides: GuideEntity[] = [
         answer:
           "Slow down, point to each word, and praise sounding out. Choose easier passages for a week to rebuild confidence.",
       },
+      {
+        question: "Should Class 1 reading homework include writing answers?",
+        answer:
+          "A little writing is fine — one or two short answers. If writing tires them, take answers orally and write one sentence together.",
+      },
+      {
+        question: "English or Hindi reading first?",
+        answer:
+          "Follow the school’s focus for the week. You can still keep a gentle second language session shorter (matching or picture talk) so neither language feels like punishment.",
+      },
+      {
+        question: "How do I know a passage is too hard?",
+        answer:
+          "If your child struggles with more than a few words per sentence or avoids starting, step down a level. Fluency and confidence come before harder text.",
+      },
     ],
   },
   {
@@ -1144,19 +1268,39 @@ export const guides: GuideEntity[] = [
     description:
       "Easy homework ideas that fit real evenings — short printables, oral practice, and calm routines.",
     datePublished: "2026-07-08",
-    dateModified: "2026-07-17",
+    dateModified: "2026-08-08",
     status: "published",
     sections: [
       {
         heading: "Easy does not mean low value",
         paragraphs: [
-          "Easy homework ideas respect energy limits while still practising reading, writing, maths, and life skills.",
+          "Easy homework ideas respect energy limits while still practising reading, writing, maths, Hindi, and life skills. For busy Indian parents, “easy” means finishable tonight — not empty busywork.",
+          "Search phrases like easy homework or easy homework activity usually mean: short, clear, age-fit, and printable or oral. That is the bar this guide uses from Nursery through Class 3.",
+          "If school already sent a heavy load, choose the lightest idea below or skip enrichment entirely. Mood and sleep are part of learning.",
         ],
       },
       {
         heading: "Ten ideas you can use this week",
         paragraphs: [
-          "1) One animal reading sheet. 2) Five addition facts orally. 3) Trace four letters. 4) Colour a festival page. 5) Retell a school story. 6) Count fruit at snack time. 7) Write three gratitude words. 8) Sort objects by size. 9) A monsoon picture talk. 10) A 10-minute app-generated printable.",
+          "1) One animal reading sheet for Class 1. 2) Five addition facts orally in the car or kitchen. 3) Trace four letters (Nursery / Jr KG). 4) Colour a festival page. 5) Retell a school story in three sentences.",
+          "6) Count fruit at snack time. 7) Write three gratitude or kindness words (Class 2–3). 8) Sort spoons or toys by size. 9) A monsoon picture talk (“What do we need in the rain?”). 10) A 10–15 minute printable generated in Homework Buddy when you need a fresh theme fast.",
+          "Pick one idea per evening. Crossing ten items off a list is not the goal — finishing one calmly is.",
+        ],
+      },
+      {
+        heading: "Match ideas to Nursery, Jr KG, and Class 1–3",
+        paragraphs: [
+          "Nursery: tracing, colouring, matching, picture talk. Keep sessions under 15 minutes and celebrate holding the crayon.",
+          "Jr KG / Sr KG: letter and number recognition, large writing lines, simple patterns. Alternate pencil work with oral sounds or counting.",
+          "Class 1–3: short reading passages, neat writing, maths with pictures, Hindi vyanjan or swar practice, and light life-skills questions. Cap at about 20 minutes unless the child asks for more.",
+        ],
+      },
+      {
+        heading: "When to use printables vs oral practice",
+        paragraphs: [
+          "Use printables when you want a clear start and finish on paper. Use oral practice when ink, energy, or time is low — five spellings, five sums, or naming five objects in Hindi still counts as homework.",
+          "Keep a tiny “emergency list” on your phone: three oral ideas and one favourite PDF link. Busy nights need fewer decisions.",
+          "For printable variety without scrolling, open Homework Buddy on Android, choose class and activity, generate a PDF, and print one page — the same approach as the free samples on easyhomeworkactivity.com.",
         ],
       },
     ],
@@ -1165,6 +1309,21 @@ export const guides: GuideEntity[] = [
         question: "What if the teacher gives lots of homework already?",
         answer:
           "Skip optional printables. Protect sleep and mood first; enrichment can wait for lighter days.",
+      },
+      {
+        question: "What are easy homework ideas for Nursery?",
+        answer:
+          "Large-line tracing, colour-and-say, simple matching, and five minutes of picture talk. Avoid tiny letters and long pages.",
+      },
+      {
+        question: "Can easy homework still help Class 2 and Class 3?",
+        answer:
+          "Yes — short reading with one “why” question, mixed maths fluency plus one word problem, or a life-skills scenario finished in about 20 minutes.",
+      },
+      {
+        question: "Where can I get printable easy homework PDFs quickly?",
+        answer:
+          "Browse free samples under Worksheets on this site, then generate more in the Homework Buddy app on Google Play when you need a new theme tonight.",
       },
     ],
   },
@@ -1342,15 +1501,20 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageAlt:
       "Class 1 Hindi vyanjan worksheet — match क ख ग to pictures, missing letters, and tracing PDF preview",
     intro: [
-      "This Class 1 Hindi worksheet practises vyanjan three ways: matching letters to pictures (ख से खरगोश, श से शेर, ह से हाथी, त से तोता), filling missing letters in the क–ठ sequence, and tracing.",
-      "व्यंजन अभ्यास sticks when children say the letter and its word aloud while drawing the matching line. One sheet a day keeps varnamala practice light and consistent.",
-      ...sharedParentTips,
+      "Looking for a free Hindi vyanjan worksheet for Class 1? This printable PDF practises व्यंजन three ways on one A4 page: match letters to pictures (ख से खरगोश, श से शेर, ह से हाथी, त से तोता), fill missing letters in the क–ठ sequence, and trace क ख ग घ with friendly spacing.",
+      "Preview the full worksheet image on this page before you print. You can see the matching panel, missing-letter row, and tracing lines — the same calm layout Homework Buddy aims for when you generate fresh Hindi sheets in the app.",
+      "Class 1 Hindi homework works best when children say the letter and its picture word aloud while drawing the matching line. That sound–shape link matters more than racing to the end of the page. One sheet a day (about 15–20 minutes) keeps varnamala practice light and consistent.",
+      "Many parents search for “hindi vyanjan worksheet for class 1” after school and find dense photocopies. This sample keeps letters large, pictures clear, and instructions short enough for a tired evening. Print on plain A4; sit nearby for the first matching items, then let your child try independently.",
+      "If ख and श look similar to your child, that is normal. Use the picture cues (खरगोश vs शेर), slow the tracing, and revisit the same two letters tomorrow instead of correcting harshly. Confidence builds the habit of Hindi practice.",
+      "Sr KG or strong Jr KG readers can try the matching section with help; the missing-letter stretch is aimed at Class 1. For Nursery, start with swar tracing (अ आ इ ई) on our Nursery Hindi sample before moving to vyanjan.",
+      "When you want another Hindi vyanjan printable with a new mix of letters or themes, open the Homework Buddy Android app, choose Class 1 + Hindi, and generate a fresh PDF — then print and practise the same way as this free sample.",
+      "Tip: keep a small Hindi folder at home with this sheet plus one generated variation each week. Review yesterday’s letters for one minute before starting a new page.",
     ],
     faqs: [
       {
         question: "Where can I get a free Hindi vyanjan worksheet for Class 1?",
         answer:
-          "Download the printable PDF on this page — it includes letter-picture matching, missing vyanjan, and tracing for क ख ग घ. Generate fresh Class 1 Hindi sheets in the Homework Buddy app anytime.",
+          "Download the printable PDF on this page — it includes letter-picture matching, missing vyanjan, and tracing for क ख ग घ. Preview the image above first, then generate more Class 1 Hindi sheets in the Homework Buddy app on Google Play.",
       },
       {
         question: "My child confuses ख and श. Is that normal?",
@@ -1361,6 +1525,21 @@ export const worksheetSeeds: WorksheetSeed[] = [
         question: "Can Jr KG or Sr KG children use this sheet?",
         answer:
           "Yes, with help. Sr KG children can usually manage the matching; the missing-letter section suits Class 1 best.",
+      },
+      {
+        question: "Should we practise swar or vyanjan first?",
+        answer:
+          "Swar (अ आ इ ई…) usually come first in Nursery. By Class 1, children often practise both; use this vyanjan sheet when letter recognition of क ख ग is the goal.",
+      },
+      {
+        question: "How long should Class 1 Hindi worksheet practice take?",
+        answer:
+          "About 15–20 minutes. Finish the matching and one more section if energy is good; save tracing for tomorrow if needed.",
+      },
+      {
+        question: "Can I get more Hindi worksheets like this without searching every night?",
+        answer:
+          "Yes. Homework Buddy lets you generate printable Hindi / varnamala activities for Nursery to Class 3. Install from Google Play and create a new sheet whenever this sample feels familiar.",
       },
     ],
   },
