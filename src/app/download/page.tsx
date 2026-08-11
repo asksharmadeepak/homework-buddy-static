@@ -7,9 +7,9 @@ import { buildMetadata } from "@/lib/seo";
 import { playStoreUrlWithUtm, site } from "@/lib/site";
 
 export const metadata = buildMetadata({
-  title: "Download Homework Buddy — get the app on Google Play",
+  title: "Download Homework Buddy — free printable worksheets for kids",
   description:
-    "Get printable worksheets in the Homework Buddy app on Google Play. Nursery to Class 3. iPhone waitlist available.",
+    "Get Homework Buddy on Google Play. Kids create their own printable homework for Nursery to Class 3 — Reading, Maths, Hindi Fun, and more.",
   path: "/download",
 });
 

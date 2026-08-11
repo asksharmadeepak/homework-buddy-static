@@ -19,7 +19,7 @@ export function buildMetadata({
   title,
   description,
   path,
-  image = "/brand/hero_boy.png",
+  image = "/opengraph-image",
   type = "website",
   noIndex = false,
 }: BuildMetadataInput): Metadata {
