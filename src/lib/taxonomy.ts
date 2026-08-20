@@ -1568,6 +1568,406 @@ export const worksheetSeeds: WorksheetSeed[] = [
       },
     ],
   },
+  {
+    slug: "tracing-lines",
+    classSlug: "nursery",
+    name: "Tracing Lines Practice",
+    title: "Nursery tracing worksheet — free printable pre-writing lines PDF",
+    description:
+      "Nursery homework tracing worksheet with straight, curvy, and zigzag paths for pencil grip practice.",
+    activitySlug: "writing",
+    themeSlug: "space",
+    status: "published",
+    pdfPath: "/worksheets/nursery-tracing-lines.pdf",
+    previewImagePath: "/worksheets/previews/nursery-tracing-lines.png",
+    previewImageAlt: "Nursery homework tracing worksheet printable free download preview",
+    intro: [
+      "Pre-writing lines help Nursery children build pencil control before letters. Trace slowly and praise steady hands.",
+      ...sharedParentTips,
+    ],
+    faqs: [
+      {
+        question: "Is tracing good nursery homework?",
+        answer:
+          "Yes — short tracing sheets are ideal nursery homework when sessions stay playful and under about 10 minutes.",
+      },
+    ],
+  },
+  {
+    slug: "animals-matching",
+    classSlug: "nursery",
+    name: "Animals Matching Fun",
+    title: "Nursery animals matching worksheet — free printable PDF",
+    description:
+      "Free Nursery matching worksheet: draw lines between animal friends to build attention and vocabulary.",
+    activitySlug: "coloring",
+    themeSlug: "animals",
+    status: "published",
+    pdfPath: "/worksheets/nursery-animals-matching.pdf",
+    previewImagePath: "/worksheets/previews/nursery-animals-matching.png",
+    previewImageAlt: "Nursery animals matching homework worksheet printable preview",
+    intro: [
+      "Matching worksheets teach focus without writing pressure. Say every animal name aloud while your child draws the line.",
+      ...sharedParentTips,
+    ],
+    faqs: [
+      {
+        question: "Can toddlers use this matching sheet?",
+        answer:
+          "With help, yes. Point to pictures together and let them finish one or two matches independently.",
+      },
+    ],
+  },
+  {
+    slug: "letter-tracing-abc",
+    classSlug: "jr-kg",
+    name: "Letter Tracing ABC",
+    title: "Jr KG letter tracing worksheet — printable ABC PDF",
+    description:
+      "Jr KG printable alphabet tracing sheet for A–H with grey guide letters and writing space.",
+    activitySlug: "writing",
+    themeSlug: "stories",
+    status: "published",
+    pdfPath: "/worksheets/jr-kg-letter-tracing-abc.pdf",
+    previewImagePath: "/worksheets/previews/jr-kg-letter-tracing-abc.png",
+    previewImageAlt: "Jr KG letter tracing ABC worksheet printable homework preview",
+    intro: [
+      "Large letters and short rows keep Jr KG writing calm. Say each letter sound while tracing.",
+      ...sharedParentTips,
+    ],
+    faqs: [
+      {
+        question: "Should Jr KG learn capital or small letters first?",
+        answer:
+          "Many Indian preschools start with capitals for recognition; follow your school’s sequence and keep practice short.",
+      },
+    ],
+  },
+  {
+    slug: "numbers-count-ten",
+    classSlug: "jr-kg",
+    name: "Numbers Count to Ten",
+    title: "Jr KG counting worksheet — numbers to 10 printable PDF",
+    description:
+      "Jr KG maths printable: count fruit pictures and circle the correct number up to ten.",
+    activitySlug: "maths",
+    themeSlug: "fruits",
+    status: "published",
+    pdfPath: "/worksheets/jr-kg-numbers-count-ten.pdf",
+    previewImagePath: "/worksheets/previews/jr-kg-numbers-count-ten.png",
+    previewImageAlt: "Jr KG numbers counting to ten worksheet printable preview",
+    intro: [
+      "Counting with pictures makes early maths concrete. Use fingers alongside the worksheet.",
+      ...sharedParentTips,
+    ],
+    faqs: [
+      {
+        question: "My child skips numbers when counting. What helps?",
+        answer:
+          "Touch each picture once and count slowly together. Repeat the same sheet another day before moving on.",
+      },
+    ],
+  },
+  {
+    slug: "patterns-colours",
+    classSlug: "jr-kg",
+    name: "Colour Patterns Play",
+    title: "Jr KG patterns worksheet — printable colour patterns PDF",
+    description:
+      "Jr KG pattern worksheet: continue star–moon and vehicle patterns by colouring the next box.",
+    activitySlug: "creative-thinking",
+    themeSlug: "festivals",
+    status: "published",
+    pdfPath: "/worksheets/jr-kg-patterns-colours.pdf",
+    previewImagePath: "/worksheets/previews/jr-kg-patterns-colours.png",
+    previewImageAlt: "Jr KG colour patterns worksheet printable homework preview",
+    intro: [
+      "Patterns build early maths thinking. Say the sequence aloud before your child fills the blank.",
+      ...sharedParentTips,
+    ],
+    faqs: [
+      {
+        question: "Are patterns part of Jr KG homework?",
+        answer:
+          "Yes — simple AB patterns are common in junior kindergarten maths and school readiness work.",
+      },
+    ],
+  },
+  {
+    slug: "cvc-reading-warm",
+    classSlug: "sr-kg",
+    name: "CVC Reading Warm-up",
+    title: "Sr KG CVC reading worksheet — free printable phonics PDF",
+    description:
+      "Sr KG printable reading warm-up with simple CVC words and picture choices for phonics practice.",
+    activitySlug: "reading",
+    themeSlug: "animals",
+    status: "published",
+    pdfPath: "/worksheets/sr-kg-cvc-reading-warm.pdf",
+    previewImagePath: "/worksheets/previews/sr-kg-cvc-reading-warm.png",
+    previewImageAlt: "Sr KG CVC reading phonics worksheet printable free download",
+    intro: [
+      "CVC blending (cat, bus, sun) is a friendly Sr KG reading start. Sound out slowly, then choose the picture.",
+      ...sharedParentTips,
+    ],
+    faqs: [
+      {
+        question: "What are CVC words?",
+        answer:
+          "Consonant–vowel–consonant words like cat and bus. They help children blend sounds into real words.",
+      },
+    ],
+  },
+  {
+    slug: "writing-sight-words",
+    classSlug: "sr-kg",
+    name: "Sight Words Writing",
+    title: "Sr KG sight words worksheet — printable writing PDF",
+    description:
+      "Sr KG writing worksheet: trace and write common sight words like the, and, is, to.",
+    activitySlug: "writing",
+    themeSlug: "stories",
+    status: "published",
+    pdfPath: "/worksheets/sr-kg-writing-sight-words.pdf",
+    previewImagePath: "/worksheets/previews/sr-kg-writing-sight-words.png",
+    previewImageAlt: "Sr KG sight words writing worksheet printable preview",
+    intro: [
+      "Sight words appear often in early readers. Trace, say, then write — keep the list short each night.",
+      ...sharedParentTips,
+    ],
+    faqs: [
+      {
+        question: "How many sight words should Sr KG practise?",
+        answer:
+          "Three to six words in one sitting is enough. Mastery beats long lists.",
+      },
+    ],
+  },
+  {
+    slug: "maths-add-within-10",
+    classSlug: "sr-kg",
+    name: "Maths Add Within 10",
+    title: "Sr KG addition worksheet — printable sums within 10",
+    description:
+      "Sr KG maths printable with picture addition and sums within 10 for early number sense.",
+    activitySlug: "maths",
+    themeSlug: "space",
+    status: "published",
+    pdfPath: "/worksheets/sr-kg-maths-add-within-10.pdf",
+    previewImagePath: "/worksheets/previews/sr-kg-maths-add-within-10.png",
+    previewImageAlt: "Sr KG addition within 10 maths worksheet printable preview",
+    intro: [
+      "Picture addition bridges counting and written sums. Use counters if your child needs a hands-on step.",
+      ...sharedParentTips,
+    ],
+    faqs: [
+      {
+        question: "Is addition within 10 right for Sr KG?",
+        answer:
+          "Yes for many Sr KG maths programmes. Stay concrete with pictures before abstract digits alone.",
+      },
+    ],
+  },
+  {
+    slug: "animals-coloring",
+    classSlug: "sr-kg",
+    name: "Animals Colouring Sheet",
+    title: "Sr KG animals colouring worksheet — free printable PDF",
+    description:
+      "Sr KG printable animal colouring sheet for fine motor practice and vocabulary talk.",
+    activitySlug: "coloring",
+    themeSlug: "animals",
+    status: "published",
+    pdfPath: "/worksheets/sr-kg-animals-coloring.pdf",
+    previewImagePath: "/worksheets/previews/sr-kg-animals-coloring.png",
+    previewImageAlt: "Sr KG animals colouring worksheet printable homework preview",
+    intro: [
+      "Colouring is still valuable in Sr KG when you add talk: names, habitats, and colours.",
+      ...sharedParentTips,
+    ],
+    faqs: [
+      {
+        question: "Is colouring enough for Sr KG homework?",
+        answer:
+          "Use it as one calm option. Balance with short reading, writing, or maths sheets on other days.",
+      },
+    ],
+  },
+  {
+    slug: "festival-writing",
+    classSlug: "class-1",
+    name: "Festival Writing Prompt",
+    title: "Class 1 festival writing worksheet — printable sentences PDF",
+    description:
+      "Class 1 printable writing worksheet with festival sentence starters and a draw box.",
+    activitySlug: "writing",
+    themeSlug: "festivals",
+    status: "published",
+    pdfPath: "/worksheets/class-1-festival-writing.pdf",
+    previewImagePath: "/worksheets/previews/class-1-festival-writing.png",
+    previewImageAlt: "Class 1 festival writing worksheet printable preview",
+    intro: [
+      "Festival prompts make Class 1 writing personal. Accept invented spelling and celebrate complete thoughts.",
+      ...sharedParentTips,
+    ],
+    faqs: [
+      {
+        question: "Should I correct every spelling?",
+        answer:
+          "Not on the first draft. Praise the idea, then fix one or two spellings together if energy remains.",
+      },
+    ],
+  },
+  {
+    slug: "animals-reading",
+    classSlug: "class-2",
+    name: "Animals Reading Passage",
+    title: "Class 2 animals reading worksheet — printable comprehension PDF",
+    description:
+      "Class 2 reading worksheet with a short zoo passage and comprehension questions.",
+    activitySlug: "reading",
+    themeSlug: "animals",
+    status: "published",
+    pdfPath: "/worksheets/class-2-animals-reading.pdf",
+    previewImagePath: "/worksheets/previews/class-2-animals-reading.png",
+    previewImageAlt: "Class 2 animals reading comprehension worksheet printable preview",
+    intro: [
+      "Short passages with clear questions suit Class 2 evenings. Read once together, then answer independently.",
+      ...sharedParentTips,
+    ],
+    faqs: [
+      {
+        question: "How long should Class 2 reading homework take?",
+        answer:
+          "About 15–20 minutes for one passage and questions is usually enough.",
+      },
+    ],
+  },
+  {
+    slug: "transport-maths",
+    classSlug: "class-2",
+    name: "Transport Word Problems",
+    title: "Class 2 transport maths worksheet — printable word problems",
+    description:
+      "Class 2 maths printable with transport-themed addition and subtraction word problems.",
+    activitySlug: "maths",
+    themeSlug: "transport",
+    status: "published",
+    pdfPath: "/worksheets/class-2-transport-maths.pdf",
+    previewImagePath: "/worksheets/previews/class-2-transport-maths.png",
+    previewImageAlt: "Class 2 transport maths word problems worksheet printable preview",
+    intro: [
+      "Word problems build reasoning. Underline numbers first, then choose the operation.",
+      ...sharedParentTips,
+    ],
+    faqs: [
+      {
+        question: "My child guesses operations. How can I help?",
+        answer:
+          "Ask “are we putting together or taking away?” before writing the sum.",
+      },
+    ],
+  },
+  {
+    slug: "festival-writing",
+    classSlug: "class-2",
+    name: "Festival Story Starter",
+    title: "Class 2 festival writing worksheet — printable story PDF",
+    description:
+      "Class 2 creative writing worksheet: plan a festival story, then write on lined space.",
+    activitySlug: "writing",
+    themeSlug: "festivals",
+    status: "published",
+    pdfPath: "/worksheets/class-2-festival-writing.pdf",
+    previewImagePath: "/worksheets/previews/class-2-festival-writing.png",
+    previewImageAlt: "Class 2 festival story writing worksheet printable preview",
+    intro: [
+      "Planning who/where/what before writing helps Class 2 stories stay organised.",
+      ...sharedParentTips,
+    ],
+    faqs: [
+      {
+        question: "How many sentences should Class 2 write?",
+        answer:
+          "Five to six clear sentences is a strong target for one homework sitting.",
+      },
+    ],
+  },
+  {
+    slug: "stories-reading",
+    classSlug: "class-3",
+    name: "Stories Reading Challenge",
+    title: "Class 3 stories reading worksheet — printable comprehension PDF",
+    description:
+      "Class 3 reading worksheet with a short story passage and full-sentence comprehension answers.",
+    activitySlug: "reading",
+    themeSlug: "stories",
+    status: "published",
+    pdfPath: "/worksheets/class-3-stories-reading.pdf",
+    previewImagePath: "/worksheets/previews/class-3-stories-reading.png",
+    previewImageAlt: "Class 3 stories reading comprehension worksheet printable preview",
+    intro: [
+      "Class 3 readers can answer in complete sentences. Ask for evidence from the passage.",
+      ...sharedParentTips,
+    ],
+    faqs: [
+      {
+        question: "Should answers be copied from the text?",
+        answer:
+          "Use the text for facts, but rephrase in your child’s own words when possible.",
+      },
+    ],
+  },
+  {
+    slug: "maths-word-problems",
+    classSlug: "class-3",
+    name: "Maths Word Problems",
+    title: "Class 3 maths word problems worksheet — free printable PDF",
+    description:
+      "Class 3 printable maths sheet with multi-step-friendly word problems and working space.",
+    activitySlug: "maths",
+    themeSlug: "transport",
+    status: "published",
+    pdfPath: "/worksheets/class-3-maths-word-problems.pdf",
+    previewImagePath: "/worksheets/previews/class-3-maths-word-problems.png",
+    previewImageAlt: "Class 3 maths word problems worksheet printable preview",
+    intro: [
+      "Working space matters as much as the answer. Circle numbers and underline the question first.",
+      ...sharedParentTips,
+    ],
+    faqs: [
+      {
+        question: "How many word problems per night?",
+        answer:
+          "Two or three well-explained problems beat a long rushed list.",
+      },
+    ],
+  },
+  {
+    slug: "space-creative",
+    classSlug: "class-3",
+    name: "Space Creative Thinking",
+    title: "Class 3 space creative thinking worksheet — printable PDF",
+    description:
+      "Class 3 creative thinking printable with space prompts for invention and vocabulary.",
+    activitySlug: "creative-thinking",
+    themeSlug: "space",
+    status: "published",
+    pdfPath: "/worksheets/class-3-space-creative.pdf",
+    previewImagePath: "/worksheets/previews/class-3-space-creative.png",
+    previewImageAlt: "Class 3 space creative thinking worksheet printable preview",
+    intro: [
+      "Creative prompts stretch language after heavier academic nights. Wild ideas are welcome.",
+      ...sharedParentTips,
+    ],
+    faqs: [
+      {
+        question: "Is creative thinking real homework?",
+        answer:
+          "Yes — planning, describing, and inventing build writing stamina and confidence alongside school tasks.",
+      },
+    ],
+  },
 ];
 
 export function publishedOnly<T extends { status: "published" | "draft" }>(items: T[]) {

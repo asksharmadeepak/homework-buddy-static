@@ -174,7 +174,7 @@ export function collectionJsonLd(input: {
   name: string;
   description: string;
   path: string;
-  items: { name: string; path: string }[];
+  items: { name: string; path: string; image?: string }[];
 }) {
   return {
     "@context": "https://schema.org",
@@ -189,6 +189,19 @@ export function collectionJsonLd(input: {
         position: i + 1,
         name: item.name,
         url: absoluteUrl(item.path),
+        ...(item.image
+          ? {
+              item: {
+                "@type": "CreativeWork",
+                name: item.name,
+                url: absoluteUrl(item.path),
+                image: {
+                  "@type": "ImageObject",
+                  url: absoluteUrl(item.image),
+                },
+              },
+            }
+          : {}),
       })),
     },
   };

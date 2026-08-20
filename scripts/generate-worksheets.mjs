@@ -1179,6 +1179,730 @@ async function buildHindiVyanjanPractice() {
   return doc.save();
 }
 
+/** Shared layout for additional class-hub sample sheets */
+async function startSample(title, subtitle) {
+  const doc = await PDFDocument.create();
+  const page = doc.addPage([595.28, 841.89]);
+  const font = await doc.embedFont(StandardFonts.Helvetica);
+  const fontBold = await doc.embedFont(StandardFonts.HelveticaBold);
+  const margin = 42;
+  let y = await drawBrandHeader(doc, page, font, fontBold);
+  page.drawText(title, { x: margin, y, size: 20, font: fontBold, color: C.text });
+  y -= 16;
+  page.drawText(subtitle, { x: margin, y, size: 10, font, color: C.muted });
+  y -= 22;
+  return { doc, page, font, fontBold, margin, y };
+}
+
+function drawTipBox(page, margin, font, fontBold, tip) {
+  page.drawRectangle({
+    x: margin,
+    y: 88,
+    width: 510,
+    height: 48,
+    color: C.peach,
+    borderColor: C.purple,
+    borderWidth: 1,
+  });
+  page.drawText("Parent tip", {
+    x: margin + 12,
+    y: 116,
+    size: 10,
+    font: fontBold,
+    color: C.purple,
+  });
+  page.drawText(tip, {
+    x: margin + 12,
+    y: 100,
+    size: 9,
+    font,
+    color: C.muted,
+  });
+}
+
+async function buildNurseryTracingLines() {
+  const { doc, page, font, fontBold, margin, y: y0 } = await startSample(
+    "Tracing Lines Practice",
+    "Nursery · Fine motor · Pre-writing  ·  Trace the paths slowly with a crayon.",
+  );
+  let y = y0;
+  const star = await doc.embedPng(loadArt("cut_star.png"));
+  const moon = await doc.embedPng(loadArt("cut_moon.png"));
+  const rocket = await doc.embedPng(loadArt("cut_rocket.png"));
+
+  const rows = [
+    { label: "1. Straight path to the star", img: star },
+    { label: "2. Curvy path to the moon", img: moon },
+    { label: "3. Zigzag path to the rocket", img: rocket },
+  ];
+  for (const row of rows) {
+    page.drawText(row.label, { x: margin, y, size: 12, font: fontBold, color: C.purple });
+    y -= 8;
+    page.drawRectangle({
+      x: margin,
+      y: y - 90,
+      width: 510,
+      height: 90,
+      borderColor: C.line,
+      borderWidth: 1.2,
+      color: C.white,
+    });
+    page.drawCircle({ x: margin + 28, y: y - 45, size: 10, borderColor: C.purple, borderWidth: 1.5 });
+    // dashed-ish path
+    for (let i = 0; i < 14; i++) {
+      const px = margin + 55 + i * 28;
+      const py = y - 45 + (row.label.includes("Curvy") ? Math.sin(i / 2) * 18 : row.label.includes("Zigzag") ? (i % 2 === 0 ? 12 : -12) : 0);
+      page.drawCircle({ x: px, y: py, size: 2.2, color: C.purple });
+    }
+    page.drawImage(row.img, { x: margin + 440, y: y - 78, width: 56, height: 56 });
+    y -= 112;
+  }
+  drawTipBox(page, margin, font, fontBold, "Sit beside your child. Praise steady hands — stop after ~10 minutes.");
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, "Tracing Lines Practice");
+  return doc.save();
+}
+
+async function buildNurseryAnimalsMatching() {
+  const { doc, page, font, fontBold, margin, y: y0 } = await startSample(
+    "Animals Matching Fun",
+    "Nursery · Matching · Animals  ·  Draw a line from each animal to its friend.",
+  );
+  let y = y0;
+  const left = [
+    { art: "cut_lion.png", label: "Lion" },
+    { art: "cut_elephant.png", label: "Elephant" },
+    { art: "cut_rabbit.png", label: "Rabbit" },
+    { art: "cut_parrot.png", label: "Parrot" },
+  ];
+  const rightOrder = [2, 0, 3, 1];
+  for (let i = 0; i < left.length; i++) {
+    const L = await doc.embedPng(loadArt(left[i].art));
+    const R = await doc.embedPng(loadArt(left[rightOrder[i]].art));
+    const by = y - 70;
+    page.drawRectangle({
+      x: margin,
+      y: by,
+      width: 200,
+      height: 64,
+      borderColor: C.line,
+      borderWidth: 1,
+      color: C.soft,
+    });
+    page.drawImage(L, { x: margin + 10, y: by + 6, width: 52, height: 52 });
+    page.drawText(left[i].label, { x: margin + 70, y: by + 26, size: 12, font: fontBold, color: C.text });
+    page.drawCircle({ x: margin + 185, y: by + 32, size: 4, color: C.purple });
+
+    page.drawRectangle({
+      x: margin + 310,
+      y: by,
+      width: 200,
+      height: 64,
+      borderColor: C.line,
+      borderWidth: 1,
+      color: C.white,
+    });
+    page.drawCircle({ x: margin + 325, y: by + 32, size: 4, color: C.purple });
+    page.drawImage(R, { x: margin + 345, y: by + 6, width: 52, height: 52 });
+    page.drawText(left[rightOrder[i]].label, {
+      x: margin + 405,
+      y: by + 26,
+      size: 12,
+      font: fontBold,
+      color: C.text,
+    });
+    y -= 78;
+  }
+  drawTipBox(page, margin, font, fontBold, "Say each animal name aloud. Matching builds attention and vocabulary.");
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, "Animals Matching Fun");
+  return doc.save();
+}
+
+async function buildJrKgLetterTracing() {
+  const { doc, page, font, fontBold, margin, y: y0 } = await startSample(
+    "Letter Tracing ABC",
+    "Jr KG · Writing · Letters  ·  Trace the grey letters, then write your own.",
+  );
+  let y = y0;
+  const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+  const grey = rgb(0.78, 0.75, 0.85);
+  for (let i = 0; i < letters.length; i++) {
+    const col = i % 4;
+    const row = Math.floor(i / 4);
+    const bx = margin + col * 128;
+    const by = y - row * 120 - 90;
+    page.drawRectangle({
+      x: bx,
+      y: by,
+      width: 118,
+      height: 100,
+      borderColor: C.line,
+      borderWidth: 1.2,
+      color: C.white,
+    });
+    page.drawText(letters[i], { x: bx + 18, y: by + 40, size: 36, font: fontBold, color: C.purple });
+    page.drawText(letters[i], { x: bx + 58, y: by + 40, size: 36, font: fontBold, color: grey });
+    page.drawText("___", { x: bx + 40, y: by + 12, size: 14, font, color: C.muted });
+  }
+  y -= 250;
+  page.drawText("Say the letter sound: A says /a/ as in apple.", {
+    x: margin,
+    y,
+    size: 11,
+    font: fontBold,
+    color: C.text,
+  });
+  drawTipBox(page, margin, font, fontBold, "Large letters first. Correct direction gently — avoid erasing every mistake.");
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, "Letter Tracing ABC");
+  return doc.save();
+}
+
+async function buildJrKgNumbersCount() {
+  const { doc, page, font, fontBold, margin, y: y0 } = await startSample(
+    "Numbers Count to Ten",
+    "Jr KG · Maths · Numbers  ·  Count the pictures and circle the correct number.",
+  );
+  let y = y0;
+  const fruit = await doc.embedPng(loadArt("theme-fruits.png"));
+  const items = [
+    { n: 3, label: "How many fruits?" },
+    { n: 5, label: "Count again — how many?" },
+    { n: 7, label: "One more set — how many?" },
+  ];
+  for (const item of items) {
+    page.drawText(item.label, { x: margin, y, size: 12, font: fontBold, color: C.purple });
+    y -= 8;
+    page.drawRectangle({
+      x: margin,
+      y: y - 100,
+      width: 510,
+      height: 100,
+      borderColor: C.line,
+      borderWidth: 1,
+      color: C.soft,
+    });
+    for (let i = 0; i < Math.min(item.n, 7); i++) {
+      page.drawImage(fruit, {
+        x: margin + 16 + i * 52,
+        y: y - 88,
+        width: 44,
+        height: 44,
+      });
+    }
+    const opts = [item.n - 1, item.n, item.n + 1].filter((n) => n > 0);
+    let ox = margin + 16;
+    for (const o of opts) {
+      page.drawCircle({ x: ox + 10, y: y - 28, size: 10, borderColor: C.purple, borderWidth: 1.2 });
+      page.drawText(String(o), { x: ox + 28, y: y - 32, size: 14, font: fontBold, color: C.text });
+      ox += 70;
+    }
+    y -= 120;
+  }
+  drawTipBox(page, margin, font, fontBold, "Use fingers to count. Celebrate correct counting even if writing is wobbly.");
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, "Numbers Count to Ten");
+  return doc.save();
+}
+
+async function buildJrKgPatternsColours() {
+  const { doc, page, font, fontBold, margin, y: y0 } = await startSample(
+    "Colour Patterns Play",
+    "Jr KG · Patterns · Colours  ·  Continue each pattern by colouring the empty boxes.",
+  );
+  let y = y0;
+  const patterns = [
+    ["star", "moon", "star", "moon", "?"],
+    ["bus", "plane", "bus", "plane", "?"],
+    ["lion", "rabbit", "lion", "rabbit", "?"],
+  ];
+  const artMap = {
+    star: "cut_star.png",
+    moon: "cut_moon.png",
+    bus: "cut_bus.png",
+    plane: "cut_plane.png",
+    lion: "cut_lion.png",
+    rabbit: "cut_rabbit.png",
+  };
+  for (let p = 0; p < patterns.length; p++) {
+    page.drawText(`Pattern ${p + 1}`, { x: margin, y, size: 12, font: fontBold, color: C.purple });
+    y -= 10;
+    const row = patterns[p];
+    for (let i = 0; i < row.length; i++) {
+      const bx = margin + i * 100;
+      page.drawRectangle({
+        x: bx,
+        y: y - 72,
+        width: 88,
+        height: 72,
+        borderColor: C.purple,
+        borderWidth: 1.2,
+        color: C.white,
+      });
+      if (row[i] !== "?") {
+        const img = await doc.embedPng(loadArt(artMap[row[i]]));
+        page.drawImage(img, { x: bx + 16, y: y - 60, width: 56, height: 56 });
+      } else {
+        page.drawText("?", { x: bx + 34, y: y - 42, size: 28, font: fontBold, color: C.muted });
+      }
+    }
+    y -= 100;
+  }
+  drawTipBox(page, margin, font, fontBold, "Say the pattern aloud: star, moon, star, moon... then ask what comes next.");
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, "Colour Patterns Play");
+  return doc.save();
+}
+
+async function buildSrKgCvcReading() {
+  const { doc, page, font, fontBold, margin, y: y0 } = await startSample(
+    "CVC Reading Warm-up",
+    "Sr KG · Reading · Phonics  ·  Sound out each word, then circle the matching picture.",
+  );
+  let y = y0;
+  const words = [
+    { word: "cat", art: "cut_tiger.png", opts: ["cat", "cap", "can"] },
+    { word: "bus", art: "cut_bus.png", opts: ["bun", "bus", "bug"] },
+    { word: "sun", art: "cut_star.png", opts: ["sun", "sum", "sip"] },
+  ];
+  for (const w of words) {
+    page.drawRectangle({
+      x: margin,
+      y: y - 110,
+      width: 510,
+      height: 110,
+      borderColor: C.line,
+      borderWidth: 1,
+      color: C.soft,
+    });
+    page.drawText(w.word.toUpperCase(), {
+      x: margin + 20,
+      y: y - 40,
+      size: 28,
+      font: fontBold,
+      color: C.purple,
+    });
+    const img = await doc.embedPng(loadArt(w.art));
+    page.drawImage(img, { x: margin + 160, y: y - 95, width: 70, height: 70 });
+    let ox = margin + 260;
+    for (const o of w.opts) {
+      circleOption(page, ox, y - 55, o, font, fontBold);
+      ox += 80;
+    }
+    y -= 128;
+  }
+  drawTipBox(page, margin, font, fontBold, "Blend sounds slowly: /c/ /a/ /t/ -> cat. Keep sessions under 15 minutes.");
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, "CVC Reading Warm-up");
+  return doc.save();
+}
+
+async function buildSrKgWritingWords() {
+  const { doc, page, font, fontBold, margin, y: y0 } = await startSample(
+    "Sight Words Writing",
+    "Sr KG · Writing · Sight words  ·  Trace, then write each word on the line.",
+  );
+  let y = y0;
+  const words = ["the", "and", "is", "to", "you", "me"];
+  const grey = rgb(0.78, 0.75, 0.85);
+  for (const w of words) {
+    page.drawRectangle({
+      x: margin,
+      y: y - 52,
+      width: 510,
+      height: 52,
+      borderColor: C.line,
+      borderWidth: 1,
+      color: C.white,
+    });
+    page.drawText(w, { x: margin + 16, y: y - 34, size: 18, font: fontBold, color: C.purple });
+    page.drawText(w, { x: margin + 100, y: y - 34, size: 18, font: fontBold, color: grey });
+    page.drawText("________________", {
+      x: margin + 220,
+      y: y - 34,
+      size: 14,
+      font,
+      color: C.muted,
+    });
+    y -= 62;
+  }
+  drawTipBox(page, margin, font, fontBold, "Read the word, tap the letters, then write. Praise neat effort over speed.");
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, "Sight Words Writing");
+  return doc.save();
+}
+
+async function buildSrKgMathsAdd() {
+  const { doc, page, font, fontBold, margin, y: y0 } = await startSample(
+    "Maths Add Within 10",
+    "Sr KG · Maths · Addition  ·  Count the pictures, then write the sum.",
+  );
+  let y = y0;
+  const star = await doc.embedPng(loadArt("cut_star.png"));
+  const moon = await doc.embedPng(loadArt("cut_moon.png"));
+  const sums = [
+    [2, 3],
+    [4, 2],
+    [1, 5],
+    [3, 3],
+  ];
+  for (const [a, b] of sums) {
+    page.drawRectangle({
+      x: margin,
+      y: y - 78,
+      width: 510,
+      height: 78,
+      borderColor: C.line,
+      borderWidth: 1,
+      color: C.soft,
+    });
+    for (let i = 0; i < a; i++) {
+      page.drawImage(star, { x: margin + 16 + i * 36, y: y - 62, width: 30, height: 30 });
+    }
+    page.drawText("+", { x: margin + 200, y: y - 42, size: 20, font: fontBold, color: C.purple });
+    for (let i = 0; i < b; i++) {
+      page.drawImage(moon, { x: margin + 230 + i * 36, y: y - 62, width: 30, height: 30 });
+    }
+    page.drawText("= ____", { x: margin + 420, y: y - 42, size: 16, font: fontBold, color: C.text });
+    y -= 90;
+  }
+  drawTipBox(page, margin, font, fontBold, "Use real counters (buttons/coins) if your child needs a hands-on bridge.");
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, "Maths Add Within 10");
+  return doc.save();
+}
+
+async function buildSrKgAnimalsColoring() {
+  const { doc, page, font, fontBold, margin, y: y0 } = await startSample(
+    "Animals Colouring Sheet",
+    "Sr KG · Coloring · Animals  ·  Colour neatly and name each animal aloud.",
+  );
+  let y = y0;
+  const panels = [
+    { art: "cut_lion.png", label: "1. Lion" },
+    { art: "cut_elephant.png", label: "2. Elephant" },
+    { art: "cut_tiger.png", label: "3. Tiger" },
+    { art: "cut_parrot.png", label: "4. Parrot" },
+  ];
+  const positions = [
+    [margin, y - 200],
+    [margin + 255, y - 200],
+    [margin, y - 420],
+    [margin + 255, y - 420],
+  ];
+  for (let i = 0; i < 4; i++) {
+    const [x, by] = positions[i];
+    const img = await doc.embedPng(loadArt(panels[i].art));
+    page.drawRectangle({
+      x,
+      y: by,
+      width: 240,
+      height: 190,
+      borderColor: C.purple,
+      borderWidth: 1.5,
+      color: C.white,
+    });
+    page.drawImage(img, { x: x + 50, y: by + 45, width: 140, height: 140 });
+    page.drawText(panels[i].label, {
+      x: x + 16,
+      y: by + 16,
+      size: 12,
+      font: fontBold,
+      color: C.purple,
+    });
+  }
+  drawTipBox(page, margin, font, fontBold, "Ask: Which animal is biggest? Which can fly? Talk while colouring.");
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, "Animals Colouring Sheet");
+  return doc.save();
+}
+
+async function buildClass1FestivalsWriting() {
+  const { doc, page, font, fontBold, margin, y: y0 } = await startSample(
+    "Festival Writing Prompt",
+    "Class 1 · Writing · Festivals  ·  Finish the sentences about your favourite festival.",
+  );
+  let y = y0;
+  const fest = await doc.embedPng(loadArt("theme-festival.png"));
+  page.drawImage(fest, { x: margin, y: y - 90, width: 90, height: 90 });
+  page.drawText("My favourite festival", {
+    x: margin + 110,
+    y: y - 30,
+    size: 14,
+    font: fontBold,
+    color: C.purple,
+  });
+  y = wrap(
+    page,
+    "Think about lights, food, family, and fun. Write short sentences. Draw a small picture in the box.",
+    font,
+    10,
+    margin + 110,
+    y - 50,
+    380,
+    C.muted,
+  );
+  y -= 70;
+  const prompts = [
+    "1. My favourite festival is ______________________________.",
+    "2. We celebrate with ____________________________________.",
+    "3. I feel _______________________________________________.",
+    "4. One thing I help with is ______________________________.",
+  ];
+  for (const p of prompts) {
+    page.drawText(p, { x: margin, y, size: 12, font, color: C.text });
+    y -= 36;
+  }
+  page.drawRectangle({
+    x: margin,
+    y: y - 100,
+    width: 160,
+    height: 100,
+    borderColor: C.line,
+    borderWidth: 1.2,
+    color: C.white,
+  });
+  page.drawText("Draw here", {
+    x: margin + 40,
+    y: y - 50,
+    size: 11,
+    font,
+    color: C.muted,
+  });
+  drawTipBox(page, margin, font, fontBold, "Accept invented spelling. Celebrate complete thoughts more than perfect spelling.");
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, "Festival Writing Prompt");
+  return doc.save();
+}
+
+async function buildClass2AnimalsReading() {
+  const { doc, page, font, fontBold, margin, y: y0 } = await startSample(
+    "Animals Reading Passage",
+    "Class 2 · Reading · Animals  ·  Read the passage, then answer the questions.",
+  );
+  let y = y0;
+  const animals = await doc.embedPng(loadArt("theme-animals.png"));
+  page.drawImage(animals, { x: margin + 400, y: y - 70, width: 100, height: 100 });
+  y = wrap(
+    page,
+    "Ravi visited the city zoo with his sister. First they saw a tall giraffe eating leaves. Next they watched playful monkeys swing between trees. Near the pond, a quiet tortoise walked slowly on the grass. Ravi wrote three new animal words in his notebook.",
+    font,
+    11,
+    margin,
+    y,
+    380,
+    C.text,
+    16,
+  );
+  y -= 24;
+  y = sectionTitle(page, "Questions", margin, y, fontBold);
+  const qs = [
+    "1. Where did Ravi go? ________________________________",
+    "2. Which animal ate leaves? ___________________________",
+    "3. Name one animal near the pond. ____________________",
+    "4. What did Ravi write in his notebook? _______________",
+  ];
+  for (const q of qs) {
+    page.drawText(q, { x: margin, y, size: 12, font, color: C.text });
+    y -= 32;
+  }
+  drawTipBox(page, margin, font, fontBold, "Read once aloud together, then let your child answer in their own words.");
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, "Animals Reading Passage");
+  return doc.save();
+}
+
+async function buildClass2TransportMaths() {
+  const { doc, page, font, fontBold, margin, y: y0 } = await startSample(
+    "Transport Word Problems",
+    "Class 2 · Maths · Transport  ·  Read each problem and write the answer.",
+  );
+  let y = y0;
+  const bus = await doc.embedPng(loadArt("cut_bus.png"));
+  const train = await doc.embedPng(loadArt("cut_train.png"));
+  const plane = await doc.embedPng(loadArt("cut_plane.png"));
+  const problems = [
+    { img: bus, text: "A bus has 12 children. 5 more get on. How many children now?" },
+    { img: train, text: "A train has 20 seats. 8 seats are empty. How many seats are filled?" },
+    { img: plane, text: "Two planes carry 15 bags each. How many bags in total?" },
+  ];
+  for (const p of problems) {
+    page.drawRectangle({
+      x: margin,
+      y: y - 95,
+      width: 510,
+      height: 95,
+      borderColor: C.line,
+      borderWidth: 1,
+      color: C.soft,
+    });
+    page.drawImage(p.img, { x: margin + 12, y: y - 82, width: 56, height: 56 });
+    wrap(page, p.text, font, 12, margin + 80, y - 30, 300, C.text, 16);
+    page.drawText("Answer: ______", {
+      x: margin + 390,
+      y: y - 55,
+      size: 12,
+      font: fontBold,
+      color: C.purple,
+    });
+    y -= 110;
+  }
+  drawTipBox(page, margin, font, fontBold, "Underline key numbers first. Check answers by drawing quick tallies.");
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, "Transport Word Problems");
+  return doc.save();
+}
+
+async function buildClass2FestivalsWriting() {
+  const { doc, page, font, fontBold, margin, y: y0 } = await startSample(
+    "Festival Story Starter",
+    "Class 2 · Writing · Festivals  ·  Plan your story, then write 5–6 sentences.",
+  );
+  let y = y0;
+  y = sectionTitle(page, "Plan your story", margin, y, fontBold);
+  const plan = ["Who is in the story?", "Where does it happen?", "What special thing happens?"];
+  for (const p of plan) {
+    page.drawText(`${p} ________________________________`, {
+      x: margin,
+      y,
+      size: 12,
+      font,
+      color: C.text,
+    });
+    y -= 28;
+  }
+  y -= 8;
+  y = sectionTitle(page, "Write your story", margin, y, fontBold);
+  for (let i = 0; i < 8; i++) {
+    page.drawLine({
+      start: { x: margin, y: y - i * 22 },
+      end: { x: margin + 510, y: y - i * 22 },
+      thickness: 0.8,
+      color: C.line,
+    });
+  }
+  drawTipBox(page, margin, font, fontBold, "Draft orally first. Then write. Edit for capitals and full stops together.");
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, "Festival Story Starter");
+  return doc.save();
+}
+
+async function buildClass3StoriesReading() {
+  const { doc, page, font, fontBold, margin, y: y0 } = await startSample(
+    "Stories Reading Challenge",
+    "Class 3 · Reading · Stories  ·  Read carefully, then answer in complete sentences.",
+  );
+  let y = y0;
+  y = wrap(
+    page,
+    "Meena found an old library book about monsoon adventures. The hero of the story saved a kitten from a flooded street and shared an umbrella with a neighbour. Meena liked that the hero was brave and kind. She decided to write her own short story about helping during heavy rain.",
+    font,
+    11,
+    margin,
+    y,
+    510,
+    C.text,
+    16,
+  );
+  y -= 20;
+  y = sectionTitle(page, "Comprehension", margin, y, fontBold);
+  const qs = [
+    "1. What kind of book did Meena find?",
+    "2. How did the hero help during the monsoon?",
+    "3. Why did Meena like the hero?",
+    "4. What did Meena decide to write?",
+  ];
+  for (const q of qs) {
+    page.drawText(q, { x: margin, y, size: 12, font: fontBold, color: C.text });
+    y -= 18;
+    page.drawText("_______________________________________________________________", {
+      x: margin,
+      y,
+      size: 11,
+      font,
+      color: C.muted,
+    });
+    y -= 28;
+  }
+  drawTipBox(page, margin, font, fontBold, "Ask for evidence from the text. Full sentences beat one-word answers.");
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, "Stories Reading Challenge");
+  return doc.save();
+}
+
+async function buildClass3MathsWord() {
+  const { doc, page, font, fontBold, margin, y: y0 } = await startSample(
+    "Maths Word Problems",
+    "Class 3 · Maths · Word problems  ·  Show your working in the box, then write the answer.",
+  );
+  let y = y0;
+  const problems = [
+    "A school library has 145 story books. 38 books are borrowed. How many remain?",
+    "Riya saves Rs 25 each week for 4 weeks. How much does she save in total?",
+    "A train travels 60 km in the morning and 45 km in the evening. How far in all?",
+  ];
+  for (let i = 0; i < problems.length; i++) {
+    page.drawText(`Problem ${i + 1}`, { x: margin, y, size: 12, font: fontBold, color: C.purple });
+    y -= 16;
+    y = wrap(page, problems[i], font, 11, margin, y, 510, C.text, 15);
+    y -= 6;
+    page.drawRectangle({
+      x: margin,
+      y: y - 70,
+      width: 510,
+      height: 70,
+      borderColor: C.line,
+      borderWidth: 1,
+      color: C.white,
+    });
+    page.drawText("Working + answer:", {
+      x: margin + 10,
+      y: y - 18,
+      size: 10,
+      font,
+      color: C.muted,
+    });
+    y -= 88;
+  }
+  drawTipBox(page, margin, font, fontBold, "Circle numbers, underline the question, then choose + - x / carefully.");
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, "Maths Word Problems");
+  return doc.save();
+}
+
+async function buildClass3SpaceCreative() {
+  const { doc, page, font, fontBold, margin, y: y0 } = await startSample(
+    "Space Creative Thinking",
+    "Class 3 · Creative thinking · Space  ·  Imagine, plan, and invent.",
+  );
+  let y = y0;
+  const space = await doc.embedPng(loadArt("theme-space.png"));
+  page.drawImage(space, { x: margin + 400, y: y - 80, width: 100, height: 100 });
+  const prompts = [
+    "1. Design a helpful robot for a space station. What job does it do?",
+    "2. List three rules for kids living on the Moon.",
+    "3. Invent a new planet name and describe its weather in two sentences.",
+  ];
+  for (const p of prompts) {
+    page.drawText(p, { x: margin, y, size: 12, font: fontBold, color: C.text });
+    y -= 22;
+    for (let i = 0; i < 3; i++) {
+      page.drawLine({
+        start: { x: margin, y: y - i * 20 },
+        end: { x: margin + 380, y: y - i * 20 },
+        thickness: 0.8,
+        color: C.line,
+      });
+    }
+    y -= 78;
+  }
+  drawTipBox(page, margin, font, fontBold, "Wild ideas welcome. Ask follow-up questions to stretch vocabulary.");
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, "Space Creative Thinking");
+  return doc.save();
+}
+
 const builders = [
   ["class-1-animals-reading-adventure.pdf", buildAnimalsReading],
   ["nursery-festival-coloring-fun.pdf", buildFestivalColoring],
@@ -1188,6 +1912,22 @@ const builders = [
   ["class-3-monsoon-life-skills.pdf", buildMonsoonLifeSkills],
   ["nursery-hindi-swar-tracing.pdf", buildHindiSwarTracing],
   ["class-1-hindi-vyanjan-practice.pdf", buildHindiVyanjanPractice],
+  ["nursery-tracing-lines.pdf", buildNurseryTracingLines],
+  ["nursery-animals-matching.pdf", buildNurseryAnimalsMatching],
+  ["jr-kg-letter-tracing-abc.pdf", buildJrKgLetterTracing],
+  ["jr-kg-numbers-count-ten.pdf", buildJrKgNumbersCount],
+  ["jr-kg-patterns-colours.pdf", buildJrKgPatternsColours],
+  ["sr-kg-cvc-reading-warm.pdf", buildSrKgCvcReading],
+  ["sr-kg-writing-sight-words.pdf", buildSrKgWritingWords],
+  ["sr-kg-maths-add-within-10.pdf", buildSrKgMathsAdd],
+  ["sr-kg-animals-coloring.pdf", buildSrKgAnimalsColoring],
+  ["class-1-festival-writing.pdf", buildClass1FestivalsWriting],
+  ["class-2-animals-reading.pdf", buildClass2AnimalsReading],
+  ["class-2-transport-maths.pdf", buildClass2TransportMaths],
+  ["class-2-festival-writing.pdf", buildClass2FestivalsWriting],
+  ["class-3-stories-reading.pdf", buildClass3StoriesReading],
+  ["class-3-maths-word-problems.pdf", buildClass3MathsWord],
+  ["class-3-space-creative.pdf", buildClass3SpaceCreative],
 ];
 
 mkdirSync(outDir, { recursive: true });
