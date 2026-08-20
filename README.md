@@ -33,9 +33,14 @@ Optional env (also set in `netlify.toml` for production builds):
 ```
 NEXT_PUBLIC_GA_ID=G-N7P5CLP7BW
 NEXT_PUBLIC_INSTAGRAM_URL=https://www.instagram.com/homeworkbuddyapp
+NEXT_PUBLIC_META_PIXEL_ID=YOUR_META_PIXEL_ID
 ```
 
-**Get the app:** Header/nav → `/download` (badge + iPhone waitlist). In-content CTAs (SoftCta, worksheet samples, sheet pages) → Google Play with UTMs via `playStoreUrlWithUtm()`. Legacy `/beta` **301 → `/download`**.
+Set `NEXT_PUBLIC_META_PIXEL_ID` in **Netlify → Site configuration → Environment variables** (do not commit the real ID unless you intend to).
+
+**Get the app:** Header/nav → `/download` (badge + iPhone waitlist). In-content CTAs (SoftCta, worksheet samples, sheet pages) → Google Play with UTMs via `PlayStoreLink` / `playStoreUrlWithUtm()`. Legacy `/beta` **301 → `/download`**.
+
+**Play click tracking:** every Play CTA fires GA4 `play_store_click` and Meta Pixel custom event `PlayStoreClick`.
 
 **Play UTMs** (for GA / Play Console attribution):
 
@@ -46,7 +51,9 @@ NEXT_PUBLIC_INSTAGRAM_URL=https://www.instagram.com/homeworkbuddyapp
 | `worksheets_samples` | `/worksheets` sample strip |
 | `worksheet_detail` | Sheet page “Generate more in the app” |
 
-After deploy: GA4 → mark outbound Play clicks as a key event / explore by `utm_content`.
+After deploy: GA4 → mark `play_store_click` as a key event. Meta Events Manager → verify `PlayStoreClick`.
+
+**Ads ops:** see [`docs/ads/`](docs/ads/) (metrics audit, Play Store destination test, Hindi creative brief).
 
 Instagram is **`@homeworkbuddyapp`** — footer + Organization `sameAs`. Post 2–3×/week using worksheet preview PNGs under `public/worksheets/previews/`.
 

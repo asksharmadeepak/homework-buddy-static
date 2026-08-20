@@ -3,8 +3,9 @@ import Link from "next/link";
 import { SoftCta } from "@/components/SoftCta";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { IphoneWaitlistForm } from "@/components/IphoneWaitlistForm";
+import { PlayStoreBadge } from "@/components/PlayStoreLink";
 import { buildMetadata } from "@/lib/seo";
-import { playStoreUrlWithUtm, site } from "@/lib/site";
+import { site } from "@/lib/site";
 
 export const metadata = buildMetadata({
   title: "Download Homework Buddy — free printable worksheets for kids",
@@ -14,8 +15,6 @@ export const metadata = buildMetadata({
 });
 
 export default function DownloadPage() {
-  const playUrl = playStoreUrlWithUtm("download_hero");
-
   return (
     <div className="mx-auto max-w-3xl px-4 py-10">
       <Breadcrumbs
@@ -34,24 +33,12 @@ export default function DownloadPage() {
         />
         <h1 className="mt-6 text-4xl font-black text-[#24212C]">Get Homework Buddy</h1>
         <p className="mt-4 text-lg font-semibold text-[#7D7788]">
-          Printable worksheets for Nursery to Class 3 — now on Google Play. Version {site.version}.
+          Kids create their own printable homework — Nursery to Class 3. Free on Google Play.
         </p>
-        <a
-          href={playUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-8 inline-block"
-          aria-label="Get it on Google Play"
-        >
-          <Image
-            src="/brand/google-play-badge.png"
-            alt="Get it on Google Play"
-            width={215}
-            height={83}
-            className="mx-auto h-auto w-[215px]"
-            priority
-          />
-        </a>
+        <PlayStoreBadge content="download_hero" className="mt-8 inline-block" priority />
+        <p className="mt-3 text-sm font-bold text-[#7B5CD6]">
+          Tap to install · Reading, Maths, Hindi Fun &amp; more
+        </p>
         <p className="mt-4 text-sm font-semibold text-[#7D7788]">
           Prefer iPhone? Join the waitlist below.
         </p>
@@ -67,6 +54,7 @@ export default function DownloadPage() {
             />
           ))}
         </div>
+        <p className="mt-4 text-xs font-semibold text-[#9A94A6]">Version {site.version}</p>
       </div>
 
       <div className="mt-12">

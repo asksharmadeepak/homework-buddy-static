@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SoftCta } from "@/components/SoftCta";
+import { PlayStoreLink } from "@/components/PlayStoreLink";
 import { buildMetadata } from "@/lib/seo";
-import { playStoreUrlWithUtm } from "@/lib/site";
 
 export const metadata = buildMetadata({
   title: "Get Homework Buddy — Android on Google Play",
@@ -22,14 +22,12 @@ export default function BetaPage() {
         on our download page.
       </p>
       <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-        <a
-          href={playStoreUrlWithUtm("beta_legacy")}
-          target="_blank"
-          rel="noopener noreferrer"
+        <PlayStoreLink
+          content="beta_legacy"
           className="rounded-full bg-[#7B5CD6] px-8 py-4 text-base font-extrabold text-white"
         >
           Get the app on Google Play
-        </a>
+        </PlayStoreLink>
         <Link
           href="/download"
           className="rounded-full border-2 border-[#7B5CD6] px-8 py-4 text-base font-extrabold text-[#7B5CD6]"

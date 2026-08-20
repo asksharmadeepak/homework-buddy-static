@@ -15,6 +15,8 @@
   NEXT_TELEMETRY_DISABLED = "1"
   NEXT_PUBLIC_GA_ID = "G-N7P5CLP7BW"
   NEXT_PUBLIC_INSTAGRAM_URL = "https://www.instagram.com/homeworkbuddyapp"
+  # Meta Pixel ID from Events Manager → set in Netlify UI if you prefer not to commit it:
+  # NEXT_PUBLIC_META_PIXEL_ID = "YOUR_PIXEL_ID"
   # Cap parallelism if Netlify memory is tight on larger rebuilds
   NODE_OPTIONS = "--max-old-space-size=4096"
 
