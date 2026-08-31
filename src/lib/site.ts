@@ -58,5 +58,6 @@ export const navFooter = {
     { href: "/privacy", label: "Privacy" },
     { href: "/terms", label: "Terms" },
     { href: "/contact", label: "Contact" },
+    { href: "/sitemap", label: "Site map" },
   ],
 } as const;

@@ -4,7 +4,7 @@ import { FaqSection } from "@/components/FaqSection";
 import { SoftCta } from "@/components/SoftCta";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { articleJsonLd, buildMetadata, jsonLdScript } from "@/lib/seo";
-import { getGuide, guides, publishedOnly } from "@/lib/taxonomy";
+import { getGuide, guideRelatedPrintables, guides, publishedOnly } from "@/lib/taxonomy";
 import { site } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -70,6 +70,20 @@ export default async function GuidePage({ params }: Props) {
           </section>
         ))}
       </div>
+      {guideRelatedPrintables[slug] ? (
+        <section className="mt-10 rounded-2xl border border-[#ebe4f7] bg-[#F7F4FC] p-6">
+          <h2 className="text-xl font-black text-[#24212C]">Related free printables</h2>
+          <ul className="mt-4 space-y-2">
+            {guideRelatedPrintables[slug].map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="text-sm font-bold text-[#7B5CD6] hover:underline">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
       <SoftCta />
       <FaqSection faqs={g.faqs} />
       <p className="mt-8 text-sm font-semibold">

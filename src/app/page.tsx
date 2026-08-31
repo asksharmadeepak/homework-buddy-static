@@ -2,12 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaqSection } from "@/components/FaqSection";
 import { HubCard } from "@/components/HubCard";
+import { ClassHubWorksheetGrid } from "@/components/ClassHubWorksheetGrid";
 import { SoftCta } from "@/components/SoftCta";
 import { buildMetadata, faqJsonLd, jsonLdScript } from "@/lib/seo";
 import { site } from "@/lib/site";
 import {
   activities,
   classes,
+  crossHubs,
+  getPopularWorksheets,
   guides,
   publishedOnly,
   themes,
@@ -44,6 +47,10 @@ export default function HomePage() {
   const themeList = publishedOnly(themes).slice(0, 6);
   const guideList = publishedOnly(guides);
   const toolList = publishedOnly(tools);
+  const popularSheets = getPopularWorksheets();
+  const curatedHubs = publishedOnly(crossHubs).filter((h) =>
+    ["preschool-worksheets", "kindergarten-worksheets"].includes(h.slug),
+  );
 
   return (
     <div>
@@ -107,6 +114,37 @@ export default function HomePage() {
                 description={c.description}
                 icon={c.icon}
               />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-14">
+        <h2 className="text-3xl font-black text-[#24212C]">Popular free downloads</h2>
+        <p className="mt-3 max-w-3xl font-semibold text-[#7D7788]">
+          Preview and print real sample worksheets — the same style Homework Buddy generates in the app.
+        </p>
+        <div className="mt-8">
+          <ClassHubWorksheetGrid sheets={popularSheets} className="Free sample" />
+        </div>
+      </section>
+
+      <section className="bg-[#FFF5F0] py-14">
+        <div className="mx-auto max-w-6xl px-4">
+          <h2 className="text-3xl font-black text-[#24212C]">Curated worksheet hubs</h2>
+          <p className="mt-3 max-w-3xl font-semibold text-[#7D7788]">
+            Preschool and kindergarten collections for parents who search by age band, not class name alone.
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {curatedHubs.map((h) => (
+              <Link
+                key={h.slug}
+                href={`/worksheets/${h.slug}`}
+                className="rounded-3xl border border-[#ebe4f7] bg-white p-6 hover:border-[#E85D75]/40"
+              >
+                <h3 className="text-xl font-black text-[#24212C]">{h.name}</h3>
+                <p className="mt-2 text-sm font-semibold text-[#7D7788]">{h.description}</p>
+              </Link>
             ))}
           </div>
         </div>

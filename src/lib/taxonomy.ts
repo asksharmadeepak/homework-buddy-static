@@ -1996,30 +1996,120 @@ export function getWorksheet(classSlug: string, slug: string) {
   return worksheetSeeds.find((w) => w.classSlug === classSlug && w.slug === slug);
 }
 
-export function allPublishedPaths(): string[] {
-  const paths = [
-    "/",
-    "/features",
-    "/download",
-    "/faq",
-    "/about",
-    "/privacy",
-    "/terms",
-    "/contact",
-    "/worksheets",
-    "/activities",
-    "/themes",
-    "/guides",
-    "/tools",
-  ];
-  for (const c of publishedOnly(classes)) paths.push(`/worksheets/${c.slug}`);
-  for (const h of publishedOnly(crossHubs)) paths.push(`/worksheets/${h.slug}`);
-  for (const a of publishedOnly(activities)) paths.push(`/activities/${a.slug}`);
-  for (const t of publishedOnly(themes)) paths.push(`/themes/${t.slug}`);
-  for (const g of publishedOnly(guides)) paths.push(`/guides/${g.slug}`);
-  for (const t of publishedOnly(tools)) paths.push(`/tools/${t.slug}`);
-  for (const w of publishedOnly(worksheetSeeds)) {
-    paths.push(`/worksheets/${w.classSlug}/${w.slug}`);
+/** Preschool + KG class slugs for cross-hub filtering */
+const PRESCHOOL_CLASS_SLUGS = ["nursery", "jr-kg", "sr-kg"] as const;
+const KINDERGARTEN_CLASS_SLUGS = ["jr-kg", "sr-kg"] as const;
+
+/** High-intent samples linked from homepage for crawl discovery */
+export const popularWorksheetSlugs: { classSlug: string; slug: string }[] = [
+  { classSlug: "nursery", slug: "tracing-lines" },
+  { classSlug: "nursery", slug: "hindi-swar-tracing" },
+  { classSlug: "nursery", slug: "festival-coloring-fun" },
+  { classSlug: "jr-kg", slug: "letter-tracing-abc" },
+  { classSlug: "sr-kg", slug: "cvc-reading-warm" },
+  { classSlug: "class-1", slug: "animals-reading-adventure" },
+  { classSlug: "class-1", slug: "hindi-vyanjan-practice" },
+  { classSlug: "class-2", slug: "animals-reading" },
+];
+
+/** Related printable links on select guide pages */
+export const guideRelatedPrintables: Record<
+  string,
+  { label: string; href: string }[]
+> = {
+  "printable-worksheets-guide": [
+    { label: "Nursery worksheets hub", href: "/worksheets/nursery" },
+    { label: "Preschool worksheets collection", href: "/worksheets/preschool-worksheets" },
+    { label: "Nursery tracing lines (free PDF)", href: "/worksheets/nursery/tracing-lines" },
+    { label: "Class 1 animals reading sample", href: "/worksheets/class-1/animals-reading-adventure" },
+  ],
+  "class-1-reading-at-home": [
+    { label: "Class 1 reading worksheets hub", href: "/worksheets/class-1-reading" },
+    { label: "Class 1 worksheets by class", href: "/worksheets/class-1" },
+    { label: "Animals reading adventure PDF", href: "/worksheets/class-1/animals-reading-adventure" },
+    { label: "Reading Fun activity hub", href: "/activities/reading" },
+  ],
+};
+
+export function filterCrossHubSheets(hub: CrossHub): WorksheetSeed[] {
+  const published = publishedOnly(worksheetSeeds);
+  if (hub.slug === "preschool-worksheets") {
+    return published.filter((w) =>
+      (PRESCHOOL_CLASS_SLUGS as readonly string[]).includes(w.classSlug),
+    );
   }
-  return paths;
+  if (hub.slug === "kindergarten-worksheets") {
+    return published.filter((w) =>
+      (KINDERGARTEN_CLASS_SLUGS as readonly string[]).includes(w.classSlug),
+    );
+  }
+  return published.filter((w) => {
+    if (hub.classSlug && w.classSlug !== hub.classSlug) return false;
+    if (hub.activitySlug && w.activitySlug !== hub.activitySlug) return false;
+    return true;
+  });
+}
+
+export function getPopularWorksheets(): WorksheetSeed[] {
+  return popularWorksheetSlugs
+    .map(({ classSlug, slug }) => getWorksheet(classSlug, slug))
+    .filter((w): w is WorksheetSeed => Boolean(w && w.status === "published"));
+}
+
+const SITE_LAUNCH = "2026-07-01";
+const HUB_CONTENT_UPDATE = "2026-08-20";
+const WORKSHEET_BATCH_UPDATE = "2026-08-20";
+
+export type SitemapEntry = { path: string; lastModified: string };
+
+export function allPublishedSitemapEntries(): SitemapEntry[] {
+  const staticPages: { path: string; lastModified: string }[] = [
+    { path: "/", lastModified: HUB_CONTENT_UPDATE },
+    { path: "/features", lastModified: SITE_LAUNCH },
+    { path: "/download", lastModified: HUB_CONTENT_UPDATE },
+    { path: "/faq", lastModified: SITE_LAUNCH },
+    { path: "/about", lastModified: SITE_LAUNCH },
+    { path: "/privacy", lastModified: SITE_LAUNCH },
+    { path: "/terms", lastModified: SITE_LAUNCH },
+    { path: "/contact", lastModified: SITE_LAUNCH },
+    { path: "/worksheets", lastModified: WORKSHEET_BATCH_UPDATE },
+    { path: "/activities", lastModified: SITE_LAUNCH },
+    { path: "/themes", lastModified: SITE_LAUNCH },
+    { path: "/guides", lastModified: SITE_LAUNCH },
+    { path: "/tools", lastModified: SITE_LAUNCH },
+    { path: "/sitemap", lastModified: WORKSHEET_BATCH_UPDATE },
+  ];
+
+  const entries: SitemapEntry[] = [...staticPages];
+
+  for (const c of publishedOnly(classes)) {
+    entries.push({ path: `/worksheets/${c.slug}`, lastModified: WORKSHEET_BATCH_UPDATE });
+  }
+  for (const h of publishedOnly(crossHubs)) {
+    entries.push({ path: `/worksheets/${h.slug}`, lastModified: WORKSHEET_BATCH_UPDATE });
+  }
+  for (const a of publishedOnly(activities)) {
+    entries.push({ path: `/activities/${a.slug}`, lastModified: SITE_LAUNCH });
+  }
+  for (const t of publishedOnly(themes)) {
+    entries.push({ path: `/themes/${t.slug}`, lastModified: SITE_LAUNCH });
+  }
+  for (const g of publishedOnly(guides)) {
+    entries.push({ path: `/guides/${g.slug}`, lastModified: g.dateModified });
+  }
+  for (const t of publishedOnly(tools)) {
+    entries.push({ path: `/tools/${t.slug}`, lastModified: SITE_LAUNCH });
+  }
+  for (const w of publishedOnly(worksheetSeeds)) {
+    entries.push({
+      path: `/worksheets/${w.classSlug}/${w.slug}`,
+      lastModified: WORKSHEET_BATCH_UPDATE,
+    });
+  }
+
+  return entries;
+}
+
+export function allPublishedPaths(): string[] {
+  return allPublishedSitemapEntries().map((e) => e.path);
 }

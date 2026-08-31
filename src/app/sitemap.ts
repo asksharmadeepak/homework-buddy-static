@@ -1,14 +1,13 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
-import { allPublishedPaths } from "@/lib/taxonomy";
+import { allPublishedSitemapEntries } from "@/lib/taxonomy";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-  return allPublishedPaths().map((path) => ({
+  return allPublishedSitemapEntries().map(({ path, lastModified }) => ({
     url: path === "/" ? site.url : `${site.url}${path}`,
-    lastModified: now,
+    lastModified: new Date(lastModified),
     changeFrequency: path === "/" ? "weekly" : "monthly",
     priority: path === "/" ? 1 : path.split("/").length <= 2 ? 0.8 : 0.6,
   }));
