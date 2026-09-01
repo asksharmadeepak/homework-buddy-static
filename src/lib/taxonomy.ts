@@ -1,3 +1,6 @@
+import { worksheetGuideExtras } from "./worksheet-guides";
+import { toolSectionExtras } from "./tool-sections";
+
 export type FaqItem = { question: string; answer: string };
 
 export type HubEntity = {
@@ -48,6 +51,7 @@ export type ToolEntity = {
   intro: string[];
   howTo: string[];
   faqs: FaqItem[];
+  sections?: { heading: string; paragraphs: string[] }[];
 };
 
 export type WorksheetSeed = {
@@ -66,15 +70,12 @@ export type WorksheetSeed = {
   /** Descriptive alt for the preview (include query language when relevant) */
   previewImageAlt?: string;
   intro: string[];
+  /** Sheet-specific steps; merged with guide extras when present */
+  howTo?: string[];
+  /** Scannable list of what the PDF contains */
+  sheetContents?: string[];
   faqs: FaqItem[];
 };
-
-const sharedParentTips = [
-  "Keep sessions short — 10 to 20 minutes works better than long drills for young children.",
-  "Print on plain A4 paper and use a calm corner of the home with good light.",
-  "Celebrate effort, not speed. Praise when your child tries a new word, sum, or drawing.",
-  "You can also generate fresh printable worksheets instantly with the Homework Buddy Android app.",
-];
 
 export const classes: HubEntity[] = [
   {
@@ -208,20 +209,53 @@ export const classes: HubEntity[] = [
     icon: "/classes/sr_kg.png",
     status: "published",
     intro: [
-      "Sr KG prepares children for Class 1 without copying Class 1 pressure. Printable worksheets should stretch attention gently: short stories, CVC words, number bonds, and neat writing practice.",
-      "Parents searching for kindergarten worksheets often want PDFs they can print tonight. Keep a small folder of favourites by theme so you are never starting from zero after a long workday.",
-      ...sharedParentTips,
+      "Senior KG (Sr KG) is the bridge year — your child is not quite in Class 1 yet, but schools already expect letter sounds, counting confidence, and the patience to sit with a page for 15 minutes. Parents searching for sr kg worksheets or senior kg homework in India often want printable PDFs that feel purposeful without turning the evening into tuition.",
+      "Sr KG children (roughly 5–6) can usually blend CVC words, write a few sight words, add within 10, and follow a short story with questions. The best Sr KG printable worksheets keep lines large enough for still-developing hands and instructions short enough that a tired parent can start without a lecture.",
+      "In many Indian cities, Sr KG overlaps with UKG or Prep-II labels. Ignore the brand name and match difficulty to your child: if reading is strong but writing tires quickly, alternate nights — reading one evening, writing the next — instead of cramming both onto one sheet.",
+      "A practical Sr KG week after a long commute might look like: Monday CVC or picture reading, Wednesday addition with pictures, Friday sight-word tracing, and the other nights reserved for school notebook work or free play. One printable plus five minutes of oral practice (counting stairs, naming five animals) often beats two rushed pages.",
+      "Theme-based Sr KG homework keeps motivation high. Animals for reading, space for maths, festivals for writing — familiar pictures reduce anxiety when a new skill appears. Pair every sheet with conversation: “Which word rhymes with cat?” or “How many mangoes if we add two more?”",
+      "Print on A4, preview on your phone before wasting ink, and sit nearby for the first two minutes. Sr KG is when children start comparing themselves to classmates — praise effort and neat tries, not speed. Backwards letters and number reversals are still common; model calmly and revisit tomorrow.",
+      "When your folder of favourites feels stale, generate a fresh Sr KG printable in the Homework Buddy Android app — CVC reading, sight words, addition within 10, or animal colouring in the same calm style as the free samples on this site.",
+      "Sr KG tip for busy Indian evenings: keep a “Tuesday reading” and “Thursday maths” rhythm so you are not deciding from scratch at 8 p.m. after dinner and WhatsApp. A happy half-finished page today beats a tearful full page tomorrow.",
     ],
     howTo: [
-      "Alternate reading and maths nights to avoid fatigue.",
-      "Use colouring or creative thinking as a cool-down after writing.",
-      "Ask your child to explain one answer aloud — it builds comprehension.",
+      "Alternate reading and maths nights — avoid stacking both on one tired evening.",
+      "Print one Sr KG sheet and preview difficulty on screen before your child sits down.",
+      "Start with oral warm-up: blend three CVC words or count objects on the table.",
+      "Use colouring or a creative prompt as cool-down after writing-heavy sheets.",
+      "Ask your child to explain one answer aloud — it builds comprehension without extra writing.",
+      "Generate a fresh Sr KG sheet in Homework Buddy when themes feel repetitive.",
     ],
     faqs: [
       {
-        question: "Are Sr KG printable worksheets enough for school readiness?",
+        question: "Are Sr KG printable worksheets enough for Class 1 readiness?",
         answer:
-          "They help when paired with conversation, play, and consistent routines. Worksheets alone are not a full readiness plan.",
+          "They help when paired with conversation, play, and consistent routines. Worksheets support readiness but do not replace sleep, outdoor time, or teacher guidance.",
+      },
+      {
+        question: "What should Sr KG homework include?",
+        answer:
+          "Short reading (CVC or picture words), sight-word writing, addition within 10, and occasional colouring or life-skills talk — about 15 minutes per session.",
+      },
+      {
+        question: "How is Sr KG different from Jr KG worksheets?",
+        answer:
+          "Sr KG sheets introduce blending, sight words, and written sums. Jr KG focuses more on letter recognition, tracing, and counting with larger visuals.",
+      },
+      {
+        question: "Are Sr KG and UKG worksheets the same?",
+        answer:
+          "Often similar in age band across Indian schools. Match the sheet to your child’s pencil control and attention, not only the school label.",
+      },
+      {
+        question: "Where can I download free Sr KG worksheets?",
+        answer:
+          "Start with the free Sr KG samples on this site (CVC reading, sight words, addition within 10), browse related activities, then generate more in the Homework Buddy app on Google Play.",
+      },
+      {
+        question: "My Sr KG child refuses to write after school. What helps?",
+        answer:
+          "Switch to oral reading or counting for a few days. Offer choice of theme, shorten the task, and never use worksheets as punishment after a hard school day.",
       },
     ],
     relatedActivitySlugs: ["reading", "writing", "maths"],
@@ -239,7 +273,8 @@ export const classes: HubEntity[] = [
       "Class 1 is where many families first feel “real homework.” The goal is calm practice, not completing five sheets a night. Class 1 worksheets should reinforce school topics with clear language and familiar themes.",
       "This hub focuses on printable Class 1 worksheets for reading comprehension, neat handwriting, addition/subtraction basics, and creative thinking prompts parents can finish in one sitting.",
       "If evenings are packed, choose one activity type per day. Consistency beats volume for Class 1 learners.",
-      ...sharedParentTips,
+      "After a long school day and maybe tuition, Class 1 children in India often arrive home hungry and restless. A 15-minute printable — one animals reading passage or a transport maths sheet — fits better than opening the entire notebook again at 9 p.m.",
+      "School labels and pace differ: some Class 1 children are still mastering three-letter words while others write full sentences. Match the worksheet to today’s energy, not to what the neighbour’s child finished. Preview PDFs on your phone before printing so difficulty feels honest.",
     ],
     howTo: [
       "Match the sheet to today’s school topic when possible.",
@@ -263,6 +298,21 @@ export const classes: HubEntity[] = [
         answer:
           "Number sense, addition within 20, subtraction stories, and simple word problems with pictures.",
       },
+      {
+        question: "Should Class 1 homework include Hindi and English on the same night?",
+        answer:
+          "Usually one language focus per evening works better. Follow the school’s priority for the week and keep the second language session shorter if energy is low.",
+      },
+      {
+        question: "My Class 1 child copies answers from the picture. Is that okay?",
+        answer:
+          "Pictures help early readers — that is normal. Gradually ask them to point to each word and sound it out before answering. Easier passages for a few days rebuild honest decoding.",
+      },
+      {
+        question: "How do I balance school notebook homework with printable worksheets?",
+        answer:
+          "Finish school work first. Add one optional printable only on lighter evenings or when the teacher suggests extra practice. Never double the load on busy days.",
+      },
     ],
     relatedActivitySlugs: ["reading", "writing", "maths", "creative-thinking", "hindi"],
     relatedThemeSlugs: ["animals", "festivals", "stories", "hindi-varnamala"],
@@ -276,20 +326,53 @@ export const classes: HubEntity[] = [
     icon: "/classes/class2.png",
     status: "published",
     intro: [
-      "Class 2 learners can handle slightly richer passages and multi-step maths — still with warmth and clarity. Printable Class 2 worksheets should invite thinking, not copying.",
-      "Parents looking for easy homework for Class 2 often need reading comprehension, grammar practice, multiplication readiness, and life-skills scenarios that feel relevant.",
-      ...sharedParentTips,
+      "Class 2 learners can handle slightly richer passages and multi-step maths — still with warmth and clarity. Printable Class 2 worksheets should invite thinking, not copying from the board or a neighbour’s notebook.",
+      "Parents looking for easy homework for Class 2 often need reading comprehension, grammar practice, multiplication readiness, and life-skills scenarios that feel relevant to Indian daily life — school runs, festivals, helping at home.",
+      "Class 2 is when many children start comparing marks and speed. Keep home practice finishable in about 20 minutes. One focused sheet beats three rushed ones after tuition and dinner.",
+      "A calm Class 2 evening might look like: snack, one reading passage or maths sheet, two minutes of oral retell, then free play. Alternate heavy writing nights with lighter reading or colouring so hands and mood recover.",
+      "School pace varies — some Class 2 children are still consolidating addition while others tackle early multiplication. Preview worksheets on screen before printing. Transport word problems or animal passages work well when vocabulary stays familiar.",
+      "Theme-based Class 2 printables connect abstract skills to stories children care about: a zoo passage for comprehension, buses and trains for word problems, festival writing for creative sentences. Talk through one question aloud before your child writes — it reduces blank-page anxiety.",
+      "If your child attends tuition, treat optional printables as light enrichment on free evenings only. Protect sleep on exam weeks; revision with the teacher’s notes matters more than an extra PDF from a random website.",
+      "When favourites feel stale, generate a fresh Class 2 printable in the Homework Buddy Android app — reading, maths, or creative prompts in the same calm layout as the free animals reading sample on this site.",
     ],
     howTo: [
-      "Start with a short reading or warm-up question.",
-      "Keep maths sheets mixed: fluency plus one word problem.",
-      "End with a creative or colouring cool-down when energy dips.",
+      "Start with a short reading warm-up or one oral maths fact before opening the worksheet.",
+      "Keep maths sheets mixed: fluency practice plus one word problem — not a full page of identical sums.",
+      "End with a creative or colouring cool-down when energy dips after school or tuition.",
+      "Ask your child to retell the passage in their own words before writing answers.",
+      "Underline evidence in the text for one comprehension question — it builds good habits gently.",
+      "Save completed sheets in a folder so your child sees progress across the term.",
     ],
     faqs: [
       {
         question: "What makes a good Class 2 printable worksheet?",
         answer:
           "Clear instructions, age-fit vocabulary, and a mix of recall plus light reasoning — finished in about 20 minutes.",
+      },
+      {
+        question: "How much Class 2 homework should parents add at home?",
+        answer:
+          "One optional printable on three to four evenings a week is plenty for many families, plus school work. Skip extras during heavy exam or project weeks.",
+      },
+      {
+        question: "What Class 2 reading worksheets help comprehension most?",
+        answer:
+          "Short paragraphs with four to six questions — mix of who/what/where and one gentle “why” question. Animals, nature, and school stories work well.",
+      },
+      {
+        question: "Should Class 2 children write full-sentence answers?",
+        answer:
+          "Many schools expect it by mid-year. Start with one full sentence per answer; accept shorter phrases if writing fatigue shows up.",
+      },
+      {
+        question: "Where can I find free Class 2 worksheet PDFs?",
+        answer:
+          "Download the free Class 2 animals reading sample on this site, browse maths and writing activities, then generate more themed PDFs in the Homework Buddy app.",
+      },
+      {
+        question: "My Class 2 child rushes and makes careless mistakes. What helps?",
+        answer:
+          "Time-box calmly (“ten more minutes”), check two answers together, and praise slowing down on one problem. Careless errors often drop when pressure drops.",
       },
     ],
     relatedActivitySlugs: ["reading", "maths", "life-skills"],
@@ -304,20 +387,53 @@ export const classes: HubEntity[] = [
     icon: "/classes/class3.png",
     status: "published",
     intro: [
-      "Class 3 worksheets can introduce longer reading, structured writing, and stronger maths without turning home into a coaching centre. Choose printables that explain why, not only what.",
-      "Indian parents often search for Class 3 worksheet PDFs they can print after office hours. Keep a weekly plan: reading, maths, writing, and one creative or life-skills sheet.",
-      ...sharedParentTips,
+      "Class 3 worksheets can introduce longer reading, structured writing, and stronger maths without turning home into a coaching centre. Choose printables that explain why, not only what — children this age ask “but why?” and good sheets welcome that curiosity.",
+      "Indian parents often search for Class 3 worksheet PDFs they can print after office hours. Keep a weekly plan: reading, maths, writing, and one creative or life-skills sheet — four short sessions instead of daily overload.",
+      "Class 3 learners (roughly 8–9) can handle multi-step word problems, paragraph answers, and longer stories if language stays clear. Avoid dense pages copied from competitive exam books; school confidence matters more than premature drill.",
+      "After tuition, sports, or a long bus ride, many Class 3 children need a snack and ten minutes of downtime before homework. A 20-minute printable — one story passage or three word problems with working space — fits real evenings better than an hour at the dining table.",
+      "Theme-based Class 3 practice keeps abstract skills grounded: monsoon scenarios for life skills, transport for maths, story adventures for comprehension. Discuss one answer aloud before writing — it clarifies thinking without doing the work for them.",
+      "Exam seasons test family patience. Use printables for light revision on non-exam nights; on heavy school days, protect sleep and mood. Worksheets support school notes — they do not replace teacher explanations or textbook examples.",
+      "Preview PDFs before printing. Class 3 children notice when a sheet is too easy (boredom) or too hard (shutdown). Match difficulty to this week’s school topic when you can — fractions after fractions week, not random advanced topics.",
+      "When you need a fresh Class 3 printable tonight, generate one in the Homework Buddy Android app — stories reading, word problems, or space creative thinking in the same readable layout as the free samples linked from this hub.",
     ],
     howTo: [
-      "Plan four short sessions weekly instead of daily overload.",
-      "Use themes to connect school topics with curiosity.",
-      "Discuss one mistake kindly — learning lives in revision.",
+      "Plan four short sessions weekly instead of stacking worksheets every night.",
+      "Use themes to connect school topics with curiosity — monsoon, stories, professions.",
+      "Discuss one mistake kindly after checking; learning lives in revision, not in perfect first tries.",
+      "Require working space on maths sheets — circle numbers and underline the question first.",
+      "Ask for evidence from the passage when answering comprehension in full sentences.",
+      "Rotate creative or life-skills sheets after heavier academic nights to balance the week.",
     ],
     faqs: [
       {
         question: "Are printable Class 3 worksheets enough for exams?",
         answer:
-          "They support practice and confidence. Pair them with school notes and teacher guidance for exam preparation.",
+          "They support practice and confidence. Pair them with school notes, teacher guidance, and revision of notebook mistakes — not endless random PDFs.",
+      },
+      {
+        question: "How long should Class 3 homework take at home?",
+        answer:
+          "About 20–25 minutes of focused optional practice is enough for many children, plus school-assigned work. Stop earlier if frustration rises.",
+      },
+      {
+        question: "What Class 3 maths worksheets help most?",
+        answer:
+          "Word problems with working space, multiplication/division fluency, and one reasoning question per sheet — not pages of identical drills.",
+      },
+      {
+        question: "Should Class 3 reading answers be copied from the text?",
+        answer:
+          "Use the passage for facts, but encourage rephrasing in your child’s own words when possible. That builds comprehension beyond keyword hunting.",
+      },
+      {
+        question: "Where can I get free Class 3 worksheet PDFs?",
+        answer:
+          "Try the free Class 3 samples on this site (stories reading, maths word problems, monsoon life skills), then generate more in the Homework Buddy app on Google Play.",
+      },
+      {
+        question: "My Class 3 child has tuition and school homework already. Should I add printables?",
+        answer:
+          "Only on lighter evenings or when the teacher suggests extra practice. Never double the load — mood and sleep are part of learning.",
       },
     ],
     relatedActivitySlugs: ["reading", "writing", "maths", "creative-thinking"],
@@ -338,7 +454,9 @@ export const activities: HubEntity[] = [
       "Reading worksheets help children move from pictures to print with confidence. For younger kids, that means naming, matching, and listening; for Class 1–3, short passages with clear questions.",
       "Parents searching for reading worksheets want printables that do not require a tutor script. Keep passages short, vocabulary familiar, and questions concrete.",
       "Theme-based reading — jungle animals, festivals, monsoon — makes comprehension feel like a story night instead of a test.",
-      ...sharedParentTips,
+      "On Indian school nights, reading practice often competes with Hindi homework, maths, and notebook copying. A single 15-minute reading sheet — read aloud once, answer three questions — fits better than a chapter meant for older children.",
+      "Nursery and KG reading worksheets should stay oral and visual: picture talk, matching words to images, listening to a short line you read. Class 1–2 need short sentences; Class 3 can handle a paragraph if questions stay focused.",
+      "Preview every PDF before printing. If your child guesses from pictures alone, slow down — point under each word, praise sounding out, and choose an easier passage for a few days to rebuild confidence.",
     ],
     howTo: [
       "Read the passage aloud together the first time.",
@@ -356,6 +474,21 @@ export const activities: HubEntity[] = [
         answer:
           "Yes when you pause on new words, use them in a sentence, and revisit them the next day.",
       },
+      {
+        question: "Should my child read silently or aloud during worksheet time?",
+        answer:
+          "Aloud is better for Class 1–2 most evenings — you hear miscues early. Class 3 can try silent reading first, then discuss answers together.",
+      },
+      {
+        question: "How long should a reading worksheet session take?",
+        answer:
+          "About 15–20 minutes including one read-through and questions. Stop while energy is still good.",
+      },
+      {
+        question: "Where can I get free reading worksheet PDFs for Indian primary classes?",
+        answer:
+          "Download free samples on this site (Class 1 animals adventure, Class 2 zoo passage, Sr KG CVC warm-up), then generate themed reading PDFs in the Homework Buddy app.",
+      },
     ],
     relatedClassSlugs: ["nursery", "jr-kg", "sr-kg", "class-1", "class-2", "class-3"],
     relatedThemeSlugs: ["animals", "stories", "festivals"],
@@ -370,8 +503,11 @@ export const activities: HubEntity[] = [
     status: "published",
     intro: [
       "Writing practice works best in small doses with clear models. Printable writing worksheets should show letter formation, then move to words and sentences at the right class level.",
-      "Avoid sheets that cram too many lines. Tired hands produce messy writing and frustrated evenings.",
-      ...sharedParentTips,
+      "Avoid sheets that cram too many lines. Tired hands produce messy writing and frustrated evenings — common after a full school day in Indian cities.",
+      "Jr KG and Sr KG writing should stay large-line tracing and short word lists. Class 1–2 move to sentences and festival prompts; Class 3 can try short paragraphs with planning space.",
+      "Theme prompts help reluctant writers: “My favourite animal,” “What we do on Diwali,” “A rainy day story.” Familiar pictures reduce blank-page staring at 8 p.m.",
+      "Many parents worry about backwards letters or messy spacing. At KG and early Class 1, model calmly and praise one neat line — harsh correction kills willingness faster than bad formation.",
+      "Alternate pencil nights with oral storytelling or labelling drawings so writing homework does not feel like punishment. One finished sentence with a clear idea beats a full page of rushed loops.",
     ],
     howTo: [
       "Warm up with two minutes of air writing or tracing.",
@@ -383,6 +519,26 @@ export const activities: HubEntity[] = [
         question: "My child hates writing worksheets. What should I do?",
         answer:
           "Shorten the task, add a theme they love, and alternate with colouring or reading on some nights.",
+      },
+      {
+        question: "How many lines should Jr KG writing include?",
+        answer:
+          "Often three to six large trace-and-write rows per session. Quality of formation matters more than filling the page.",
+      },
+      {
+        question: "Should I correct every spelling mistake in Class 1 writing?",
+        answer:
+          "Not on the first draft. Praise the idea, then fix one or two spellings together if energy remains.",
+      },
+      {
+        question: "Are writing worksheets enough for handwriting improvement?",
+        answer:
+          "They help when sessions stay short and posture is good. Pair with colouring and tracing for fine motor strength.",
+      },
+      {
+        question: "Where can I download free writing worksheet PDFs?",
+        answer:
+          "Try the Jr KG fruits writing and Class 1 festival writing samples on this site, then generate fresh themed sheets in Homework Buddy.",
       },
     ],
     relatedClassSlugs: ["jr-kg", "sr-kg", "class-1", "class-2", "class-3"],
@@ -399,7 +555,10 @@ export const activities: HubEntity[] = [
     intro: [
       "Maths worksheets should build number sense, not fear. Start with concrete counting and pictures, then move to numerals and word problems as confidence grows.",
       "Parents looking for maths worksheets often need tonight’s printable that matches school pace. Keep difficulty honest: one challenging problem is enough after fluency practice.",
-      ...sharedParentTips,
+      "Real-life maths still matters — counting tomatoes at the sabzi stall, adding bus fares, sharing sweets at a festival. Worksheets complement those moments; they do not replace them.",
+      "Indian parents often download pages of identical sums. Better: five fluency questions plus one picture word problem about autos, mangoes, or cricket scores — finished in fifteen minutes.",
+      "Class 1 maths stays within 20 with pictures; Class 2 adds subtraction stories and early multiplication readiness; Class 3 needs working space for word problems. Preview before printing.",
+      "If your child guesses operations, ask “are we putting together or taking away?” before writing the sum. That one habit fixes many careless errors on transport and shopping-themed sheets.",
     ],
     howTo: [
       "Begin with a quick oral warm-up (count objects on the table).",
@@ -411,6 +570,26 @@ export const activities: HubEntity[] = [
         question: "How often should kids do maths worksheets at home?",
         answer:
           "Three short sessions a week is enough for many families, plus real-life maths while shopping or cooking.",
+      },
+      {
+        question: "What maths topics suit Class 1 worksheets?",
+        answer:
+          "Counting, number sense to 100, addition and subtraction within 20, shapes, and simple picture word problems.",
+      },
+      {
+        question: "My child knows answers but hates showing working. What helps?",
+        answer:
+          "Start with pictures and counters. Circle numbers in the word problem together — working space feels less pointless when it supports one tricky question.",
+      },
+      {
+        question: "Are competitive exam maths sheets okay for Class 2–3?",
+        answer:
+          "Usually too dense for daily homework. Prefer school-pace sheets that finish in one calm sitting unless the teacher recommends harder practice.",
+      },
+      {
+        question: "Where can I get free maths worksheet PDFs?",
+        answer:
+          "Download Class 1 transport counting, Class 2 transport word problems, and Sr KG addition samples on this site, then generate more in Homework Buddy.",
       },
     ],
     relatedClassSlugs: ["jr-kg", "sr-kg", "class-1", "class-2", "class-3"],
@@ -426,8 +605,11 @@ export const activities: HubEntity[] = [
     status: "published",
     intro: [
       "Coloring is not “just play.” It strengthens fine motor control, attention, and emotional regulation — all useful for writing later.",
-      "Use themed colouring worksheets after a harder reading or maths sheet, or as a gentle Nursery/KG homework option.",
-      ...sharedParentTips,
+      "Use themed colouring worksheets after a harder reading or maths sheet, or as a gentle Nursery/KG homework option when pencils feel overwhelming.",
+      "Festival colouring — diyas, rangoli patterns, Eid lanterns — connects fine motor practice with family conversations about kindness and celebration.",
+      "Offer four to six crayons to start; too many choices can paralyse a tired Nursery child at 7 p.m. Talk about colours and objects while they work: “Which part is the elephant’s ear?”",
+      "Colouring works as homework cool-down for Class 1 too, especially after a writing-heavy evening. Pair with one oral question so the session stays intentional, not only passive.",
+      "Display finished pages on the fridge or in a folder — pride fuels the next session more than nagging about staying inside the lines.",
     ],
     howTo: [
       "Offer 4–6 colours to start; add more later.",
@@ -439,6 +621,26 @@ export const activities: HubEntity[] = [
         question: "Are coloring worksheets good homework?",
         answer:
           "Yes for younger learners and as a cool-down. Pair with a short oral question so learning stays intentional.",
+      },
+      {
+        question: "How long should Nursery colouring homework take?",
+        answer:
+          "Often 10 minutes is perfect. Stop while it is still fun — a half-coloured page tomorrow beats a meltdown tonight.",
+      },
+      {
+        question: "Should I insist on staying inside the lines?",
+        answer:
+          "Encourage gently, but praise effort and colour choices. Fine motor control develops over months, not one sheet.",
+      },
+      {
+        question: "Can colouring replace writing practice?",
+        answer:
+          "No — balance both. Colouring builds grip and focus; tracing and writing build letter formation. Alternate through the week.",
+      },
+      {
+        question: "Where can I get free colouring worksheet PDFs?",
+        answer:
+          "Try the Nursery festival colouring and Sr KG animals colouring samples on this site, then generate themed pages in Homework Buddy.",
       },
     ],
     relatedClassSlugs: ["nursery", "jr-kg", "sr-kg", "class-1"],
@@ -454,7 +656,6 @@ export const activities: HubEntity[] = [
     status: "published",
     intro: [
       "Creative thinking worksheets invite children to invent, compare, and explain — skills that support school and life. They are excellent when you want homework that feels lighter but still purposeful.",
-      ...sharedParentTips,
     ],
     howTo: [
       "Read the prompt together and brainstorm aloud.",
@@ -483,7 +684,9 @@ export const activities: HubEntity[] = [
       "Hindi worksheets help children learn the varnamala — swar (स्वर) like अ, आ, इ, ई and vyanjan (व्यंजन) like क, ख, ग — through tracing, matching, and picture words such as ख से खरगोश and त से तोता.",
       "Many parents search for Hindi worksheets for Nursery, LKG, UKG, or Class 1 and find only dense photocopied pages. Good Hindi printables keep letters large, add friendly pictures, and finish in one short sitting.",
       "Start with swar tracing for Nursery, move to vyanjan recognition in KG, and mix both (varnamala mix) by Class 1. Saying each letter aloud while tracing builds sound-letter links faster than silent copying.",
-      ...sharedParentTips,
+      "English-medium families often worry about Hindi homework feeling foreign. Keep sessions playful — five minutes of अ से अनार talk while chopping fruit counts as much as a formal sheet some evenings.",
+      "Confusing similar letters (ख/श, ब/द) is normal through Class 1. Use picture cues, slow tracing, and revisit the same two letters tomorrow instead of correcting harshly after a long school day.",
+      "Preview PDFs on your phone before printing Hindi sheets — tiny matras and crowded lines frustrate children and waste ink. One clear A4 page beats a booklet meant for coaching class.",
     ],
     howTo: [
       "Say the letter aloud together before tracing it.",
@@ -507,6 +710,16 @@ export const activities: HubEntity[] = [
         answer:
           "Download the free samples on this site, or generate fresh swar, vyanjan, and varnamala-mix worksheets anytime in the Homework Buddy app.",
       },
+      {
+        question: "My child learns Hindi only at school. Is home practice necessary?",
+        answer:
+          "Short, happy sessions help most Indian schools’ second-language pace. Even twice a week of tracing or matching keeps Hindi from feeling like exam cramming later.",
+      },
+      {
+        question: "How long should Hindi worksheet practice take?",
+        answer:
+          "About 10–15 minutes for Nursery–KG, up to 20 minutes for Class 1 matching and missing-letter tasks. Stop before frustration.",
+      },
     ],
     relatedClassSlugs: ["nursery", "jr-kg", "sr-kg", "class-1"],
     relatedThemeSlugs: ["hindi-varnamala", "animals", "stories"],
@@ -522,7 +735,6 @@ export const activities: HubEntity[] = [
     intro: [
       "Life skills worksheets help children practise sharing, routines, hygiene habits, and simple decision-making through stories and scenarios.",
       "These printables are perfect weekend homework: meaningful, discussable, and calm.",
-      ...sharedParentTips,
     ],
     howTo: [
       "Connect each scenario to your home routine.",
@@ -553,7 +765,9 @@ export const themes: HubEntity[] = [
     intro: [
       "Animals are a universal theme for kids. Animal worksheets make vocabulary, counting, and stories stick because children already care about lions, elephants, and pets.",
       "Use animal themes across activities: reading passages about zoo friends, maths with animal counters, and colouring of jungle scenes.",
-      ...sharedParentTips,
+      "On Indian school nights, animal worksheets feel familiar — children know cow, monkey, and peacock from stories, parks, and TV. That comfort lowers anxiety when a new skill appears on the same page.",
+      "Mix activities through the week: Monday animal matching for Nursery, Wednesday Class 1 animals reading, Friday Sr KG animal colouring as cool-down. One theme, many skills — without hunting new PDFs every night.",
+      "Visit a park, watch birds from the balcony, or name street dogs safely — real animals make worksheet vocabulary memorable. “We saw a crow today — which letter does crow start with?”",
     ],
     howTo: [
       "Pick one animal focus for the week.",
@@ -565,6 +779,21 @@ export const themes: HubEntity[] = [
         question: "Are animals worksheets only for colouring?",
         answer:
           "No. They work for reading, writing prompts, maths story sums, and creative thinking too.",
+      },
+      {
+        question: "Which classes suit animal-themed worksheets best?",
+        answer:
+          "All early years — Nursery through Class 3 — with difficulty matched to class. Nursery matches pictures; Class 2–3 use short passages.",
+      },
+      {
+        question: "Can I use the same animal theme for Hindi practice?",
+        answer:
+          "Yes — picture words like श से शेर and ह से हाथी connect varnamala to animals children already love.",
+      },
+      {
+        question: "Where can I download free animal worksheet PDFs?",
+        answer:
+          "Try Nursery animals matching, Class 1 animals reading adventure, and Class 2 zoo passage samples on this site, then generate more in Homework Buddy.",
       },
     ],
     relatedClassSlugs: ["nursery", "jr-kg", "class-1"],
@@ -579,8 +808,11 @@ export const themes: HubEntity[] = [
     icon: "/themes/transport.png",
     status: "published",
     intro: [
-      "Buses, trains, and planes capture attention quickly. Transport worksheets support vocabulary, sequencing, and maths with real-world hooks.",
-      ...sharedParentTips,
+      "Buses, trains, and planes capture attention quickly. Transport worksheets support vocabulary, sequencing, and maths with real-world hooks children see on every school run.",
+      "Talk about autos, buses, and metro rides while doing transport sheets — “If three buses leave and one arrives, how many at the stop?” Concrete stories beat abstract drills.",
+      "Transport themes work from Jr KG counting vehicles to Class 2 word problems about fares and distances. Keep language local: autorickshaw, school van, local train — words your child actually uses.",
+      "Pair a transport maths printable with five minutes watching traffic from the window (safely). Naming colours and counting wheels extends the sheet without another PDF.",
+      "Class 1 transport counting and Class 2 transport word problem samples on this site show how one theme scales across classes — preview before printing for tonight’s level.",
     ],
     howTo: [
       "Talk about vehicles you see on the school run.",
@@ -591,6 +823,21 @@ export const themes: HubEntity[] = [
         question: "Which classes benefit from transport worksheets?",
         answer:
           "All early years classes — especially Nursery to Class 2 — enjoy vehicle themes for literacy and maths.",
+      },
+      {
+        question: "Can transport worksheets teach sequencing?",
+        answer:
+          "Yes — order of stops, traffic lights, and “first/next/last” vehicle in a row build early logic alongside maths.",
+      },
+      {
+        question: "Are transport themes good for reluctant maths learners?",
+        answer:
+          "Often yes. Familiar vehicles make word problems feel like stories instead of scary numbers.",
+      },
+      {
+        question: "Where can I get free transport worksheet PDFs?",
+        answer:
+          "Download Class 1 transport maths counting and Class 2 transport word problems samples on this site, then generate more in Homework Buddy.",
       },
     ],
     relatedClassSlugs: ["jr-kg", "class-1", "class-2"],
@@ -606,7 +853,6 @@ export const themes: HubEntity[] = [
     status: "published",
     intro: [
       "Nature themes connect homework to the world outside the window. Nature worksheets can cover observation, vocabulary, and gentle science talk for young children.",
-      ...sharedParentTips,
     ],
     howTo: [
       "Pair a printable with a five-minute balcony or park observation.",
@@ -632,7 +878,6 @@ export const themes: HubEntity[] = [
     status: "published",
     intro: [
       "Space themes unlock wonder. Use space worksheets for vocabulary, imaginative writing, and simple counting with stars and rockets.",
-      ...sharedParentTips,
     ],
     howTo: [
       "Start with a picture talk about the night sky.",
@@ -657,8 +902,11 @@ export const themes: HubEntity[] = [
     icon: "/themes/festival.png",
     status: "published",
     intro: [
-      "Festival worksheets help children connect learning with family celebrations — Diwali lights, Holi colours, Eid kindness, Christmas giving, and more — with respect and joy.",
-      ...sharedParentTips,
+      "Festival worksheets help children connect learning with family celebrations — Diwali lights, Holi colours, Eid kindness, Christmas giving, Gurpurab gratitude, and Pongal harvest joy — with respect and warmth.",
+      "Use festival themes when school sends generic homework but your home is preparing for a real celebration. Colouring diyas or writing two sentences about kindness fits the mood better than random unrelated drills.",
+      "Festival printables build vocabulary (diya, rangoli, moon, sweets), fine motor skills, and conversation about sharing — valuable for Nursery through Class 2 especially.",
+      "Keep cultural tone inclusive: learn about festivals your neighbours celebrate even when your family observes different ones. Worksheets can spark curiosity without turning into a test on dates and rituals.",
+      "The free Nursery festival colouring sample on this site is a gentle start — preview the PDF, print one page, and talk about colours and celebration while your child works.",
     ],
     howTo: [
       "Choose a festival your family is celebrating or learning about.",
@@ -669,6 +917,21 @@ export const themes: HubEntity[] = [
         question: "How do festival worksheets support learning?",
         answer:
           "They build vocabulary, cultural awareness, fine motor skills, and conversation — all valuable for early learners.",
+      },
+      {
+        question: "Can festival worksheets replace school homework?",
+        answer:
+          "Only when school allows themed enrichment. Finish assigned notebook work first; use festival sheets as optional practice on celebration weeks.",
+      },
+      {
+        question: "Are festival colouring sheets only for Nursery?",
+        answer:
+          "No — Sr KG and Class 1 can add labels or sentences; Class 2 can write short festival stories after colouring.",
+      },
+      {
+        question: "Where can I download free festival worksheet PDFs?",
+        answer:
+          "Try the Nursery festival colouring fun sample on this site, plus Class 1 and Class 2 festival writing samples, then generate more in Homework Buddy.",
       },
     ],
     relatedClassSlugs: ["nursery", "jr-kg", "class-1"],
@@ -683,8 +946,11 @@ export const themes: HubEntity[] = [
     icon: "/themes/stories.png",
     status: "published",
     intro: [
-      "Story worksheets turn practice into adventure. Short, illustrated narratives help Class 1–3 readers build comprehension and writing responses.",
-      ...sharedParentTips,
+      "Story worksheets turn practice into adventure. Short, illustrated narratives help Class 1–3 readers build comprehension and writing responses without feeling like an exam paper.",
+      "Before reading, predict the ending together — “What might the monkey do next?” After reading, ask who/what/where before jumping to written answers. Oral first reduces blank-page anxiety.",
+      "Story themes connect reading and writing: read a passage one night, write three sentences about the same characters the next. Familiar characters carry motivation across the week.",
+      "Keep bedtime storybooks separate from homework stories. Bedtime stays joyful; worksheet stories stay short and finishable. Children notice when everything feels like a test.",
+      "Class 2–3 story samples on this site show sensible length — preview the PDF, print one passage, and use it as a model before generating fresh story reading in Homework Buddy.",
     ],
     howTo: [
       "Predict the ending before reading.",
@@ -695,6 +961,21 @@ export const themes: HubEntity[] = [
         question: "Can story worksheets replace bedtime books?",
         answer:
           "No — they complement books. Keep bedtime reading joyful and separate from homework pressure.",
+      },
+      {
+        question: "How many questions should story worksheets include?",
+        answer:
+          "Three to six for Class 1–2, up to six for Class 3 with one evidence-based question. More than that often causes rushing.",
+      },
+      {
+        question: "Should children read story worksheets silently?",
+        answer:
+          "Class 1 usually benefits from reading aloud together first. Class 2–3 can try silent read, then discuss answers.",
+      },
+      {
+        question: "Where can I get free story reading worksheet PDFs?",
+        answer:
+          "Download Class 2 animals reading and Class 3 stories reading challenge samples on this site, then generate themed passages in Homework Buddy.",
       },
     ],
     relatedClassSlugs: ["sr-kg", "class-1", "class-2", "class-3"],
@@ -710,7 +991,6 @@ export const themes: HubEntity[] = [
     status: "published",
     intro: [
       "Fruits are colourful, countable, and perfect for Nursery–Class 1 vocabulary. Fruit worksheets support sorting, tracing, and simple maths.",
-      ...sharedParentTips,
     ],
     howTo: [
       "Use real fruit for a matching game after the printable.",
@@ -735,8 +1015,11 @@ export const themes: HubEntity[] = [
     icon: "/themes/monsoon.png",
     status: "published",
     intro: [
-      "Monsoon worksheets turn rainy days into learning time. Weather vocabulary, safety reminders, and cosy indoor reading prompts fit Indian seasons perfectly.",
-      ...sharedParentTips,
+      "Monsoon worksheets turn rainy days into learning time. Weather vocabulary, safety reminders, and cosy indoor reading prompts fit Indian seasons perfectly — when outdoor play pauses and energy still needs an outlet.",
+      "Watch the rain for one minute from a safe window, then open the printable. Naming dark clouds, puddles, and umbrellas makes vocabulary stick better than reading about sun-only stories in textbook English.",
+      "Monsoon themes suit life-skills talk: wearing sandals carefully, not playing near open drains, helping dry wet school bags — practical scenarios Class 2–3 children can discuss and write about.",
+      "Pair monsoon reading with a five-line “rain journal” once a week — date, weather, one kind thing someone did indoors. Light structure, no exam pressure.",
+      "The free Class 3 monsoon life skills sample on this site sparks discussion after heavy academic nights — preview it when thunder keeps everyone home and screens feel like too much.",
     ],
     howTo: [
       "Watch the rain for one minute, then open the printable.",
@@ -746,7 +1029,22 @@ export const themes: HubEntity[] = [
       {
         question: "What activities pair with monsoon worksheets?",
         answer:
-          "Indoor colouring, story reading, and simple weather journals work well.",
+          "Indoor colouring, story reading, weather journals, and simple life-skills scenarios work well.",
+      },
+      {
+        question: "Are monsoon worksheets only for Class 3?",
+        answer:
+          "Life-skills scenarios suit Class 2–3 best. Younger children enjoy monsoon colouring and picture talk with simpler vocabulary.",
+      },
+      {
+        question: "Can monsoon homework feel too gloomy?",
+        answer:
+          "Balance safety talk with cosy prompts — hot snack stories, indoor games, gratitude for rain helping farmers. Keep tone warm.",
+      },
+      {
+        question: "Where can I download free monsoon worksheet PDFs?",
+        answer:
+          "Try the Class 3 monsoon life skills sample on this site, then generate fresh rainy-day activities in Homework Buddy.",
       },
     ],
     relatedClassSlugs: ["class-1", "class-2", "class-3"],
@@ -764,7 +1062,9 @@ export const themes: HubEntity[] = [
       "The Hindi varnamala — 13 swar and 33+ vyanjan — is easiest to learn a few letters at a time with big print and pictures. Varnamala worksheets turn अ, आ, इ into tracing games and क, ख, ग into matching puzzles.",
       "Parents searching for हिंदी वर्णमाला worksheets or swar-vyanjan practice PDFs usually need tonight's printable, not a textbook. Keep each session to one sheet: trace, say aloud, and connect letters to words like शेर, हाथी, and तोता.",
       "Mother-tongue letter practice also strengthens English phonics — children who map sounds to symbols in one script transfer that skill to the other.",
-      ...sharedParentTips,
+      "English-medium families in metro cities often squeeze Hindi into tired evenings. A five-minute swar trace after snack beats skipping Hindi all week and cramming before the school test.",
+      "Keep a varnamala chart on the fridge or study corner — quick glance revision before new letters. Celebrate finishing each consonant group (क–घ, च–झ) before rushing to the next.",
+      "Preview the Nursery Hindi swar tracing and Class 1 vyanjan practice samples on this site — large letters, clear pictures — then generate fresh varnamala sheets in Homework Buddy when letters feel familiar.",
     ],
     howTo: [
       "Trace with a finger first, then with a pencil.",
@@ -783,6 +1083,16 @@ export const themes: HubEntity[] = [
         answer:
           "Yes. Most Indian schools teach Hindi as a second language from early years, and home varnamala practice keeps it enjoyable instead of stressful.",
       },
+      {
+        question: "How many letters should we practise per session?",
+        answer:
+          "Four to six letters is enough for most evenings. Revisit yesterday’s letters for one minute before adding new ones.",
+      },
+      {
+        question: "Where can I get free Hindi varnamala worksheet PDFs?",
+        answer:
+          "Download Nursery Hindi swar tracing and Class 1 Hindi vyanjan practice samples on this site, then generate unlimited fresh sheets in Homework Buddy.",
+      },
     ],
     relatedClassSlugs: ["nursery", "jr-kg", "class-1"],
     relatedActivitySlugs: ["hindi", "writing", "coloring"],
@@ -797,7 +1107,6 @@ export const themes: HubEntity[] = [
     status: "published",
     intro: [
       "Professions themes help children appreciate community helpers — doctors, teachers, drivers, farmers — while practising reading and writing.",
-      ...sharedParentTips,
     ],
     howTo: [
       "Talk about people who help in your neighbourhood.",
@@ -829,7 +1138,9 @@ export const crossHubs: CrossHub[] = [
       "Class 1 reading worksheets should feel like shared story time with a light pencil task. Look for short lines, familiar words, and 3–4 clear questions.",
       "Parents searching specifically for Class 1 reading worksheets usually need printables tonight — not a full curriculum overhaul.",
       "Pair each sheet with oral reading. Listening to your child decode builds fluency faster than silent worksheet completion alone.",
-      ...sharedParentTips,
+      "Start with the free Class 1 animals reading adventure sample on this site — preview the PDF on your phone, print one A4 page, and use it as a length and tone guide for other nights.",
+      "If your child guesses from pictures, choose easier passages for a few days. Point under each word, praise sounding out, and save harder sheets for when confidence returns after a school test week.",
+      "When the animals passage feels familiar, generate a fresh Class 1 reading PDF in Homework Buddy — festival or school story theme — without another late-night scroll through random blogs.",
     ],
     howTo: [
       "Preview tricky words before reading.",
@@ -859,7 +1170,10 @@ export const crossHubs: CrossHub[] = [
     intro: [
       "Class 1 maths worksheets work best when they mix fluency with one thinking problem. Avoid dense pages of identical sums.",
       "Use themes — fruits to count, buses to add — so number practice feels concrete.",
-      ...sharedParentTips,
+      "The free Class 1 transport maths count sample on this site shows picture-based counting and simple sums — preview it before printing so difficulty matches tonight’s energy.",
+      "Warm up with one minute of oral maths while setting the dinner table: “If we have four rotis and I add one, how many?” Then open the worksheet for written practice.",
+      "If school already sent notebook sums, skip optional printables on heavy nights. One calm transport-themed sheet on Wednesday beats three rushed pages after tuition.",
+      "Generate a fresh Class 1 maths PDF in Homework Buddy when fruits or vehicles themes feel stale — same readable layout as the free transport sample linked below.",
     ],
     howTo: [
       "Warm up with mental maths for one minute.",
@@ -885,7 +1199,10 @@ export const crossHubs: CrossHub[] = [
     status: "published",
     intro: [
       "Class 2 reading worksheets can introduce slightly longer paragraphs while keeping language friendly. Ask “why” and “how” questions sparingly alongside factual ones.",
-      ...sharedParentTips,
+      "Try the free Class 2 animals reading passage sample on this site — a short zoo story with comprehension questions sized for a 15–20 minute evening after school or tuition.",
+      "Have your child retell the passage in their own words before writing answers. Oral retell catches gaps early and lowers blank-page anxiety when it is time to pick up the pencil.",
+      "Underline evidence for one answer together — “Show me the sentence that tells us where the tiger lives.” That habit scales to school exams without feeling like coaching class drill.",
+      "When the zoo passage feels easy, generate a new Class 2 reading printable in Homework Buddy with a different theme — nature, festival, or school adventure — preview, then print one page.",
     ],
     howTo: [
       "Have your child retell the passage in their own words.",
@@ -908,7 +1225,10 @@ export const crossHubs: CrossHub[] = [
     intro: [
       "Preschool worksheets should protect play. The best easy homework for preschool is short, visual, and optional — a bridge between school and home, not a second school day.",
       "This hub points parents toward Nursery and KG printables that build readiness skills without drilling.",
-      ...sharedParentTips,
+      "Browse free samples linked below: Nursery tracing lines for pencil grip, festival colouring for calm fine motor practice, and Hindi swar tracing for early varnamala play.",
+      "If your playgroup calls it Nursery and your neighbour says LKG, ignore the label — match sheets to attention span and pencil control, not the school brand name.",
+      "A preschool evening rhythm might be: snack, one tracing or matching sheet, five minutes of picture talk, then bath time. Three such sessions a week plus outdoor play beats daily dense photocopies.",
+      "When favourites feel stale, generate a fresh Nursery or Jr KG printable in Homework Buddy — animals matching, fruits counting, or festival colouring — preview on screen before you print.",
     ],
     howTo: [
       "Offer worksheets after outdoor play or snack.",
@@ -937,7 +1257,11 @@ export const crossHubs: CrossHub[] = [
     status: "published",
     intro: [
       "Kindergarten worksheets bridge play and primary school. Focus on letter-sound awareness, counting, patterns, and pencil control with themes children love.",
-      ...sharedParentTips,
+      "This hub collects Jr KG and Sr KG samples — letter tracing ABC, fruits writing words, CVC reading warm-up, sight words, and addition within 10 — so you can preview difficulty before printing.",
+      "Kindergarten labels vary across India (Jr KG, LKG, Sr KG, UKG). Choose sheets by skill: large tracing for beginners, CVC blending when sounds click, sight words when recognition is ready.",
+      "A calm kindergarten week might alternate: Monday Jr KG letter tracing, Wednesday Sr KG CVC reading, Friday animals colouring cool-down. One printable per night, about 15 minutes.",
+      "Open the Jr KG fruits writing or Sr KG CVC reading sample below on your phone first — if lines look too small or text too dense, step down to Nursery-style tracing for a week.",
+      "Generate fresh kindergarten PDFs in Homework Buddy when the folder feels repetitive — same calm style as the free samples listed on this page.",
     ],
     howTo: [
       "Keep a visible weekly rhythm: letters, numbers, story, colour.",
@@ -966,7 +1290,6 @@ export const tools: ToolEntity[] = [
       "On this site we explain how worksheet generators work, what to look for, and how to keep generated practice age-appropriate. For instant generation on your phone, Homework Buddy creates printable activities for Nursery to Class 3.",
       "Good generators respect attention spans. A 15-minute sheet with clear instructions beats a dense packet that causes stress.",
       "When you evaluate any worksheet generator or app, check: class fit, theme variety, printable quality, and whether kids can finish without tears.",
-      ...sharedParentTips,
     ],
     howTo: [
       "Decide the class and skill you need tonight.",
@@ -998,7 +1321,6 @@ export const tools: ToolEntity[] = [
     intro: [
       "A reading generator helps you produce short passages matched to your child’s class. That matters because Class 1 readers need different text than Class 3.",
       "Use reading generators to create theme-based stories, then ask a few clear questions. Preview vocabulary and read aloud together.",
-      ...sharedParentTips,
     ],
     howTo: [
       "Select reading as the activity type.",
@@ -1024,7 +1346,6 @@ export const tools: ToolEntity[] = [
     intro: [
       "Math worksheet generators should let you control difficulty. Random hard sums frustrate Class 1 children; endless easy sums bore Class 3.",
       "Aim for mixed practice: fluency plus one story problem. Themes help word problems feel concrete.",
-      ...sharedParentTips,
     ],
     howTo: [
       "Pick maths and your child’s class.",
@@ -1049,7 +1370,6 @@ export const tools: ToolEntity[] = [
     intro: [
       "A homework planner reduces nightly decision fatigue. When you know Monday is reading and Wednesday is maths, evenings feel lighter.",
       "Use this guide to sketch a weekly plan, then fill slots with printable worksheets or app-generated PDFs.",
-      ...sharedParentTips,
     ],
     howTo: [
       "Block four short sessions per week.",
@@ -1346,7 +1666,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     intro: [
       "This Class 1 animals reading worksheet is designed for a single calm sitting. Read together, talk about the animals, then answer a few questions.",
       "Parents can print it as easy homework after school or generate similar themed reading PDFs in Homework Buddy.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1371,7 +1690,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageAlt: "Nursery festival colouring worksheet printable preview",
     intro: [
       "Festival colouring gives Nursery children a joyful fine-motor task. Talk about colours and celebration while they work.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1395,7 +1713,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageAlt: "Class 1 transport maths counting worksheet printable preview",
     intro: [
       "Vehicles make counting concrete. Use this transport maths worksheet for Class 1 number practice in one short session.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1420,7 +1737,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageAlt: "Class 2 space creative thinking worksheet printable preview",
     intro: [
       "Invite your Class 2 learner to imagine a trip to the stars. Creative prompts build language and confidence.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1444,7 +1760,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageAlt: "Jr KG fruits writing worksheet printable preview",
     intro: [
       "Fruit words are short and friendly for Jr KG writers. Keep tracing large and praise every letter.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1471,7 +1786,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     intro: [
       "This Nursery Hindi worksheet introduces the first swar of the varnamala — अ, आ, इ, ई, उ, ऊ — with large trace-over letters and a circle-the-letter game. Say each swar aloud together before tracing.",
       "स्वर अभ्यास works best in short, happy sessions: one sheet, six letters, lots of praise. For fresh swar, vyanjan, and varnamala-mix sheets every day, generate them in the Homework Buddy app.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1558,7 +1872,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageAlt: "Class 3 monsoon life skills worksheet printable preview",
     intro: [
       "Monsoon season is a natural time to talk about safety, empathy, and routines. This Class 3 sheet sparks discussion.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1583,7 +1896,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageAlt: "Nursery homework tracing worksheet printable free download preview",
     intro: [
       "Pre-writing lines help Nursery children build pencil control before letters. Trace slowly and praise steady hands.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1608,7 +1920,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageAlt: "Nursery animals matching homework worksheet printable preview",
     intro: [
       "Matching worksheets teach focus without writing pressure. Say every animal name aloud while your child draws the line.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1633,7 +1944,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageAlt: "Jr KG letter tracing ABC worksheet printable homework preview",
     intro: [
       "Large letters and short rows keep Jr KG writing calm. Say each letter sound while tracing.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1658,7 +1968,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageAlt: "Jr KG numbers counting to ten worksheet printable preview",
     intro: [
       "Counting with pictures makes early maths concrete. Use fingers alongside the worksheet.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1683,7 +1992,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageAlt: "Jr KG colour patterns worksheet printable homework preview",
     intro: [
       "Patterns build early maths thinking. Say the sequence aloud before your child fills the blank.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1708,7 +2016,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageAlt: "Sr KG CVC reading phonics worksheet printable free download",
     intro: [
       "CVC blending (cat, bus, sun) is a friendly Sr KG reading start. Sound out slowly, then choose the picture.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1733,7 +2040,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageAlt: "Sr KG sight words writing worksheet printable preview",
     intro: [
       "Sight words appear often in early readers. Trace, say, then write — keep the list short each night.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1758,7 +2064,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageAlt: "Sr KG addition within 10 maths worksheet printable preview",
     intro: [
       "Picture addition bridges counting and written sums. Use counters if your child needs a hands-on step.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1783,7 +2088,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageAlt: "Sr KG animals colouring worksheet printable homework preview",
     intro: [
       "Colouring is still valuable in Sr KG when you add talk: names, habitats, and colours.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1808,7 +2112,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageAlt: "Class 1 festival writing worksheet printable preview",
     intro: [
       "Festival prompts make Class 1 writing personal. Accept invented spelling and celebrate complete thoughts.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1833,7 +2136,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageAlt: "Class 2 animals reading comprehension worksheet printable preview",
     intro: [
       "Short passages with clear questions suit Class 2 evenings. Read once together, then answer independently.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1858,7 +2160,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageAlt: "Class 2 transport maths word problems worksheet printable preview",
     intro: [
       "Word problems build reasoning. Underline numbers first, then choose the operation.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1883,7 +2184,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageAlt: "Class 2 festival story writing worksheet printable preview",
     intro: [
       "Planning who/where/what before writing helps Class 2 stories stay organised.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1908,7 +2208,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageAlt: "Class 3 stories reading comprehension worksheet printable preview",
     intro: [
       "Class 3 readers can answer in complete sentences. Ask for evidence from the passage.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1933,7 +2232,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageAlt: "Class 3 maths word problems worksheet printable preview",
     intro: [
       "Working space matters as much as the answer. Circle numbers and underline the question first.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1958,7 +2256,6 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageAlt: "Class 3 space creative thinking worksheet printable preview",
     intro: [
       "Creative prompts stretch language after heavier academic nights. Wild ideas are welcome.",
-      ...sharedParentTips,
     ],
     faqs: [
       {
@@ -1987,13 +2284,29 @@ export function getCrossHub(slug: string) {
   return crossHubs.find((h) => h.slug === slug);
 }
 export function getTool(slug: string) {
-  return tools.find((t) => t.slug === slug);
+  const tool = tools.find((t) => t.slug === slug);
+  if (!tool) return undefined;
+  const sections = toolSectionExtras[slug];
+  if (!sections) return tool;
+  return { ...tool, sections };
 }
 export function getGuide(slug: string) {
   return guides.find((g) => g.slug === slug);
 }
 export function getWorksheet(classSlug: string, slug: string) {
-  return worksheetSeeds.find((w) => w.classSlug === classSlug && w.slug === slug);
+  const seed = worksheetSeeds.find((w) => w.classSlug === classSlug && w.slug === slug);
+  if (!seed) return undefined;
+
+  const extra = worksheetGuideExtras[`${classSlug}/${slug}`];
+  if (!extra) return seed;
+
+  return {
+    ...seed,
+    intro: [...seed.intro, ...extra.extraIntro],
+    faqs: [...seed.faqs, ...extra.extraFaqs],
+    howTo: extra.howTo ?? seed.howTo,
+    sheetContents: extra.sheetContents,
+  };
 }
 
 /** Preschool + KG class slugs for cross-hub filtering */
@@ -2057,8 +2370,8 @@ export function getPopularWorksheets(): WorksheetSeed[] {
 }
 
 const SITE_LAUNCH = "2026-07-01";
-const HUB_CONTENT_UPDATE = "2026-08-20";
-const WORKSHEET_BATCH_UPDATE = "2026-08-20";
+const HUB_CONTENT_UPDATE = "2026-09-01";
+const WORKSHEET_BATCH_UPDATE = "2026-09-01";
 
 export type SitemapEntry = { path: string; lastModified: string };
 
@@ -2068,15 +2381,16 @@ export function allPublishedSitemapEntries(): SitemapEntry[] {
     { path: "/features", lastModified: SITE_LAUNCH },
     { path: "/download", lastModified: HUB_CONTENT_UPDATE },
     { path: "/faq", lastModified: SITE_LAUNCH },
-    { path: "/about", lastModified: SITE_LAUNCH },
+    { path: "/about", lastModified: HUB_CONTENT_UPDATE },
+    { path: "/editorial", lastModified: HUB_CONTENT_UPDATE },
     { path: "/privacy", lastModified: SITE_LAUNCH },
     { path: "/terms", lastModified: SITE_LAUNCH },
     { path: "/contact", lastModified: SITE_LAUNCH },
     { path: "/worksheets", lastModified: WORKSHEET_BATCH_UPDATE },
-    { path: "/activities", lastModified: SITE_LAUNCH },
-    { path: "/themes", lastModified: SITE_LAUNCH },
+    { path: "/activities", lastModified: HUB_CONTENT_UPDATE },
+    { path: "/themes", lastModified: HUB_CONTENT_UPDATE },
     { path: "/guides", lastModified: SITE_LAUNCH },
-    { path: "/tools", lastModified: SITE_LAUNCH },
+    { path: "/tools", lastModified: HUB_CONTENT_UPDATE },
     { path: "/sitemap", lastModified: WORKSHEET_BATCH_UPDATE },
   ];
 
@@ -2089,16 +2403,16 @@ export function allPublishedSitemapEntries(): SitemapEntry[] {
     entries.push({ path: `/worksheets/${h.slug}`, lastModified: WORKSHEET_BATCH_UPDATE });
   }
   for (const a of publishedOnly(activities)) {
-    entries.push({ path: `/activities/${a.slug}`, lastModified: SITE_LAUNCH });
+    entries.push({ path: `/activities/${a.slug}`, lastModified: HUB_CONTENT_UPDATE });
   }
   for (const t of publishedOnly(themes)) {
-    entries.push({ path: `/themes/${t.slug}`, lastModified: SITE_LAUNCH });
+    entries.push({ path: `/themes/${t.slug}`, lastModified: HUB_CONTENT_UPDATE });
   }
   for (const g of publishedOnly(guides)) {
     entries.push({ path: `/guides/${g.slug}`, lastModified: g.dateModified });
   }
   for (const t of publishedOnly(tools)) {
-    entries.push({ path: `/tools/${t.slug}`, lastModified: SITE_LAUNCH });
+    entries.push({ path: `/tools/${t.slug}`, lastModified: HUB_CONTENT_UPDATE });
   }
   for (const w of publishedOnly(worksheetSeeds)) {
     entries.push({

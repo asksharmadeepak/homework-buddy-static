@@ -311,128 +311,45 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-3xl px-4 py-14">
-        <h2 className="text-3xl font-black text-[#24212C]">
-          Why topical clusters beat random PDF dumps
-        </h2>
-        <div className="mt-6 space-y-4 text-base font-semibold leading-relaxed text-[#3d3848]">
-          <p>
-            Search engines reward helpful content that satisfies intent. A parent looking for “Class 1 reading
-            worksheets” does not want a generic homepage paragraph. They want Class 1 reading guidance, sample
-            ideas, FAQs, and a next step. That is why we publish curated cross-hubs alongside class and activity
-            pillars.
-          </p>
-          <p>
-            Likewise, “worksheet generator” is commercial investigation intent. Our tools section explains what
-            good generators do, how to avoid overload, and how Homework Buddy maps class + activity + theme +
-            time into a printable PDF. We do not pretend a blank web form is a finished product when the real
-            generator lives in the Android app today.
-          </p>
-          <p>
-            Over time this architecture can grow to hundreds of articles and worksheet explainers without
-            rewriting the site. New pages join the taxonomy registry, earn unique copy, and only then enter the
-            sitemap. Draft ideas stay unpublished. Filter UIs — if added later — remain noindex.
-          </p>
-          <p>
-            If you are a parent reading this on a phone at 8:17 p.m., skip ahead: open{" "}
-            <Link href="/worksheets/class-1" className="text-[#7B5CD6]">
-              Class 1 worksheets
+        <h2 className="text-3xl font-black text-[#24212C]">How to use this site</h2>
+        <ol className="mt-6 list-decimal space-y-3 pl-5 text-base font-semibold leading-relaxed text-[#3d3848]">
+          <li>
+            Pick your child&apos;s class — start with{" "}
+            <Link href="/worksheets/nursery" className="text-[#7B5CD6]">
+              Nursery
             </Link>
-            , pick an activity, or{" "}
-            <Link href={site.appCtaPath} className="text-[#7B5CD6]">
-              get the Homework Buddy app
+            ,{" "}
+            <Link href="/worksheets/jr-kg" className="text-[#7B5CD6]">
+              Jr KG
+            </Link>
+            , or{" "}
+            <Link href="/worksheets/class-1" className="text-[#7B5CD6]">
+              Class 1
             </Link>{" "}
-            and generate one calm printable for tonight.
-          </p>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-3xl px-4 py-14">
-        <h2 className="text-3xl font-black text-[#24212C]">
-          Search intents we design pages around
-        </h2>
-        <div className="mt-6 space-y-4 text-base font-semibold leading-relaxed text-[#3d3848]">
-          <p>
-            Informational intent includes queries like printable worksheets for Class 1, reading worksheets for
-            kindergarten, and easy homework ideas. Those visitors need explanations, examples, and calm next
-            steps — not a hard sell on the first screen.
-          </p>
-          <p>
-            Commercial investigation includes best worksheet generator, homework app, and AI worksheet generator.
-            For those readers we explain trade-offs: static PDF libraries versus generators, how to judge class
-            fit, and when an Android app is simply faster than hunting another website.
-          </p>
-          <p>
-            Transactional intent looks like download Homework Buddy or worksheet generator app. Those visitors
-            should reach a clear download path quickly, with screenshots and version context, without losing the
-            educational framing of the rest of the site.
-          </p>
-          <p>
-            Navigational intent is people already looking for Homework Buddy by name. They deserve a trustworthy
-            brand presence, privacy and contact links, and an unambiguous Google Play button.
-          </p>
-        </div>
-      </section>
-
-      <section className="bg-[#F7F2FF] py-14">
-        <div className="mx-auto max-w-3xl px-4">
-          <h2 className="text-3xl font-black text-[#24212C]">
-            Building topical authority without thin pages
-          </h2>
-          <div className="mt-6 space-y-4 text-base font-semibold leading-relaxed text-[#3d3848]">
-            <p>
-              Long-term, this platform can support hundreds of articles, worksheet explainers, FAQs, and free
-              tools. The architecture is registry-driven so new hubs join as data with unique intros — not as
-              accidental duplicates of every class × theme × difficulty combination.
-            </p>
-            <p>
-              That is a deliberate SEO choice. Indexable pages must offer unique educational value: an
-              introduction that could not be swapped onto another URL, FAQs that match the page intent, related
-              links that strengthen the cluster, and a soft invitation to generate printables when helpful.
-            </p>
-            <p>
-              If you are choosing between printing one thoughtful sheet and downloading five random packets,
-              choose the thoughtful sheet. Children remember how homework felt. Calm practice builds the habit
-              you actually want.
-            </p>
-            <p>
-              Explore{" "}
-              <Link href="/worksheets" className="text-[#7B5CD6]">
-                worksheets
-              </Link>
-              ,{" "}
-              <Link href="/activities" className="text-[#7B5CD6]">
-                activities
-              </Link>
-              ,{" "}
-              <Link href="/themes" className="text-[#7B5CD6]">
-                themes
-              </Link>
-              ,{" "}
-              <Link href="/guides" className="text-[#7B5CD6]">
-                guides
-              </Link>
-              , and{" "}
-              <Link href="/tools" className="text-[#7B5CD6]">
-                tools
-              </Link>
-              — then return whenever tonight needs a better plan than improvising under stress.
-            </p>
-            <p>
-              Remember: helpful content is patient content. We would rather publish one careful Class 2 reading
-              hub than fifty near-duplicate pages that confuse parents and search engines alike. Your child’s
-              evening is not a keyword experiment — it is a relationship. This platform exists to support that
-              relationship with printable practice, clear explanations, and a worksheet generator app when you
-              need something new in minutes instead of another late-night search spiral.
-            </p>
-            <p>
-              Bookmark the hubs you use most. Share a guide with another parent. Print one sheet tonight. Small
-              consistent steps create the homework culture you want — and that is exactly what easy homework
-              activity should mean on {site.url.replace("https://www.", "")}. Thank you for trusting us with a
-              few quiet minutes of your family’s evening learning time — we built this platform to make those
-              minutes calmer and more useful.
-            </p>
-          </div>
-        </div>
+            worksheets.
+          </li>
+          <li>
+            Preview a free sample PDF above, download, and print on A4 — no login required.
+          </li>
+          <li>
+            Read the parent guide on each page for a calm 10–20 minute session script.
+          </li>
+          <li>
+            Need a fresh theme tonight?{" "}
+            <Link href={site.appCtaPath} className="text-[#7B5CD6]">
+              Get Homework Buddy
+            </Link>{" "}
+            or browse{" "}
+            <Link href="/guides" className="text-[#7B5CD6]">
+              parent guides
+            </Link>{" "}
+            and{" "}
+            <Link href="/tools/worksheet-generator" className="text-[#7B5CD6]">
+              worksheet generator tips
+            </Link>
+            .
+          </li>
+        </ol>
       </section>
 
       <div className="mx-auto max-w-3xl px-4">

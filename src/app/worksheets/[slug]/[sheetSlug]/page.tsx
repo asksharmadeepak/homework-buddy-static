@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { HubPageLayout } from "@/components/HubPageLayout";
+import { WorksheetDetailLayout } from "@/components/WorksheetDetailLayout";
 import { WorksheetDownload } from "@/components/WorksheetDownload";
 import {
   buildMetadata,
@@ -72,7 +72,7 @@ export default async function WorksheetDetailPage({ params }: Props) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={jsonLdScript(jsonLd)} />
-      <HubPageLayout
+      <WorksheetDetailLayout
         breadcrumbs={[
           { name: "Home", path: "/" },
           { name: "Worksheets", path: "/worksheets" },
@@ -81,36 +81,19 @@ export default async function WorksheetDetailPage({ params }: Props) {
         ]}
         title={sheet.title}
         lead={sheet.description}
-        intro={sheet.intro}
-        howTo={[
-          "Download the free PDF below.",
-          "Print on A4 paper.",
-          "Sit with your child for the first few minutes.",
-          "Stop while energy is still good.",
-          "Generate a fresh variation in Homework Buddy when you want a new theme.",
-        ]}
+        guideIntro={sheet.intro}
+        sheetContents={sheet.sheetContents}
+        howTo={sheet.howTo ?? []}
         faqs={sheet.faqs}
       >
-        {sheet.slug === "hindi-vyanjan-practice" ? (
-          <section className="mt-8">
-            <h2 className="text-2xl font-black text-[#24212C]">
-              Class 1 Hindi vyanjan worksheet
-            </h2>
-            <p className="mt-3 text-base font-semibold leading-relaxed text-[#3d3848]">
-              Looking for a printable Hindi vyanjan worksheet for Class 1? This free sample covers क ख ग
-              matching with pictures, missing letters, and tracing — ready to print tonight. Preview the
-              sheet below, download the PDF, then generate more Hindi varnamala practice in the app when
-              you need a fresh set.
-            </p>
-          </section>
-        ) : null}
-
-        <WorksheetDownload
-          pdfPath={sheet.pdfPath}
-          worksheetName={sheet.name}
-          previewImagePath={sheet.previewImagePath}
-          previewImageAlt={sheet.previewImageAlt}
-        />
+        <div className="mt-8">
+          <WorksheetDownload
+            pdfPath={sheet.pdfPath}
+            worksheetName={sheet.name}
+            previewImagePath={sheet.previewImagePath}
+            previewImageAlt={sheet.previewImageAlt}
+          />
+        </div>
 
         <section className="mt-10">
           <h2 className="text-2xl font-black text-[#24212C]">Related hubs</h2>
@@ -141,7 +124,7 @@ export default async function WorksheetDetailPage({ params }: Props) {
             )}
           </div>
         </section>
-      </HubPageLayout>
+      </WorksheetDetailLayout>
     </>
   );
 }
