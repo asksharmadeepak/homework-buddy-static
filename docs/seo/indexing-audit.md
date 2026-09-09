@@ -6,11 +6,16 @@ Cross-check GSC **Page indexing → Discovered - currently not indexed → examp
 
 ## Expected redirect URLs (do not index)
 
+These **should stay as 301s**. Google Search Console lists them under **Page with redirect**. That is not a failure to repair — those URLs must redirect to `https://easyhomeworkactivity.com/`. Clicking **Validate fix** on this report will keep failing because the URLs still redirect (by design).
+
 | URL | Reason |
 |-----|--------|
 | `/beta` | 301 → `/download` ([netlify.toml](../../netlify.toml)) |
-| `https://www.easyhomeworkactivity.com/*` | 301 → apex |
-| Possible http→https variant | Netlify force HTTPS |
+| `http://www.easyhomeworkactivity.com/*` | 301 → apex HTTPS (one hop) |
+| `https://www.easyhomeworkactivity.com/*` | 301 → apex HTTPS |
+| `http://easyhomeworkactivity.com/*` | 301 → apex HTTPS |
+
+**Do not** request indexing for www or http variants. Inspect `https://easyhomeworkactivity.com/` instead.
 
 ## Likely discovered-not-indexed buckets (~19)
 

@@ -20,9 +20,23 @@
   # Cap parallelism if Netlify memory is tight on larger rebuilds
   NODE_OPTIONS = "--max-old-space-size=4096"
 
-# Canonical host is apex (matches site.url / metadataBase). Consolidate www signals.
+# Canonical host is apex HTTPS (matches site.url / metadataBase).
+# One hop only: avoid http://www → https://www → https://apex chains.
+# GSC "Page with redirect" on these 3 hosts is expected — do not validate as a "fix".
+[[redirects]]
+  from = "http://www.easyhomeworkactivity.com/*"
+  to = "https://easyhomeworkactivity.com/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "https://www.easyhomeworkactivity.com/*"
+  to = "https://easyhomeworkactivity.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://easyhomeworkactivity.com/*"
   to = "https://easyhomeworkactivity.com/:splat"
   status = 301
   force = true

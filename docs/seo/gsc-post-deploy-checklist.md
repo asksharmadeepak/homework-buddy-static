@@ -18,7 +18,7 @@ Run after every indexing-related deploy to production.
    - `/worksheets/nursery/festival-coloring-fun`
    - `/worksheets/sr-kg`
    - `/worksheets/preschool-worksheets`
-3. **Page indexing → Discovered - currently not indexed → Validate fix**
+3. **Page indexing → Discovered - currently not indexed → Validate fix** (not "Page with redirect" — www/http host variants will always show as redirects)
 
 ## 3. Monitor (weekly)
 
