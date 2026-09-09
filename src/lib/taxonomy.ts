@@ -1598,22 +1598,21 @@ export const guides: GuideEntity[] = [
     description:
       "Easy homework ideas that fit real evenings — short printables, oral practice, and calm routines.",
     datePublished: "2026-07-08",
-    dateModified: "2026-08-08",
+    dateModified: "2026-09-09",
     status: "published",
     sections: [
       {
-        heading: "Easy does not mean low value",
+        heading: "When the bag hits the floor at 7:40",
         paragraphs: [
-          "Easy homework ideas respect energy limits while still practising reading, writing, maths, Hindi, and life skills. For busy Indian parents, “easy” means finishable tonight — not empty busywork.",
-          "Search phrases like easy homework or easy homework activity usually mean: short, clear, age-fit, and printable or oral. That is the bar this guide uses from Nursery through Class 3.",
-          "If school already sent a heavy load, choose the lightest idea below or skip enrichment entirely. Mood and sleep are part of learning.",
+          "School bag thumps down. Someone wants biscuits. Someone else wants the remote. You still have dinner and a WhatsApp from the class group. That is the moment most “homework plans” die.",
+          "Easy homework, for us, means one finishable task tonight — not empty busywork and not a second school day at the dining table. If school already sent a heavy load, pick the lightest idea below or skip enrichment. Mood and sleep are part of learning.",
         ],
       },
       {
         heading: "Ten ideas you can use this week",
         paragraphs: [
-          "1) One animal reading sheet for Class 1. 2) Five addition facts orally in the car or kitchen. 3) Trace four letters (Nursery / Jr KG). 4) Colour a festival page. 5) Retell a school story in three sentences.",
-          "6) Count fruit at snack time. 7) Write three gratitude or kindness words (Class 2–3). 8) Sort spoons or toys by size. 9) A monsoon picture talk (“What do we need in the rain?”). 10) A 10–15 minute printable generated in Homework Buddy when you need a fresh theme fast.",
+          "1) One animal reading sheet for Class 1. 2) Five addition facts orally while chopping vegetables. 3) Trace four letters (Nursery / Jr KG). 4) Colour a festival page. 5) Retell a school story in three sentences.",
+          "6) Count fruit at snack time. 7) Write three kindness words (Class 2–3). 8) Sort spoons by size. 9) A monsoon picture talk (“What do we need in the rain?”). 10) One 10–15 minute printable from Homework Buddy when you need a fresh theme fast.",
           "Pick one idea per evening. Crossing ten items off a list is not the goal — finishing one calmly is.",
         ],
       },
@@ -1628,9 +1627,9 @@ export const guides: GuideEntity[] = [
       {
         heading: "When to use printables vs oral practice",
         paragraphs: [
-          "Use printables when you want a clear start and finish on paper. Use oral practice when ink, energy, or time is low — five spellings, five sums, or naming five objects in Hindi still counts as homework.",
-          "Keep a tiny “emergency list” on your phone: three oral ideas and one favourite PDF link. Busy nights need fewer decisions.",
-          "For printable variety without scrolling, open Homework Buddy on Android, choose class and activity, generate a PDF, and print one page — the same approach as the free samples on easyhomeworkactivity.com.",
+          "Print when you want a clear start and finish on paper. Go oral when ink, energy, or time is low — five spellings, five sums, or naming five objects in Hindi still counts.",
+          "Keep a tiny emergency list on your phone: three oral ideas and one favourite PDF link. Busy nights need fewer decisions.",
+          "For printable variety without scrolling, open Homework Buddy on Android, choose class and activity, generate a PDF, and print one page — the same approach as the free samples on this site.",
         ],
       },
     ],
@@ -1654,6 +1653,128 @@ export const guides: GuideEntity[] = [
         question: "Where can I get printable easy homework PDFs quickly?",
         answer:
           "Browse free samples under Worksheets on this site, then generate more in the Homework Buddy app on Google Play when you need a new theme tonight.",
+      },
+    ],
+  },
+  {
+    slug: "nursery-homework-ideas",
+    title: "Nursery homework ideas for Indian evenings (10–15 minutes)",
+    description:
+      "Practical Nursery homework ideas that fit after school or tuition — short tracing, counting, Hindi play, and free printable PDFs.",
+    datePublished: "2026-09-09",
+    dateModified: "2026-09-09",
+    status: "published",
+    sections: [
+      {
+        heading: "After biscuits, before bath",
+        paragraphs: [
+          "Nursery homework does not need a desk and a timer. It needs one calm pocket: snack done, bag open, one page on the table. If your child is rubbing eyes after tuition, skip the page and do five minutes of picture talk instead.",
+          "Most Nursery evenings in India land between 7 and 8:30 p.m. Aim for 10–15 minutes. One unfinished happy sheet beats three pages that end in tears.",
+        ],
+      },
+      {
+        heading: "Seven Nursery homework ideas you can rotate",
+        paragraphs: [
+          "1) Straight and curvy tracing paths. 2) Alphabet A–F with a thick crayon. 3) Count dots for numbers 1–5 (save 6–10 for a fresher night). 4) Name and colour a circle or square. 5) Match animal friends. 6) Say and trace two Hindi swar. 7) Festival colouring while you talk about diyas, flags, or rangoli.",
+          "Say the instruction out loud once: “Slow and steady.” Sit for the first two minutes, then step back if they are engaged. Celebrate grip and effort, not perfect lines.",
+        ],
+      },
+      {
+        heading: "Tonight’s plan (print one page)",
+        paragraphs: [
+          "Open the Nursery worksheets hub, pick one free PDF that matches today’s energy, preview it on your phone, then print on A4 with no scaling.",
+          "If ink is low, choose a black-and-white tracing or numbers sheet and save colour pages for the weekend. When favourites feel stale, generate a fresh Nursery theme in the Homework Buddy app.",
+        ],
+      },
+      {
+        heading: "Homework, home work, worksheets — same need",
+        paragraphs: [
+          "Schools and WhatsApp groups use different spellings: nursery homework, home work, worksheets, even work sheets. They usually mean the same short printable practice for ages 3–4.",
+          "Match the sheet to pencil grip and attention, not the label on the school diary. If letters are still huge and play-based, stay on Nursery pages rather than Class 1 grids.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How long should Nursery homework take?",
+        answer:
+          "About 10–15 minutes. Stop while energy is still good — a calm half-page is enough.",
+      },
+      {
+        question: "What if my Nursery child refuses worksheets?",
+        answer:
+          "Offer choice (“animals or tracing?”), switch to colouring or oral picture talk for a few days, and never use worksheets as punishment.",
+      },
+      {
+        question: "Do we need Nursery homework every day?",
+        answer:
+          "No. Three or four short sessions a week plus outdoor play is a healthy rhythm for most Nursery kids.",
+      },
+      {
+        question: "Where can I download free Nursery homework PDFs?",
+        answer:
+          "Start at the Nursery worksheets hub on this site — tracing, alphabet, numbers, Hindi swar, matching, and festival colouring — then generate more in Homework Buddy when you want a new theme.",
+      },
+    ],
+  },
+  {
+    slug: "how-to-teach-nursery-tracing",
+    title: "How to teach Nursery tracing at home without tears",
+    description:
+      "A parent guide to Nursery pencil grip and pre-writing tracing — short sessions, thick crayons, and free printable line and alphabet sheets.",
+    datePublished: "2026-09-09",
+    dateModified: "2026-09-09",
+    status: "published",
+    sections: [
+      {
+        heading: "The crayon that snaps",
+        paragraphs: [
+          "Your child presses so hard the crayon breaks. Or they race to the end of the zigzag and skip every curve. That is not “bad homework” — that is a hand still learning control.",
+          "Nursery tracing is pre-writing practice. The goal is a calm hand and a happy stop, not perfect lines for Instagram.",
+        ],
+      },
+      {
+        heading: "Start with finger, then crayon",
+        paragraphs: [
+          "Before the PDF, draw a road in the air: “Pencil is a little car.” Trace one path with your finger on the table, then one on paper together.",
+          "Use a thick crayon or short pencil. Whole-hand or emerging tripod grip is fine at ages 3–4. Move to a longer pencil later, when lines stay mostly on the path for two sessions.",
+        ],
+      },
+      {
+        heading: "A 10-minute tracing script",
+        paragraphs: [
+          "Snack first. Print one sheet — straight paths tonight, curves another day. Say “slow and steady.” Demo one path. Let them try two alone. Clap once. Put the page away.",
+          "If shoulders hunch, the free hand stops holding the paper, or tears start, stop mid-row. A calm half-page today beats a full page of frustration.",
+        ],
+      },
+      {
+        heading: "Which printable to use",
+        paragraphs: [
+          "Begin with large pre-writing paths (straight, curvy, zigzag). When those feel easy, add alphabet A–F tracing on alternate evenings — not the same night as Hindi swar if everyone is tired.",
+          "Preview on your phone before printing so you do not waste ink on tiny lines. Keep the favourite sheet in a clear sleeve for car rides or balcony time in monsoon season.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Is tracing good Nursery homework?",
+        answer:
+          "Yes — short tracing sheets work well when sessions stay playful and under about 10 minutes.",
+      },
+      {
+        question: "My child traces outside the lines. Should I reprint?",
+        answer:
+          "No. Wobble means the hand is learning. Praise effort and try the same sheet again after a day or two.",
+      },
+      {
+        question: "Pencil or crayon for Nursery tracing?",
+        answer:
+          "Start with a thick crayon. Switch to a short pencil when lines stay mostly on the path for a couple of sessions.",
+      },
+      {
+        question: "How often should we do tracing homework?",
+        answer:
+          "Two or three short sessions a week is plenty alongside free drawing and outdoor play.",
       },
     ],
   },
@@ -2523,6 +2644,25 @@ export const guideRelatedPrintables: Record<
     { label: "Class 1 worksheets by class", href: "/worksheets/class-1" },
     { label: "Animals reading adventure PDF", href: "/worksheets/class-1/animals-reading-adventure" },
     { label: "Reading Fun activity hub", href: "/activities/reading" },
+  ],
+  "nursery-homework-ideas": [
+    { label: "Nursery worksheets hub", href: "/worksheets/nursery" },
+    { label: "Nursery tracing lines (free PDF)", href: "/worksheets/nursery/tracing-lines" },
+    { label: "Nursery alphabet tracing", href: "/worksheets/nursery/alphabet-tracing" },
+    { label: "Nursery numbers 1–10", href: "/worksheets/nursery/numbers-1-to-10" },
+    { label: "Hindi swar tracing", href: "/worksheets/nursery/hindi-swar-tracing" },
+  ],
+  "how-to-teach-nursery-tracing": [
+    { label: "Nursery tracing lines (free PDF)", href: "/worksheets/nursery/tracing-lines" },
+    { label: "Nursery alphabet tracing", href: "/worksheets/nursery/alphabet-tracing" },
+    { label: "Nursery worksheets hub", href: "/worksheets/nursery" },
+    { label: "Preschool worksheets collection", href: "/worksheets/preschool-worksheets" },
+  ],
+  "easy-homework-ideas": [
+    { label: "Nursery worksheets hub", href: "/worksheets/nursery" },
+    { label: "Nursery tracing lines (free PDF)", href: "/worksheets/nursery/tracing-lines" },
+    { label: "Class 1 animals reading sample", href: "/worksheets/class-1/animals-reading-adventure" },
+    { label: "Preschool worksheets collection", href: "/worksheets/preschool-worksheets" },
   ],
 };
 

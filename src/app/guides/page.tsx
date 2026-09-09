@@ -7,7 +7,7 @@ import { guides, publishedOnly } from "@/lib/taxonomy";
 export const metadata = buildMetadata({
   title: "Parent guides for homework & printable worksheets",
   description:
-    "Long-form parent guides on homework routines, printable worksheets, Class 1 reading, and easy homework ideas.",
+    "Long-form parent guides on Nursery homework, tracing at home, printable worksheets, Class 1 reading, and easy homework ideas.",
   path: "/guides",
 });
 
