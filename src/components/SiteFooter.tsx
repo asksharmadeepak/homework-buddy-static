@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PlayStoreLink } from "@/components/PlayStoreLink";
 import { navFooter, site } from "@/lib/site";
 
 export function SiteFooter() {
@@ -11,9 +12,9 @@ export function SiteFooter() {
           <p className="mt-2 text-sm font-semibold text-[#7D7788]">{site.tagline}</p>
           <p className="mt-4 text-sm text-[#7D7788]">
             Version {site.version} ·{" "}
-            <Link className="font-bold text-[#7B5CD6]" href={site.appCtaPath}>
+            <PlayStoreLink placement="footer" className="font-bold text-[#7B5CD6]">
               Get the app
-            </Link>
+            </PlayStoreLink>
           </p>
           {site.instagramUrl ? (
             <p className="mt-3 text-sm font-semibold text-[#7D7788]">
@@ -40,9 +41,21 @@ export function SiteFooter() {
             <ul className="mt-3 space-y-2">
               {links.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-sm font-semibold text-[#7D7788] hover:text-[#7B5CD6]">
-                    {l.label}
-                  </Link>
+                  {l.href === site.appCtaPath ? (
+                    <PlayStoreLink
+                      placement="footer"
+                      className="text-sm font-semibold text-[#7D7788] hover:text-[#7B5CD6]"
+                    >
+                      {l.label}
+                    </PlayStoreLink>
+                  ) : (
+                    <Link
+                      href={l.href}
+                      className="text-sm font-semibold text-[#7D7788] hover:text-[#7B5CD6]"
+                    >
+                      {l.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

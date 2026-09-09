@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { PlayStoreLink } from "@/components/PlayStoreLink";
+import type { PlayStoreClickPlacement } from "@/lib/analytics";
 
 export function SoftCta({
   title = "Generate worksheets instantly with Homework Buddy",
@@ -9,12 +10,12 @@ export function SoftCta({
   /** When true, hide Play CTA (e.g. on /download where hero already installs). */
   browseOnly = false,
   /** UTM / analytics content for the Play Store CTA. */
-  playContent = "soft_cta",
+  playPlacement = "soft_cta",
 }: {
   title?: string;
   body?: string;
   browseOnly?: boolean;
-  playContent?: string;
+  playPlacement?: PlayStoreClickPlacement;
 }) {
   return (
     <aside className="my-10 rounded-3xl bg-[#F0EBFF] px-6 py-8 text-center md:px-10">
@@ -23,7 +24,7 @@ export function SoftCta({
       <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
         {!browseOnly ? (
           <PlayStoreLink
-            content={playContent}
+            placement={playPlacement}
             className="rounded-full bg-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-white"
           >
             Get the app

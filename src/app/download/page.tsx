@@ -35,7 +35,7 @@ export default function DownloadPage() {
         <p className="mt-4 text-lg font-semibold text-[#7D7788]">
           Kids create their own printable homework — Nursery to Class 3. Free on Google Play.
         </p>
-        <PlayStoreBadge content="download_hero" className="mt-8 inline-block" priority />
+        <PlayStoreBadge placement="download_hero" className="mt-8 inline-block" priority />
         <p className="mt-3 text-sm font-bold text-[#7B5CD6]">
           Tap to install · Reading, Maths, Hindi Fun &amp; more
         </p>

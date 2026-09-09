@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaqSection } from "@/components/FaqSection";
 import { HubCard } from "@/components/HubCard";
 import { ClassHubWorksheetGrid } from "@/components/ClassHubWorksheetGrid";
+import { PlayStoreLink } from "@/components/PlayStoreLink";
 import { SoftCta } from "@/components/SoftCta";
 import { buildMetadata, faqJsonLd, jsonLdScript } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -77,12 +78,12 @@ export default function HomePage() {
             <Link href="/worksheets" className="rounded-full bg-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-white">
               Browse worksheets
             </Link>
-            <Link
-              href={site.appCtaPath}
+            <PlayStoreLink
+              placement="home_hero"
               className="rounded-full border-2 border-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-[#7B5CD6]"
             >
               Get the app
-            </Link>
+            </PlayStoreLink>
           </div>
         </div>
         <div className="flex justify-center">
@@ -336,9 +337,9 @@ export default function HomePage() {
           </li>
           <li>
             Need a fresh theme tonight?{" "}
-            <Link href={site.appCtaPath} className="text-[#7B5CD6]">
+            <PlayStoreLink placement="home_content" className="text-[#7B5CD6]">
               Get Homework Buddy
-            </Link>{" "}
+            </PlayStoreLink>{" "}
             or browse{" "}
             <Link href="/guides" className="text-[#7B5CD6]">
               parent guides

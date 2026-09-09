@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Nunito } from "next/font/google";
 import { Analytics } from "@/components/Analytics";
+import { AppDownloadRibbon } from "@/components/AppDownloadRibbon";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import {
@@ -79,7 +80,10 @@ export default function RootLayout({
           ])}
         />
         <Analytics />
-        <SiteHeader />
+        <div className="sticky top-0 z-50">
+          <AppDownloadRibbon />
+          <SiteHeader />
+        </div>
         <main>{children}</main>
         <SiteFooter />
       </body>

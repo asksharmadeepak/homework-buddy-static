@@ -61,7 +61,7 @@ export function WorksheetDetailLayout({
         </ol>
       </section>
 
-      <SoftCta playContent="worksheet_detail" />
+      <SoftCta playPlacement="worksheet_detail" />
       <FaqSection faqs={faqs} />
       <p className="mt-8 text-xs font-semibold text-[#7D7788]">
         Educational disclaimer: Content is for general parent guidance and practice ideas. Follow your

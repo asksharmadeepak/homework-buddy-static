@@ -51,7 +51,7 @@ export default async function WorksheetHubPage({ params }: Props) {
       .map(getActivity)
       .filter(Boolean);
     const relatedThemes = (cls.relatedThemeSlugs || []).map(getTheme).filter(Boolean);
-    const playContent = `class_hub_${slug}`;
+    const playPlacement = `class_hub_${slug}` as const;
 
     return (
       <>
@@ -97,7 +97,7 @@ export default async function WorksheetHubPage({ params }: Props) {
             </p>
             <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
               <PlayStoreLink
-                content={playContent}
+                placement={playPlacement}
                 className="rounded-full bg-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-white"
               >
                 Get Homework Buddy on Google Play
@@ -161,7 +161,7 @@ export default async function WorksheetHubPage({ params }: Props) {
             </section>
 
             <SoftCta
-              playContent={playContent}
+              playPlacement={playPlacement}
               title={`Generate more ${cls.name} worksheets in the app`}
               body="Pick class, activity, theme, and time — download a fresh print-ready PDF anytime."
             />
@@ -179,7 +179,7 @@ export default async function WorksheetHubPage({ params }: Props) {
 
   if (hub?.status === "published") {
     const sheets = filterCrossHubSheets(hub);
-    const playContent = `class_hub_${slug}`;
+    const playPlacement = `class_hub_${slug}` as const;
     const relatedClass = hub.classSlug ? getClass(hub.classSlug) : undefined;
     const relatedActivity = hub.activitySlug ? getActivity(hub.activitySlug) : undefined;
 
@@ -229,7 +229,7 @@ export default async function WorksheetHubPage({ params }: Props) {
             </p>
             <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
               <PlayStoreLink
-                content={playContent}
+                placement={playPlacement}
                 className="rounded-full bg-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-white"
               >
                 Get Homework Buddy on Google Play
@@ -315,7 +315,7 @@ export default async function WorksheetHubPage({ params }: Props) {
             </section>
 
             <SoftCta
-              playContent={playContent}
+              playPlacement={playPlacement}
               title="Generate more worksheets in the app"
               body="Pick class, activity, theme, and time — download a fresh print-ready PDF anytime."
             />

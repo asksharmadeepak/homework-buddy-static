@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PlayStoreLink } from "@/components/PlayStoreLink";
 import { navMain, site } from "@/lib/site";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-[#ebe4f7] bg-[#FFFBF6]/95 backdrop-blur">
+    <header className="border-b border-[#ebe4f7] bg-[#FFFBF6]/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <Image
@@ -29,12 +30,12 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <Link
-          href={site.appCtaPath}
+        <PlayStoreLink
+          placement="header"
           className="rounded-full bg-[#7B5CD6] px-4 py-2 text-sm font-extrabold text-white shadow-sm hover:bg-[#6a4ec4]"
         >
           Get the app
-        </Link>
+        </PlayStoreLink>
       </div>
       <nav
         className="flex gap-3 overflow-x-auto border-t border-[#ebe4f7] px-4 py-2 text-xs font-bold text-[#7D7788] md:hidden"

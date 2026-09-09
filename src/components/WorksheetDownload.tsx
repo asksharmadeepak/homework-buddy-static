@@ -49,7 +49,7 @@ export function WorksheetDownload({
           Download free PDF
         </a>
         <PlayStoreLink
-          content="worksheet_detail"
+          placement="worksheet_detail"
           className="rounded-full border-2 border-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-[#7B5CD6]"
         >
           Generate more in the app

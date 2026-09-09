@@ -115,7 +115,7 @@ export default function WorksheetsIndexPage() {
             ))}
           </div>
           <PlayStoreLink
-            content="worksheets_samples"
+            placement="worksheets_samples"
             className="mt-6 inline-block rounded-full bg-[#7B5CD6] px-5 py-3 text-sm font-extrabold text-white"
           >
             Generate more in the app

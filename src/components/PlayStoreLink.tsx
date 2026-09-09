@@ -2,11 +2,14 @@
 
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { trackPlayStoreClick, type PlayStoreClickContent } from "@/lib/analytics";
+import {
+  trackPlayStoreClick,
+  type PlayStoreClickPlacement,
+} from "@/lib/analytics";
 import { playStoreUrlWithUtm } from "@/lib/site";
 
 type PlayStoreLinkProps = {
-  content: PlayStoreClickContent;
+  placement: PlayStoreClickPlacement;
   className?: string;
   children: ReactNode;
   /** Defaults to opening Play Store in a new tab. */
@@ -16,7 +19,7 @@ type PlayStoreLinkProps = {
 
 /** Outbound Play Store link that fires GA4 + Meta Pixel click events. */
 export function PlayStoreLink({
-  content,
+  placement,
   className,
   children,
   target = "_blank",
@@ -24,12 +27,12 @@ export function PlayStoreLink({
 }: PlayStoreLinkProps) {
   return (
     <a
-      href={playStoreUrlWithUtm(content)}
+      href={playStoreUrlWithUtm(placement)}
       target={target}
       rel="noopener noreferrer"
       className={className}
       aria-label={ariaLabel}
-      onClick={() => trackPlayStoreClick(content)}
+      onClick={() => trackPlayStoreClick(placement)}
     >
       {children}
     </a>
@@ -37,15 +40,15 @@ export function PlayStoreLink({
 }
 
 type PlayStoreBadgeProps = {
-  content: PlayStoreClickContent;
+  placement: PlayStoreClickPlacement;
   className?: string;
   priority?: boolean;
 };
 
 /** Standard Google Play badge used on /download hero. */
-export function PlayStoreBadge({ content, className, priority }: PlayStoreBadgeProps) {
+export function PlayStoreBadge({ placement, className, priority }: PlayStoreBadgeProps) {
   return (
-    <PlayStoreLink content={content} className={className} aria-label="Get it on Google Play">
+    <PlayStoreLink placement={placement} className={className} aria-label="Get it on Google Play">
       <Image
         src="/brand/google-play-badge.png"
         alt="Get it on Google Play"

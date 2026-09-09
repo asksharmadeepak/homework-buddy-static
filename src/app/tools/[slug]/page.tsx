@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaqSection } from "@/components/FaqSection";
+import { PlayStoreLink } from "@/components/PlayStoreLink";
 import { SoftCta } from "@/components/SoftCta";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
 import { getTool, publishedOnly, tools } from "@/lib/taxonomy";
-import { site } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -103,7 +103,7 @@ export default async function ToolPage({ params }: Props) {
         </ol>
       </section>
 
-      <SoftCta playContent={`tool_${slug}`} />
+      <SoftCta playPlacement={`tool_${slug}`} />
       <FaqSection faqs={t.faqs} />
 
       <p className="mt-8 text-sm font-semibold">
@@ -118,9 +118,9 @@ export default async function ToolPage({ params }: Props) {
       </p>
       <p className="mt-6 text-xs font-semibold text-[#7D7788]">
         Educational disclaimer: General parent guidance. Follow your school curriculum.{" "}
-        <Link href={site.appCtaPath} className="text-[#7B5CD6]">
+        <PlayStoreLink placement="tool_page" className="text-[#7B5CD6]">
           Get the app
-        </Link>
+        </PlayStoreLink>
       </p>
     </article>
   );
