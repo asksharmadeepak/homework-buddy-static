@@ -11,6 +11,9 @@ type BuildMetadataInput = {
   description: string;
   path: string;
   image?: string;
+  imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
   type?: "website" | "article";
   noIndex?: boolean;
 };
@@ -20,6 +23,9 @@ export function buildMetadata({
   description,
   path,
   image = "/opengraph-image",
+  imageAlt = title,
+  imageWidth = 1200,
+  imageHeight = 630,
   type = "website",
   noIndex = false,
 }: BuildMetadataInput): Metadata {
@@ -29,7 +35,9 @@ export function buildMetadata({
     : `${title} | ${site.name}`;
 
   return {
-    title: fullTitle,
+    // Absolute prevents the root layout's `%s | Homework Buddy` template from
+    // appending the brand a second time.
+    title: { absolute: fullTitle },
     description,
     alternates: { canonical: url },
     robots: noIndex ? { index: false, follow: false } : { index: true, follow: true },
@@ -40,13 +48,20 @@ export function buildMetadata({
       siteName: site.name,
       locale: site.locale,
       type,
-      images: [{ url: absoluteUrl(image), width: 1200, height: 630, alt: title }],
+      images: [
+        {
+          url: absoluteUrl(image),
+          width: imageWidth,
+          height: imageHeight,
+          alt: imageAlt,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: [absoluteUrl(image)],
+      images: [{ url: absoluteUrl(image), alt: imageAlt }],
     },
   };
 }
@@ -78,6 +93,9 @@ export function worksheetCreativeWorkJsonLd(input: {
   pdfPath: string;
   imagePath: string;
   imageAlt: string;
+  imageWidth: number;
+  imageHeight: number;
+  imageCaption: string;
 }) {
   const pageUrl = absoluteUrl(input.path);
   const imageUrl = absoluteUrl(input.imagePath);
@@ -99,6 +117,15 @@ export function worksheetCreativeWorkJsonLd(input: {
       url: imageUrl,
       description: input.imageAlt,
       name: input.imageAlt,
+      caption: input.imageCaption,
+      width: input.imageWidth,
+      height: input.imageHeight,
+      creator: {
+        "@type": "Organization",
+        name: site.name,
+      },
+      creditText: site.name,
+      copyrightNotice: `© ${new Date().getFullYear()} ${site.name}`,
     },
     publisher: {
       "@type": "Organization",

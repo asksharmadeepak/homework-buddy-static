@@ -30,7 +30,11 @@ export function ClassHubWorksheetGrid({
               key={s.slug}
               className="flex flex-col overflow-hidden rounded-2xl border border-[#ebe4f7] bg-white"
             >
-              <Link href={detailHref} className="relative block aspect-[3/4] bg-[#F7F4FC]">
+              <Link
+                href={detailHref}
+                prefetch={false}
+                className="relative block aspect-[3/4] bg-[#F7F4FC]"
+              >
                 {s.previewImagePath ? (
                   <Image
                     src={s.previewImagePath}
@@ -51,6 +55,7 @@ export function ClassHubWorksheetGrid({
                 </p>
                 <Link
                   href={detailHref}
+                  prefetch={false}
                   className="mt-1 text-base font-extrabold leading-snug text-[#24212C] hover:text-[#7B5CD6]"
                 >
                   {s.name}
@@ -68,6 +73,7 @@ export function ClassHubWorksheetGrid({
                   </a>
                   <Link
                     href={detailHref}
+                    prefetch={false}
                     className="rounded-full border border-[#ebe4f7] px-4 py-2 text-sm font-bold text-[#7D7788] hover:border-[#7B5CD6] hover:text-[#7B5CD6]"
                   >
                     Details

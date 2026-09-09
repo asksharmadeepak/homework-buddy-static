@@ -43,6 +43,7 @@ export const navMain = [
 export const navFooter = {
   explore: [
     { href: "/worksheets", label: "Printable worksheets" },
+    { href: "/worksheets/nursery", label: "Nursery worksheets" },
     { href: "/activities", label: "Homework activities" },
     { href: "/themes", label: "Theme-based learning" },
     { href: "/guides", label: "Parent guides" },

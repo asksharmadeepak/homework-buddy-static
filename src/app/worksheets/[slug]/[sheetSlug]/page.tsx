@@ -4,7 +4,6 @@ import { WorksheetDetailLayout } from "@/components/WorksheetDetailLayout";
 import { WorksheetDownload } from "@/components/WorksheetDownload";
 import {
   buildMetadata,
-  breadcrumbJsonLd,
   jsonLdScript,
   worksheetCreativeWorkJsonLd,
 } from "@/lib/seo";
@@ -30,11 +29,15 @@ export async function generateMetadata({ params }: Props) {
   const { slug: classSlug, sheetSlug } = await params;
   const sheet = getWorksheet(classSlug, sheetSlug);
   if (!sheet || sheet.status !== "published") return {};
+  const imageAlt = sheet.previewImageAlt || sheet.title;
   return buildMetadata({
     title: sheet.title,
     description: sheet.description,
     path: `/worksheets/${classSlug}/${sheetSlug}`,
     image: sheet.previewImagePath,
+    imageAlt,
+    imageWidth: sheet.previewImageWidth ?? 848,
+    imageHeight: sheet.previewImageHeight ?? 1200,
   });
 }
 
@@ -47,31 +50,34 @@ export default async function WorksheetDetailPage({ params }: Props) {
   const activity = getActivity(sheet.activitySlug);
   const theme = getTheme(sheet.themeSlug);
   const path = `/worksheets/${classSlug}/${sheetSlug}`;
+  const imageWidth = sheet.previewImageWidth ?? 848;
+  const imageHeight = sheet.previewImageHeight ?? 1200;
+  const imageCaption =
+    sheet.previewImageCaption ??
+    `${sheet.name} — free printable ${cls?.name || classSlug} worksheet preview.`;
 
-  const jsonLd: Record<string, unknown>[] = [
-    breadcrumbJsonLd([
-      { name: "Home", path: "/" },
-      { name: "Worksheets", path: "/worksheets" },
-      { name: cls?.name || classSlug, path: `/worksheets/${classSlug}` },
-      { name: sheet.name, path },
-    ]),
-  ];
-  if (sheet.previewImagePath) {
-    jsonLd.push(
-      worksheetCreativeWorkJsonLd({
+  const worksheetJsonLd = sheet.previewImagePath
+    ? worksheetCreativeWorkJsonLd({
         name: sheet.title,
         description: sheet.description,
         path,
         pdfPath: sheet.pdfPath,
         imagePath: sheet.previewImagePath,
         imageAlt: sheet.previewImageAlt || sheet.title,
-      }),
-    );
-  }
+        imageWidth,
+        imageHeight,
+        imageCaption,
+      })
+    : null;
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLdScript(jsonLd)} />
+      {worksheetJsonLd ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={jsonLdScript(worksheetJsonLd)}
+        />
+      ) : null}
       <WorksheetDetailLayout
         breadcrumbs={[
           { name: "Home", path: "/" },
@@ -92,6 +98,10 @@ export default async function WorksheetDetailPage({ params }: Props) {
             worksheetName={sheet.name}
             previewImagePath={sheet.previewImagePath}
             previewImageAlt={sheet.previewImageAlt}
+            previewImageWidth={imageWidth}
+            previewImageHeight={imageHeight}
+            previewImageCaption={imageCaption}
+            description={sheet.description}
           />
         </div>
 

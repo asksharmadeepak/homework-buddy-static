@@ -69,6 +69,11 @@ export type WorksheetSeed = {
   previewImagePath?: string;
   /** Descriptive alt for the preview (include query language when relevant) */
   previewImageAlt?: string;
+  /** Native preview dimensions used by metadata and visible rendering */
+  previewImageWidth?: number;
+  previewImageHeight?: number;
+  /** Visible caption and image-sitemap description */
+  previewImageCaption?: string;
   intro: string[];
   /** Sheet-specific steps; merged with guide extras when present */
   howTo?: string[];
@@ -81,13 +86,13 @@ export const classes: HubEntity[] = [
   {
     slug: "nursery",
     name: "Nursery",
-    title: "Nursery homework — printable worksheets & easy activities",
+    title: "Free Nursery Worksheets & Homework PDFs",
     description:
-      "Nursery homework printable worksheets for tracing, colours, matching, and early listening — free easy PDFs for Indian preschool parents.",
+      "Free printable Nursery homework and worksheets for ages 3–4, including tracing, Hindi, maths, colours, shapes, and matching PDFs.",
     icon: "/classes/nursery.png",
     status: "published",
     intro: [
-      "Nursery homework should feel like play with a little structure. When parents search for nursery homework or easy preschool worksheets in India, they usually need a short printable that builds pencil grip, listening, and confidence — not exam pressure or long packs of photocopies.",
+      "Nursery homework should feel like play with a little structure. These free Nursery worksheets give Indian parents short printable PDFs that build pencil grip, early maths, language, listening, and confidence — not exam pressure or long packs of photocopies.",
       "At Nursery age (roughly 3–4), children are still learning how to sit with a page, hold a crayon, and follow a simple instruction. The best nursery printable worksheets use large lines, clear pictures, and one skill at a time: tracing paths, colour recognition, matching pairs, or picture talk (“What do you see?”).",
       "This Nursery hub is written for busy evenings after school or playgroup. Aim for 10–15 minutes. One sheet is enough. If your child is tired, stop and try again tomorrow — a happy unfinished page beats a tearful finished one.",
       "Choose themes your child already loves — animals, fruits, festivals, or monsoon — so the worksheet feels familiar. Pair every printable with conversation. Naming colours and animals aloud builds vocabulary as much as filling boxes.",
@@ -131,12 +136,17 @@ export const classes: HubEntity[] = [
           "Download the free Nursery samples on this site (including festival colouring and Hindi swar tracing), then generate more themed sheets in the Homework Buddy app on Google Play.",
       },
       {
+        question: "Are nursery homework, home work, worksheets, and work sheets the same?",
+        answer:
+          "Yes. Parents use nursery homework or home work and nursery worksheets or work sheets for the same short printable practice pages. Choose by your child’s age and skill rather than the spelling used by a school or website.",
+      },
+      {
         question: "My Nursery child refuses worksheets. What should I do?",
         answer:
           "Switch to colouring or oral picture talk for a few days. Offer choice (“animals or fruits?”), keep sessions tiny, and never use worksheets as punishment.",
       },
     ],
-    relatedActivitySlugs: ["coloring", "reading", "life-skills"],
+    relatedActivitySlugs: ["coloring", "writing", "hindi"],
     relatedThemeSlugs: ["animals", "fruits", "festivals"],
   },
   {
@@ -1218,13 +1228,13 @@ export const crossHubs: CrossHub[] = [
   {
     slug: "preschool-worksheets",
     name: "Preschool Worksheets",
-    title: "Preschool worksheets — printable easy homework for nursery & KG",
+    title: "Preschool Worksheets for Ages 3–6 — Free Printables",
     description:
-      "Preschool printable worksheets for Nursery, Jr KG, and Sr KG: tracing, colours, matching, and play-based learning.",
+      "Playgroup and preschool printable worksheets for ages 3–6, with tracing, colours, matching, and links to class-specific Nursery and KG practice.",
     status: "published",
     intro: [
       "Preschool worksheets should protect play. The best easy homework for preschool is short, visual, and optional — a bridge between school and home, not a second school day.",
-      "This hub points parents toward Nursery and KG printables that build readiness skills without drilling.",
+      "This age-based hub helps parents compare playgroup, Nursery, Jr KG, and Sr KG printables that build readiness skills without drilling. For class-specific practice, browse the dedicated Nursery worksheets collection.",
       "Browse free samples linked below: Nursery tracing lines for pencil grip, festival colouring for calm fine motor practice, and Hindi swar tracing for early varnamala play.",
       "If your playgroup calls it Nursery and your neighbour says LKG, ignore the label — match sheets to attention span and pencil control, not the school brand name.",
       "A preschool evening rhythm might be: snack, one tracing or matching sheet, five minutes of picture talk, then bath time. Three such sessions a week plus outdoor play beats daily dense photocopies.",
@@ -1338,14 +1348,14 @@ export const tools: ToolEntity[] = [
   },
   {
     slug: "math-worksheet-generator",
-    name: "Math Worksheet Generator",
-    title: "Math worksheet generator — printable practice",
+    name: "Maths Worksheet Planning Guide",
+    title: "How to Create Maths Worksheets for Kids — Parent Guide",
     description:
-      "Create printable maths worksheets for counting, sums, and word problems with class-fit difficulty.",
+      "Plan age-appropriate maths worksheets for counting, sums, and word problems, then create printable practice in the Homework Buddy app.",
     status: "published",
     intro: [
-      "Math worksheet generators should let you control difficulty. Random hard sums frustrate Class 1 children; endless easy sums bore Class 3.",
-      "Aim for mixed practice: fluency plus one story problem. Themes help word problems feel concrete.",
+      "A useful maths worksheet starts with the child’s level, not a random page of sums. Hard questions frustrate Class 1 children; endless easy sums bore Class 3.",
+      "Use this guide to plan mixed practice—short fluency work plus one story problem—then create and print the finished sheet in Homework Buddy.",
     ],
     howTo: [
       "Pick maths and your child’s class.",
@@ -1783,6 +1793,8 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImagePath: "/worksheets/previews/nursery-hindi-swar-tracing.png",
     previewImageAlt:
       "Nursery Hindi swar worksheet — printable अ आ इ ई tracing practice sheet",
+    previewImageWidth: 1131,
+    previewImageHeight: 1600,
     intro: [
       "This Nursery Hindi worksheet introduces the first swar of the varnamala — अ, आ, इ, ई, उ, ऊ — with large trace-over letters and a circle-the-letter game. Say each swar aloud together before tracing.",
       "स्वर अभ्यास works best in short, happy sessions: one sheet, six letters, lots of praise. For fresh swar, vyanjan, and varnamala-mix sheets every day, generate them in the Homework Buddy app.",
@@ -1814,6 +1826,8 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImagePath: "/worksheets/previews/class-1-hindi-vyanjan-practice.png",
     previewImageAlt:
       "Class 1 Hindi vyanjan worksheet — match क ख ग to pictures, missing letters, and tracing PDF preview",
+    previewImageWidth: 1131,
+    previewImageHeight: 1600,
     intro: [
       "Looking for a free Hindi vyanjan worksheet for Class 1? This printable PDF practises व्यंजन three ways on one A4 page: match letters to pictures (ख से खरगोश, श से शेर, ह से हाथी, त से तोता), fill missing letters in the क–ठ sequence, and trace क ख ग घ with friendly spacing.",
       "Preview the full worksheet image on this page before you print. You can see the matching panel, missing-letter row, and tracing lines — the same calm layout Homework Buddy aims for when you generate fresh Hindi sheets in the app.",
@@ -1926,6 +1940,174 @@ export const worksheetSeeds: WorksheetSeed[] = [
         question: "Can toddlers use this matching sheet?",
         answer:
           "With help, yes. Point to pictures together and let them finish one or two matches independently.",
+      },
+    ],
+  },
+  {
+    slug: "alphabet-tracing",
+    classSlug: "nursery",
+    name: "Alphabet Tracing A to F",
+    title: "Nursery Alphabet Tracing Worksheet — Free ABC PDF",
+    description:
+      "Free Nursery alphabet tracing worksheet for letters A–F, with large guide letters and space for first independent writing attempts.",
+    activitySlug: "writing",
+    themeSlug: "stories",
+    status: "published",
+    pdfPath: "/worksheets/nursery-alphabet-tracing.pdf",
+    previewImagePath: "/worksheets/previews/nursery-alphabet-tracing.png",
+    previewImageAlt: "Nursery alphabet tracing worksheet A to F free printable ABC PDF preview",
+    intro: [
+      "This Nursery ABC worksheet keeps alphabet practice short: say the sound, trace one large letter, then try it once without a guide.",
+      "Use a thick crayon or short pencil and stop after three letters if your child’s hand looks tired.",
+    ],
+    howTo: [
+      "Print at actual size on A4 paper.",
+      "Say each letter sound before tracing it with a finger.",
+      "Trace the grey letter slowly, then try the blank line once.",
+      "Complete three to six letters depending on attention and grip.",
+    ],
+    sheetContents: [
+      "Large capital letters A to F",
+      "Grey trace-over letter guides",
+      "Independent writing lines",
+      "Short sound-and-say prompts",
+    ],
+    faqs: [
+      {
+        question: "Which alphabet letters should Nursery children trace first?",
+        answer:
+          "Start with a small set such as A–F and repeat it calmly. Letter recognition and comfortable pencil movement matter more than finishing A–Z in one sitting.",
+      },
+      {
+        question: "Is this Nursery ABC worksheet free?",
+        answer:
+          "Yes. Download and print this A4 alphabet tracing PDF without signing up.",
+      },
+    ],
+  },
+  {
+    slug: "numbers-1-to-10",
+    classSlug: "nursery",
+    name: "Numbers 1 to 10",
+    title: "Nursery Numbers 1–10 Worksheet — Free Counting PDF",
+    description:
+      "Free Nursery numbers worksheet for counting and tracing 1–10 with colourful dot groups and large number guides.",
+    activitySlug: "maths",
+    themeSlug: "fruits",
+    status: "published",
+    pdfPath: "/worksheets/nursery-numbers-1-to-10.pdf",
+    previewImagePath: "/worksheets/previews/nursery-numbers-1-to-10.png",
+    previewImageAlt: "Nursery numbers 1 to 10 counting and tracing worksheet free PDF preview",
+    intro: [
+      "Counting works best when children touch each object once. This sheet pairs every numeral with a small dot group so number shapes connect to quantity.",
+      "Begin with 1–5 and continue to 10 only if your child is still interested.",
+    ],
+    howTo: [
+      "Point to and count each dot aloud.",
+      "Trace the large grey numeral once.",
+      "Ask your child to show the same number on their fingers.",
+      "Stop at five and return later if attention fades.",
+    ],
+    sheetContents: [
+      "Numbers 1 to 10 in large print",
+      "Trace-over numeral guides",
+      "Countable dot groups for every number",
+      "Two-column layout sized for Nursery",
+    ],
+    faqs: [
+      {
+        question: "Should Nursery children count to 10?",
+        answer:
+          "Many Nursery children can begin counting to 10, but understanding quantities 1–5 is more important than reciting quickly. Build up gradually.",
+      },
+      {
+        question: "Can I reuse this counting worksheet?",
+        answer:
+          "Yes. Place it in a clear sleeve and use a washable marker for repeated number tracing.",
+      },
+    ],
+  },
+  {
+    slug: "colours-shapes",
+    classSlug: "nursery",
+    name: "Colours and Shapes",
+    title: "Nursery Colours and Shapes Worksheet — Free PDF",
+    description:
+      "Free Nursery colours and shapes worksheet with circle, square, rectangle, and triangle recognition plus simple colouring practice.",
+    activitySlug: "maths",
+    themeSlug: "nature",
+    status: "published",
+    pdfPath: "/worksheets/nursery-colours-shapes.pdf",
+    previewImagePath: "/worksheets/previews/nursery-colours-shapes.png",
+    previewImageAlt: "Nursery colours and shapes worksheet circle square triangle free printable preview",
+    intro: [
+      "Shape learning becomes easier when a child can name, point, and colour. This one-page activity introduces four familiar shapes without a crowded grid.",
+      "After printing, find one matching shape around the room—a clock, window, book, or block.",
+    ],
+    howTo: [
+      "Name each coloured example together.",
+      "Trace the empty shape with a finger.",
+      "Colour the matching outline in any chosen shade.",
+      "Find one circle or rectangle in the room after the page.",
+    ],
+    sheetContents: [
+      "Circle, square, rectangle, and triangle examples",
+      "Large empty outlines for colouring",
+      "Colour naming prompts",
+      "Simple real-world shape discussion",
+    ],
+    faqs: [
+      {
+        question: "Which shapes should a Nursery child know?",
+        answer:
+          "Circle, square, triangle, and rectangle are useful first shapes. Recognition in everyday objects matters more than perfect drawing.",
+      },
+      {
+        question: "Do children need to use the shown colour?",
+        answer:
+          "No. Let them choose colours freely; naming the shape and controlling the crayon are the main learning goals.",
+      },
+    ],
+  },
+  {
+    slug: "same-different",
+    classSlug: "nursery",
+    name: "Same and Different",
+    title: "Nursery Same and Different Worksheet — Free PDF",
+    description:
+      "Free Nursery same-and-different worksheet with friendly picture rows for visual discrimination, attention, and early reasoning.",
+    activitySlug: "creative-thinking",
+    themeSlug: "animals",
+    status: "published",
+    pdfPath: "/worksheets/nursery-same-different.pdf",
+    previewImagePath: "/worksheets/previews/nursery-same-different.png",
+    previewImageAlt: "Nursery same and different pictures worksheet free printable reasoning PDF preview",
+    intro: [
+      "Spotting what changed builds the visual attention children use later for letters, numbers, and reading. Ask for an explanation before circling.",
+      "There is no need to time the page. One thoughtful answer is better than racing through all four rows.",
+    ],
+    howTo: [
+      "Name all three pictures in a row.",
+      "Ask which two are the same.",
+      "Let your child explain what makes the other picture different.",
+      "Circle the different picture and stop after four rows.",
+    ],
+    sheetContents: [
+      "Four picture-based comparison rows",
+      "Animals, transport, moon, and star artwork",
+      "Large circle targets for young hands",
+      "Oral reasoning prompts for parents",
+    ],
+    faqs: [
+      {
+        question: "What does a same-and-different worksheet teach?",
+        answer:
+          "It builds visual discrimination, attention, comparison language, and the ability to explain a simple choice.",
+      },
+      {
+        question: "What if my child circles the wrong picture?",
+        answer:
+          "Ask what they noticed rather than marking it wrong immediately. Naming the pictures together often helps them self-correct.",
       },
     ],
   },
@@ -2370,8 +2552,8 @@ export function getPopularWorksheets(): WorksheetSeed[] {
 }
 
 const SITE_LAUNCH = "2026-07-01";
-const HUB_CONTENT_UPDATE = "2026-09-01";
-const WORKSHEET_BATCH_UPDATE = "2026-09-01";
+const HUB_CONTENT_UPDATE = "2026-09-09";
+const WORKSHEET_BATCH_UPDATE = "2026-09-09";
 
 export type SitemapEntry = { path: string; lastModified: string };
 

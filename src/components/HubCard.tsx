@@ -15,6 +15,7 @@ export function HubCard({
   return (
     <Link
       href={href}
+      prefetch={false}
       className="group flex flex-col rounded-3xl border border-[#ebe4f7] bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-[#7B5CD6]/40 hover:shadow-md"
     >
       <Image

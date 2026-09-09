@@ -47,3 +47,10 @@
   to = "/download"
   status = 301
   force = true
+
+# Next's generated Open Graph image has no filename extension in a static
+# export, so Netlify otherwise serves it as text/plain.
+[[headers]]
+  for = "/opengraph-image"
+  [headers.values]
+    Content-Type = "image/png"

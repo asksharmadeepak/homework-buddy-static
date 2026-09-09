@@ -38,7 +38,7 @@ const homeFaqs = [
   {
     question: "How is this different from random worksheet PDFs?",
     answer:
-      "We organise content by search intent and topic clusters, with unique guidance and FAQs — then offer Homework Buddy when you want fresh printables generated for your child’s class.",
+      "Every free sample includes an age level, a clear skill goal, practical parent guidance, and a printable preview so you can check the difficulty before using ink.",
   },
 ];
 
@@ -169,9 +169,13 @@ export default function HomePage() {
             comprehension and multi-step thinking — still with warmth and a finishable length.
           </p>
           <p>
-            Every hub on this site is written for one primary search intent. Looking for Class 1 reading
-            worksheets? There is a curated hub for that. Exploring animals themes for colouring night? Open the
-            animals theme page. Want a weekly rhythm instead of nightly panic? Read the homework routine guide.
+            Start with the page that matches your child today. Choose{" "}
+            <Link href="/worksheets/nursery" className="text-[#7B5CD6]">
+              free Nursery worksheets
+            </Link>{" "}
+            for ages 3–4, open a Class 1 reading collection for early sentences, or pick an animals theme
+            for a relaxed colouring night. If the bigger challenge is routine, the parent guides offer
+            short session plans for busy evenings.
           </p>
           <p>
             The Homework Buddy Android app is the product behind the platform. When guidance is not enough and
@@ -179,16 +183,14 @@ export default function HomePage() {
             a PDF. First we help. Then we recommend the app as the easiest generator for busy parents in India.
           </p>
           <p>
-            Our editorial approach follows helpful-content principles: unique introductions, practical how-tos,
-            FAQs parents actually ask, and internal links that connect class pages to activities, themes, guides,
-            and tools. We do not publish every filter combination as an indexed URL. Quality beats combinatorial
-            spam.
+            Each worksheet page tells you what the PDF contains, who it suits, how long to spend, and when
+            to stop. Preview the complete page before printing, choose one activity rather than a thick pack,
+            and use the FAQs when grip, focus, or difficulty is causing frustration.
           </p>
           <p>
-            Seed keywords that shape our clusters include easy homework activity, easy homework for preschool,
-            kindergarten worksheets, Class 1 worksheets, worksheet generator, printable worksheets, reading
-            worksheets, writing worksheets, maths worksheets, and kids activities. From those seeds we expand
-            into long-tail questions and People-Also-Ask style FAQs on each hub.
+            Families use different words for the same need: homework or home work, worksheets or work sheets,
+            Nursery or playgroup. Whatever your school calls it, match the printable to your child&apos;s age,
+            attention span, and current skill instead of chasing a label.
           </p>
           <p>
             Whether you need a monsoon rainy-day printable, a festival colouring sheet, or Class 3 life-skills
@@ -267,9 +269,10 @@ export default function HomePage() {
             without turning homework into coaching-centre intensity.
           </p>
           <p>
-            Internal links on this site are intentional. A Class 1 hub points to reading and maths activities.
-            An animals theme points back to class pages. Guides explain routines. Tools explain generators.
-            Together they form topical authority around printable learning for early primary years.
+            Not sure where to continue? Move between class pages, skill activities, and familiar themes.
+            A Nursery child can alternate alphabet tracing with Hindi swar or shapes; an older child can
+            combine a reading sheet with one maths story problem. The goal is a balanced week, not a taller
+            pile of paper.
           </p>
         </div>
       </section>

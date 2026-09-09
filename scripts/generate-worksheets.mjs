@@ -1319,6 +1319,160 @@ async function buildNurseryAnimalsMatching() {
   return doc.save();
 }
 
+async function buildNurseryAlphabetTracing() {
+  const { doc, page, font, fontBold, margin, y: y0 } = await startSample(
+    "Alphabet Tracing A to F",
+    "Nursery · English · ABC  ·  Say each sound, trace the grey letter, then try alone.",
+  );
+  let y = y0;
+  const letters = ["A", "B", "C", "D", "E", "F"];
+  const trace = rgb(0.72, 0.69, 0.78);
+
+  for (let i = 0; i < letters.length; i++) {
+    const col = i % 2;
+    const row = Math.floor(i / 2);
+    const x = margin + col * 260;
+    const by = y - row * 135 - 108;
+    page.drawRectangle({
+      x,
+      y: by,
+      width: 245,
+      height: 116,
+      borderColor: C.line,
+      borderWidth: 1.2,
+      color: i % 2 === 0 ? C.soft : C.peach,
+    });
+    page.drawText(letters[i], { x: x + 18, y: by + 43, size: 46, font: fontBold, color: C.purple });
+    page.drawText(letters[i], { x: x + 86, y: by + 43, size: 46, font: fontBold, color: trace });
+    page.drawText("___", { x: x + 158, y: by + 42, size: 22, font, color: C.muted });
+    page.drawText(`Say: ${letters[i]}`, { x: x + 18, y: by + 16, size: 9, font, color: C.muted });
+  }
+
+  drawTipBox(page, margin, font, fontBold, "Trace with a finger first. One neat attempt matters more than filling every box.");
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, "Nursery Alphabet Tracing A to F");
+  return doc.save();
+}
+
+async function buildNurseryNumbersOneToTen() {
+  const { doc, page, font, fontBold, margin, y: y0 } = await startSample(
+    "Numbers 1 to 10",
+    "Nursery · Maths · Counting  ·  Count the dots, trace the number, and say it aloud.",
+  );
+  let y = y0;
+
+  for (let n = 1; n <= 10; n++) {
+    const col = (n - 1) % 2;
+    const row = Math.floor((n - 1) / 2);
+    const x = margin + col * 260;
+    const by = y - row * 82 - 66;
+    page.drawRectangle({
+      x,
+      y: by,
+      width: 245,
+      height: 70,
+      borderColor: C.line,
+      borderWidth: 1,
+      color: n % 2 === 0 ? C.peach : C.soft,
+    });
+    page.drawText(String(n), { x: x + 14, y: by + 20, size: 30, font: fontBold, color: C.purple });
+    page.drawText(String(n), { x: x + 55, y: by + 20, size: 30, font: fontBold, color: rgb(0.72, 0.69, 0.78) });
+    for (let d = 0; d < n; d++) {
+      const dx = x + 104 + (d % 5) * 24;
+      const dy = by + 45 - Math.floor(d / 5) * 24;
+      page.drawCircle({ x: dx, y: dy, size: 6, color: d % 2 === 0 ? C.purple : rgb(0.91, 0.365, 0.459) });
+    }
+  }
+
+  drawTipBox(page, margin, font, fontBold, "Touch each dot while counting. Stop at five if ten feels too long today.");
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, "Nursery Numbers 1 to 10");
+  return doc.save();
+}
+
+async function buildNurseryColoursShapes() {
+  const { doc, page, font, fontBold, margin, y: y0 } = await startSample(
+    "Colours and Shapes",
+    "Nursery · Maths · Colours  ·  Name each shape, then colour the matching outline.",
+  );
+  let y = y0;
+  const rows = [
+    { label: "Circle", color: rgb(0.91, 0.365, 0.459), kind: "circle" },
+    { label: "Square", color: C.purple, kind: "square" },
+    { label: "Rectangle", color: rgb(1, 0.65, 0.18), kind: "rectangle" },
+    { label: "Triangle", color: rgb(0.18, 0.65, 0.52), kind: "triangle" },
+  ];
+
+  for (const item of rows) {
+    page.drawText(item.label, { x: margin, y, size: 13, font: fontBold, color: C.text });
+    const x1 = margin + 145;
+    const x2 = margin + 340;
+    const by = y - 30;
+    if (item.kind === "circle") {
+      page.drawCircle({ x: x1 + 30, y: by, size: 28, color: item.color });
+      page.drawCircle({ x: x2 + 30, y: by, size: 28, borderColor: C.muted, borderWidth: 2 });
+    } else if (item.kind === "square") {
+      page.drawRectangle({ x: x1, y: by - 28, width: 56, height: 56, color: item.color });
+      page.drawRectangle({ x: x2, y: by - 28, width: 56, height: 56, borderColor: C.muted, borderWidth: 2 });
+    } else if (item.kind === "rectangle") {
+      page.drawRectangle({ x: x1 - 8, y: by - 22, width: 78, height: 44, color: item.color });
+      page.drawRectangle({ x: x2 - 8, y: by - 22, width: 78, height: 44, borderColor: C.muted, borderWidth: 2 });
+    } else {
+      const points = [[x1, by - 28], [x1 + 60, by - 28], [x1 + 30, by + 30]];
+      const outline = [[x2, by - 28], [x2 + 60, by - 28], [x2 + 30, by + 30]];
+      for (let i = 0; i < 3; i++) {
+        page.drawLine({ start: { x: points[i][0], y: points[i][1] }, end: { x: points[(i + 1) % 3][0], y: points[(i + 1) % 3][1] }, thickness: 8, color: item.color });
+        page.drawLine({ start: { x: outline[i][0], y: outline[i][1] }, end: { x: outline[(i + 1) % 3][0], y: outline[(i + 1) % 3][1] }, thickness: 2, color: C.muted });
+      }
+    }
+    page.drawText("Look", { x: x1 + 85, y: by - 4, size: 9, font, color: C.muted });
+    page.drawText("Colour me", { x: x2 + 85, y: by - 4, size: 9, font, color: C.muted });
+    y -= 105;
+  }
+
+  drawTipBox(page, margin, font, fontBold, "Let your child choose the crayon shade. Naming the shape is the main goal.");
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, "Nursery Colours and Shapes");
+  return doc.save();
+}
+
+async function buildNurserySameDifferent() {
+  const { doc, page, font, fontBold, margin, y: y0 } = await startSample(
+    "Same and Different",
+    "Nursery · Thinking · Visual skills  ·  Circle the picture that is different in each row.",
+  );
+  let y = y0;
+  const rows = [
+    ["cut_star.png", "cut_star.png", "cut_moon.png"],
+    ["cut_lion.png", "cut_rabbit.png", "cut_lion.png"],
+    ["cut_bus.png", "cut_bus.png", "cut_plane.png"],
+    ["cut_parrot.png", "cut_elephant.png", "cut_parrot.png"],
+  ];
+
+  for (let r = 0; r < rows.length; r++) {
+    page.drawText(`Row ${r + 1}: circle the different picture`, {
+      x: margin,
+      y,
+      size: 12,
+      font: fontBold,
+      color: C.purple,
+    });
+    y -= 82;
+    for (let i = 0; i < 3; i++) {
+      const x = margin + 45 + i * 155;
+      const img = await doc.embedPng(loadArt(rows[r][i]));
+      page.drawCircle({ x: x + 35, y: y + 35, size: 42, borderColor: C.line, borderWidth: 1.2 });
+      page.drawImage(img, { x, y, width: 70, height: 70 });
+    }
+    y -= 30;
+  }
+
+  drawTipBox(page, margin, font, fontBold, "Ask: What changed? Let your child explain before circling the answer.");
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, "Nursery Same and Different");
+  return doc.save();
+}
+
 async function buildJrKgLetterTracing() {
   const { doc, page, font, fontBold, margin, y: y0 } = await startSample(
     "Letter Tracing ABC",
@@ -1914,6 +2068,10 @@ const builders = [
   ["class-1-hindi-vyanjan-practice.pdf", buildHindiVyanjanPractice],
   ["nursery-tracing-lines.pdf", buildNurseryTracingLines],
   ["nursery-animals-matching.pdf", buildNurseryAnimalsMatching],
+  ["nursery-alphabet-tracing.pdf", buildNurseryAlphabetTracing],
+  ["nursery-numbers-1-to-10.pdf", buildNurseryNumbersOneToTen],
+  ["nursery-colours-shapes.pdf", buildNurseryColoursShapes],
+  ["nursery-same-different.pdf", buildNurserySameDifferent],
   ["jr-kg-letter-tracing-abc.pdf", buildJrKgLetterTracing],
   ["jr-kg-numbers-count-ten.pdf", buildJrKgNumbersCount],
   ["jr-kg-patterns-colours.pdf", buildJrKgPatternsColours],

@@ -157,6 +157,22 @@ export default async function WorksheetHubPage({ params }: Props) {
                     </Link>
                   ) : null,
                 )}
+                {cls.slug === "nursery" ? (
+                  <>
+                    <Link
+                      href="/worksheets/preschool-worksheets"
+                      className="rounded-full bg-[#F0EBFF] px-4 py-2 text-sm font-bold text-[#7B5CD6]"
+                    >
+                      Preschool worksheets for ages 3–6
+                    </Link>
+                    <Link
+                      href="/worksheets/kindergarten-worksheets"
+                      className="rounded-full bg-[#F0EBFF] px-4 py-2 text-sm font-bold text-[#7B5CD6]"
+                    >
+                      Jr KG &amp; Sr KG worksheets
+                    </Link>
+                  </>
+                ) : null}
               </div>
             </section>
 

@@ -5,13 +5,21 @@ import { PlayStoreLink } from "@/components/PlayStoreLink";
 export function WorksheetDownload({
   pdfPath,
   worksheetName,
+  description,
   previewImagePath,
   previewImageAlt,
+  previewImageWidth = 848,
+  previewImageHeight = 1200,
+  previewImageCaption,
 }: {
   pdfPath: string;
   worksheetName: string;
+  description: string;
   previewImagePath?: string;
   previewImageAlt?: string;
+  previewImageWidth?: number;
+  previewImageHeight?: number;
+  previewImageCaption?: string;
 }) {
   return (
     <section className="my-10 overflow-hidden rounded-3xl border border-[#7B5CD6]/25 bg-gradient-to-br from-[#F0EBFF] to-[#FFFBF6] p-6 md:p-8">
@@ -22,22 +30,23 @@ export function WorksheetDownload({
         Download “{worksheetName}”
       </h2>
       <p className="mt-3 max-w-2xl text-sm font-semibold leading-relaxed text-[#7D7788]">
-        Print this free sample — it includes illustrations, quizzes, and a drawing prompt. No signup
-        required. When you want unlimited class + theme combinations, generate fresh worksheets in the
-        Homework Buddy app.
+        {description} Preview the complete sheet below, then download and print it without signing up.
       </p>
 
       {previewImagePath ? (
-        <div className="mt-6 overflow-hidden rounded-2xl border border-[#ebe4f7] bg-white shadow-sm">
+        <figure className="mt-6 overflow-hidden rounded-2xl border border-[#ebe4f7] bg-white shadow-sm">
           <Image
             src={previewImagePath}
             alt={previewImageAlt || `${worksheetName} printable worksheet preview`}
-            width={1131}
-            height={1600}
+            width={previewImageWidth}
+            height={previewImageHeight}
             className="mx-auto h-auto w-full max-w-lg object-contain"
             priority
           />
-        </div>
+          <figcaption className="border-t border-[#ebe4f7] px-4 py-3 text-center text-xs font-semibold text-[#7D7788]">
+            {previewImageCaption || `${worksheetName} printable worksheet preview`}
+          </figcaption>
+        </figure>
       ) : null}
 
       <div className="mt-6 flex flex-wrap gap-3">
