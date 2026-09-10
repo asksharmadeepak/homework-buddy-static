@@ -76,6 +76,16 @@ export default async function ToolPage({ params }: Props) {
         </section>
       ) : null}
 
+      {slug === "worksheet-generator" ? (
+        <p className="mt-6 rounded-2xl border border-[#ebe4f7] bg-[#F7F4FC] px-4 py-3 text-sm font-semibold text-[#3d3848]">
+          Want one free sheet right now?{" "}
+          <Link href="/tools/chat" className="text-[#7B5CD6]">
+            Try the printable worksheet helper
+          </Link>{" "}
+          — then get the app for unlimited themed PDFs.
+        </p>
+      ) : null}
+
       {t.sections && t.sections.length > 0 ? (
         <div className="mt-10 space-y-10">
           {t.sections.map((section) => (

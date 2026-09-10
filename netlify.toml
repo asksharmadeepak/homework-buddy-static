@@ -5,10 +5,19 @@
 #   - Build command: npm run build  (or leave blank; this file wins)
 #   - Publish directory: out
 # Then: Deploys → Trigger deploy → Clear cache and deploy site
+#
+# Gemini printable chat (/tools/chat):
+#   Set GEMINI_API_KEY in Netlify → Environment variables (secret).
+#   Optional: GEMINI_MODEL (default gemini-2.0-flash-lite), GEMINI_DAILY_MAX (default 500).
+#   Function: netlify/functions/generate-worksheet.js → /.netlify/functions/generate-worksheet
+#   Local: netlify dev (not plain next dev) so the function is available.
 
 [build]
   command = "npm run build"
   publish = "out"
+
+[functions]
+  directory = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "22"

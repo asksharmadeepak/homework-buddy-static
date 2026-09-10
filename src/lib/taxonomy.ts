@@ -2713,6 +2713,7 @@ export function allPublishedSitemapEntries(): SitemapEntry[] {
     { path: "/themes", lastModified: HUB_CONTENT_UPDATE },
     { path: "/guides", lastModified: SITE_LAUNCH },
     { path: "/tools", lastModified: HUB_CONTENT_UPDATE },
+    { path: "/tools/chat", lastModified: HUB_CONTENT_UPDATE },
     { path: "/sitemap", lastModified: WORKSHEET_BATCH_UPDATE },
   ];
 

@@ -31,6 +31,23 @@ export default function ToolsIndexPage() {
       <p className="mt-4 text-lg font-semibold text-[#7D7788]">
         Learn how worksheet generators and planners help busy parents — then create printables in Homework Buddy.
       </p>
+
+      <Link
+        href="/tools/chat"
+        className="mt-8 block rounded-3xl border-2 border-[#7B5CD6]/35 bg-gradient-to-br from-[#F0EBFF] to-[#FFFBF6] p-5 hover:border-[#7B5CD6]"
+      >
+        <span className="text-xs font-extrabold uppercase tracking-wide text-[#7B5CD6]">
+          Try tonight
+        </span>
+        <span className="mt-1 block text-xl font-black text-[#24212C]">
+          Printable worksheet helper
+        </span>
+        <p className="mt-2 text-sm font-semibold text-[#7D7788]">
+          Chat-style helper: generate one calm browser-printable sheet for Nursery–Class 3, then get
+          unlimited PDFs in the app.
+        </p>
+      </Link>
+
       <ul className="mt-10 space-y-4">
         {list.map((t) => (
           <li key={t.slug}>

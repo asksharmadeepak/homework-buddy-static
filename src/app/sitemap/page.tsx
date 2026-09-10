@@ -74,10 +74,13 @@ export default function HtmlSitemapPage() {
     },
     {
       title: "Tools",
-      links: toolList.map((t) => ({
-        href: `/tools/${t.slug}`,
-        label: t.name,
-      })),
+      links: [
+        { href: "/tools/chat", label: "Printable worksheet helper" },
+        ...toolList.map((t) => ({
+          href: `/tools/${t.slug}`,
+          label: t.name,
+        })),
+      ],
     },
     {
       title: "Main pages",

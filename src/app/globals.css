@@ -23,3 +23,20 @@ body {
 summary::-webkit-details-marker {
   display: none;
 }
+
+/* Printable worksheet chat — hide chrome, keep the sheet */
+@media print {
+  body {
+    background: #fff !important;
+  }
+
+  header,
+  footer,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  .worksheet-print-sheet {
+    break-inside: avoid;
+  }
+}

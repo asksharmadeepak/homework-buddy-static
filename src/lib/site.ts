@@ -48,6 +48,7 @@ export const navFooter = {
     { href: "/themes", label: "Theme-based learning" },
     { href: "/guides", label: "Parent guides" },
     { href: "/tools", label: "Free tools" },
+    { href: "/tools/chat", label: "Printable helper" },
   ],
   product: [
     { href: "/features", label: "Features" },

@@ -19,6 +19,7 @@ export type PlayStoreClickPlacement =
   | "soft_cta"
   | "worksheets_samples"
   | "worksheet_detail"
+  | "worksheet_chat"
   | "beta_legacy"
   | `class_hub_${string}`
   | `tool_${string}`;

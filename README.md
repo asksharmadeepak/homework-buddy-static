@@ -28,7 +28,7 @@ This site builds as a **static export** (`out/`). No Next.js runtime plugin requ
 3. Trigger **Clear cache and deploy site**
 4. Confirm `https://easyhomeworkactivity.com/` returns 200
 
-Optional env (also set in `netlify.toml` for production builds):
+# Optional env (also set in `netlify.toml` for production builds):
 
 ```
 NEXT_PUBLIC_GA_ID=G-N7P5CLP7BW
@@ -38,9 +38,31 @@ NEXT_PUBLIC_META_PIXEL_ID=YOUR_META_PIXEL_ID
 
 Set `NEXT_PUBLIC_META_PIXEL_ID` in **Netlify → Site configuration → Environment variables** (do not commit the real ID unless you intend to).
 
+### Printable worksheet chat (Gemini)
+
+Interactive helper at `/tools/chat`. The static site stays as `out/`; Gemini runs in a **Netlify Function** so the API key never ships to the browser.
+
+1. In Netlify → **Environment variables**, set:
+   - `GEMINI_API_KEY` — from [Google AI Studio](https://aistudio.google.com/apikey) (required, secret)
+   - `GEMINI_MODEL` — optional, default `gemini-2.0-flash-lite`
+   - `GEMINI_DAILY_MAX` — optional global cap across visitors (default `500`)
+2. Local preview of the function + site:
+
+```bash
+# Install Netlify CLI if needed: npm i -g netlify-cli
+export GEMINI_API_KEY=your_key_here
+netlify dev
+```
+
+Open the URL Netlify prints (often `http://localhost:8888/tools/chat`). Plain `npm run dev` serves the page but **not** `/.netlify/functions/generate-worksheet`.
+
+3. After deploy: generate one sheet, print, confirm Play CTA `utm_content=worksheet_chat`, confirm static pages still publish from `out/`.
+
+**Limits:** 3 free generations / visitor / day. Output is browser-printable HTML (not app PDFs).
+
 **Get the app:** Header/nav → `/download` (badge + iPhone waitlist). In-content CTAs (SoftCta, worksheet samples, sheet pages) → Google Play with UTMs via `PlayStoreLink` / `playStoreUrlWithUtm()`. Legacy `/beta` **301 → `/download`**.
 
-**Play click tracking:** every Play CTA fires GA4 `play_store_click` and Meta Pixel custom event `PlayStoreClick`.
+**Play click tracking:** every Play CTA fires GA4 `play_store_click` and Meta Pixel custom event `PlayStoreClick`. Chat also fires `chat_generate_success`, `chat_limit_hit`, `chat_print_click`.
 
 **Play UTMs** (for GA / Play Console attribution):
 
@@ -50,6 +72,7 @@ Set `NEXT_PUBLIC_META_PIXEL_ID` in **Netlify → Site configuration → Environm
 | `download_hero` | `/download` Play badge |
 | `worksheets_samples` | `/worksheets` sample strip |
 | `worksheet_detail` | Sheet page “Generate more in the app” |
+| `worksheet_chat` | `/tools/chat` print helper CTAs |
 
 After deploy: GA4 → mark `play_store_click` as a key event. Meta Events Manager → verify `PlayStoreClick`.
 
@@ -67,9 +90,11 @@ Instagram is **`@homeworkbuddyapp`** — footer + Organization `sameAs`. Post 2�
 - `src/lib/site.ts` — domain, Play Store + `playStoreUrlWithUtm`, Instagram URL, nav
 - `src/lib/taxonomy.ts` — content clusters
 - `src/lib/seo.ts` — metadata + JSON-LD (incl. MobileApplication screenshots)
+- `src/app/tools/chat/` — printable worksheet helper (Gemini via Netlify Function)
+- `netlify/functions/generate-worksheet.js` — server-side Gemini proxy + rate limits
 - `public/worksheets/previews/` — worksheet preview PNGs for Image SEO
 - `public/brand/google-play-badge.png` — official Play badge on `/download`
-- `netlify.toml` — build command + publish `out/`
+- `netlify.toml` — build command + publish `out/` + functions directory
 
 ## After each deploy (GSC)
 
