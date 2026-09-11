@@ -37,7 +37,7 @@ const faqs = [
 
 export default function WorksheetChatPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10">
+    <div className="mx-auto max-w-6xl px-4 py-10">
       <div className="print:hidden">
         <Breadcrumbs
           items={[
@@ -50,8 +50,8 @@ export default function WorksheetChatPage() {
         <h1 className="mt-2 text-3xl font-black leading-tight text-[#24212C] md:text-4xl">
           Print one worksheet tonight
         </h1>
-        <p className="mt-4 text-lg font-semibold text-[#7D7788]">
-          Chat-style helper for busy parents: pick a class, ask for calm practice, print from your
+        <p className="mt-4 max-w-3xl text-lg font-semibold text-[#7D7788]">
+          Worksheet studio for busy parents: pick a class, describe calm practice, print from your
           browser. When you want unlimited themed PDFs, get{" "}
           <Link href="/download" className="text-[#7B5CD6]">
             Homework Buddy
@@ -59,11 +59,11 @@ export default function WorksheetChatPage() {
           .
         </p>
 
-        <section className="mt-8">
+        <section className="mt-6 max-w-3xl">
           <h2 className="text-xl font-black text-[#24212C]">How it works</h2>
           <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm font-semibold text-[#3d3848]">
             <li>Choose your child&apos;s class (and optional activity).</li>
-            <li>Tap a starter or type a short request (under 500 characters).</li>
+            <li>Tap an example prompt or type a short request (under 500 characters).</li>
             <li>Print the sheet — then open the app when you need a fresh PDF theme.</li>
           </ol>
         </section>

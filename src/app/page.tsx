@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaqSection } from "@/components/FaqSection";
+import { GeneratorHubCard } from "@/components/GeneratorHubCard";
 import { HubCard } from "@/components/HubCard";
 import { ClassHubWorksheetGrid } from "@/components/ClassHubWorksheetGrid";
 import { PlayStoreLink } from "@/components/PlayStoreLink";
 import { SoftCta } from "@/components/SoftCta";
 import { buildMetadata, faqJsonLd, jsonLdScript } from "@/lib/seo";
+import { generatorHubItems } from "@/lib/generator-hub";
 import { site } from "@/lib/site";
 import {
   activities,
@@ -60,41 +62,58 @@ export default function HomePage() {
         dangerouslySetInnerHTML={jsonLdScript(faqJsonLd(homeFaqs))}
       />
 
-      <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:grid-cols-2">
-        <div>
-          <p className="text-sm font-extrabold uppercase tracking-wide text-[#7B5CD6]">
-            Easy homework activity · Printable worksheets
-          </p>
-          <h1 className="mt-3 text-4xl font-black leading-tight text-[#24212C] md:text-5xl">
-            Printable worksheets & calm homework ideas for{" "}
-            <span className="text-[#E85D75]">Nursery to Class 3</span>
-          </h1>
-          <p className="mt-5 text-lg font-semibold leading-relaxed text-[#7D7788]">
-            {site.name} helps Indian parents find genuine educational guidance — then create print-ready
-            activities in seconds with the Android app. Start with class hubs, reading and maths practice,
-            or theme-based learning your child already loves.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/worksheets" className="rounded-full bg-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-white">
-              Browse worksheets
-            </Link>
-            <PlayStoreLink
-              placement="home_hero"
-              className="rounded-full border-2 border-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-[#7B5CD6]"
-            >
-              Get the app
-            </PlayStoreLink>
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#F7F2FF] via-[#FFFBF6] to-[#FFF5F0]">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:grid-cols-2 md:py-16">
+          <div>
+            <p className="text-sm font-extrabold uppercase tracking-wide text-[#7B5CD6]">
+              {site.name}
+            </p>
+            <h1 className="mt-3 text-4xl font-black leading-tight text-[#24212C] md:text-5xl">
+              Printable worksheets & calm homework for{" "}
+              <span className="text-[#E85D75]">Nursery to Class 3</span>
+            </h1>
+            <p className="mt-5 text-lg font-semibold leading-relaxed text-[#7D7788]">
+              Choose class-fit practice for Indian evenings — or try one free browser printable tonight,
+              then generate unlimited themed PDFs in the Android app.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/tools/chat"
+                className="rounded-full bg-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-white"
+              >
+                Try free printable helper
+              </Link>
+              <PlayStoreLink
+                placement="home_hero"
+                className="rounded-full border-2 border-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-[#7B5CD6]"
+              >
+                Get the app
+              </PlayStoreLink>
+            </div>
+          </div>
+          <div className="flex justify-center">
+            <Image
+              src="/brand/hero_boy.png"
+              alt="Child enjoying learning with a workbook"
+              width={420}
+              height={420}
+              priority
+              className="h-auto w-full max-w-md"
+            />
           </div>
         </div>
-        <div className="flex justify-center">
-          <Image
-            src="/brand/hero_boy.png"
-            alt="Child enjoying learning with a workbook"
-            width={420}
-            height={420}
-            priority
-            className="h-auto w-full max-w-md"
-          />
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-14">
+        <h2 className="text-3xl font-black text-[#24212C]">Create practice tonight</h2>
+        <p className="mt-3 max-w-3xl font-semibold text-[#7D7788]">
+          Pick a helper below — real Homework Buddy paths for class-fit worksheets, samples, and the app.
+          No sign-in required to browse.
+        </p>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {generatorHubItems.map((item) => (
+            <GeneratorHubCard key={item.href + item.title} item={item} />
+          ))}
         </div>
       </section>
 
@@ -159,43 +178,21 @@ export default function HomePage() {
           <p>
             If you have ever typed “easy homework ideas” into Google after a long workday, you already know the
             problem: endless PDFs, unclear age levels, and worksheets that look busy but do not fit your child.
-            This website exists to fix that discovery problem with helpful, organised educational content —
-            not thin pages built only to rank.
+            This site organises class hubs, free samples, and parent guides so you can find one calm sheet —
+            then create fresh themes in the Homework Buddy app when favourites feel stale.
           </p>
           <p>
-            We treat printable worksheets as part of a larger learning conversation. Nursery children need
-            tracing, colours, and picture talk. Jr KG and Sr KG need letter-sound play and gentle number sense.
-            Class 1 brings early reading passages and addition stories. Class 2 and Class 3 can handle richer
-            comprehension and multi-step thinking — still with warmth and a finishable length.
-          </p>
-          <p>
-            Start with the page that matches your child today. Choose{" "}
+            Start with{" "}
             <Link href="/worksheets/nursery" className="text-[#7B5CD6]">
               free Nursery worksheets
-            </Link>{" "}
-            for ages 3–4, open a Class 1 reading collection for early sentences, or pick an animals theme
-            for a relaxed colouring night. If the bigger challenge is routine, the parent guides offer
-            short session plans for busy evenings.
+            </Link>
+            , a Class 1 reading collection, or an animals theme for a relaxed colouring night. Nursery needs
+            tracing and picture talk; Jr KG and Sr KG need letter-sound play; Class 1–3 need finishable reading
+            and maths without coaching-centre intensity.
           </p>
           <p>
-            The Homework Buddy Android app is the product behind the platform. When guidance is not enough and
-            you need a fresh printable tonight, you can choose class, activity, theme, and time — then download
-            a PDF. First we help. Then we recommend the app as the easiest generator for busy parents in India.
-          </p>
-          <p>
-            Each worksheet page tells you what the PDF contains, who it suits, how long to spend, and when
-            to stop. Preview the complete page before printing, choose one activity rather than a thick pack,
-            and use the FAQs when grip, focus, or difficulty is causing frustration.
-          </p>
-          <p>
-            Families use different words for the same need: homework or home work, worksheets or work sheets,
-            Nursery or playgroup. Whatever your school calls it, match the printable to your child&apos;s age,
-            attention span, and current skill instead of chasing a label.
-          </p>
-          <p>
-            Whether you need a monsoon rainy-day printable, a festival colouring sheet, or Class 3 life-skills
-            discussion prompts, start from a hub, follow related links, and keep sessions short. Fifteen calm
-            minutes beat an hour of conflict.
+            Each worksheet page tells you what the PDF contains, who it suits, and how long to spend. Preview
+            before printing. Fifteen calm minutes beat an hour of conflict.
           </p>
         </div>
       </section>
@@ -248,31 +245,21 @@ export default function HomePage() {
         </h2>
         <div className="mt-6 space-y-4 text-base font-semibold leading-relaxed text-[#3d3848]">
           <p>
-            After school, many children still have tuition, playdates, or simply need rest. Printable worksheets
-            should never become a second full school day at the dining table. The best easy homework for Class 1
-            or kindergarten is short, clear, and connected to something your child already cares about.
+            After school, many children still have tuition or simply need rest. Printable worksheets should never
+            become a second full school day. The best easy homework is short, clear, and connected to something
+            your child already cares about — one skill, then stop.
           </p>
           <p>
-            Start with one skill. If today was a writing-heavy school day, choose reading or colouring at home.
-            If maths felt shaky in class, use a single Class 1 maths worksheet with picture support — then stop.
-            Celebrate effort: “You sounded out a new word” matters more than finishing every blank.
-          </p>
-          <p>
-            Printers, ink, and paper are real costs. Preview on screen. Prefer A4 layouts. Keep a folder of
-            favourites by class so you are not searching from zero every Sunday night. When favourites feel
-            stale, a worksheet generator app like Homework Buddy can create a new theme without another hour of
-            scrolling.
-          </p>
-          <p>
-            For preschool and Nursery, protect play. Tracing, matching, and colouring are enough. For Class 2
-            and Class 3, add light reasoning — a “why” question, a creative prompt, or a life-skills scenario —
-            without turning homework into coaching-centre intensity.
-          </p>
-          <p>
-            Not sure where to continue? Move between class pages, skill activities, and familiar themes.
-            A Nursery child can alternate alphabet tracing with Hindi swar or shapes; an older child can
-            combine a reading sheet with one maths story problem. The goal is a balanced week, not a taller
-            pile of paper.
+            Preview on screen before you use ink. Prefer A4 layouts. Keep a folder of favourites by class. When
+            they feel stale, try the{" "}
+            <Link href="/tools/chat" className="text-[#7B5CD6]">
+              printable helper
+            </Link>{" "}
+            or{" "}
+            <PlayStoreLink placement="home_content" className="text-[#7B5CD6]">
+              Homework Buddy on Google Play
+            </PlayStoreLink>{" "}
+            for a new theme without another hour of scrolling.
           </p>
         </div>
       </section>
@@ -336,22 +323,15 @@ export default function HomePage() {
             Preview a free sample PDF above, download, and print on A4 — no login required.
           </li>
           <li>
-            Read the parent guide on each page for a calm 10–20 minute session script.
-          </li>
-          <li>
-            Need a fresh theme tonight?{" "}
-            <PlayStoreLink placement="home_content" className="text-[#7B5CD6]">
-              Get Homework Buddy
-            </PlayStoreLink>{" "}
-            or browse{" "}
-            <Link href="/guides" className="text-[#7B5CD6]">
-              parent guides
+            Or{" "}
+            <Link href="/tools/chat" className="text-[#7B5CD6]">
+              generate one browser printable
             </Link>{" "}
-            and{" "}
-            <Link href="/tools/worksheet-generator" className="text-[#7B5CD6]">
-              worksheet generator tips
-            </Link>
-            .
+            for tonight, then get{" "}
+            <PlayStoreLink placement="home_content" className="text-[#7B5CD6]">
+              Homework Buddy
+            </PlayStoreLink>{" "}
+            for unlimited themed PDFs.
           </li>
         </ol>
       </section>
