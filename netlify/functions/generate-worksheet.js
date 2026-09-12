@@ -37,7 +37,7 @@ const CLASS_LABELS = {
 const BLOCKED =
   /\b(porn|nude|sex|kill|weapon|bomb|hack|exam.?cheat|answer.?key for test|nsfw)\b/i;
 
-const DAILY_LIMIT = 3;
+const DAILY_LIMIT = 1;
 const MAX_PROMPT = 500;
 
 /** @type {Map<string, { day: string; n: number }>} */
