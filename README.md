@@ -44,7 +44,7 @@ Interactive helper at `/tools/chat`. The static site stays as `out/`; Gemini run
 
 1. In Netlify → **Environment variables**, set:
    - `GEMINI_API_KEY` — from [Google AI Studio](https://aistudio.google.com/apikey) (required, secret)
-   - `GEMINI_MODEL` — optional, default `gemini-2.0-flash-lite`
+   - `GEMINI_MODEL` — optional, default `gemini-3.5-flash-lite`
    - `GEMINI_DAILY_MAX` — optional global cap across visitors (default `500`)
 2. Local preview of the function + site:
 

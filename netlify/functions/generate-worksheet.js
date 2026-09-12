@@ -279,7 +279,7 @@ exports.handler = async function handler(event) {
     );
   }
 
-  const model = process.env.GEMINI_MODEL || "gemini-2.0-flash-lite";
+  const model = process.env.GEMINI_MODEL || "gemini-3.5-flash-lite";
 
   try {
     const worksheet = await callGemini({
