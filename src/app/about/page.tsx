@@ -20,10 +20,11 @@ export default function AboutPage() {
         <p>
           {site.url.replace("https://", "")} is a parent-first educational site for printable worksheets and calm
           homework ideas from Nursery through Class 3. We publish class hubs, free sample PDFs, parent guides,
-          and tools explainers — written for real Indian evenings after school, tuition, or a long commute.
+          and tools explainers — written for real evenings after school, activities, or a long day.
         </p>
         <p>
-          The Homework Buddy Android app generates print-ready activities when you need a fresh theme tonight.
+          The Homework Buddy app (Android and iOS) generates print-ready activities when you need a fresh theme
+          tonight.
           This website explains what good practice looks like at each age, offers downloadable samples you can
           preview before printing, and links to deeper guides on reading, maths, Hindi, and routines.
         </p>

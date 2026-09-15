@@ -73,7 +73,7 @@ export function jsonLdScript(data: Record<string, unknown> | Record<string, unkn
 }
 
 export function organizationJsonLd() {
-  const sameAs = [site.playStoreUrl, site.instagramUrl].filter(Boolean);
+  const sameAs = [site.playStoreUrl, site.appStoreUrl, site.instagramUrl].filter(Boolean);
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -151,15 +151,15 @@ export function softwareAppJsonLd() {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
     name: site.name,
-    operatingSystem: "Android",
+    operatingSystem: "Android, iOS",
     applicationCategory: "EducationalApplication",
     offers: {
       "@type": "Offer",
       price: "0",
-      priceCurrency: "INR",
+      priceCurrency: "USD",
     },
-    downloadUrl: site.playStoreUrl,
-    installUrl: site.playStoreUrl,
+    downloadUrl: [site.playStoreUrl, site.appStoreUrl],
+    installUrl: [site.playStoreUrl, site.appStoreUrl],
     url: absoluteUrl("/download"),
     description: site.description,
     image: absoluteUrl("/brand/app_icon.png"),

@@ -4,7 +4,7 @@ import { ClassHubWorksheetGrid } from "@/components/ClassHubWorksheetGrid";
 import { SoftCta } from "@/components/SoftCta";
 import { FaqSection } from "@/components/FaqSection";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { PlayStoreLink } from "@/components/PlayStoreLink";
+import { SmartStoreLink } from "@/components/PlayStoreLink";
 import { buildMetadata, collectionJsonLd, jsonLdScript } from "@/lib/seo";
 import {
   getActivity,
@@ -96,12 +96,12 @@ export default async function WorksheetHubPage({ params }: Props) {
               then print whenever you need homework tonight.
             </p>
             <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
-              <PlayStoreLink
+              <SmartStoreLink
                 placement={playPlacement}
                 className="rounded-full bg-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-white"
               >
-                Get Homework Buddy on Google Play
-              </PlayStoreLink>
+                Get Homework Buddy
+              </SmartStoreLink>
               <Link
                 href="/download"
                 className="rounded-full border-2 border-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-[#7B5CD6]"
@@ -244,12 +244,12 @@ export default async function WorksheetHubPage({ params }: Props) {
               whenever you need homework tonight.
             </p>
             <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
-              <PlayStoreLink
+              <SmartStoreLink
                 placement={playPlacement}
                 className="rounded-full bg-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-white"
               >
-                Get Homework Buddy on Google Play
-              </PlayStoreLink>
+                Get Homework Buddy
+              </SmartStoreLink>
               <Link
                 href="/download"
                 className="rounded-full border-2 border-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-[#7B5CD6]"

@@ -16,12 +16,12 @@ const faqs = [
   {
     question: "Is this the same as the Homework Buddy app?",
     answer:
-      "No. This page builds one browser-printable practice sheet (not a branded PDF). The Android app generates unlimited class + theme PDFs with preview and download.",
+      "No. This page builds one browser-printable practice sheet (not a branded PDF). The Homework Buddy app generates unlimited class + theme PDFs with preview and download.",
   },
   {
     question: "How many free sheets can I generate?",
     answer:
-      "Up to three free sheets per day on this website. When you need more variety, install Homework Buddy from Google Play.",
+      "Up to three free sheets per day on this website. When you need more variety, install Homework Buddy from Google Play or the App Store.",
   },
   {
     question: "Can I save a PDF from this chat?",

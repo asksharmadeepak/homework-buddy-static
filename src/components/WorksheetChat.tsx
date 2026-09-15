@@ -1,8 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import Image from "next/image";
-import { PlayStoreLink } from "@/components/PlayStoreLink";
+import { AppStoreBadge, PlayStoreBadge, SmartStoreLink } from "@/components/PlayStoreLink";
 import { SoftCta } from "@/components/SoftCta";
 import {
   CHAT_ACTIVITY_OPTIONS,
@@ -12,8 +11,6 @@ import {
   trackChatEvent,
   type WorksheetChatResult,
 } from "@/lib/worksheet-chat";
-import { playStoreUrlWithUtm } from "@/lib/site";
-import { trackPlayStoreClick } from "@/lib/analytics";
 
 export function WorksheetChat() {
   const [classSlug, setClassSlug] = useState<string>("class-1");
@@ -181,12 +178,12 @@ export function WorksheetChat() {
               >
                 Print this sheet
               </button>
-              <PlayStoreLink
+              <SmartStoreLink
                 placement="worksheet_chat"
                 className="rounded-full border-2 border-[#7B5CD6] px-4 py-2 text-xs font-extrabold text-[#7B5CD6]"
               >
                 Get unlimited PDFs
-              </PlayStoreLink>
+              </SmartStoreLink>
             </div>
           </div>
 
@@ -272,7 +269,7 @@ export function WorksheetChat() {
             <ul className="mt-3 list-disc space-y-1.5 pl-4 text-xs font-semibold text-[#7D7788]">
               <li>Pick the class first, then describe one skill.</li>
               <li>Keep sessions 10–20 minutes.</li>
-              <li>Need fresh themes every night? Get the Android app.</li>
+              <li>Need fresh themes every night? Get the Homework Buddy app.</li>
             </ul>
           </div>
         </aside>
@@ -283,7 +280,7 @@ export function WorksheetChat() {
           <SoftCta
             playPlacement="worksheet_chat"
             title="Want unlimited themed PDFs?"
-            body="This page prints one calm sheet in your browser. Homework Buddy on Google Play generates fresh class + theme PDFs whenever tonight needs something new."
+            body="This page prints one calm sheet in your browser. Homework Buddy on Google Play or the App Store generates fresh class + theme PDFs whenever tonight needs something new."
           />
         </div>
       ) : null}
@@ -341,25 +338,12 @@ function AppDownloadModal({ open, onClose }: { open: boolean; onClose: () => voi
           </button>
         </div>
         <p className="mt-3 text-sm font-semibold leading-relaxed text-[#3d3848]">
-          You have used your free browser sheet for today. Install the Homework Buddy Android app for
-          unlimited class + theme PDFs, previews, and one-tap printing.
+          You have used your free browser sheet for today. Install Homework Buddy for unlimited class +
+          theme PDFs, previews, and one-tap printing — on Google Play or the App Store.
         </p>
-        <div className="mt-5 flex justify-center">
-          <a
-            href={playStoreUrlWithUtm("worksheet_chat_modal")}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackPlayStoreClick("worksheet_chat")}
-            className="inline-flex"
-          >
-            <Image
-              src="/brand/google-play-badge.png"
-              alt="Get Homework Buddy on Google Play"
-              width={200}
-              height={60}
-              className="h-14 w-auto"
-            />
-          </a>
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+          <PlayStoreBadge placement="worksheet_chat" />
+          <AppStoreBadge placement="worksheet_chat" />
         </div>
         <button
           type="button"

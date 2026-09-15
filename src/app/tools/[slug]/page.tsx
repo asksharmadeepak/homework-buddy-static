@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaqSection } from "@/components/FaqSection";
-import { PlayStoreLink } from "@/components/PlayStoreLink";
+import { SmartStoreLink } from "@/components/PlayStoreLink";
 import { SoftCta } from "@/components/SoftCta";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
@@ -128,9 +128,9 @@ export default async function ToolPage({ params }: Props) {
       </p>
       <p className="mt-6 text-xs font-semibold text-[#7D7788]">
         Educational disclaimer: General parent guidance. Follow your school curriculum.{" "}
-        <PlayStoreLink placement="tool_page" className="text-[#7B5CD6]">
+        <SmartStoreLink placement="tool_page" className="text-[#7B5CD6]">
           Get the app
-        </PlayStoreLink>
+        </SmartStoreLink>
       </p>
     </article>
   );

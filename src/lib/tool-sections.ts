@@ -72,7 +72,7 @@ export const toolSectionExtras: Record<string, ToolSection[]> = {
       ],
     },
     {
-      heading: "Indian evening maths without coaching-centre pressure",
+      heading: "Evening maths without coaching-centre pressure",
       paragraphs: [
         "Many families balance school, tuition, and travel time. One maths printable of 15 minutes supports school — it does not need to replicate a full tuition packet.",
         "Match difficulty to today’s energy: fluency only on tired days; one story problem when focus is better.",

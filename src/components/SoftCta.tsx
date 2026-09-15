@@ -1,21 +1,21 @@
 "use client";
 
 import Link from "next/link";
-import { PlayStoreLink } from "@/components/PlayStoreLink";
-import type { PlayStoreClickPlacement } from "@/lib/analytics";
+import { SmartStoreLink } from "@/components/PlayStoreLink";
+import type { StoreClickPlacement } from "@/lib/analytics";
 
 export function SoftCta({
   title = "Generate worksheets instantly with Homework Buddy",
-  body = "Pick class, activity, theme, and time — then download a print-ready PDF. Get the app on Google Play.",
-  /** When true, hide Play CTA (e.g. on /download where hero already installs). */
+  body = "Pick class, activity, theme, and time — then download a print-ready PDF. Get the app on Google Play or the App Store.",
+  /** When true, hide store CTA (e.g. on /download where hero already installs). */
   browseOnly = false,
-  /** UTM / analytics content for the Play Store CTA. */
+  /** UTM / analytics content for the store CTA. */
   playPlacement = "soft_cta",
 }: {
   title?: string;
   body?: string;
   browseOnly?: boolean;
-  playPlacement?: PlayStoreClickPlacement;
+  playPlacement?: StoreClickPlacement;
 }) {
   return (
     <aside className="my-10 rounded-3xl bg-[#F0EBFF] px-6 py-8 text-center md:px-10">
@@ -23,12 +23,12 @@ export function SoftCta({
       <p className="mx-auto mt-3 max-w-2xl text-sm font-semibold text-[#7D7788] md:text-base">{body}</p>
       <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
         {!browseOnly ? (
-          <PlayStoreLink
+          <SmartStoreLink
             placement={playPlacement}
             className="rounded-full bg-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-white"
           >
             Get the app
-          </PlayStoreLink>
+          </SmartStoreLink>
         ) : null}
         <Link
           href="/worksheets"

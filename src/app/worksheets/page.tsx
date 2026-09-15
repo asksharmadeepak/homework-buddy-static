@@ -12,12 +12,12 @@ import {
   themes,
   worksheetSeeds,
 } from "@/lib/taxonomy";
-import { PlayStoreLink } from "@/components/PlayStoreLink";
+import { SmartStoreLink } from "@/components/PlayStoreLink";
 
 export const metadata = buildMetadata({
   title: "Printable worksheets for Nursery to Class 3",
   description:
-    "Browse printable worksheets by class, curated reading & maths hubs, and theme ideas for Indian parents.",
+    "Browse printable worksheets by class, curated reading & maths hubs, and theme ideas for parents.",
   path: "/worksheets",
 });
 
@@ -114,12 +114,12 @@ export default function WorksheetsIndexPage() {
               </div>
             ))}
           </div>
-          <PlayStoreLink
+          <SmartStoreLink
             placement="worksheets_samples"
             className="mt-6 inline-block rounded-full bg-[#7B5CD6] px-5 py-3 text-sm font-extrabold text-white"
           >
             Generate more in the app
-          </PlayStoreLink>
+          </SmartStoreLink>
         </div>
       </section>
 

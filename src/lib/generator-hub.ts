@@ -63,7 +63,7 @@ export const generatorHubItems: GeneratorHubItem[] = [
   },
   {
     title: "Get the app",
-    description: "Unlimited class + theme PDFs on Google Play.",
+    description: "Unlimited class + theme PDFs on Google Play and the App Store.",
     href: "/download",
     icon: "/brand/app_icon.png",
     tint: "bg-[#FFE8F0]",

@@ -2,23 +2,24 @@ import { FaqSection } from "@/components/FaqSection";
 import { SoftCta } from "@/components/SoftCta";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
+import { site } from "@/lib/site";
 import type { FaqItem } from "@/lib/taxonomy";
 
 const faqs: FaqItem[] = [
   {
     question: "What is Homework Buddy?",
     answer:
-      "Homework Buddy is an Android app that helps parents create printable learning activities for children from Nursery to Class 3 — with class, activity, theme, and time controls.",
+      "Homework Buddy is a mobile app that helps parents create printable learning activities for children from Nursery to Class 3 — with class, activity, theme, and time controls. It is available on Google Play and the App Store.",
   },
   {
     question: "Who is this website for?",
     answer:
-      "Parents and caregivers looking for printable worksheets, easy homework ideas, and educational guidance for early primary years in India.",
+      "Parents and caregivers looking for printable worksheets, easy homework ideas, and educational guidance for early primary years.",
   },
   {
     question: "Are the worksheet pages free to use?",
     answer:
-      "Yes. Educational articles and hubs on this site are free to read. You can also generate fresh printable PDFs in the Homework Buddy app on Google Play.",
+      "Yes. Educational articles and hubs on this site are free to read. You can also generate fresh printable PDFs in the Homework Buddy app on Google Play or the App Store.",
   },
   {
     question: "Do you create pages for every filter combination?",
@@ -33,18 +34,18 @@ const faqs: FaqItem[] = [
   {
     question: "Is there an iOS version?",
     answer:
-      "Homework Buddy is available now on Google Play for Android. If you want the iPhone app, join the waitlist on our download page and we will email you when iOS early access opens.",
+      "Yes. Homework Buddy is available on the App Store for iPhone and iPad, and on Google Play for Android. Visit the download page to install on your device.",
   },
   {
     question: "How do I contact support?",
-    answer: "Email support@homeworkbuddy.app — we are happy to help with app or website questions.",
+    answer: `Email ${site.supportEmail} — we are happy to help with app or website questions.`,
   },
 ];
 
 export const metadata = buildMetadata({
   title: "FAQ — printable worksheets & Homework Buddy",
   description:
-    "Frequently asked questions about printable worksheets, homework activities, and the Homework Buddy Android app.",
+    "Frequently asked questions about printable worksheets, homework activities, and the Homework Buddy app for Android and iOS.",
   path: "/faq",
 });
 

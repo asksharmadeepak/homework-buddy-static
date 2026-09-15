@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { PlayStoreLink } from "@/components/PlayStoreLink";
+import { SmartStoreLink } from "@/components/PlayStoreLink";
 
 export function AppDownloadRibbon() {
   const pathname = usePathname();
@@ -29,12 +29,12 @@ export function AppDownloadRibbon() {
             Create printable worksheets in minutes with Homework Buddy
           </span>
         </p>
-        <PlayStoreLink
+        <SmartStoreLink
           placement="ribbon"
           className="inline-flex min-h-11 shrink-0 items-center rounded-full bg-white px-4 text-sm font-black text-[#6A4EC4] shadow-sm transition hover:bg-[#FFF3D6] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
           Get App
-        </PlayStoreLink>
+        </SmartStoreLink>
       </div>
     </aside>
   );

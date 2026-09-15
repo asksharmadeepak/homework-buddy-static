@@ -15,7 +15,7 @@ export default function ContactPage() {
       <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]} />
       <h1 className="text-4xl font-black text-[#24212C]">Contact us</h1>
       <p className="mt-4 text-lg font-semibold text-[#7D7788]">
-        We are here to help with the website and the Homework Buddy Android app.
+        We are here to help with the website and the Homework Buddy app (Android and iOS).
       </p>
       <ul className="mt-8 space-y-4 text-base font-semibold text-[#3d3848]">
         <li>
@@ -46,7 +46,7 @@ export default function ContactPage() {
         <li>
           App:{" "}
           <Link className="text-[#7B5CD6]" href={site.appCtaPath}>
-            Get the app / iPhone waitlist
+            Download on Google Play or the App Store
           </Link>
         </li>
       </ul>

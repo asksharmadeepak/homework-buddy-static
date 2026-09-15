@@ -7,7 +7,7 @@ import Link from "next/link";
 export const metadata = buildMetadata({
   title: "Editorial standards — Homework Buddy",
   description:
-    "How Homework Buddy creates and reviews printable worksheet content for Nursery to Class 3 parents in India.",
+    "How Homework Buddy creates and reviews printable worksheet content for Nursery to Class 3 parents.",
   path: "/editorial",
 });
 
@@ -24,7 +24,7 @@ export default function EditorialPage() {
       <div className="mt-6 space-y-4 text-base font-semibold leading-relaxed text-[#3d3848]">
         <p>
           {site.name} publishes parent guidance and free printable worksheet samples for Nursery through Class 3.
-          Content is written for busy Indian families — short evening sessions, A4 home printing, and calm
+          Content is written for busy families — short evening sessions, A4 home printing, and calm
           practice without coaching-centre intensity.
         </p>
         <p>
@@ -33,7 +33,7 @@ export default function EditorialPage() {
           We avoid exam-style pressure language and dense photocopy-style grids on early-year pages.
         </p>
         <p>
-          Free PDF samples on this site match the layout style generated in the Homework Buddy Android app.
+          Free PDF samples on this site match the layout style generated in the Homework Buddy app.
           When a sample feels familiar, you can generate fresh variations in the app rather than searching for
           another random download.
         </p>

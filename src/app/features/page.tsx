@@ -35,7 +35,7 @@ export default function FeaturesPage() {
       <h1 className="text-4xl font-black text-[#24212C]">Built for real parent evenings</h1>
       <p className="mt-4 max-w-3xl text-lg font-semibold text-[#7D7788]">
         Homework Buddy focuses on printable, class-aware activities for Nursery to Class 3 — so learning fits
-        into busy Indian households.
+        into busy households.
       </p>
       <div className="mt-12 grid gap-8 md:grid-cols-3">
         {features.map((f) => (

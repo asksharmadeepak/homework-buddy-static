@@ -4,7 +4,7 @@ import { FaqSection } from "@/components/FaqSection";
 import { GeneratorHubCard } from "@/components/GeneratorHubCard";
 import { HubCard } from "@/components/HubCard";
 import { ClassHubWorksheetGrid } from "@/components/ClassHubWorksheetGrid";
-import { PlayStoreLink } from "@/components/PlayStoreLink";
+import { SmartStoreLink } from "@/components/PlayStoreLink";
 import { SoftCta } from "@/components/SoftCta";
 import { buildMetadata, faqJsonLd, jsonLdScript } from "@/lib/seo";
 import { generatorHubItems } from "@/lib/generator-hub";
@@ -35,7 +35,7 @@ const homeFaqs = [
   {
     question: "Is Homework Buddy free to try?",
     answer:
-      "The Android app is available on Google Play with a free experience and premium options as listed on the store page. This website’s educational articles are free to read.",
+      "Homework Buddy is free to download on Google Play and the App Store, with free and premium options as listed on each store page. This website’s educational articles are free to read.",
   },
   {
     question: "How is this different from random worksheet PDFs?",
@@ -73,8 +73,8 @@ export default function HomePage() {
               <span className="text-[#E85D75]">Nursery to Class 3</span>
             </h1>
             <p className="mt-5 text-lg font-semibold leading-relaxed text-[#7D7788]">
-              Choose class-fit practice for Indian evenings — or try one free browser printable tonight,
-              then generate unlimited themed PDFs in the Android app.
+              Choose class-fit practice for busy evenings — or try one free browser printable tonight,
+              then generate unlimited themed PDFs in the Homework Buddy app.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -83,12 +83,12 @@ export default function HomePage() {
               >
                 Try free printable helper
               </Link>
-              <PlayStoreLink
+              <SmartStoreLink
                 placement="home_hero"
                 className="rounded-full border-2 border-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-[#7B5CD6]"
               >
                 Get the app
-              </PlayStoreLink>
+              </SmartStoreLink>
             </div>
           </div>
           <div className="flex justify-center">
@@ -241,7 +241,7 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-3xl px-4 py-14">
         <h2 className="text-3xl font-black text-[#24212C]">
-          How printable worksheets fit real Indian evenings
+          How printable worksheets fit real evenings at home
         </h2>
         <div className="mt-6 space-y-4 text-base font-semibold leading-relaxed text-[#3d3848]">
           <p>
@@ -256,9 +256,9 @@ export default function HomePage() {
               printable helper
             </Link>{" "}
             or{" "}
-            <PlayStoreLink placement="home_content" className="text-[#7B5CD6]">
-              Homework Buddy on Google Play
-            </PlayStoreLink>{" "}
+            <SmartStoreLink placement="home_content" className="text-[#7B5CD6]">
+              Homework Buddy app
+            </SmartStoreLink>{" "}
             for a new theme without another hour of scrolling.
           </p>
         </div>
@@ -328,9 +328,9 @@ export default function HomePage() {
               generate one browser printable
             </Link>{" "}
             for tonight, then get{" "}
-            <PlayStoreLink placement="home_content" className="text-[#7B5CD6]">
+            <SmartStoreLink placement="home_content" className="text-[#7B5CD6]">
               Homework Buddy
-            </PlayStoreLink>{" "}
+            </SmartStoreLink>{" "}
             for unlimited themed PDFs.
           </li>
         </ol>

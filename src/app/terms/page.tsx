@@ -24,8 +24,8 @@ export default function TermsPage() {
           your child&apos;s school curriculum and teacher guidance.
         </p>
         <p>
-          App features, pricing, and availability may change. Google Play terms also apply to app downloads and
-          purchases.
+          App features, pricing, and availability may change. Google Play and Apple App Store terms also apply to
+          app downloads and purchases.
         </p>
         <p>
           Questions:{" "}
