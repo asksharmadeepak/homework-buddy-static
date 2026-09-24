@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState, type ReactNode } from "react";
 import {
   trackAppStoreClick,
@@ -9,7 +8,7 @@ import {
   type StoreClickPlacement,
 } from "@/lib/analytics";
 import { detectStorePlatform } from "@/lib/platform";
-import { appStoreUrlWithUtm, playStoreUrlWithUtm, site } from "@/lib/site";
+import { appStoreUrlWithUtm, playStoreUrlWithUtm } from "@/lib/site";
 
 type StoreLinkBaseProps = {
   placement: StoreClickPlacement;
@@ -69,6 +68,9 @@ type BadgeProps = {
   priority?: boolean;
 };
 
+/** Shared badge display size so Play + App Store match side-by-side. */
+const badgeImgClass = "mx-auto h-[64px] w-[168px] object-contain";
+
 /** Standard Google Play badge used on /download hero. */
 export function PlayStoreBadge({ placement, className, priority }: BadgeProps) {
   return (
@@ -76,9 +78,9 @@ export function PlayStoreBadge({ placement, className, priority }: BadgeProps) {
       <Image
         src="/brand/google-play-badge.png"
         alt="Get it on Google Play"
-        width={215}
-        height={83}
-        className="mx-auto h-auto w-[215px]"
+        width={168}
+        height={64}
+        className={badgeImgClass}
         priority={priority}
       />
     </PlayStoreLink>
@@ -94,9 +96,9 @@ export function AppStoreBadge({ placement, className }: BadgeProps) {
       <img
         src="/brand/app-store-badge.svg"
         alt="Download on the App Store"
-        width={215}
+        width={168}
         height={64}
-        className="mx-auto h-auto w-[215px]"
+        className={badgeImgClass}
         decoding="async"
       />
     </AppStoreLink>
@@ -112,9 +114,8 @@ type SmartStoreLinkProps = {
 
 /**
  * Single “Get the app” CTA:
- * - iOS → App Store
- * - Android → Play Store
- * - Desktop/other → /download (both badges)
+ * - iOS / iPadOS → App Store
+ * - Android + desktop / other → Play Store
  */
 export function SmartStoreLink({
   placement,
@@ -122,30 +123,18 @@ export function SmartStoreLink({
   children,
   "aria-label": ariaLabel = "Get the Homework Buddy app",
 }: SmartStoreLinkProps) {
-  const [href, setHref] = useState<string>(site.appCtaPath);
-  const [store, setStore] = useState<"play" | "app_store" | "download">("download");
+  const [href, setHref] = useState(() => playStoreUrlWithUtm(placement));
+  const [store, setStore] = useState<"play" | "app_store">("play");
 
   useEffect(() => {
-    const platform = detectStorePlatform();
-    if (platform === "ios") {
+    if (detectStorePlatform() === "ios") {
       setHref(appStoreUrlWithUtm(placement));
       setStore("app_store");
-    } else if (platform === "android") {
+    } else {
       setHref(playStoreUrlWithUtm(placement));
       setStore("play");
-    } else {
-      setHref(site.appCtaPath);
-      setStore("download");
     }
   }, [placement]);
-
-  if (store === "download") {
-    return (
-      <Link href={href} className={className} aria-label={ariaLabel}>
-        {children}
-      </Link>
-    );
-  }
 
   return (
     <a

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { SmartStoreLink } from "@/components/PlayStoreLink";
+import { ShareAppButton } from "@/components/ShareAppButton";
 
 export function AppDownloadRibbon() {
   const pathname = usePathname();
@@ -15,7 +16,7 @@ export function AppDownloadRibbon() {
       aria-label="Download Homework Buddy"
       className="border-b border-[#6A4EC4] bg-[#7B5CD6] text-white"
     >
-      <div className="mx-auto flex min-h-12 max-w-6xl items-center gap-3 px-3 sm:px-4">
+      <div className="mx-auto flex min-h-12 max-w-6xl items-center gap-2 px-3 sm:gap-3 sm:px-4">
         <Image
           src="/brand/app_icon.png"
           alt=""
@@ -29,6 +30,7 @@ export function AppDownloadRibbon() {
             Create printable worksheets in minutes with Homework Buddy
           </span>
         </p>
+        <ShareAppButton placement="ribbon" variant="ribbon" />
         <SmartStoreLink
           placement="ribbon"
           className="inline-flex min-h-11 shrink-0 items-center rounded-full bg-white px-4 text-sm font-black text-[#6A4EC4] shadow-sm transition hover:bg-[#FFF3D6] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"

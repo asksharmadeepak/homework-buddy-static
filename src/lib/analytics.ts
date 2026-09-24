@@ -27,6 +27,8 @@ export type StoreClickPlacement =
 /** @deprecated Prefer StoreClickPlacement — kept for existing imports. */
 export type PlayStoreClickPlacement = StoreClickPlacement;
 
+export type AppSharePlacement = "download_hero" | "ribbon";
+
 export type StoreKind = "play" | "app_store";
 
 /**
@@ -73,4 +75,36 @@ export function trackPlayStoreClick(placement: StoreClickPlacement) {
 /** Fires when a user taps an App Store / Get the app link. */
 export function trackAppStoreClick(placement: StoreClickPlacement) {
   trackStoreClick("app_store", placement);
+}
+
+/**
+ * Fires when a user shares the app download page.
+ * - GA4: `app_share`
+ * - Meta Pixel custom: `AppShare`
+ */
+export function trackAppShare(placement: AppSharePlacement) {
+  if (typeof window === "undefined") return;
+
+  const pagePath = window.location.pathname;
+
+  try {
+    window.gtag?.("event", "app_share", {
+      event_category: "engagement",
+      event_label: placement,
+      placement,
+      page_path: pagePath,
+      transport_type: "beacon",
+    });
+  } catch {
+    /* ignore */
+  }
+
+  try {
+    window.fbq?.("trackCustom", "AppShare", {
+      placement,
+      page_path: pagePath,
+    });
+  } catch {
+    /* ignore */
+  }
 }

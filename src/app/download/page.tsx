@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SoftCta } from "@/components/SoftCta";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { AppStoreBadge, PlayStoreBadge } from "@/components/PlayStoreLink";
+import { ShareAppButton } from "@/components/ShareAppButton";
 import { buildMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
@@ -42,6 +43,9 @@ export default function DownloadPage() {
         <p className="mt-3 text-sm font-bold text-[#7B5CD6]">
           Tap to install · Reading, Maths, Hindi Fun &amp; more
         </p>
+        <div className="mt-5 flex justify-center">
+          <ShareAppButton placement="download_hero" />
+        </div>
         <div className="mt-12 grid gap-4 sm:grid-cols-2">
           {["/screens/home.png", "/screens/preview.png"].map((src) => (
             <Image
