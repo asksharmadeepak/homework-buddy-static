@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Nunito } from "next/font/google";
+import localFont from "next/font/local";
 import { Analytics } from "@/components/Analytics";
 import { AppDownloadRibbon } from "@/components/AppDownloadRibbon";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -13,10 +13,16 @@ import {
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const nunito = Nunito({
-  subsets: ["latin"],
-  weight: ["600", "700", "800", "900"],
+/** Self-hosted so Netlify builds do not depend on Turbopack Google Fonts fetch. */
+const nunito = localFont({
+  src: [
+    { path: "../fonts/Nunito-600.woff2", weight: "600", style: "normal" },
+    { path: "../fonts/Nunito-700.woff2", weight: "700", style: "normal" },
+    { path: "../fonts/Nunito-800.woff2", weight: "800", style: "normal" },
+    { path: "../fonts/Nunito-900.woff2", weight: "900", style: "normal" },
+  ],
   variable: "--font-nunito",
+  display: "swap",
 });
 
 export const metadata: Metadata = {

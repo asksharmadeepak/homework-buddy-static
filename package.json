@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run generate:worksheets && next build",
+    "build": "npm run generate:worksheets && next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "generate:worksheets": "node scripts/generate-worksheets.mjs"
