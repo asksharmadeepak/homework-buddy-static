@@ -8,7 +8,7 @@ import {
   type StoreClickPlacement,
 } from "@/lib/analytics";
 import { detectStorePlatform } from "@/lib/platform";
-import { appStoreUrlWithUtm, playStoreUrlWithUtm } from "@/lib/site";
+import { appStoreUrlWithUtm, playStoreUrlWithUtm, site } from "@/lib/site";
 
 type StoreLinkBaseProps = {
   placement: StoreClickPlacement;
@@ -112,10 +112,13 @@ type SmartStoreLinkProps = {
   "aria-label"?: string;
 };
 
+type SmartStoreTarget = "play" | "app_store" | "download";
+
 /**
  * Single “Get the app” CTA:
  * - iOS / iPadOS → App Store
- * - Android + desktop / other → Play Store
+ * - Android → Play Store
+ * - Desktop / other → /download (both badges)
  */
 export function SmartStoreLink({
   placement,
@@ -123,29 +126,35 @@ export function SmartStoreLink({
   children,
   "aria-label": ariaLabel = "Get the Homework Buddy app",
 }: SmartStoreLinkProps) {
-  const [href, setHref] = useState(() => playStoreUrlWithUtm(placement));
-  const [store, setStore] = useState<"play" | "app_store">("play");
+  const [href, setHref] = useState<string>(() => site.appCtaPath);
+  const [store, setStore] = useState<SmartStoreTarget>("download");
 
   useEffect(() => {
-    if (detectStorePlatform() === "ios") {
+    const platform = detectStorePlatform();
+    if (platform === "ios") {
       setHref(appStoreUrlWithUtm(placement));
       setStore("app_store");
-    } else {
+    } else if (platform === "android") {
       setHref(playStoreUrlWithUtm(placement));
       setStore("play");
+    } else {
+      setHref(site.appCtaPath);
+      setStore("download");
     }
   }, [placement]);
+
+  const external = store !== "download";
 
   return (
     <a
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
       className={className}
       aria-label={ariaLabel}
       onClick={() => {
         if (store === "play") trackPlayStoreClick(placement);
-        else trackAppStoreClick(placement);
+        else if (store === "app_store") trackAppStoreClick(placement);
       }}
     >
       {children}

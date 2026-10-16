@@ -8,11 +8,12 @@ export const site = {
     "https://play.google.com/store/apps/details?id=com.homeworkbuddy.app",
   playStoreId: "com.homeworkbuddy.app",
   /**
-   * App Store listing URL. Replace placeholder when the iOS app goes live,
-   * or set NEXT_PUBLIC_APP_STORE_URL in Netlify.
+   * App Store listing URL. Override with NEXT_PUBLIC_APP_STORE_URL in Netlify
+   * if the listing slug or id changes.
    */
   appStoreUrl:
-    process.env.NEXT_PUBLIC_APP_STORE_URL ?? "https://apps.apple.com/app/idPLACEHOLDER",
+    process.env.NEXT_PUBLIC_APP_STORE_URL ??
+    "https://apps.apple.com/app/homework-buddy-worksheets/id6811864199",
   /** Primary in-site path for “Get the app” CTAs (both store badges). */
   appCtaPath: "/download",
   /**
@@ -23,7 +24,7 @@ export const site = {
     process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "https://www.instagram.com/homeworkbuddyapp",
   supportEmail: "support.dlabs@gmail.com",
   privacyEmail: "support.dlabs@gmail.com",
-  version: "1.0.6",
+  version: "1.0.7",
   locale: "en",
 } as const;
 

@@ -6,7 +6,7 @@ export type StorePlatform = "ios" | "android" | "other";
  *
  * - iPhone / iPad / iPod / iPadOS → ios
  * - Android → android
- * - Desktop and everything else → other (treated as Play by SmartStoreLink)
+ * - Desktop and everything else → other (SmartStoreLink sends these to /download)
  */
 export function detectStorePlatform(): StorePlatform {
   if (typeof navigator === "undefined") return "other";

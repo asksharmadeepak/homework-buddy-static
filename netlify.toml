@@ -24,6 +24,7 @@
   NEXT_TELEMETRY_DISABLED = "1"
   NEXT_PUBLIC_GA_ID = "G-N7P5CLP7BW"
   NEXT_PUBLIC_INSTAGRAM_URL = "https://www.instagram.com/homeworkbuddyapp"
+  NEXT_PUBLIC_APP_STORE_URL = "https://apps.apple.com/app/homework-buddy-worksheets/id6811864199"
   # Meta Pixel ID from Events Manager → set in Netlify UI if you prefer not to commit it:
   # NEXT_PUBLIC_META_PIXEL_ID = "YOUR_PIXEL_ID"
   # Cap parallelism if Netlify memory is tight on larger rebuilds
@@ -50,7 +51,7 @@
   status = 301
   force = true
 
-# Old beta signup URL → Get the app + iPhone waitlist
+# Old beta signup URL → download page (both store badges)
 [[redirects]]
   from = "/beta"
   to = "/download"

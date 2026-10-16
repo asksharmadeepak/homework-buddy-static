@@ -72,8 +72,13 @@ export function jsonLdScript(data: Record<string, unknown> | Record<string, unkn
   };
 }
 
+/** Drop unfinished store URLs so JSON-LD never ships a PLACEHOLDER listing. */
+function publicStoreUrls(...urls: string[]) {
+  return urls.filter((url) => Boolean(url) && !url.includes("PLACEHOLDER"));
+}
+
 export function organizationJsonLd() {
-  const sameAs = [site.playStoreUrl, site.appStoreUrl, site.instagramUrl].filter(Boolean);
+  const sameAs = publicStoreUrls(site.playStoreUrl, site.appStoreUrl, site.instagramUrl);
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -147,6 +152,7 @@ export function websiteJsonLd() {
 }
 
 export function softwareAppJsonLd() {
+  const storeUrls = publicStoreUrls(site.playStoreUrl, site.appStoreUrl);
   return {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
@@ -158,8 +164,8 @@ export function softwareAppJsonLd() {
       price: "0",
       priceCurrency: "USD",
     },
-    downloadUrl: [site.playStoreUrl, site.appStoreUrl],
-    installUrl: [site.playStoreUrl, site.appStoreUrl],
+    downloadUrl: storeUrls,
+    installUrl: storeUrls,
     url: absoluteUrl("/download"),
     description: site.description,
     image: absoluteUrl("/brand/app_icon.png"),

@@ -33,6 +33,7 @@ This site builds as a **static export** (`out/`). No Next.js runtime plugin requ
 ```
 NEXT_PUBLIC_GA_ID=G-N7P5CLP7BW
 NEXT_PUBLIC_INSTAGRAM_URL=https://www.instagram.com/homeworkbuddyapp
+NEXT_PUBLIC_APP_STORE_URL=https://apps.apple.com/app/homework-buddy-worksheets/id6811864199
 NEXT_PUBLIC_META_PIXEL_ID=YOUR_META_PIXEL_ID
 ```
 
@@ -60,21 +61,22 @@ Open the URL Netlify prints (often `http://localhost:8888/tools/chat`). Plain `n
 
 **Limits:** 3 free generations / visitor / day. Output is browser-printable HTML (not app PDFs).
 
-**Get the app:** Header/nav → `/download` (badge + iPhone waitlist). In-content CTAs (SoftCta, worksheet samples, sheet pages) → Google Play with UTMs via `PlayStoreLink` / `playStoreUrlWithUtm()`. Legacy `/beta` **301 → `/download`**.
+**Get the app:** `/download` shows Google Play + App Store badges. In-content “Get the app” CTAs use `SmartStoreLink`: iPhone → App Store, Android → Play, desktop → `/download`. Legacy `/beta` **301 → `/download`**.
 
-**Play click tracking:** every Play CTA fires GA4 `play_store_click` and Meta Pixel custom event `PlayStoreClick`. Chat also fires `chat_generate_success`, `chat_limit_hit`, `chat_print_click`.
+**Store click tracking:** Play CTAs fire GA4 `play_store_click` / Meta `PlayStoreClick`; App Store CTAs fire `app_store_click` / `AppStoreClick`. Chat also fires `chat_generate_success`, `chat_limit_hit`, `chat_print_click`.
 
-**Play UTMs** (for GA / Play Console attribution):
+**Store UTMs** (for GA / console attribution):
 
 | `utm_content` | Where |
 |---|---|
 | `soft_cta` | SoftCta “Get the app” |
-| `download_hero` | `/download` Play badge |
+| `download_hero` | `/download` store badges |
+| `ribbon` | Sticky download ribbon |
 | `worksheets_samples` | `/worksheets` sample strip |
 | `worksheet_detail` | Sheet page “Generate more in the app” |
 | `worksheet_chat` | `/tools/chat` print helper CTAs |
 
-After deploy: GA4 → mark `play_store_click` as a key event. Meta Events Manager → verify `PlayStoreClick`.
+After deploy: GA4 → mark `play_store_click` and `app_store_click` as key events. Meta Events Manager → verify store click events.
 
 **Ads ops:** see [`docs/ads/`](docs/ads/) (metrics audit, Play Store destination test, Hindi creative brief).
 
@@ -82,18 +84,19 @@ Instagram is **`@homeworkbuddyapp`** — footer + Organization `sameAs`. Post 2�
 
 ## Email
 
-- **iPhone waitlist:** Netlify Forms on `/download` — no custom SMTP needed.
 - **App transactional email:** Defer until volume justifies automation.
 
 ## Key paths
 
-- `src/lib/site.ts` — domain, Play Store + `playStoreUrlWithUtm`, Instagram URL, nav
+- `src/lib/site.ts` — domain, Play + App Store URLs, UTMs, Instagram URL, nav
 - `src/lib/taxonomy.ts` — content clusters
 - `src/lib/seo.ts` — metadata + JSON-LD (incl. MobileApplication screenshots)
+- `src/components/PlayStoreLink.tsx` — store badges + `SmartStoreLink`
 - `src/app/tools/chat/` — printable worksheet helper (Gemini via Netlify Function)
 - `netlify/functions/generate-worksheet.js` — server-side Gemini proxy + rate limits
 - `public/worksheets/previews/` — worksheet preview PNGs for Image SEO
 - `public/brand/google-play-badge.png` — official Play badge on `/download`
+- `public/brand/app-store-badge.svg` — App Store badge on `/download`
 - `netlify.toml` — build command + publish `out/` + functions directory
 
 ## After each deploy (GSC)
