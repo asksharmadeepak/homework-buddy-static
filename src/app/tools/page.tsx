@@ -16,7 +16,7 @@ export const metadata = buildMetadata({
 export default function ToolsIndexPage() {
   const list = publishedOnly(tools);
   const featured = generatorHubItems.filter((i) =>
-    ["/tools/chat", "/tools/worksheet-generator", "/download", "/worksheets"].includes(i.href),
+    ["/tools/free-printable-worksheet-generator", "/tools/worksheet-generator", "/download", "/worksheets"].includes(i.href),
   );
 
   return (
@@ -29,7 +29,7 @@ export default function ToolsIndexPage() {
             description: "Educational tools for parents",
             path: "/tools",
             items: [
-              { name: "Printable worksheet helper", path: "/tools/chat" },
+              { name: "Free printable worksheet generator", path: "/tools/free-printable-worksheet-generator" },
               ...list.map((t) => ({ name: t.name, path: `/tools/${t.slug}` })),
             ],
           }),

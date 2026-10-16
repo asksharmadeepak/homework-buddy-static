@@ -21,7 +21,7 @@ import {
 } from "@/lib/taxonomy";
 
 export const metadata = buildMetadata({
-  title: "Printable worksheets & easy homework activities for Nursery to Class 3",
+  title: "Free printable worksheets for Nursery to Class 3",
   description: site.description,
   path: "/",
 });
@@ -69,19 +69,19 @@ export default function HomePage() {
               {site.name}
             </p>
             <h1 className="mt-3 text-4xl font-black leading-tight text-[#24212C] md:text-5xl">
-              Printable worksheets & calm homework for{" "}
+              Free printable worksheets for{" "}
               <span className="text-[#E85D75]">Nursery to Class 3</span>
             </h1>
             <p className="mt-5 text-lg font-semibold leading-relaxed text-[#7D7788]">
-              Choose class-fit practice for busy evenings — or try one free browser printable tonight,
-              then generate unlimited themed PDFs in the Homework Buddy app.
+              Download free class-fit PDF samples for busy evenings — or generate one browser sheet tonight,
+              then create unlimited themed printables in the Homework Buddy app.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/tools/chat"
+                href="/worksheets"
                 className="rounded-full bg-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-white"
               >
-                Try free printable helper
+                Browse free worksheets
               </Link>
               <SmartStoreLink
                 placement="home_hero"
@@ -252,8 +252,8 @@ export default function HomePage() {
           <p>
             Preview on screen before you use ink. Prefer A4 layouts. Keep a folder of favourites by class. When
             they feel stale, try the{" "}
-            <Link href="/tools/chat" className="text-[#7B5CD6]">
-              printable helper
+            <Link href="/tools/free-printable-worksheet-generator" className="text-[#7B5CD6]">
+              free worksheet generator
             </Link>{" "}
             or{" "}
             <SmartStoreLink placement="home_content" className="text-[#7B5CD6]">
@@ -324,7 +324,7 @@ export default function HomePage() {
           </li>
           <li>
             Or{" "}
-            <Link href="/tools/chat" className="text-[#7B5CD6]">
+            <Link href="/tools/free-printable-worksheet-generator" className="text-[#7B5CD6]">
               generate one browser printable
             </Link>{" "}
             for tonight, then get{" "}

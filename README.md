@@ -41,7 +41,7 @@ Set `NEXT_PUBLIC_META_PIXEL_ID` in **Netlify → Site configuration → Environm
 
 ### Printable worksheet chat (Gemini)
 
-Interactive helper at `/tools/chat`. The static site stays as `out/`; Gemini runs in a **Netlify Function** so the API key never ships to the browser.
+Interactive helper at `/tools/free-printable-worksheet-generator`. The static site stays as `out/`; Gemini runs in a **Netlify Function** so the API key never ships to the browser.
 
 1. In Netlify → **Environment variables**, set:
    - `GEMINI_API_KEY` — from [Google AI Studio](https://aistudio.google.com/apikey) (required, secret)
@@ -55,7 +55,7 @@ export GEMINI_API_KEY=your_key_here
 netlify dev
 ```
 
-Open the URL Netlify prints (often `http://localhost:8888/tools/chat`). Plain `npm run dev` serves the page but **not** `/.netlify/functions/generate-worksheet`.
+Open the URL Netlify prints (often `http://localhost:8888/tools/free-printable-worksheet-generator`). Plain `npm run dev` serves the page but **not** `/.netlify/functions/generate-worksheet`.
 
 3. After deploy: generate one sheet, print, confirm Play CTA `utm_content=worksheet_chat`, confirm static pages still publish from `out/`.
 
@@ -74,7 +74,7 @@ Open the URL Netlify prints (often `http://localhost:8888/tools/chat`). Plain `n
 | `ribbon` | Sticky download ribbon |
 | `worksheets_samples` | `/worksheets` sample strip |
 | `worksheet_detail` | Sheet page “Generate more in the app” |
-| `worksheet_chat` | `/tools/chat` print helper CTAs |
+| `worksheet_chat` | `/tools/free-printable-worksheet-generator` print helper CTAs |
 
 After deploy: GA4 → mark `play_store_click` and `app_store_click` as key events. Meta Events Manager → verify store click events.
 
@@ -92,7 +92,7 @@ Instagram is **`@homeworkbuddyapp`** — footer + Organization `sameAs`. Post 2�
 - `src/lib/taxonomy.ts` — content clusters
 - `src/lib/seo.ts` — metadata + JSON-LD (incl. MobileApplication screenshots)
 - `src/components/PlayStoreLink.tsx` — store badges + `SmartStoreLink`
-- `src/app/tools/chat/` — printable worksheet helper (Gemini via Netlify Function)
+- `src/app/tools/free-printable-worksheet-generator/` — printable worksheet helper (Gemini via Netlify Function)
 - `netlify/functions/generate-worksheet.js` — server-side Gemini proxy + rate limits
 - `public/worksheets/previews/` — worksheet preview PNGs for Image SEO
 - `public/brand/google-play-badge.png` — official Play badge on `/download`

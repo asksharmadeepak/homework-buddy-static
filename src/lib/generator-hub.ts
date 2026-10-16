@@ -12,9 +12,9 @@ export type GeneratorHubItem = {
 
 export const generatorHubItems: GeneratorHubItem[] = [
   {
-    title: "Printable helper",
-    description: "Describe tonight’s practice and print one calm sheet.",
-    href: "/tools/chat",
+    title: "Free worksheet generator",
+    description: "Make one printable sheet in your browser tonight.",
+    href: "/tools/free-printable-worksheet-generator",
     icon: "/activities/creative.png",
     tint: "bg-[#F0EBFF]",
     featured: true,

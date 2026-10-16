@@ -1285,55 +1285,295 @@ export const crossHubs: CrossHub[] = [
       },
     ],
   },
+  {
+    slug: "lkg",
+    name: "LKG Worksheets",
+    title: "Free LKG worksheets — printable PDF for home practice",
+    description:
+      "Free LKG worksheets and printable PDFs for letters, numbers, patterns, and early reading. Same age band as Jr KG in many Indian schools.",
+    classSlug: "jr-kg",
+    status: "published",
+    intro: [
+      "Parents searching for free LKG worksheets usually need a short printable for tonight — letter tracing, counting, or a calm colouring cool-down — not a full school photocopied pack.",
+      "In many Indian schools, LKG overlaps with Jr KG or Prep. Ignore the brand name on the school diary and match the sheet to pencil control: large tracing and picture counting before tiny lined writing.",
+      "This LKG hub collects the same free Jr KG samples parents already trust on this site: letter tracing ABC, numbers count to ten, fruits writing words, and colour patterns. Preview each PDF on your phone before you print.",
+      "A calm LKG evening might look like snack, one 10–15 minute printable, two minutes of oral praise, then free play. Three such nights a week beat daily dense drills after a long school day.",
+      "When the folder feels repetitive, generate a fresh Jr KG / LKG theme in Homework Buddy — animals, fruits, or transport — then print one A4 page. Start with the free samples below so difficulty stays honest.",
+      "Looking for UKG next year? Browse our UKG worksheets hub when blending and sight words are ready. For playgroup ages, see preschool and Nursery tracing first.",
+    ],
+    howTo: [
+      "Pick one skill: letters, numbers, or patterns — not all three.",
+      "Preview the PDF; step down to Nursery tracing if lines look too small.",
+      "Stop while energy is still good and celebrate effort.",
+    ],
+    faqs: [
+      {
+        question: "Is LKG the same as Jr KG?",
+        answer:
+          "Often yes in age band. Schools use different labels. Match worksheets to attention span and pencil grip, not only the label on the bag.",
+      },
+      {
+        question: "What free LKG worksheets should I print first?",
+        answer:
+          "Start with letter tracing ABC or numbers 1–10, then add a fruits or patterns sheet when grip feels steady.",
+      },
+      {
+        question: "Are these LKG worksheets free PDFs?",
+        answer:
+          "Yes. Download and print the samples on this page without signing up. Use Homework Buddy when you need unlimited fresh themes.",
+      },
+    ],
+  },
+  {
+    slug: "ukg",
+    name: "UKG Worksheets",
+    title: "Free UKG worksheets — printable reading, writing & maths PDFs",
+    description:
+      "Free UKG worksheets for CVC reading, sight words, and early maths. Same age band as Sr KG in many Indian schools.",
+    classSlug: "sr-kg",
+    status: "published",
+    intro: [
+      "Free UKG worksheets should bridge play and Class 1 without feeling like an exam. Look for CVC warm-ups, sight-word tracing, and addition within 10 with pictures.",
+      "UKG often overlaps with Sr KG or Prep-II. If reading is strong but writing tires quickly, alternate nights — reading one evening, maths the next — instead of stacking both after tuition.",
+      "This hub lists free Sr KG samples sized for UKG evenings: CVC reading warm-up, writing sight words, maths add within 10, and animals colouring as cool-down. Open the PDF preview before you use ink.",
+      "A practical UKG week: Monday CVC, Wednesday picture addition, Friday sight words, and other nights for school notebook work or outdoor play.",
+      "Theme-based UKG homework keeps motivation high. Animals for reading, space for maths, festivals for writing — familiar pictures reduce anxiety when a new skill appears.",
+      "When favourites feel stale, generate a fresh Sr KG / UKG printable in Homework Buddy. Keep browsing LKG worksheets if blending is still new.",
+    ],
+    howTo: [
+      "Warm up with one oral sound blend before the CVC sheet.",
+      "Keep maths sheets mixed: fluency plus one picture sum.",
+      "Use colouring only as a cool-down, not the whole night.",
+    ],
+    faqs: [
+      {
+        question: "Is UKG the same as Sr KG?",
+        answer:
+          "Often similar in age. Choose sheets by skill: CVC and sight words when sounds click; step back to LKG letter tracing if needed.",
+      },
+      {
+        question: "How long should a UKG worksheet take?",
+        answer: "About 15 minutes including a short oral warm-up. Stop before frustration.",
+      },
+      {
+        question: "Where can I download free UKG worksheet PDFs?",
+        answer:
+          "The free samples on this page download as A4 PDFs. Browse more under Sr KG and kindergarten worksheets hubs.",
+      },
+    ],
+  },
+  {
+    slug: "english",
+    name: "English Worksheets",
+    title: "Free English worksheets for kids — printable reading & writing PDFs",
+    description:
+      "Free English worksheets for Nursery to Class 3: reading passages, handwriting, sight words, and comprehension practice at home.",
+    activitySlug: "reading",
+    status: "published",
+    intro: [
+      "Parents searching for free English worksheets for kids usually need a short reading or writing page — not a full grammar book. This hub gathers printable English practice: comprehension, handwriting, and early literacy.",
+      "For Nursery and LKG, English practice stays oral and visual: picture talk, matching, and large letter tracing. For Class 1–3, short passages and sentence writing fit after a long school day.",
+      "Browse free samples linked below and on the reading and writing activity hubs. Preview Class 1 animals reading or Sr KG CVC warm-up before printing so difficulty matches tonight’s energy.",
+      "A calm English homework rhythm: read aloud once, answer two questions orally, then write. That order cuts blank-page tears and builds confidence for school notebooks.",
+      "Hindi nights can sit beside English nights without stacking both on a tired evening. See our Hindi worksheets hub for swar and vyanjan practice.",
+      "When you need a fresh English theme — festivals, school stories, animals — generate a new PDF in Homework Buddy after you have tried a free sample from this site.",
+    ],
+    howTo: [
+      "Pick reading or writing — one skill per night.",
+      "Preview vocabulary and pictures together first.",
+      "Celebrate finishing the page, not only perfect spelling.",
+    ],
+    faqs: [
+      {
+        question: "What English worksheets are best for Class 1?",
+        answer:
+          "Short passages with picture support and 3–4 questions, or large-line sentence writing with a familiar theme.",
+      },
+      {
+        question: "Are these English worksheets free to download?",
+        answer:
+          "Yes. The PDF samples on linked class pages are free. Use the app for unlimited themed English printables.",
+      },
+      {
+        question: "English or Hindi first?",
+        answer:
+          "Follow the school’s focus for the week. Keep the second language shorter — matching or picture talk — so neither feels like punishment.",
+      },
+    ],
+  },
+  {
+    slug: "evs",
+    name: "EVS Worksheets",
+    title: "Free EVS worksheets for kids — printable nature & life-skills PDFs",
+    description:
+      "Free EVS worksheets and printable PDFs for nature, animals, monsoon, and life skills — calm environmental studies practice for home.",
+    status: "published",
+    intro: [
+      "EVS worksheets help children notice the world around them — plants, animals, weather, and everyday habits — without turning home into a coaching centre.",
+      "This hub points to free samples that fit environmental studies style practice: nature themes, animals matching, monsoon life skills, and outdoor conversation prompts you can print on A4.",
+      "For Nursery and LKG, EVS is picture talk and matching. For Class 1–3, short life-skills or nature sheets with one discussion question work better than dense textbook copies.",
+      "A calm EVS evening: walk to the balcony or park, name three things you see, then open a one-page printable. Conversation first, pencil second.",
+      "Pair EVS with maths counting (fruits, vehicles) or English reading (animal stories) across the week so subjects feel connected.",
+      "Generate fresh nature or life-skills themes in Homework Buddy when the free monsoon or animals samples feel familiar.",
+    ],
+    howTo: [
+      "Start with real-world noticing before the worksheet.",
+      "Keep one discussion question — not a full exam paper.",
+      "Use colouring or matching for younger EVS nights.",
+    ],
+    faqs: [
+      {
+        question: "What is EVS for Nursery and KG?",
+        answer:
+          "Picture talk about animals, plants, weather, and habits — matching and colouring sheets work well before written answers.",
+      },
+      {
+        question: "Where can I find free EVS worksheet PDFs?",
+        answer:
+          "Use the nature, animals, and life-skills samples linked from this hub. Download without signing up.",
+      },
+      {
+        question: "How long should EVS homework take?",
+        answer: "Ten to fifteen minutes plus a short outdoor or window observation is enough for most evenings.",
+      },
+    ],
+  },
+  {
+    slug: "matching",
+    name: "Matching Worksheets",
+    title: "Free matching worksheets for kids — printable PDF practice",
+    description:
+      "Free matching worksheets for Nursery and KG: animals, pictures, and focus practice without heavy writing.",
+    status: "published",
+    intro: [
+      "Matching worksheets teach focus and vocabulary without writing pressure — ideal Nursery and LKG homework after a long day.",
+      "This hub highlights free matching PDFs such as Nursery animals matching and same-different practice. Say every picture name aloud while your child draws the line.",
+      "Matching is also a gentle English and EVS warm-up: animals, fruits, colours, and transport pictures build words before reading passages.",
+      "Keep sessions under ten minutes. One or two complete matches with praise beat a rushed full page that ends in tears.",
+      "If your child needs more challenge, move to letter–picture matching on Hindi varnamala sheets or simple Class 1 picture comprehension.",
+      "Download the free samples below, then generate fresh matching-style themes in Homework Buddy when you want a new set of pictures.",
+    ],
+    howTo: [
+      "Point to pictures together before drawing lines.",
+      "Let your child finish one match independently.",
+      "Stop early if grip or attention drops.",
+    ],
+    faqs: [
+      {
+        question: "Are matching worksheets good for Nursery?",
+        answer:
+          "Yes. They build attention and vocabulary with large pictures and minimal writing.",
+      },
+      {
+        question: "Can toddlers use matching sheets?",
+        answer:
+          "With help, yes. Complete one or two pairs together and celebrate effort.",
+      },
+      {
+        question: "Where do I download free matching worksheet PDFs?",
+        answer:
+          "Start with Nursery animals matching and same-different samples on this site — free A4 downloads.",
+      },
+    ],
+  },
+  {
+    slug: "tracing",
+    name: "Tracing Worksheets",
+    title: "Free tracing worksheets for kids — printable pre-writing PDFs",
+    description:
+      "Free tracing worksheets for Nursery and LKG: lines, alphabet, and Hindi swar practice for pencil grip at home.",
+    status: "published",
+    intro: [
+      "Tracing worksheets are the most requested Nursery homework printable — straight and curvy paths, alphabet A–F, and Hindi swar with large letters.",
+      "This hub collects free tracing PDFs: Nursery tracing lines, alphabet tracing, Hindi swar tracing, and Jr KG / LKG letter tracing ABC. Preview on your phone so line size matches your child’s grip.",
+      "Use a thick crayon or short pencil. Say the sound or path type aloud (“up the hill, down the hill”) before tracing. Stop after a few paths if the hand looks tired.",
+      "Tracing is pre-writing, not a test. Celebrate steady movement more than perfect lines. Alternate with matching or colouring so fine motor practice stays playful.",
+      "When alphabet A–F feels easy, move to Jr KG letter tracing or Hindi vyanjan. See our guide on teaching Nursery tracing without tears for a 10-minute script.",
+      "Download free samples here first. Generate unlimited tracing-style and writing sheets in Homework Buddy when you need a fresh set.",
+    ],
+    howTo: [
+      "Warm up with finger tracing in the air.",
+      "Trace grey guides slowly, then try one independent line.",
+      "Keep sessions around 10 minutes for Nursery.",
+    ],
+    faqs: [
+      {
+        question: "Is tracing good Nursery homework?",
+        answer:
+          "Yes — short tracing sheets work well when sessions stay playful and under about 10 minutes.",
+      },
+      {
+        question: "Pencil or crayon for tracing worksheets?",
+        answer:
+          "A thick crayon or short pencil is easier for small hands than a long thin pen.",
+      },
+      {
+        question: "Where can I get free tracing worksheet PDFs?",
+        answer:
+          "Download Nursery tracing lines, alphabet tracing, and Hindi swar tracing from the free samples on this hub.",
+      },
+    ],
+  },
 ];
 
 export const tools: ToolEntity[] = [
   {
     slug: "worksheet-generator",
     name: "Worksheet Generator",
-    title: "Free worksheet generator ideas for parents",
+    title: "Free worksheet generator for parents — printable PDF ideas",
     description:
-      "Learn how a worksheet generator helps busy parents create printable PDFs — plus use Homework Buddy on Android.",
+      "Learn how a free worksheet generator helps busy parents print age-fit PDFs for Nursery to Class 3 — start with free samples, then unlimited sheets in Homework Buddy.",
     status: "published",
     intro: [
-      "A worksheet generator saves parents from hunting random PDFs every evening. Instead of scrolling endlessly, you choose class, activity, theme, and time — then print.",
-      "On this site we explain how worksheet generators work, what to look for, and how to keep generated practice age-appropriate. For instant generation on your phone, Homework Buddy creates printable activities for Nursery to Class 3.",
-      "Good generators respect attention spans. A 15-minute sheet with clear instructions beats a dense packet that causes stress.",
-      "When you evaluate any worksheet generator or app, check: class fit, theme variety, printable quality, and whether kids can finish without tears.",
+      "A worksheet generator saves parents from hunting random PDFs every evening. Instead of scrolling endlessly, you choose class, activity, theme, and time — then print one calm A4 page your child can finish.",
+      "Start free on this site: download ready-made sample PDFs from the class hubs, or try the free printable worksheet generator in your browser for one quick sheet tonight. Those crawlable samples show layout and difficulty before you commit ink.",
+      "When you need unlimited themed PDFs — animals reading, festival colouring, Hindi tracing, maths word problems — Homework Buddy on Google Play and the App Store maps class + activity + theme into a print-ready file with preview.",
+      "Good generators respect attention spans. A 15-minute sheet with clear instructions beats a dense packet that causes stress. Match Nursery to Class 3 carefully; school labels like LKG and UKG map to Jr KG and Sr KG on our hubs.",
+      "Teachers and parents can share free sample links for take-home practice, then point families to the app only when they want fresh variations. Free samples answer the search; the app is the next step for volume.",
+      "When you evaluate any worksheet generator, check: class fit, theme variety, printable quality, preview before print, and whether kids can finish without tears. Use the free library here as your quality bar.",
     ],
     howTo: [
-      "Decide the class and skill you need tonight.",
+      "Browse a free sample PDF for your child’s class first.",
+      "Decide the skill you need tonight (reading, maths, Hindi, tracing).",
       "Pick a theme your child already likes.",
-      "Choose a short duration (10–20 minutes).",
-      "Preview before printing; adjust difficulty if needed.",
-      "Save favourites so next week starts easier.",
+      "Generate or download one sheet; preview before printing.",
+      "Get the app only when you need unlimited fresh PDFs.",
     ],
     faqs: [
       {
-        question: "What is the best worksheet generator for Class 1–3?",
+        question: "What is the best free worksheet generator for Class 1–3?",
         answer:
-          "Look for class-aware content, printable PDFs, and themes kids enjoy. Homework Buddy is built for Nursery to Class 3 on Android.",
+          "Start with free printable samples and the browser generator on this site, then use Homework Buddy for unlimited class-aware PDFs on Android and iOS.",
       },
       {
         question: "Are AI worksheet generators safe for young kids?",
         answer:
           "Use parent-controlled tools, preview every page, and keep sessions short. Avoid anything that replaces conversation with endless drills.",
       },
+      {
+        question: "Can teachers use this worksheet generator guide?",
+        answer:
+          "Yes — share free sample PDF links for homework, then suggest the app for families who want unlimited themed practice at home.",
+      },
     ],
   },
   {
     slug: "reading-generator",
     name: "Reading Generator",
-    title: "Reading worksheet generator for kids",
+    title: "Reading worksheet generator for kids — free samples first",
     description:
-      "How to generate reading worksheets and comprehension practice for early readers at home.",
+      "How to generate reading worksheets and comprehension practice for early readers — with free Class 1–3 printable samples you can download tonight.",
     status: "published",
     intro: [
-      "A reading generator helps you produce short passages matched to your child’s class. That matters because Class 1 readers need different text than Class 3.",
-      "Use reading generators to create theme-based stories, then ask a few clear questions. Preview vocabulary and read aloud together.",
+      "A reading generator helps you produce short passages matched to your child’s class. That matters because Class 1 readers need different text than Class 3, and Nursery needs picture talk more than paragraphs.",
+      "Tonight’s printable can start free: try the Class 1 English park reading sample, Class 2 market comprehension, or Class 3 stories reading PDF on this site. Preview on your phone, print one A4 page, and read aloud together before writing answers.",
+      "Use a reading generator when favourites feel stale. Pick a familiar theme — animals, festivals, nature — generate one passage, preview vocabulary, and keep questions concrete (who, what, where) before harder inference.",
+      "For UKG / Sr KG, CVC and sight-word sheets are better first steps than long comprehension. For LKG / Jr KG, English sight words and oral picture talk beat dense paragraphs. Match the free sample to energy, not only to the class label.",
+      "Homework Buddy creates unlimited themed reading PDFs after you have judged length and tone from the free library. Soft path: free sample → short browser sheet if needed → app for unlimited practice.",
     ],
     howTo: [
-      "Select reading as the activity type.",
+      "Download a free Class 1–3 reading sample from this site.",
+      "Select reading as the activity type in the app when you need more.",
       "Choose a familiar theme.",
       "Generate, preview, and print one passage.",
       "Discuss answers before writing.",
@@ -1344,29 +1584,44 @@ export const tools: ToolEntity[] = [
         answer:
           "Homework Buddy focuses on creating printables you can save and reuse. Check the app for current offline/save options after generation.",
       },
+      {
+        question: "Where are free reading worksheet PDFs?",
+        answer:
+          "Open the English hub or Class 1–3 worksheet pages for free printable reading samples, then generate more in the app.",
+      },
     ],
   },
   {
     slug: "math-worksheet-generator",
     name: "Maths Worksheet Planning Guide",
-    title: "How to Create Maths Worksheets for Kids — Parent Guide",
+    title: "Maths worksheet generator ideas — free printable samples",
     description:
-      "Plan age-appropriate maths worksheets for counting, sums, and word problems, then create printable practice in the Homework Buddy app.",
+      "Plan age-appropriate maths worksheets for counting, sums, and word problems — download free samples tonight, then create more in Homework Buddy.",
     status: "published",
     intro: [
-      "A useful maths worksheet starts with the child’s level, not a random page of sums. Hard questions frustrate Class 1 children; endless easy sums bore Class 3.",
-      "Use this guide to plan mixed practice—short fluency work plus one story problem—then create and print the finished sheet in Homework Buddy.",
+      "A useful maths worksheet starts with the child’s level, not a random page of sums. Hard questions frustrate Class 1 children; endless easy sums bore Class 3. Nursery and LKG need counting and shapes before bare columns.",
+      "Start with a free printable tonight: Nursery numbers 1–10, Jr KG shapes count, Sr KG add within 10, Class 1 bonds to 10, Class 2 transport maths, or Class 3 fair-shares fractions intro. Preview difficulty on your phone before you print.",
+      "Use this guide to plan mixed practice — short fluency work plus one story problem — then create and print fresh sheets in Homework Buddy when you need unlimited themed maths PDFs.",
+      "Scaffold word problems by reading aloud, circling numbers, and drawing tallies before the final answer. Themes like transport or monsoon make story sums feel local for Indian evenings after school and tuition.",
+      "Free samples answer “maths worksheet PDF” searches; the app is for unlimited variety. Keep sessions to about 15 minutes and stop while confidence is still high.",
     ],
     howTo: [
-      "Pick maths and your child’s class.",
-      "Keep duration short.",
+      "Download a free maths sample for your child’s class.",
+      "Pick maths and class in the app when you need a fresh sheet.",
+      "Keep duration short (10–20 minutes).",
       "Print and sit nearby for the first word problem.",
+      "Add real-life maths during chores on rest days.",
     ],
     faqs: [
       {
         question: "How do I avoid maths worksheet overload?",
         answer:
           "Limit to one printable session and add real-life maths during chores or shopping.",
+      },
+      {
+        question: "Where can I get a free maths worksheet PDF tonight?",
+        answer:
+          "Browse Class hubs and the free samples linked on this page — then use Homework Buddy for unlimited maths PDFs.",
       },
     ],
   },
@@ -1775,6 +2030,71 @@ export const guides: GuideEntity[] = [
         question: "How often should we do tracing homework?",
         answer:
           "Two or three short sessions a week is plenty alongside free drawing and outdoor play.",
+      },
+    ],
+  },
+  {
+    slug: "worksheet-generator-for-teachers-and-parents",
+    title: "Worksheet generator for teachers and parents",
+    description:
+      "How teachers and parents can use a free worksheet generator and printable PDF samples for Nursery to Class 3 homework without overwhelm.",
+    datePublished: "2026-10-16",
+    dateModified: "2026-10-16",
+    status: "published",
+    sections: [
+      {
+        heading: "What teachers and parents actually need at 8 p.m.",
+        paragraphs: [
+          "Most searches for a worksheet generator are not about building a curriculum from scratch. A teacher needs a take-home page that matches tonight’s skill. A parent needs one calm A4 PDF after school, tuition, and dinner — not a 20-page packet.",
+          "The fastest path is free samples first: open a class hub, download a tracing, matching, reading, maths, Hindi, or EVS PDF, preview on a phone, and print. That answers the search and gives families something finishable tonight.",
+          "A generator becomes useful when the same favourite sheet feels stale or when you need a new theme — animals, festivals, transport — without hunting another website. Unlimited themed PDFs belong in the app after the free library has proven the layout.",
+        ],
+      },
+      {
+        heading: "A simple classroom-to-home workflow",
+        paragraphs: [
+          "Teachers can share links to free sample detail pages (not PDF-only URLs) so parents land on guidance, preview, and download together. One skill per night keeps WhatsApp groups calmer than “print the whole workbook.”",
+          "Parents can bookmark LKG, UKG, English, EVS, matching, and tracing hubs if school labels differ from Nursery / Jr KG / Sr KG. The content maps across; the URL matches what people type.",
+          "Use the free printable worksheet generator in the browser for a quick warm-up sheet, then point families to Homework Buddy on Google Play or the App Store when they ask for unlimited practice.",
+        ],
+      },
+      {
+        heading: "Quality bar for any generated sheet",
+        paragraphs: [
+          "Age fit: Nursery needs large paths and pictures; Class 3 can handle a short paragraph or word problem. White space beats dense grids. Instructions should need at most one adult sentence of help.",
+          "Preview every page before printing — whether it came from a static library or a generator. Wrong difficulty wastes ink and goodwill.",
+          "Stop while energy is still good. A half-finished happy page teaches more than a tearful complete one. Generators and free PDFs are tools for calm practice, not proof of parenting or teaching worth.",
+        ],
+      },
+      {
+        heading: "Free samples to try this week",
+        paragraphs: [
+          "Nursery: tracing lines, fruits matching, alphabet tracing. LKG / Jr KG: letter tracing ABC, English sight words, EVS my body. UKG / Sr KG: CVC mix, add within 10, Hindi vyanjan trace.",
+          "Class 1–3: English park reading, maths bonds to 10, EVS seasons or water, Hindi matras or sentences, Class 3 paragraph and fair shares. Each has a detail page with preview and download on this site.",
+          "When those favourites are done, generate fresh class + theme PDFs in Homework Buddy. Soft CTA order stays the same everywhere: browse free samples → generate one sheet → get the app for unlimited.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Can teachers use Homework Buddy worksheet samples in class?",
+        answer:
+          "Yes for educational practice — share the free detail page links so parents get preview and guidance, not only a bare PDF.",
+      },
+      {
+        question: "What is the best free worksheet generator for parents?",
+        answer:
+          "Start with free printable samples and the browser generator on easyhomeworkactivity.com, then use the Homework Buddy app for unlimited themed PDFs.",
+      },
+      {
+        question: "How many worksheets should teachers assign for homework?",
+        answer:
+          "One short page for Nursery to Class 3 is usually enough alongside school notebook work.",
+      },
+      {
+        question: "LKG vs Jr KG — which worksheets should we share?",
+        answer:
+          "Use the LKG hub (Jr KG samples) or UKG hub (Sr KG samples); the labels match parent search while the sheets stay age-fit.",
       },
     ],
   },
@@ -2568,6 +2888,887 @@ export const worksheetSeeds: WorksheetSeed[] = [
       },
     ],
   },
+  // SEO batch — money-keyword free PDFs with previews + parent guidance
+  {
+    slug: "fruits-matching",
+    classSlug: "nursery",
+    name: "Fruits Matching Fun",
+    title: "Nursery fruits matching worksheet — free printable PDF",
+    description: "Free Nursery matching worksheet with fruit pictures for vocabulary and focus.",
+    activitySlug: "coloring",
+    themeSlug: "fruits",
+    status: "published",
+    pdfPath: "/worksheets/nursery-fruits-matching.pdf",
+    previewImagePath: "/worksheets/previews/nursery-fruits-matching.png",
+    previewImageAlt: "Fruits Matching Fun — free printable nursery worksheet preview",
+    previewImageWidth: 848,
+    previewImageHeight: 1200,
+    previewImageCaption: "Fruits Matching Fun free printable worksheet preview for home practice.",
+    intro: [
+      "This free Nursery fruits matching worksheet is built for a short evening at home: large pictures, clear pairs, and almost no writing. Parents searching for Nursery matching worksheets or fruit vocabulary PDFs can print one A4 page, sit nearby, and treat the sheet like a game rather than a test.",
+      "Before drawing match lines, say every fruit name aloud — apple, banana, mango, or whichever pictures appear on the page. Matching builds focus and vocabulary without pencil-pressure tears. If your child only completes two pairs happily, stop and celebrate; Nursery homework should feel playful.",
+      "Preview the PDF on your phone so the pictures look clear before you print. When you want a fresh fruit or animals matching sheet tomorrow, browse more free samples on this site or generate unlimited themed PDFs in the Homework Buddy app."
+    ],
+    howTo: [
+      "Preview the PDF on your phone.",
+      "Print one A4 page with no scaling.",
+      "Name each fruit aloud, then draw match lines.",
+      "Stop after a calm 10–15 minutes."
+    ],
+    sheetContents: [
+      "Fruit picture pairs to match",
+      "Oral vocabulary prompts",
+      "Calm Nursery layout with space to work"
+    ],
+    faqs: [
+      {
+        question: "Is fruit matching good Nursery homework?",
+        answer:
+          "Yes — short matching sheets suit ages 3–4 and build vocabulary without writing pressure.",
+      },
+      {
+        question: "Can I reuse this fruits matching PDF?",
+        answer:
+          "Yes for home practice. When you need a new theme, download another free sample or generate sheets in Homework Buddy.",
+      }
+    ],
+  },
+  {
+    slug: "vehicles-matching",
+    classSlug: "nursery",
+    name: "Vehicles Matching",
+    title: "Nursery vehicles matching worksheet — free transport PDF",
+    description: "Free Nursery transport matching worksheet: bus, train, and plane picture practice.",
+    activitySlug: "coloring",
+    themeSlug: "transport",
+    status: "published",
+    pdfPath: "/worksheets/nursery-vehicles-matching.pdf",
+    previewImagePath: "/worksheets/previews/nursery-vehicles-matching.png",
+    previewImageAlt: "Vehicles Matching — free printable nursery worksheet preview",
+    previewImageWidth: 848,
+    previewImageHeight: 1200,
+    previewImageCaption: "Vehicles Matching free printable worksheet preview for home practice.",
+    intro: [
+      "Parents looking for Nursery transport worksheets or vehicles matching PDFs can use this free printable for a single calm sitting. Large vehicle pictures invite talk about where each one goes — road, tracks, or sky — before any marks go on the page.",
+      "Matching lines train visual attention and pencil control gently. Keep crayons thick and sessions around ten minutes. If interest fades, finish orally: point to the bus and ask your child to find its pair.",
+      "Download the free sample first, preview on screen, then print. Browse our matching and Nursery hubs for more free sheets, and use Homework Buddy when you want unlimited transport-themed practice PDFs."
+    ],
+    howTo: [
+      "Talk about where each vehicle travels.",
+      "Print one sheet on A4.",
+      "Match two or three pairs together if needed.",
+      "Praise effort more than perfect lines."
+    ],
+    sheetContents: [
+      "Vehicle picture matching pairs",
+      "Transport vocabulary talk prompts",
+      "Nursery-friendly spacing"
+    ],
+    faqs: [
+      {
+        question: "Can toddlers try vehicle matching?",
+        answer:
+          "With help, yes — complete one or two pairs together and keep the mood playful.",
+      },
+      {
+        question: "Where are more free matching worksheets?",
+        answer:
+          "See the matching hub and Nursery worksheets index for more free printable PDFs.",
+      }
+    ],
+  },
+  {
+    slug: "hindi-picture-match",
+    classSlug: "nursery",
+    name: "Hindi Picture Match",
+    title: "Nursery Hindi matching worksheet — free printable PDF",
+    description: "Free Nursery Hindi picture matching for early varnamala play at home.",
+    activitySlug: "hindi",
+    themeSlug: "hindi-varnamala",
+    status: "published",
+    pdfPath: "/worksheets/nursery-hindi-picture-match.pdf",
+    previewImagePath: "/worksheets/previews/nursery-hindi-picture-match.png",
+    previewImageAlt: "Hindi Picture Match — free printable nursery worksheet preview",
+    previewImageWidth: 848,
+    previewImageHeight: 1200,
+    previewImageCaption: "Hindi Picture Match free printable worksheet preview for home practice.",
+    intro: [
+      "This free Nursery Hindi matching worksheet supports early Hindi at home without forcing writing. Picture match plus slow oral naming is enough for ages 3–4 who are just meeting sounds and everyday words.",
+      "Say each Hindi word slowly together, then let your child find the matching picture. Keep sessions short — five to ten minutes — and switch to English or colouring if energy drops. Hindi homework at Nursery should feel like play with language, not a test.",
+      "Preview before printing so pictures are clear. When you want Hindi swar tracing or more free Hindi PDFs, open the Hindi activity hub or generate fresh sheets in Homework Buddy after the free samples."
+    ],
+    howTo: [
+      "Say the Hindi word aloud first.",
+      "Match the picture calmly.",
+      "Stop while your child is still enjoying it.",
+      "Try Hindi swar tracing another night."
+    ],
+    sheetContents: [
+      "Picture matching for early Hindi",
+      "Oral pronunciation prompts",
+      "Short Nursery session length"
+    ],
+    faqs: [
+      {
+        question: "Is Hindi matching okay for Nursery?",
+        answer:
+          "Yes when sessions stay oral, visual, and short.",
+      },
+      {
+        question: "Should Nursery write Hindi letters tonight?",
+        answer:
+          "Not required — matching and saying words builds readiness for tracing later.",
+      }
+    ],
+  },
+  {
+    slug: "english-sight-words",
+    classSlug: "jr-kg",
+    name: "English Sight Words",
+    title: "LKG English sight words worksheet — free printable PDF",
+    description: "Free LKG / Jr KG English worksheet for early sight words: read, trace, and circle.",
+    activitySlug: "reading",
+    themeSlug: "stories",
+    status: "published",
+    pdfPath: "/worksheets/jr-kg-english-sight-words.pdf",
+    previewImagePath: "/worksheets/previews/jr-kg-english-sight-words.png",
+    previewImageAlt: "English Sight Words — free printable jr kg worksheet preview",
+    previewImageWidth: 848,
+    previewImageHeight: 1200,
+    previewImageCaption: "English Sight Words free printable worksheet preview for home practice.",
+    intro: [
+      "This free LKG English worksheet targets early sight words parents often search for — short, frequent words children meet in readers and classroom charts. Jr KG / LKG evenings work best with three words, not a full list.",
+      "Read each word aloud, trace once, and circle it in a simple sentence or row. Celebrate recognition more than neat handwriting. If your child tires, finish orally and return tomorrow; English practice at this age grows through repetition and warmth.",
+      "Preview the PDF, print one A4 page, and keep a folder of favourites. Browse free English and LKG hubs on this site, then use Homework Buddy for unlimited reading and writing PDFs when you need a new set."
+    ],
+    howTo: [
+      "Choose three sight words for tonight.",
+      "Read, then trace once each.",
+      "Use in a spoken sentence together.",
+      "Stop around 15 minutes."
+    ],
+    sheetContents: [
+      "Sight word read-and-trace rows",
+      "Circle or match practice",
+      "LKG / Jr KG friendly lines"
+    ],
+    faqs: [
+      {
+        question: "Which sight words for LKG?",
+        answer:
+          "Start with I, am, the — short and frequent — then add a few school words.",
+      },
+      {
+        question: "Is this the same as UKG English?",
+        answer:
+          "LKG / Jr KG stays lighter; UKG / Sr KG can add CVC blending sheets next.",
+      }
+    ],
+  },
+  {
+    slug: "evs-my-body",
+    classSlug: "jr-kg",
+    name: "EVS My Body",
+    title: "LKG EVS worksheet — my body printable PDF",
+    description: "Free LKG / Jr KG EVS worksheet about body parts: point, name, and colour.",
+    activitySlug: "life-skills",
+    themeSlug: "nature",
+    status: "published",
+    pdfPath: "/worksheets/jr-kg-evs-my-body.pdf",
+    previewImagePath: "/worksheets/previews/jr-kg-evs-my-body.png",
+    previewImageAlt: "EVS My Body — free printable jr kg worksheet preview",
+    previewImageWidth: 848,
+    previewImageHeight: 1200,
+    previewImageCaption: "EVS My Body free printable worksheet preview for home practice.",
+    intro: [
+      "Parents searching for LKG EVS worksheets or “my body” printables can use this free PDF for picture talk first. Touch your own nose, hands, and feet while naming them — EVS at this age is observation, not textbook paragraphs.",
+      "Colour or circle body parts calmly after the oral warm-up. Keep language simple and bilingual if that matches your home. One short sheet after snack is enough for Jr KG / LKG.",
+      "Download free EVS samples here before generating more in the app. Related hubs: EVS, LKG, and Nursery life-skills pages collect more free printable PDFs for home."
+    ],
+    howTo: [
+      "Point to real body parts together.",
+      "Name each part aloud.",
+      "Colour or circle on the sheet.",
+      "End with a stretch or song."
+    ],
+    sheetContents: [
+      "Body-part naming prompts",
+      "Simple colour or circle tasks",
+      "Oral EVS warm-up first"
+    ],
+    faqs: [
+      {
+        question: "Is EVS for LKG?",
+        answer:
+          "Yes as picture talk and naming — not long written answers.",
+      },
+      {
+        question: "How long should an LKG EVS sheet take?",
+        answer:
+          "About 10–15 minutes including the oral warm-up.",
+      }
+    ],
+  },
+  {
+    slug: "maths-shapes-count",
+    classSlug: "jr-kg",
+    name: "Shapes Count",
+    title: "LKG maths shapes worksheet — free printable PDF",
+    description: "Free LKG / Jr KG maths worksheet for counting circles, squares, and triangles.",
+    activitySlug: "maths",
+    themeSlug: "fruits",
+    status: "published",
+    pdfPath: "/worksheets/jr-kg-maths-shapes-count.pdf",
+    previewImagePath: "/worksheets/previews/jr-kg-maths-shapes-count.png",
+    previewImageAlt: "Shapes Count — free printable jr kg worksheet preview",
+    previewImageWidth: 848,
+    previewImageHeight: 1200,
+    previewImageCaption: "Shapes Count free printable worksheet preview for home practice.",
+    intro: [
+      "This free LKG maths worksheet focuses on shapes and counting — the skills parents usually want for Jr KG evenings. Count real objects on the table first, then circle answers on the page so maths stays concrete.",
+      "Circle, square, and triangle with small counts beat long sum columns. If your child guesses, go back to fingers or buttons. Praise careful counting more than speed.",
+      "Preview, print one A4 page, and browse more free maths samples on the Class hubs. When you need unlimited themed maths PDFs, get Homework Buddy after the free library."
+    ],
+    howTo: [
+      "Count real objects first.",
+      "Name each shape aloud.",
+      "Circle the correct count on the sheet.",
+      "Keep the session under 15 minutes."
+    ],
+    sheetContents: [
+      "Shape recognition with counting",
+      "Picture-supported maths prompts",
+      "LKG / Jr KG spacing"
+    ],
+    faqs: [
+      {
+        question: "Shapes for LKG maths?",
+        answer:
+          "Circle, square, and triangle with counting is a calm start.",
+      },
+      {
+        question: "Should LKG do addition tonight?",
+        answer:
+          "Only if counting feels easy — otherwise stay with shapes and numbers to 10.",
+      }
+    ],
+  },
+  {
+    slug: "tracing-curves",
+    classSlug: "jr-kg",
+    name: "Tracing Curves",
+    title: "LKG tracing worksheet — free curvy paths PDF",
+    description: "Free LKG / Jr KG tracing worksheet with wave and hill paths for pencil grip.",
+    activitySlug: "writing",
+    themeSlug: "space",
+    status: "published",
+    pdfPath: "/worksheets/jr-kg-tracing-curves.pdf",
+    previewImagePath: "/worksheets/previews/jr-kg-tracing-curves.png",
+    previewImageAlt: "Tracing Curves — free printable jr kg worksheet preview",
+    previewImageWidth: 848,
+    previewImageHeight: 1200,
+    previewImageCaption: "Tracing Curves free printable worksheet preview for home practice.",
+    intro: [
+      "Parents searching for LKG tracing worksheets or pencil-grip practice can start with this free curvy-path PDF. After Nursery straight lines, gentle waves and hills prepare strokes used in letters without jumping straight into full alphabets.",
+      "Use a thick crayon or short pencil. Trace slowly, saying “up the hill, down the hill.” Stop after a few paths if the hand looks tired. Tracing is pre-writing, not a race for perfect curves.",
+      "Preview on your phone, print one page, then explore our tracing hub and free Nursery alphabet sheets. Generate more writing practice in Homework Buddy when free samples are not enough."
+    ],
+    howTo: [
+      "Warm up with finger tracing in the air.",
+      "Trace grey guides slowly.",
+      "Try one independent curve.",
+      "Rest the hand between paths."
+    ],
+    sheetContents: [
+      "Wave and hill tracing paths",
+      "Pencil-grip friendly line weight",
+      "Short LKG session design"
+    ],
+    faqs: [
+      {
+        question: "Tracing after Nursery lines?",
+        answer:
+          "Yes — curves prepare for letter strokes in LKG.",
+      },
+      {
+        question: "Crayon or pencil for tracing?",
+        answer:
+          "A thick crayon or short pencil is easier for small hands.",
+      }
+    ],
+  },
+  {
+    slug: "english-cvc-mix",
+    classSlug: "sr-kg",
+    name: "English CVC Mix",
+    title: "UKG English CVC worksheet — free printable PDF",
+    description: "Free UKG / Sr KG English CVC blending worksheet for early reading at home.",
+    activitySlug: "reading",
+    themeSlug: "animals",
+    status: "published",
+    pdfPath: "/worksheets/sr-kg-english-cvc-mix.pdf",
+    previewImagePath: "/worksheets/previews/sr-kg-english-cvc-mix.png",
+    previewImageAlt: "English CVC Mix — free printable sr kg worksheet preview",
+    previewImageWidth: 848,
+    previewImageHeight: 1200,
+    previewImageCaption: "English CVC Mix free printable worksheet preview for home practice.",
+    intro: [
+      "This free UKG English worksheet practices CVC blending — the skill parents often type when searching for UKG reading PDFs. Tap each sound, then say the word fast: /c/ /a/ /t/ → cat. Keep the mood playful even when decoding is new.",
+      "If letter sounds are shaky, step back to a sight-word sheet for a few nights. One short CVC page after school is enough; do not stack multiple reading packets on tired evenings.",
+      "Preview and print the free sample, then browse UKG and English hubs for more. Homework Buddy can generate unlimited themed reading PDFs when you need fresh words."
+    ],
+    howTo: [
+      "Review letter sounds orally first.",
+      "Blend two or three CVC words together.",
+      "Let your child try one independently.",
+      "Stop while confidence is still high."
+    ],
+    sheetContents: [
+      "CVC word blending rows",
+      "Sound-tap prompts",
+      "UKG / Sr KG reading length"
+    ],
+    faqs: [
+      {
+        question: "CVC for UKG?",
+        answer:
+          "Yes when letter sounds are ready; step back to sight words if needed.",
+      },
+      {
+        question: "How many CVC words per night?",
+        answer:
+          "Three to five well-understood words beat a long list.",
+      }
+    ],
+  },
+  {
+    slug: "evs-plants",
+    classSlug: "sr-kg",
+    name: "EVS Plants Around Us",
+    title: "UKG EVS plants worksheet — free printable PDF",
+    description: "Free UKG / Sr KG EVS worksheet about plants, water, and sunlight.",
+    activitySlug: "life-skills",
+    themeSlug: "nature",
+    status: "published",
+    pdfPath: "/worksheets/sr-kg-evs-plants.pdf",
+    previewImagePath: "/worksheets/previews/sr-kg-evs-plants.png",
+    previewImageAlt: "EVS Plants Around Us — free printable sr kg worksheet preview",
+    previewImageWidth: 848,
+    previewImageHeight: 1200,
+    previewImageCaption: "EVS Plants Around Us free printable worksheet preview for home practice.",
+    intro: [
+      "This free UKG EVS worksheet connects plants, water, and sunlight to something real at home — a balcony pot, park tree, or kitchen herb. Observation plus one short printable beats memorising a paragraph.",
+      "Look at a real plant before answering. Talk about what plants need in simple language. Colour or circle prompts keep writing light for Sr KG / UKG evenings.",
+      "Download free EVS samples from this hub first. Related pages include the EVS intent hub and nature themes. Use the app later for unlimited life-skills PDFs."
+    ],
+    howTo: [
+      "Observe a real plant first.",
+      "Name what plants need.",
+      "Complete the short printable.",
+      "Water a plant together afterward if you can."
+    ],
+    sheetContents: [
+      "Plant needs picture prompts",
+      "Simple circle or colour tasks",
+      "UKG-friendly EVS length"
+    ],
+    faqs: [
+      {
+        question: "EVS without a textbook?",
+        answer:
+          "Observation plus one short printable is enough for UKG.",
+      },
+      {
+        question: "Can Nursery use this plants sheet?",
+        answer:
+          "It is sized for UKG / Sr KG; Nursery may enjoy oral plant talk only.",
+      }
+    ],
+  },
+  {
+    slug: "hindi-vyanjan-trace",
+    classSlug: "sr-kg",
+    name: "Hindi Vyanjan Trace",
+    title: "UKG Hindi vyanjan tracing worksheet — free PDF",
+    description: "Free UKG / Sr KG Hindi worksheet to trace early vyanjan with picture cues.",
+    activitySlug: "hindi",
+    themeSlug: "hindi-varnamala",
+    status: "published",
+    pdfPath: "/worksheets/sr-kg-hindi-vyanjan-trace.pdf",
+    previewImagePath: "/worksheets/previews/sr-kg-hindi-vyanjan-trace.png",
+    previewImageAlt: "Hindi Vyanjan Trace — free printable sr kg worksheet preview",
+    previewImageWidth: 848,
+    previewImageHeight: 1200,
+    previewImageCaption: "Hindi Vyanjan Trace free printable worksheet preview for home practice.",
+    intro: [
+      "Parents searching for UKG Hindi worksheets or vyanjan tracing PDFs can use this free sample for a gentle next step after swar. Say each letter aloud before tracing; picture cues keep meaning attached to sound.",
+      "Keep strokes large and sessions short. Neatness matters less than steady left-to-right movement and happy practice. If your child resists writing, return to oral Hindi or matching for a few days.",
+      "Preview the PDF, print one A4 page, and browse free Hindi hubs on this site. Generate more Hindi practice in Homework Buddy when you want unlimited sheets."
+    ],
+    howTo: [
+      "Say the letter aloud first.",
+      "Trace slowly with a short pencil.",
+      "Try one independent letter.",
+      "Praise effort, not perfect shapes."
+    ],
+    sheetContents: [
+      "Early vyanjan tracing rows",
+      "Picture cues for meaning",
+      "UKG / Sr KG Hindi pacing"
+    ],
+    faqs: [
+      {
+        question: "Vyanjan after swar?",
+        answer:
+          "Yes — many UKG programmes introduce a few consonants next.",
+      },
+      {
+        question: "Should I correct every stroke?",
+        answer:
+          "Model once calmly; avoid erasing every attempt on night one.",
+      }
+    ],
+  },
+  {
+    slug: "english-reading-park",
+    classSlug: "class-1",
+    name: "English Reading: Park Day",
+    title: "Class 1 English reading worksheet — free park passage PDF",
+    description: "Free Class 1 English comprehension worksheet with a short park story.",
+    activitySlug: "reading",
+    themeSlug: "nature",
+    status: "published",
+    pdfPath: "/worksheets/class-1-english-reading-park.pdf",
+    previewImagePath: "/worksheets/previews/class-1-english-reading-park.png",
+    previewImageAlt: "English Reading: Park Day — free printable class 1 worksheet preview",
+    previewImageWidth: 848,
+    previewImageHeight: 1200,
+    previewImageCaption: "English Reading: Park Day free printable worksheet preview for home practice.",
+    intro: [
+      "This free Class 1 English reading worksheet uses a short park passage parents can finish in one sitting. Read aloud once, point under words if needed, then answer. One-word answers are fine at first.",
+      "Choose this sheet when school already sent notebook work and you still want light English practice. Three clear questions beat a dense comprehension packet that ends in tears.",
+      "Preview on your phone before printing. Browse Class 1 and English hubs for more free PDFs, then generate unlimited reading sheets in Homework Buddy when favourites feel stale."
+    ],
+    howTo: [
+      "Read the passage aloud together.",
+      "Ask one oral question before writing.",
+      "Write short answers.",
+      "Re-read for fluency if energy remains."
+    ],
+    sheetContents: [
+      "Short Class 1 park passage",
+      "Three gentle comprehension prompts",
+      "Space for short answers"
+    ],
+    faqs: [
+      {
+        question: "English reading for Class 1?",
+        answer:
+          "Short lines and 3 questions fit a 15-minute evening.",
+      },
+      {
+        question: "What if my child guesses from pictures?",
+        answer:
+          "Point under each word and praise sounding out for a week.",
+      }
+    ],
+  },
+  {
+    slug: "evs-seasons",
+    classSlug: "class-1",
+    name: "EVS Seasons",
+    title: "Class 1 EVS seasons worksheet — free printable PDF",
+    description: "Free Class 1 EVS worksheet about seasons, weather, and clothes.",
+    activitySlug: "life-skills",
+    themeSlug: "monsoon",
+    status: "published",
+    pdfPath: "/worksheets/class-1-evs-seasons.pdf",
+    previewImagePath: "/worksheets/previews/class-1-evs-seasons.png",
+    previewImageAlt: "EVS Seasons — free printable class 1 worksheet preview",
+    previewImageWidth: 848,
+    previewImageHeight: 1200,
+    previewImageCaption: "EVS Seasons free printable worksheet preview for home practice.",
+    intro: [
+      "Parents searching for Class 1 EVS worksheets about seasons can print this free PDF after a quick weather talk. Connect the page to today’s clothes, rain, or heat so EVS feels real.",
+      "Circle or short answers are enough. Avoid turning the sheet into a long essay. Fifteen minutes of talk-plus-printable supports school without doubling homework load.",
+      "Download free EVS samples here first. See the EVS hub and Class 1 worksheets for related free PDFs; use the app for unlimited themed life-skills practice."
+    ],
+    howTo: [
+      "Talk about today’s weather first.",
+      "Complete the short printable.",
+      "Link answers to real clothes or seasons.",
+      "Stop while the conversation is still positive."
+    ],
+    sheetContents: [
+      "Seasons and weather prompts",
+      "Clothes-matching style tasks",
+      "Class 1 EVS length"
+    ],
+    faqs: [
+      {
+        question: "Is seasons EVS for Class 1?",
+        answer:
+          "Yes — weather talk plus one short printable works well.",
+      },
+      {
+        question: "Colour or black-and-white?",
+        answer:
+          "Either works; black-and-white saves ink for school nights.",
+      }
+    ],
+  },
+  {
+    slug: "maths-bonds-10",
+    classSlug: "class-1",
+    name: "Maths Bonds to 10",
+    title: "Class 1 maths number bonds worksheet — free PDF",
+    description: "Free Class 1 maths worksheet for number bonds that make 10.",
+    activitySlug: "maths",
+    themeSlug: "space",
+    status: "published",
+    pdfPath: "/worksheets/class-1-maths-bonds-10.pdf",
+    previewImagePath: "/worksheets/previews/class-1-maths-bonds-10.png",
+    previewImageAlt: "Maths Bonds to 10 — free printable class 1 worksheet preview",
+    previewImageWidth: 848,
+    previewImageHeight: 1200,
+    previewImageCaption: "Maths Bonds to 10 free printable worksheet preview for home practice.",
+    intro: [
+      "This free Class 1 maths worksheet practices number bonds that make 10 — a core fluency skill behind addition. Use ten fingers or buttons before writing the missing number so maths stays concrete.",
+      "A few well-understood bonds beat a full page of rushed sums. Sit nearby for the first two problems, then step back if your child is confident.",
+      "Preview and print the free sample. Browse Class 1 maths hubs for more free PDFs, and generate unlimited maths sheets in Homework Buddy when you need variety."
+    ],
+    howTo: [
+      "Show ten with fingers or objects.",
+      "Solve two bonds together.",
+      "Let your child try two independently.",
+      "Check answers calmly without rushing."
+    ],
+    sheetContents: [
+      "Number bonds to 10",
+      "Concrete-to-abstract prompts",
+      "Class 1 evening length"
+    ],
+    faqs: [
+      {
+        question: "Bonds to 10 in Class 1?",
+        answer:
+          "Yes — concrete counting first, then blanks.",
+      },
+      {
+        question: "How many problems tonight?",
+        answer:
+          "Four to six careful bonds are enough for most Class 1 children.",
+      }
+    ],
+  },
+  {
+    slug: "hindi-matra-practice",
+    classSlug: "class-1",
+    name: "Hindi Matra Practice",
+    title: "Class 1 Hindi matra worksheet — free printable PDF",
+    description: "Free Class 1 Hindi worksheet for gentle matra recognition and writing.",
+    activitySlug: "hindi",
+    themeSlug: "hindi-varnamala",
+    status: "published",
+    pdfPath: "/worksheets/class-1-hindi-matra-practice.pdf",
+    previewImagePath: "/worksheets/previews/class-1-hindi-matra-practice.png",
+    previewImageAlt: "Hindi Matra Practice — free printable class 1 worksheet preview",
+    previewImageWidth: 848,
+    previewImageHeight: 1200,
+    previewImageCaption: "Hindi Matra Practice free printable worksheet preview for home practice.",
+    intro: [
+      "Parents searching for Class 1 Hindi matra worksheets can use this free printable for gentle recognition, not a full grammar drill. Say the base letter and matra sound slowly together before writing.",
+      "Start with a few familiar matras. Praise effort and keep sessions under fifteen minutes. If writing frustrates, circle examples orally and return to tracing another night.",
+      "Preview the PDF first. Browse free Hindi hubs on this site, then generate more Hindi practice in Homework Buddy when you need unlimited sheets."
+    ],
+    howTo: [
+      "Review two matra sounds orally.",
+      "Trace or write a few examples.",
+      "Use one word in a spoken sentence.",
+      "Stop before fatigue sets in."
+    ],
+    sheetContents: [
+      "Matra recognition prompts",
+      "Short writing lines",
+      "Class 1 Hindi pacing"
+    ],
+    faqs: [
+      {
+        question: "Matras in Class 1?",
+        answer:
+          "Start with a few familiar ones; keep sessions short.",
+      },
+      {
+        question: "Should I use only Devanagari worksheets?",
+        answer:
+          "Follow school materials; this free sample supports calm home practice alongside them.",
+      }
+    ],
+  },
+  {
+    slug: "english-comprehension",
+    classSlug: "class-2",
+    name: "English Comprehension: Market",
+    title: "Class 2 English comprehension worksheet — free PDF",
+    description: "Free Class 2 English reading worksheet with a short market passage.",
+    activitySlug: "reading",
+    themeSlug: "fruits",
+    status: "published",
+    pdfPath: "/worksheets/class-2-english-comprehension.pdf",
+    previewImagePath: "/worksheets/previews/class-2-english-comprehension.png",
+    previewImageAlt: "English Comprehension: Market — free printable class 2 worksheet preview",
+    previewImageWidth: 848,
+    previewImageHeight: 1200,
+    previewImageCaption: "English Comprehension: Market free printable worksheet preview for home practice.",
+    intro: [
+      "This free Class 2 English comprehension worksheet uses a short market passage sized for after-school energy. Underline the sentence that proves one answer so children learn to look back in the text.",
+      "About 15–20 minutes is enough. Discuss one “why” question orally if writing slows the session. Confidence grows when the passage feels finishable.",
+      "Preview before printing. Browse Class 2 and English hubs for more free reading PDFs, then use Homework Buddy for unlimited themed comprehension sheets."
+    ],
+    howTo: [
+      "Read the passage once silently or aloud.",
+      "Underline proof for one answer.",
+      "Write short responses.",
+      "Retell the market scene in two sentences."
+    ],
+    sheetContents: [
+      "Short market passage",
+      "Comprehension questions with proof",
+      "Class 2 reading length"
+    ],
+    faqs: [
+      {
+        question: "How long for Class 2 English reading?",
+        answer:
+          "About 15–20 minutes for one passage.",
+      },
+      {
+        question: "What if answers are copied randomly?",
+        answer:
+          "Ask your child to point to the sentence that proves each answer.",
+      }
+    ],
+  },
+  {
+    slug: "evs-water",
+    classSlug: "class-2",
+    name: "EVS Save Water",
+    title: "Class 2 EVS water worksheet — free printable PDF",
+    description: "Free Class 2 EVS worksheet on saving water and daily habits.",
+    activitySlug: "life-skills",
+    themeSlug: "monsoon",
+    status: "published",
+    pdfPath: "/worksheets/class-2-evs-water.pdf",
+    previewImagePath: "/worksheets/previews/class-2-evs-water.png",
+    previewImageAlt: "EVS Save Water — free printable class 2 worksheet preview",
+    previewImageWidth: 848,
+    previewImageHeight: 1200,
+    previewImageCaption: "EVS Save Water free printable worksheet preview for home practice.",
+    intro: [
+      "Parents looking for Class 2 EVS worksheets on water can print this free PDF and link it to real home habits — closing the tap, shorter showers, or catching rain talk during monsoon.",
+      "Discuss one water-saving habit after the sheet so EVS becomes behaviour, not only a filled page. Keep writing short; oral plans count.",
+      "Download free EVS samples first. See the EVS hub for more free PDFs across classes, and generate unlimited life-skills sheets in Homework Buddy when needed."
+    ],
+    howTo: [
+      "Talk about water use at home.",
+      "Complete the short printable.",
+      "Choose one habit to try this week.",
+      "Review the habit two days later."
+    ],
+    sheetContents: [
+      "Save-water habit prompts",
+      "Simple planning questions",
+      "Class 2 EVS length"
+    ],
+    faqs: [
+      {
+        question: "EVS habits for Class 2?",
+        answer:
+          "Yes — real home habits beat memorising lists.",
+      },
+      {
+        question: "Can this work on a rainy day?",
+        answer:
+          "Yes — monsoon talk pairs well with water-saving ideas.",
+      }
+    ],
+  },
+  {
+    slug: "hindi-sentences",
+    classSlug: "class-2",
+    name: "Hindi Simple Sentences",
+    title: "Class 2 Hindi sentence worksheet — free printable PDF",
+    description: "Free Class 2 Hindi writing worksheet with simple sentence starters.",
+    activitySlug: "hindi",
+    themeSlug: "stories",
+    status: "published",
+    pdfPath: "/worksheets/class-2-hindi-sentences.pdf",
+    previewImagePath: "/worksheets/previews/class-2-hindi-sentences.png",
+    previewImageAlt: "Hindi Simple Sentences — free printable class 2 worksheet preview",
+    previewImageWidth: 848,
+    previewImageHeight: 1200,
+    previewImageCaption: "Hindi Simple Sentences free printable worksheet preview for home practice.",
+    intro: [
+      "This free Class 2 Hindi worksheet uses simple sentence starters so children practise complete thoughts without fear of perfect spelling. Accept invented spelling on the first draft; fix one or two words together later.",
+      "Say each sentence aloud before writing. Drawing what they wrote about keeps the session warm after a long school day.",
+      "Preview and print one page. Browse Hindi hubs for more free samples, then generate unlimited Hindi PDFs in Homework Buddy when you want fresh prompts."
+    ],
+    howTo: [
+      "Read the sentence starter aloud.",
+      "Complete two sentences together.",
+      "Let your child finish one independently.",
+      "Draw a quick picture of the idea."
+    ],
+    sheetContents: [
+      "Sentence starter lines",
+      "Optional draw-what-you-wrote prompt",
+      "Class 2 Hindi writing length"
+    ],
+    faqs: [
+      {
+        question: "Correct every Hindi spelling?",
+        answer:
+          "Not on the first draft — fix one or two together later.",
+      },
+      {
+        question: "English transliteration okay?",
+        answer:
+          "Use whatever helps tonight; school notebooks can stay in Devanagari.",
+      }
+    ],
+  },
+  {
+    slug: "english-paragraph",
+    classSlug: "class-3",
+    name: "English Paragraph Practice",
+    title: "Class 3 English paragraph worksheet — free printable PDF",
+    description: "Free Class 3 English writing worksheet: plan and write a short paragraph.",
+    activitySlug: "writing",
+    themeSlug: "space",
+    status: "published",
+    pdfPath: "/worksheets/class-3-english-paragraph.pdf",
+    previewImagePath: "/worksheets/previews/class-3-english-paragraph.png",
+    previewImageAlt: "English Paragraph Practice — free printable class 3 worksheet preview",
+    previewImageWidth: 848,
+    previewImageHeight: 1200,
+    previewImageCaption: "English Paragraph Practice free printable worksheet preview for home practice.",
+    intro: [
+      "Parents searching for Class 3 English paragraph worksheets can use this free PDF to plan and write four to six clear sentences. Say the paragraph aloud before writing so ideas stay organised.",
+      "One focused paragraph beats three messy pages. Sit nearby for the opening sentence, then let your child finish if flow is good. Praise structure and effort more than fancy vocabulary.",
+      "Preview on screen, print A4, and browse Class 3 and English hubs for more free samples. Get Homework Buddy when you need unlimited writing PDFs with new themes."
+    ],
+    howTo: [
+      "Brainstorm three ideas orally.",
+      "Say a full paragraph aloud.",
+      "Write four to six sentences.",
+      "Read the paragraph back together."
+    ],
+    sheetContents: [
+      "Paragraph planning prompts",
+      "Lined writing space",
+      "Class 3 evening length"
+    ],
+    faqs: [
+      {
+        question: "How long should a Class 3 paragraph be?",
+        answer:
+          "Four to six clear sentences is enough for homework.",
+      },
+      {
+        question: "What if my child hates writing?",
+        answer:
+          "Plan orally first and write only four sentences; stop while energy remains.",
+      }
+    ],
+  },
+  {
+    slug: "evs-community",
+    classSlug: "class-3",
+    name: "EVS Community Helpers",
+    title: "Class 3 EVS community helpers worksheet — free PDF",
+    description: "Free Class 3 EVS worksheet about community helpers and local jobs.",
+    activitySlug: "life-skills",
+    themeSlug: "transport",
+    status: "published",
+    pdfPath: "/worksheets/class-3-evs-community.pdf",
+    previewImagePath: "/worksheets/previews/class-3-evs-community.png",
+    previewImageAlt: "EVS Community Helpers — free printable class 3 worksheet preview",
+    previewImageWidth: 848,
+    previewImageHeight: 1200,
+    previewImageCaption: "EVS Community Helpers free printable worksheet preview for home practice.",
+    intro: [
+      "This free Class 3 EVS worksheet about community helpers works best when you name a real person your child has met — a doctor, driver, teacher, or shopkeeper. Local connection makes the printable stick.",
+      "Short written answers plus oral stories beat copying definitions. Fifteen to twenty minutes is enough after school notebook work.",
+      "Download free EVS samples here first. Explore the EVS hub for related free PDFs, then use Homework Buddy for unlimited themed life-skills sheets."
+    ],
+    howTo: [
+      "Name a real helper you know.",
+      "Complete the short printable.",
+      "Tell one story about that helper.",
+      "Thank someone in the community this week if you can."
+    ],
+    sheetContents: [
+      "Community helper prompts",
+      "Local connection questions",
+      "Class 3 EVS length"
+    ],
+    faqs: [
+      {
+        question: "Community helpers in EVS?",
+        answer:
+          "Yes — connect the sheet to people in your neighbourhood.",
+      },
+      {
+        question: "Is this only for CBSE?",
+        answer:
+          "No — the ideas fit most Indian Class 3 EVS or environmental studies units.",
+      }
+    ],
+  },
+  {
+    slug: "maths-fractions-intro",
+    classSlug: "class-3",
+    name: "Maths Fair Shares",
+    title: "Class 3 maths fractions worksheet — free halves PDF",
+    description: "Free Class 3 maths worksheet introducing halves and fair shares with pictures.",
+    activitySlug: "maths",
+    themeSlug: "fruits",
+    status: "published",
+    pdfPath: "/worksheets/class-3-maths-fractions-intro.pdf",
+    previewImagePath: "/worksheets/previews/class-3-maths-fractions-intro.png",
+    previewImageAlt: "Maths Fair Shares — free printable class 3 worksheet preview",
+    previewImageWidth: 848,
+    previewImageHeight: 1200,
+    previewImageCaption: "Maths Fair Shares free printable worksheet preview for home practice.",
+    intro: [
+      "Parents searching for Class 3 maths fractions worksheets can start gently with this free fair-shares PDF. Use a roti or paper circle to show half before answering so fractions stay concrete.",
+      "Picture-supported halves beat abstract notation on night one. A few careful problems with talk beat a long drill. Stop if frustration rises and return with objects tomorrow.",
+      "Preview and print the free sample. Browse Class 3 maths hubs for more free PDFs, and generate unlimited maths practice in Homework Buddy when you need more variety."
+    ],
+    howTo: [
+      "Show half with a real object.",
+      "Solve two picture problems together.",
+      "Let your child try two independently.",
+      "Explain answers in everyday words."
+    ],
+    sheetContents: [
+      "Fair shares and halves pictures",
+      "Concrete fraction talk prompts",
+      "Class 3 intro length"
+    ],
+    faqs: [
+      {
+        question: "Fractions in Class 3?",
+        answer:
+          "Fair shares and halves are a gentle start before formal fractions.",
+      },
+      {
+        question: "Calculator okay?",
+        answer:
+          "Not needed — pictures and sharing talk matter more tonight.",
+      }
+    ],
+  }
 ];
 
 export function publishedOnly<T extends { status: "published" | "draft" }>(items: T[]) {
@@ -2678,6 +3879,39 @@ export function filterCrossHubSheets(hub: CrossHub): WorksheetSeed[] {
       (KINDERGARTEN_CLASS_SLUGS as readonly string[]).includes(w.classSlug),
     );
   }
+  if (hub.slug === "lkg") {
+    return published.filter((w) => w.classSlug === "jr-kg");
+  }
+  if (hub.slug === "ukg") {
+    return published.filter((w) => w.classSlug === "sr-kg");
+  }
+  if (hub.slug === "english") {
+    return published.filter((w) =>
+      ["reading", "writing"].includes(w.activitySlug),
+    );
+  }
+  if (hub.slug === "evs") {
+    return published.filter(
+      (w) =>
+        ["nature", "animals", "monsoon"].includes(w.themeSlug) ||
+        w.activitySlug === "life-skills",
+    );
+  }
+  if (hub.slug === "matching") {
+    return published.filter(
+      (w) =>
+        w.slug.includes("matching") ||
+        w.slug.includes("same-different") ||
+        w.name.toLowerCase().includes("matching"),
+    );
+  }
+  if (hub.slug === "tracing") {
+    return published.filter(
+      (w) =>
+        w.slug.includes("tracing") ||
+        w.name.toLowerCase().includes("tracing"),
+    );
+  }
   return published.filter((w) => {
     if (hub.classSlug && w.classSlug !== hub.classSlug) return false;
     if (hub.activitySlug && w.activitySlug !== hub.activitySlug) return false;
@@ -2713,7 +3947,7 @@ export function allPublishedSitemapEntries(): SitemapEntry[] {
     { path: "/themes", lastModified: HUB_CONTENT_UPDATE },
     { path: "/guides", lastModified: SITE_LAUNCH },
     { path: "/tools", lastModified: HUB_CONTENT_UPDATE },
-    { path: "/tools/chat", lastModified: HUB_CONTENT_UPDATE },
+    { path: "/tools/free-printable-worksheet-generator", lastModified: HUB_CONTENT_UPDATE },
     { path: "/sitemap", lastModified: WORKSHEET_BATCH_UPDATE },
   ];
 

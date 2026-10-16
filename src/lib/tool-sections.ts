@@ -5,6 +5,14 @@ export type ToolSection = { heading: string; paragraphs: string[] };
 export const toolSectionExtras: Record<string, ToolSection[]> = {
   "worksheet-generator": [
     {
+      heading: "Free samples first, unlimited sheets second",
+      paragraphs: [
+        "Search intent for “worksheet generator” usually means a parent needs something printable tonight. Answer that with a free sample PDF or the browser free printable worksheet generator on this site before asking anyone to install an app.",
+        "Ready-made samples — Nursery tracing, LKG letter practice, UKG CVC, Class 1 reading, Class 2 maths, Class 3 paragraphs — are crawlable, shareable, and previewable. They set the quality bar for anything you generate later.",
+        "Homework Buddy is the unlimited step: class + activity + theme into a fresh A4 PDF with preview on Google Play and the App Store. Free library first; app when you need volume.",
+      ],
+    },
+    {
       heading: "PDF libraries vs generators vs school photocopies",
       paragraphs: [
         "Random PDF websites give you volume, not fit. Your child might get Class 3 word problems when they are in Jr KG, or tiny fonts that need a tutor to explain. School photocopies are trusted but static — the same addition drill every week.",
@@ -24,12 +32,20 @@ export const toolSectionExtras: Record<string, ToolSection[]> = {
       heading: "When an app beats another hour of searching",
       paragraphs: [
         "It is 8:15 p.m., tuition just ended, and tomorrow’s school notebook says ‘practice reading.’ Searching ‘Class 1 reading worksheet PDF’ returns dozens of unrelated files.",
-        "Homework Buddy on Android maps class + activity + theme + time into one print-ready PDF. You preview on the phone, print on A4, and start — same quality as the free samples on this site.",
+        "Homework Buddy on Android and iOS maps class + activity + theme + time into one print-ready PDF. You preview on the phone, print on A4, and start — same quality as the free samples on this site.",
         "Use the web samples here to judge layout and difficulty; use the app when you need a fresh variation without opening ten browser tabs.",
       ],
     },
   ],
   "reading-generator": [
+    {
+      heading: "Tonight’s free printable reading samples",
+      paragraphs: [
+        "Download before you generate: Class 1 English reading park, Class 2 English comprehension (market), Class 3 stories reading, Sr KG / UKG CVC mix, and Jr KG / LKG English sight words — all free on this site with preview images.",
+        "Open the English worksheets hub or the matching class page, preview the PDF on your phone, print one A4 sheet, and read aloud together. That is tonight’s printable without installing anything.",
+        "When you need a new theme tomorrow, generate unlimited reading PDFs in Homework Buddy — same quality bar as the free samples.",
+      ],
+    },
     {
       heading: "What reading practice should look like by class",
       paragraphs: [
@@ -55,6 +71,14 @@ export const toolSectionExtras: Record<string, ToolSection[]> = {
     },
   ],
   "math-worksheet-generator": [
+    {
+      heading: "Tonight’s free printable maths samples",
+      paragraphs: [
+        "Start free: Nursery numbers 1–10, Jr KG maths shapes count, Sr KG add within 10, Class 1 maths bonds to 10, Class 2 transport maths, Class 3 maths word problems or fair-shares fractions intro.",
+        "Each sample has a detail page with preview and download. Preview difficulty before printing so you do not waste ink on the wrong class band.",
+        "Use Homework Buddy when you need unlimited themed maths PDFs after the free library — free sample first, app second.",
+      ],
+    },
     {
       heading: "Concrete before abstract",
       paragraphs: [

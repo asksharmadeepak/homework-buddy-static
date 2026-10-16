@@ -75,7 +75,7 @@ export default function HtmlSitemapPage() {
     {
       title: "Tools",
       links: [
-        { href: "/tools/chat", label: "Printable worksheet helper" },
+        { href: "/tools/free-printable-worksheet-generator", label: "Free printable worksheet generator" },
         ...toolList.map((t) => ({
           href: `/tools/${t.slug}`,
           label: t.name,

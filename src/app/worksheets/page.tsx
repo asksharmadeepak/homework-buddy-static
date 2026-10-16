@@ -15,9 +15,9 @@ import {
 import { SmartStoreLink } from "@/components/PlayStoreLink";
 
 export const metadata = buildMetadata({
-  title: "Printable worksheets for Nursery to Class 3",
+  title: "Free printable worksheets for Nursery to Class 3",
   description:
-    "Browse printable worksheets by class, curated reading & maths hubs, and theme ideas for parents.",
+    "Download free printable worksheets by class (Nursery, LKG, UKG, Class 1–3), subject, and theme. Preview PDFs before you print.",
   path: "/worksheets",
 });
 
@@ -42,10 +42,13 @@ export default function WorksheetsIndexPage() {
         )}
       />
       <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Worksheets", path: "/worksheets" }]} />
-      <h1 className="text-4xl font-black text-[#24212C]">Printable worksheets</h1>
+      <h1 className="text-4xl font-black text-[#24212C]">
+        Free printable worksheets for Nursery to Class 3
+      </h1>
       <p className="mt-4 max-w-3xl text-lg font-semibold text-[#7D7788]">
-        Find class-wise printable worksheet hubs and curated collections like Class 1 reading or preschool
-        printables. Every page is written for real parent search intent — not empty filter combinations.
+        Find free printable worksheets by class (Nursery, LKG, UKG, Class 1–3), subject, and theme —
+        including matching, tracing, English, maths, Hindi, and EVS practice. Every page is written for
+        real parent search intent.
       </p>
 
       <section className="mt-12 rounded-3xl border border-[#7B5CD6]/20 bg-[#F0EBFF]/60 p-6 md:p-8">

@@ -6,7 +6,7 @@
 #   - Publish directory: out
 # Then: Deploys → Trigger deploy → Clear cache and deploy site
 #
-# Gemini printable chat (/tools/chat):
+# Gemini printable chat (/tools/free-printable-worksheet-generator):
 #   Set GEMINI_API_KEY in Netlify → Environment variables (secret).
 #   Optional: GEMINI_MODEL (default gemini-3.5-flash-lite), GEMINI_DAILY_MAX (default 500).
 #   Function: netlify/functions/generate-worksheet.js → /.netlify/functions/generate-worksheet
@@ -55,6 +55,19 @@
 [[redirects]]
   from = "/beta"
   to = "/download"
+  status = 301
+  force = true
+
+# Old printable helper URL → free worksheet generator (search-intent name)
+[[redirects]]
+  from = "/tools/chat"
+  to = "/tools/free-printable-worksheet-generator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/chat/"
+  to = "/tools/free-printable-worksheet-generator"
   status = 301
   force = true
 

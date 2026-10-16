@@ -89,25 +89,25 @@ export default async function WorksheetHubPage({ params }: Props) {
 
           <aside className="mt-10 rounded-3xl bg-[#FFEFE8] px-6 py-7 text-center md:px-10">
             <h2 className="text-xl font-black text-[#24212C]">
-              Want unlimited fresh sheets?
+              Free samples first — then unlimited sheets
             </h2>
             <p className="mx-auto mt-2 max-w-xl text-sm font-semibold text-[#7D7788]">
-              Generate new {cls.name} worksheets by class, activity, and theme in Homework Buddy —
-              then print whenever you need homework tonight.
+              Download a free {cls.name} PDF above. When you need fresh themes every night, generate
+              unlimited worksheets in Homework Buddy.
             </p>
             <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
-              <SmartStoreLink
-                placement={playPlacement}
+              <Link
+                href="/worksheets"
                 className="rounded-full bg-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-white"
               >
-                Get Homework Buddy
-              </SmartStoreLink>
-              <Link
-                href="/download"
+                More free worksheets
+              </Link>
+              <SmartStoreLink
+                placement={playPlacement}
                 className="rounded-full border-2 border-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-[#7B5CD6]"
               >
-                App download page
-              </Link>
+                Get the app
+              </SmartStoreLink>
             </div>
           </aside>
 
@@ -178,8 +178,8 @@ export default async function WorksheetHubPage({ params }: Props) {
 
             <SoftCta
               playPlacement={playPlacement}
-              title={`Generate more ${cls.name} worksheets in the app`}
-              body="Pick class, activity, theme, and time — download a fresh print-ready PDF anytime."
+              title={`More free ${cls.name} worksheets, then unlimited in the app`}
+              body="Browse free samples on this site first. When favourites feel stale, generate unlimited class + theme PDFs in Homework Buddy."
             />
             <FaqSection faqs={cls.faqs} />
             <p className="mt-8 text-xs font-semibold text-[#7D7788]">
@@ -237,25 +237,25 @@ export default async function WorksheetHubPage({ params }: Props) {
 
           <aside className="mt-10 rounded-3xl bg-[#FFEFE8] px-6 py-7 text-center md:px-10">
             <h2 className="text-xl font-black text-[#24212C]">
-              Want unlimited fresh sheets?
+              Free samples first — then unlimited sheets
             </h2>
             <p className="mx-auto mt-2 max-w-xl text-sm font-semibold text-[#7D7788]">
-              Generate new worksheets by class, activity, and theme in Homework Buddy — then print
-              whenever you need homework tonight.
+              Preview and download the free PDFs above. When you need fresh themes every night, generate
+              unlimited worksheets in Homework Buddy.
             </p>
             <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
-              <SmartStoreLink
-                placement={playPlacement}
+              <Link
+                href="/worksheets"
                 className="rounded-full bg-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-white"
               >
-                Get Homework Buddy
-              </SmartStoreLink>
-              <Link
-                href="/download"
+                More free worksheets
+              </Link>
+              <SmartStoreLink
+                placement={playPlacement}
                 className="rounded-full border-2 border-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-[#7B5CD6]"
               >
-                App download page
-              </Link>
+                Get the app
+              </SmartStoreLink>
             </div>
           </aside>
 

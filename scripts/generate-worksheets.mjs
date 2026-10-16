@@ -2057,6 +2057,297 @@ async function buildClass3SpaceCreative() {
   return doc.save();
 }
 
+/** Compact quiz/practice sheets for SEO intent keywords (batch 2). */
+async function buildSeoPracticeSheet({
+  title,
+  subtitle,
+  tip,
+  art,
+  prompts,
+  optionsBlocks,
+}) {
+  const { doc, page, font, fontBold, margin, y: y0 } = await startSample(title, subtitle);
+  let y = y0;
+  if (art) {
+    const img = await doc.embedPng(loadArt(art));
+    page.drawImage(img, { x: margin + 420, y: y - 70, width: 80, height: 80 });
+  }
+  if (prompts?.length) {
+    for (const prompt of prompts) {
+      page.drawText(prompt, { x: margin, y, size: 12, font: fontBold, color: C.text });
+      y -= 20;
+      for (let i = 0; i < 2; i++) {
+        page.drawLine({
+          start: { x: margin, y: y - i * 18 },
+          end: { x: margin + 380, y: y - i * 18 },
+          thickness: 0.8,
+          color: C.line,
+        });
+      }
+      y -= 52;
+    }
+  }
+  if (optionsBlocks?.length) {
+    for (const block of optionsBlocks) {
+      page.drawText(block.q, { x: margin, y, size: 12, font: fontBold, color: C.purple });
+      y -= 22;
+      for (const opt of block.options) {
+        circleOption(page, margin, y, opt, font, fontBold);
+        y -= 20;
+      }
+      y -= 10;
+    }
+  }
+  drawTipBox(page, margin, font, fontBold, tip);
+  await drawBrandFooter(doc, page, font, fontBold);
+  await finishMeta(doc, title);
+  return doc.save();
+}
+
+const seoBatchSpecs = [
+  {
+    file: "nursery-fruits-matching.pdf",
+    title: "Fruits Matching Fun",
+    subtitle: "Nursery · Matching · Fruits  ·  Draw a line to match each fruit.",
+    tip: "Say each fruit name aloud. Stop after a few matches if attention drops.",
+    art: "theme-fruits.png",
+    optionsBlocks: [
+      { q: "1. Which fruit is yellow and curved?", options: ["Banana", "Apple", "Grape"] },
+      { q: "2. Which fruit is red and crunchy?", options: ["Mango", "Apple", "Lemon"] },
+      { q: "3. Circle a fruit you ate this week and draw it:", options: ["Done", "Need help", "Skip"] },
+    ],
+  },
+  {
+    file: "nursery-vehicles-matching.pdf",
+    title: "Vehicles Matching",
+    subtitle: "Nursery · Matching · Transport  ·  Match each vehicle to where it goes.",
+    tip: "Talk about bus, train, and plane before drawing lines.",
+    art: "theme-transport.png",
+    optionsBlocks: [
+      { q: "1. Which vehicle flies in the sky?", options: ["Plane", "Bus", "Train"] },
+      { q: "2. Which vehicle has many seats for school?", options: ["Rocket", "Bus", "Boat"] },
+      { q: "3. Draw your favourite vehicle in the box at home:", options: ["Ready", "Later", "Help"] },
+    ],
+  },
+  {
+    file: "nursery-hindi-picture-match.pdf",
+    title: "Hindi Picture Match",
+    subtitle: "Nursery · Hindi · Matching  ·  Point, say, and match the picture word.",
+    tip: "Say the Hindi word slowly together before matching.",
+    art: "cut_parrot.png",
+    optionsBlocks: [
+      { q: "1. Point to the bird picture and say 'tota' together.", options: ["Said it", "Again", "Skip"] },
+      { q: "2. Which sound starts many animal names?", options: ["Listen first", "Trace later", "Done"] },
+      { q: "3. Clap once for each new Hindi word you hear:", options: ["1 clap", "2 claps", "3 claps"] },
+    ],
+  },
+  {
+    file: "jr-kg-english-sight-words.pdf",
+    title: "English Sight Words",
+    subtitle: "Jr KG / LKG · English · Sight words  ·  Read, trace, and circle.",
+    tip: "Read the word aloud, then trace. Three words is enough tonight.",
+    art: "theme-animals.png",
+    prompts: ["1. Trace: I", "2. Trace: am", "3. Trace: the", "4. Circle the word 'am' in a sentence you say aloud."],
+  },
+  {
+    file: "jr-kg-evs-my-body.pdf",
+    title: "EVS My Body",
+    subtitle: "Jr KG / LKG · EVS · Body parts  ·  Point, name, and colour.",
+    tip: "Touch your own nose, eyes, and hands while naming them.",
+    art: "cut_star.png",
+    optionsBlocks: [
+      { q: "1. How many eyes do you have?", options: ["1", "2", "4"] },
+      { q: "2. Which body part helps you smell?", options: ["Nose", "Ear", "Foot"] },
+      { q: "3. Colour two hands on a blank paper after this sheet.", options: ["Done", "Later", "Help"] },
+    ],
+  },
+  {
+    file: "jr-kg-maths-shapes-count.pdf",
+    title: "Shapes Count",
+    subtitle: "Jr KG / LKG · Maths · Shapes  ·  Count circles, squares, and triangles.",
+    tip: "Use snacks or blocks to count before circling answers.",
+    art: "theme-fruits.png",
+    optionsBlocks: [
+      { q: "1. How many sides does a triangle have?", options: ["2", "3", "4"] },
+      { q: "2. A circle is round like a:", options: ["Ball", "Book", "Door"] },
+      { q: "3. Draw 3 circles and count them aloud.", options: ["Done", "Need help", "Skip"] },
+    ],
+  },
+  {
+    file: "sr-kg-english-cvc-mix.pdf",
+    title: "English CVC Mix",
+    subtitle: "Sr KG / UKG · English · CVC  ·  Blend sounds and choose the word.",
+    tip: "Tap each sound: /c/ /a/ /t/ then say the word fast.",
+    art: "cut_tiger.png",
+    optionsBlocks: [
+      { q: "1. c-a-t makes:", options: ["cat", "cot", "cut"] },
+      { q: "2. p-i-g makes:", options: ["peg", "pig", "pug"] },
+      { q: "3. Write one CVC word you can read:", options: ["Wrote it", "Said it", "Help"] },
+    ],
+  },
+  {
+    file: "sr-kg-evs-plants.pdf",
+    title: "EVS Plants Around Us",
+    subtitle: "Sr KG / UKG · EVS · Plants  ·  Observe and answer.",
+    tip: "Look at a real plant or balcony pot before answering.",
+    art: "theme-monsoon.png",
+    optionsBlocks: [
+      { q: "1. Plants need water and:", options: ["Sunlight", "Television", "Shoes"] },
+      { q: "2. Which part of a plant is usually green?", options: ["Leaf", "Root only", "Stone"] },
+      { q: "3. Draw one plant you saw today.", options: ["Drawn", "Later", "Help"] },
+    ],
+  },
+  {
+    file: "sr-kg-hindi-vyanjan-trace.pdf",
+    title: "Hindi Vyanjan Trace",
+    subtitle: "Sr KG / UKG · Hindi · Vyanjan  ·  Trace ka, kha, ga slowly.",
+    tip: "Say the letter aloud before each tracing stroke.",
+    art: "cut_elephant.png",
+    prompts: [
+      "1. Trace ka (as in kamal)",
+      "2. Trace kha (as in khargosh)",
+      "3. Trace ga (as in gajar)",
+      "4. Write one letter on your own:",
+    ],
+  },
+  {
+    file: "class-1-english-reading-park.pdf",
+    title: "English Reading: Park Day",
+    subtitle: "Class 1 · English · Reading  ·  Read the lines and answer.",
+    tip: "Read aloud once, then answer. One word answers are fine.",
+    art: "theme-animals.png",
+    optionsBlocks: [
+      { q: "Mia went to the park. She saw a red ball. She kicked it to her friend.", options: ["Read together"] },
+      { q: "1. Where did Mia go?", options: ["Park", "Shop", "School"] },
+      { q: "2. What colour was the ball?", options: ["Blue", "Red", "Green"] },
+      { q: "3. Who got the ball?", options: ["Her friend", "A bird", "A bus"] },
+    ],
+  },
+  {
+    file: "class-1-evs-seasons.pdf",
+    title: "EVS Seasons",
+    subtitle: "Class 1 · EVS · Seasons  ·  Think about weather and clothes.",
+    tip: "Talk about today’s weather before circling answers.",
+    art: "theme-monsoon.png",
+    optionsBlocks: [
+      { q: "1. In the rainy season we often use a:", options: ["Umbrella", "Sunglasses only", "Woollen cap only"] },
+      { q: "2. Summer days usually feel:", options: ["Hot", "Snowy", "Frozen"] },
+      { q: "3. Write one thing you do in monsoon:", options: ["Wrote", "Said aloud", "Help"] },
+    ],
+  },
+  {
+    file: "class-1-maths-bonds-10.pdf",
+    title: "Maths Bonds to 10",
+    subtitle: "Class 1 · Maths · Number bonds  ·  Fill pairs that make 10.",
+    tip: "Use ten fingers or buttons before writing.",
+    art: "cut_star.png",
+    prompts: ["1. 7 + __ = 10", "2. __ + 4 = 10", "3. 10 = 6 + __", "4. Draw 10 dots and circle a bond pair."],
+  },
+  {
+    file: "class-2-english-comprehension.pdf",
+    title: "English Comprehension: Market",
+    subtitle: "Class 2 · English · Reading  ·  Short passage + questions.",
+    tip: "Underline the sentence that proves one answer.",
+    art: "theme-fruits.png",
+    optionsBlocks: [
+      {
+        q: "Ravi went to the market with Amma. They bought mangoes and tomatoes. Ravi carried one bag carefully.",
+        options: ["Read together"],
+      },
+      { q: "1. Who went with Ravi?", options: ["Amma", "A teacher", "A driver"] },
+      { q: "2. What fruit did they buy?", options: ["Mangoes", "Apples", "Grapes"] },
+      { q: "3. Why was Ravi careful?", options: ["He carried a bag", "He slept", "He ran away"] },
+    ],
+  },
+  {
+    file: "class-2-evs-water.pdf",
+    title: "EVS Save Water",
+    subtitle: "Class 2 · EVS · Water  ·  Habits and thinking questions.",
+    tip: "Discuss one water-saving habit at home after the sheet.",
+    art: "theme-monsoon.png",
+    optionsBlocks: [
+      { q: "1. We should turn off the tap while:", options: ["Brushing teeth", "Never", "Only at school"] },
+      { q: "2. Plants need water to:", options: ["Grow", "Watch TV", "Fly"] },
+      { q: "3. Write one way your family saves water:", options: ["Wrote", "Said", "Help"] },
+    ],
+  },
+  {
+    file: "class-2-hindi-sentences.pdf",
+    title: "Hindi Simple Sentences",
+    subtitle: "Class 2 · Hindi · Writing  ·  Read and complete gently.",
+    tip: "Accept invented spelling; praise complete thoughts.",
+    art: "cut_parrot.png",
+    prompts: [
+      "1. Main ___ jata / jati hoon. (I go to ___)",
+      "2. Mujhe ___ achha lagta hai. (I like ___)",
+      "3. Aaj ka mausam ___ hai. (Today's weather is ___)",
+      "4. Draw what you wrote about:",
+    ],
+  },
+  {
+    file: "class-3-english-paragraph.pdf",
+    title: "English Paragraph Practice",
+    subtitle: "Class 3 · English · Writing  ·  Plan, then write 4–5 lines.",
+    tip: "Say the paragraph aloud before writing.",
+    art: "theme-space.png",
+    prompts: [
+      "Topic: My favourite outdoor game",
+      "1. Who do you play with?",
+      "2. Where do you play?",
+      "3. Why do you like it?",
+      "4. Write your paragraph on lined paper:",
+    ],
+  },
+  {
+    file: "class-3-evs-community.pdf",
+    title: "EVS Community Helpers",
+    subtitle: "Class 3 · EVS · Community  ·  Think about helpers around you.",
+    tip: "Name a real helper your child has met this month.",
+    art: "cut_bus.png",
+    optionsBlocks: [
+      { q: "1. Who helps put out fires?", options: ["Firefighter", "Pilot", "Baker only"] },
+      { q: "2. A doctor helps us when we are:", options: ["Sick", "Flying", "Painting only"] },
+      { q: "3. Write two sentences about a helper in your area:", options: ["Wrote", "Said", "Help"] },
+    ],
+  },
+  {
+    file: "class-3-maths-fractions-intro.pdf",
+    title: "Maths Fair Shares",
+    subtitle: "Class 3 · Maths · Sharing  ·  Halves and fair shares with pictures.",
+    tip: "Use a roti or paper circle to show half before answering.",
+    art: "theme-fruits.png",
+    optionsBlocks: [
+      { q: "1. Half of 8 mangoes is:", options: ["4", "2", "8"] },
+      { q: "2. If 2 friends share 6 sweets fairly, each gets:", options: ["3", "6", "1"] },
+      { q: "3. Draw a circle and shade one half.", options: ["Done", "Need help", "Skip"] },
+    ],
+  },
+  {
+    file: "class-1-hindi-matra-practice.pdf",
+    title: "Hindi Matra Practice",
+    subtitle: "Class 1 · Hindi · Matras  ·  Gentle recognition practice.",
+    tip: "Say the base letter and matra sound slowly together.",
+    art: "cut_rabbit.png",
+    prompts: [
+      "1. Circle words with aa-matra in your notebook.",
+      "2. Write ka, ki, ke once each:",
+      "3. Draw a picture for ka (as in kaka):",
+    ],
+  },
+  {
+    file: "jr-kg-tracing-curves.pdf",
+    title: "Tracing Curves",
+    subtitle: "Jr KG / LKG · Tracing · Curves  ·  Follow the waves slowly.",
+    tip: "Use a thick crayon. Praise slow, steady lines.",
+    art: "cut_moon.png",
+    prompts: ["1. Trace the big wave path.", "2. Trace the small hills path.", "3. Draw your own wave line once:"],
+  },
+];
+
+function makeSeoBuilder(spec) {
+  return () => buildSeoPracticeSheet(spec);
+}
+
 const builders = [
   ["class-1-animals-reading-adventure.pdf", buildAnimalsReading],
   ["nursery-festival-coloring-fun.pdf", buildFestivalColoring],
@@ -2086,6 +2377,7 @@ const builders = [
   ["class-3-stories-reading.pdf", buildClass3StoriesReading],
   ["class-3-maths-word-problems.pdf", buildClass3MathsWord],
   ["class-3-space-creative.pdf", buildClass3SpaceCreative],
+  ...seoBatchSpecs.map((spec) => [spec.file, makeSeoBuilder(spec)]),
 ];
 
 mkdirSync(outDir, { recursive: true });

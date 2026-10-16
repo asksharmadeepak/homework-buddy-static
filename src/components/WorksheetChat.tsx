@@ -279,7 +279,7 @@ export function WorksheetChat() {
         <div className="print:hidden">
           <SoftCta
             playPlacement="worksheet_chat"
-            title="Want unlimited themed PDFs?"
+            title="Download free samples, then get unlimited PDFs"
             body="This page prints one calm sheet in your browser. Homework Buddy on Google Play or the App Store generates fresh class + theme PDFs whenever tonight needs something new."
           />
         </div>
