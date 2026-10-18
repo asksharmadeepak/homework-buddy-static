@@ -88,18 +88,16 @@ export function PlayStoreBadge({ placement, className, priority }: BadgeProps) {
 }
 
 /** Official-style App Store badge used on /download hero. */
-export function AppStoreBadge({ placement, className }: BadgeProps) {
+export function AppStoreBadge({ placement, className, priority }: BadgeProps) {
   return (
     <AppStoreLink placement={placement} className={className} aria-label="Download on the App Store">
-      {/* SVG badge: native img avoids next/image SVG restrictions */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/brand/app-store-badge.svg"
+      <Image
+        src="/brand/app-store-badge.png"
         alt="Download on the App Store"
         width={168}
         height={64}
         className={badgeImgClass}
-        decoding="async"
+        priority={priority}
       />
     </AppStoreLink>
   );

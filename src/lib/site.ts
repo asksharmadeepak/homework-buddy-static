@@ -24,7 +24,7 @@ export const site = {
     process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "https://www.instagram.com/homeworkbuddyapp",
   supportEmail: "support.dlabs@gmail.com",
   privacyEmail: "support.dlabs@gmail.com",
-  version: "1.0.7",
+  version: "1.0.8",
   locale: "en",
 } as const;
 

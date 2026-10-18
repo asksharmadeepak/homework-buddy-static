@@ -133,7 +133,7 @@ export const classes: HubEntity[] = [
       {
         question: "Where can I get free Nursery homework PDFs?",
         answer:
-          "Download the free Nursery samples on this site (including festival colouring and Hindi swar tracing), then generate more themed sheets in the Homework Buddy app on Google Play.",
+          "Download the free Nursery samples on this site (including festival colouring and Hindi swar tracing), then generate more themed sheets in the Homework Buddy app on Google Play and the App Store.",
       },
       {
         question: "Are nursery homework, home work, worksheets, and work sheets the same?",
@@ -199,7 +199,7 @@ export const classes: HubEntity[] = [
       {
         question: "Where can I download free Jr KG worksheets?",
         answer:
-          "Start with the free Jr KG sample on this site (fruits writing), browse related activities, then create more printable Jr KG homework in the Homework Buddy app on Google Play.",
+          "Start with the free Jr KG sample on this site (fruits writing), browse related activities, then create more printable Jr KG homework in the Homework Buddy app on Google Play and the App Store.",
       },
       {
         question: "My child mixes b and d in Jr KG. Is that okay?",
@@ -260,7 +260,7 @@ export const classes: HubEntity[] = [
       {
         question: "Where can I download free Sr KG worksheets?",
         answer:
-          "Start with the free Sr KG samples on this site (CVC reading, sight words, addition within 10), browse related activities, then generate more in the Homework Buddy app on Google Play.",
+          "Start with the free Sr KG samples on this site (CVC reading, sight words, addition within 10), browse related activities, then generate more in the Homework Buddy app on Google Play and the App Store.",
       },
       {
         question: "My Sr KG child refuses to write after school. What helps?",
@@ -438,7 +438,7 @@ export const classes: HubEntity[] = [
       {
         question: "Where can I get free Class 3 worksheet PDFs?",
         answer:
-          "Try the free Class 3 samples on this site (stories reading, maths word problems, monsoon life skills), then generate more in the Homework Buddy app on Google Play.",
+          "Try the free Class 3 samples on this site (stories reading, maths word problems, monsoon life skills), then generate more in the Homework Buddy app on Google Play and the App Store.",
       },
       {
         question: "My Class 3 child has tuition and school homework already. Should I add printables?",
@@ -1907,7 +1907,7 @@ export const guides: GuideEntity[] = [
       {
         question: "Where can I get printable easy homework PDFs quickly?",
         answer:
-          "Browse free samples under Worksheets on this site, then generate more in the Homework Buddy app on Google Play when you need a new theme tonight.",
+          "Browse free samples under Worksheets on this site, then generate more in the Homework Buddy app on Google Play and the App Store when you need a new theme tonight.",
       },
     ],
   },
@@ -2283,7 +2283,7 @@ export const worksheetSeeds: WorksheetSeed[] = [
       {
         question: "Where can I get a free Hindi vyanjan worksheet for Class 1?",
         answer:
-          "Download the printable PDF on this page — it includes letter-picture matching, missing vyanjan, and tracing for क ख ग घ. Preview the image above first, then generate more Class 1 Hindi sheets in the Homework Buddy app on Google Play.",
+          "Download the printable PDF on this page — it includes letter-picture matching, missing vyanjan, and tracing for क ख ग घ. Preview the image above first, then generate more Class 1 Hindi sheets in the Homework Buddy app on Google Play and the App Store.",
       },
       {
         question: "My child confuses ख and श. Is that normal?",
@@ -2308,7 +2308,7 @@ export const worksheetSeeds: WorksheetSeed[] = [
       {
         question: "Can I get more Hindi worksheets like this without searching every night?",
         answer:
-          "Yes. Homework Buddy lets you generate printable Hindi / varnamala activities for Nursery to Class 3. Install from Google Play and create a new sheet whenever this sample feels familiar.",
+          "Yes. Homework Buddy lets you generate printable Hindi / varnamala activities for Nursery to Class 3. Install from Google Play or the App Store and create a new sheet whenever this sample feels familiar.",
       },
     ],
   },

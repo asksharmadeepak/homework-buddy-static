@@ -137,7 +137,7 @@ async function drawBrandFooter(doc, page, font, fontBold) {
     font,
     color: C.white,
   });
-  page.drawText("Google Play  ·  www.easyhomeworkactivity.com", {
+  page.drawText("Google Play · App Store · www.easyhomeworkactivity.com", {
     x: margin + 36,
     y: 14,
     size: 8,

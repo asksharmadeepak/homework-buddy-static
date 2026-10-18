@@ -105,15 +105,12 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-14">
-        <h2 className="text-3xl font-black text-[#24212C]">Create practice tonight</h2>
+        <h2 className="text-3xl font-black text-[#24212C]">Popular free downloads</h2>
         <p className="mt-3 max-w-3xl font-semibold text-[#7D7788]">
-          Pick a helper below — real Homework Buddy paths for class-fit worksheets, samples, and the app.
-          No sign-in required to browse.
+          Preview and print real sample worksheets — the same style Homework Buddy generates in the app.
         </p>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {generatorHubItems.map((item) => (
-            <GeneratorHubCard key={item.href + item.title} item={item} />
-          ))}
+        <div className="mt-8">
+          <ClassHubWorksheetGrid sheets={popularSheets} className="Free sample" />
         </div>
       </section>
 
@@ -140,12 +137,15 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-14">
-        <h2 className="text-3xl font-black text-[#24212C]">Popular free downloads</h2>
+        <h2 className="text-3xl font-black text-[#24212C]">Create practice tonight</h2>
         <p className="mt-3 max-w-3xl font-semibold text-[#7D7788]">
-          Preview and print real sample worksheets — the same style Homework Buddy generates in the app.
+          Pick a helper below — real Homework Buddy paths for class-fit worksheets, samples, and the app.
+          No sign-in required to browse.
         </p>
-        <div className="mt-8">
-          <ClassHubWorksheetGrid sheets={popularSheets} className="Free sample" />
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {generatorHubItems.map((item) => (
+            <GeneratorHubCard key={item.href + item.title} item={item} />
+          ))}
         </div>
       </section>
 
