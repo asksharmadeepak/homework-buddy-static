@@ -26,6 +26,13 @@ export const site = {
   privacyEmail: "support.dlabs@gmail.com",
   version: "1.0.8",
   locale: "en",
+  /** Sibling D labs properties for quiet footer cross-promo. */
+  dlabs: {
+    developerPlayUrl: "https://play.google.com/store/apps/dev?id=8759041902208147900",
+    myBingeSiteUrl: "https://offlinemedialibrary.com",
+    myBingePlayUrl: "https://play.google.com/store/apps/details?id=com.mybinge.app",
+    nextBingePlayUrl: "https://play.google.com/store/apps/details?id=com.nextbinge.app",
+  },
 } as const;
 
 /** Play Store URL with UTM params for organic→install attribution. */
@@ -37,6 +44,17 @@ export function playStoreUrlWithUtm(content: string, medium = "organic") {
   url.searchParams.set("utm_content", content);
   return url.toString();
 }
+
+/** External Play Store URL with D labs cross-promo UTMs. */
+export function siblingPlayUrlWithUtm(baseUrl: string, content: string) {
+  const url = new URL(baseUrl);
+  url.searchParams.set("utm_source", "easyhomeworkactivity");
+  url.searchParams.set("utm_medium", "referral");
+  url.searchParams.set("utm_campaign", "dlabs_cross_promo");
+  url.searchParams.set("utm_content", content);
+  return url.toString();
+}
+
 
 /** App Store URL with UTM params for organic→install attribution. */
 export function appStoreUrlWithUtm(content: string, medium = "organic") {

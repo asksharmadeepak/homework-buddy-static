@@ -1,12 +1,35 @@
 import Link from "next/link";
 import { SmartStoreLink } from "@/components/PlayStoreLink";
-import { navFooter, site } from "@/lib/site";
+import { navFooter, siblingPlayUrlWithUtm, site } from "@/lib/site";
+
+const moreFromDlabs = [
+  {
+    href: siblingPlayUrlWithUtm(site.dlabs.myBingePlayUrl, "footer_more_apps"),
+    label: "MyBinge — Offline Media Library",
+    external: true,
+  },
+  {
+    href: site.dlabs.myBingeSiteUrl,
+    label: "Offline Media Library guides",
+    external: true,
+  },
+  {
+    href: siblingPlayUrlWithUtm(site.dlabs.nextBingePlayUrl, "footer_more_apps"),
+    label: "NextBinge — What to Watch",
+    external: true,
+  },
+  {
+    href: site.dlabs.developerPlayUrl,
+    label: "All D labs apps",
+    external: true,
+  },
+] as const;
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
   return (
     <footer className="mt-16 border-t border-[#ebe4f7] bg-[#F7F2FF]">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:grid-cols-4">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:grid-cols-2 lg:grid-cols-5">
         <div>
           <p className="text-lg font-black text-[#24212C]">{site.name}</p>
           <p className="mt-2 text-sm font-semibold text-[#7D7788]">{site.tagline}</p>
@@ -61,9 +84,26 @@ export function SiteFooter() {
             </ul>
           </div>
         ))}
+        <div>
+          <p className="font-extrabold text-[#24212C]">More from D labs</p>
+          <ul className="mt-3 space-y-2">
+            {moreFromDlabs.map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-semibold text-[#7D7788] hover:text-[#7B5CD6]"
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
       <div className="border-t border-[#ebe4f7] py-4 text-center text-xs font-semibold text-[#7D7788]">
-        © {year} {site.name} ·{" "}
+        © {year} {site.name} · A D labs product ·{" "}
         <a href={`mailto:${site.supportEmail}`} className="text-[#7B5CD6]">
           {site.supportEmail}
         </a>
