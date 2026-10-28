@@ -13,7 +13,7 @@ export default function PrivacyPage() {
     <div className="mx-auto max-w-3xl px-4 py-10">
       <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Privacy", path: "/privacy" }]} />
       <h1 className="text-4xl font-black text-[#24212C]">Privacy Policy</h1>
-      <p className="mt-2 text-sm font-semibold text-[#7D7788]">Last updated: 26 October 2026</p>
+      <p className="mt-2 text-sm font-semibold text-[#7D7788]">Last updated: 28 October 2026</p>
       <div className="mt-8 space-y-4 text-base font-semibold leading-relaxed text-[#3d3848]">
         <p>
           This Privacy Policy explains how Homework Buddy (&quot;we&quot;, &quot;us&quot;) handles information in the
@@ -42,8 +42,7 @@ export default function PrivacyPage() {
         <p>
           Teachers can add their own labels, such as A, B or C, plus a class and an optional section, and
           record which worksheets were given to which label. These labels are not a record of a real child.
-          The list is kept on the phone and, when the teacher is signed in, synced to their account so only
-          that teacher can read it.
+          The list stays on the phone only and is not uploaded.
         </p>
         <h2 className="pt-4 text-2xl font-black text-[#24212C]">Worksheet content generation</h2>
         <p>
@@ -54,7 +53,7 @@ export default function PrivacyPage() {
         <h2 className="pt-4 text-2xl font-black text-[#24212C]">Deleting your account</h2>
         <p>
           You can delete your account at any time from Profile, then Delete account in the app. This removes your
-          account, profile, synced students and assignments from our servers. Sheets saved on your phone stay
+          account and profile from our servers. Student labels and sheets saved on your phone stay
           there until you remove them or uninstall the app.
         </p>
         <h2 className="pt-4 text-2xl font-black text-[#24212C]">Analytics & cookies</h2>
