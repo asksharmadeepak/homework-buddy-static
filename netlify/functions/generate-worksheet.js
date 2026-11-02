@@ -262,7 +262,7 @@ exports.handler = async function handler(event) {
     return json(
       429,
       {
-        error: "Daily free limit reached (3 sheets). Get unlimited PDFs in the Homework Buddy app.",
+        error: `Daily free limit reached (${DAILY_LIMIT} sheet${DAILY_LIMIT === 1 ? "" : "s"}). Get unlimited PDFs in the Homework Buddy app.`,
         code: "limit",
         remaining: 0,
       },

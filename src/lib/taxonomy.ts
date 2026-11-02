@@ -1593,13 +1593,13 @@ export const tools: ToolEntity[] = [
   },
   {
     slug: "math-worksheet-generator",
-    name: "Maths Worksheet Planning Guide",
-    title: "Maths worksheet generator ideas — free printable samples",
+    name: "Maths Worksheet Generator",
+    title: "Maths worksheet generator for kids — create printable PDFs",
     description:
-      "Plan age-appropriate maths worksheets for counting, sums, and word problems — download free samples tonight, then create more in Homework Buddy.",
+      "Maths worksheet generator for kids: counting, sums, and word problems from Nursery to Class 3. Download a free sample PDF or create a printable sheet.",
     status: "published",
     intro: [
-      "A useful maths worksheet starts with the child’s level, not a random page of sums. Hard questions frustrate Class 1 children; endless easy sums bore Class 3. Nursery and LKG need counting and shapes before bare columns.",
+      "This maths worksheet generator covers Nursery through Class 3: counting and shapes, sums within 10, number bonds, and short word problems. Hard questions frustrate Class 1 children; endless easy sums bore Class 3.",
       "Start with a free printable tonight: Nursery numbers 1–10, Jr KG shapes count, Sr KG add within 10, Class 1 bonds to 10, Class 2 transport maths, or Class 3 fair-shares fractions intro. Preview difficulty on your phone before you print.",
       "Use this guide to plan mixed practice — short fluency work plus one story problem — then create and print fresh sheets in Homework Buddy when you need unlimited themed maths PDFs.",
       "Scaffold word problems by reading aloud, circling numbers, and drawing tallies before the final answer. Themes like transport or monsoon make story sums feel local for Indian evenings after school and tuition.",
@@ -3598,7 +3598,8 @@ export const worksheetSeeds: WorksheetSeed[] = [
     classSlug: "class-2",
     name: "Hindi Simple Sentences",
     title: "Class 2 Hindi sentence worksheet — free printable PDF",
-    description: "Free Class 2 Hindi writing worksheet with simple sentence starters.",
+    description:
+      "Free Class 2 Hindi sentence worksheet: turn words into short sentences, finish sentence starters, and practise writing a complete thought.",
     activitySlug: "hindi",
     themeSlug: "stories",
     status: "published",
@@ -3609,9 +3610,10 @@ export const worksheetSeeds: WorksheetSeed[] = [
     previewImageHeight: 1200,
     previewImageCaption: "Hindi Simple Sentences free printable worksheet preview for home practice.",
     intro: [
-      "This free Class 2 Hindi worksheet uses simple sentence starters so children practise complete thoughts without fear of perfect spelling. Accept invented spelling on the first draft; fix one or two words together later.",
-      "Say each sentence aloud before writing. Drawing what they wrote about keeps the session warm after a long school day.",
-      "Preview and print one page. Browse Hindi hubs for more free samples, then generate unlimited Hindi PDFs in Homework Buddy when you want fresh prompts."
+      "This free Class 2 Hindi worksheet practises sentence formation: a child starts with one familiar word and turns it into a short sentence. Sentence starters keep the first line from feeling blank.",
+      "Word to sentence examples to say aloud before writing: सेब → सेब लाल है. माँ → माँ खाना बनाती है. स्कूल → मैं स्कूल जाता हूँ. Let your child change the ending — the point is a complete thought, not one right answer.",
+      "Parent guidance: read the starter together, finish one sentence as a pair, then let them write one alone. Accept invented spelling on the first draft and fix one or two words later. Say each sentence aloud before writing. A small drawing of what they wrote keeps the session warm after school.",
+      "Preview and print one page. Browse Hindi hubs for more free samples, then generate more Hindi PDFs in Homework Buddy when you want fresh prompts."
     ],
     howTo: [
       "Read the sentence starter aloud.",

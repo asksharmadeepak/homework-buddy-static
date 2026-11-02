@@ -1,6 +1,7 @@
 import { SoftCta } from "@/components/SoftCta";
 import { FaqSection } from "@/components/FaqSection";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { appCtaCopy } from "@/lib/app-cta";
 import type { FaqItem } from "@/lib/taxonomy";
 
 /** Worksheet detail: lead → children (download) → guide body → how-to → FAQs */
@@ -12,6 +13,9 @@ export function WorksheetDetailLayout({
   sheetContents,
   howTo,
   faqs,
+  classSlug,
+  className,
+  activitySlug,
   children,
 }: {
   breadcrumbs: { name: string; path: string }[];
@@ -21,6 +25,9 @@ export function WorksheetDetailLayout({
   sheetContents?: string[];
   howTo: string[];
   faqs: FaqItem[];
+  classSlug?: string;
+  className?: string;
+  activitySlug?: string;
   children: React.ReactNode;
 }) {
   return (
@@ -61,7 +68,12 @@ export function WorksheetDetailLayout({
         </ol>
       </section>
 
-      <SoftCta playPlacement="worksheet_detail" />
+      <SoftCta
+        playPlacement="worksheet_detail"
+        classLevel={classSlug}
+        subject={activitySlug}
+        {...appCtaCopy({ className, classSlug, activitySlug })}
+      />
       <FaqSection faqs={faqs} />
       <p className="mt-8 text-xs font-semibold text-[#7D7788]">
         Educational disclaimer: Content is for general parent guidance and practice ideas. Follow your

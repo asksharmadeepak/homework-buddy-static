@@ -56,7 +56,11 @@ export const CHAT_STARTERS = [
 export const GENERATE_WORKSHEET_PATH = "/.netlify/functions/generate-worksheet";
 
 export function trackChatEvent(
-  name: "chat_generate_success" | "chat_limit_hit" | "chat_print_click",
+  name:
+    | "chat_generate_start"
+    | "chat_generate_success"
+    | "chat_limit_hit"
+    | "chat_print_click",
   params: Record<string, string | number> = {},
 ) {
   if (typeof window === "undefined") return;

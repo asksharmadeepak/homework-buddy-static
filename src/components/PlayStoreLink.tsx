@@ -107,6 +107,8 @@ type SmartStoreLinkProps = {
   placement: StoreClickPlacement;
   className?: string;
   children: ReactNode;
+  classLevel?: string;
+  subject?: string;
   "aria-label"?: string;
 };
 
@@ -122,6 +124,8 @@ export function SmartStoreLink({
   placement,
   className,
   children,
+  classLevel,
+  subject,
   "aria-label": ariaLabel = "Get the Homework Buddy app",
 }: SmartStoreLinkProps) {
   const [href, setHref] = useState<string>(() => site.appCtaPath);
@@ -151,8 +155,9 @@ export function SmartStoreLink({
       className={className}
       aria-label={ariaLabel}
       onClick={() => {
-        if (store === "play") trackPlayStoreClick(placement);
-        else if (store === "app_store") trackAppStoreClick(placement);
+        const context = { class_level: classLevel, subject };
+        if (store === "play") trackPlayStoreClick(placement, context);
+        else if (store === "app_store") trackAppStoreClick(placement, context);
       }}
     >
       {children}

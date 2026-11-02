@@ -91,6 +91,9 @@ export default async function WorksheetDetailPage({ params }: Props) {
         sheetContents={sheet.sheetContents}
         howTo={sheet.howTo ?? []}
         faqs={sheet.faqs}
+        classSlug={classSlug}
+        className={cls?.name}
+        activitySlug={activity?.slug}
       >
         <div className="mt-8">
           <WorksheetDownload

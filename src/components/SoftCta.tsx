@@ -13,6 +13,9 @@ export function SoftCta({
   playPlacement = "soft_cta",
   browseHref = "/worksheets",
   browseLabel = "Browse free worksheets",
+  storeLabel = "Get the app",
+  classLevel,
+  subject,
 }: {
   title?: string;
   body?: string;
@@ -20,6 +23,9 @@ export function SoftCta({
   playPlacement?: StoreClickPlacement;
   browseHref?: string;
   browseLabel?: string;
+  storeLabel?: string;
+  classLevel?: string;
+  subject?: string;
 }) {
   return (
     <aside className="my-10 rounded-3xl bg-[#F0EBFF] px-6 py-8 text-center md:px-10">
@@ -35,9 +41,11 @@ export function SoftCta({
         {!browseOnly ? (
           <SmartStoreLink
             placement={playPlacement}
+            classLevel={classLevel}
+            subject={subject}
             className="rounded-full border-2 border-[#7B5CD6] px-6 py-3 text-sm font-extrabold text-[#7B5CD6]"
           >
-            Get the app
+            {storeLabel}
           </SmartStoreLink>
         ) : null}
       </div>

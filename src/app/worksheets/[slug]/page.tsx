@@ -5,6 +5,7 @@ import { SoftCta } from "@/components/SoftCta";
 import { FaqSection } from "@/components/FaqSection";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SmartStoreLink } from "@/components/PlayStoreLink";
+import { appCtaCopy } from "@/lib/app-cta";
 import { buildMetadata, collectionJsonLd, jsonLdScript } from "@/lib/seo";
 import {
   getActivity,
@@ -176,10 +177,30 @@ export default async function WorksheetHubPage({ params }: Props) {
               </div>
             </section>
 
+            <nav className="mt-10" aria-label="Explore other classes">
+              <h2 className="text-2xl font-black text-[#24212C]">Explore other classes</h2>
+              <div className="mt-4 flex flex-wrap gap-3">
+                {publishedOnly(classes).map((c) => (
+                  <Link
+                    key={c.slug}
+                    href={`/worksheets/${c.slug}`}
+                    aria-current={c.slug === cls.slug ? "page" : undefined}
+                    className={`rounded-full px-4 py-2 text-sm font-bold ${
+                      c.slug === cls.slug
+                        ? "bg-[#7B5CD6] text-white"
+                        : "bg-[#F0EBFF] text-[#7B5CD6]"
+                    }`}
+                  >
+                    {c.name} worksheets
+                  </Link>
+                ))}
+              </div>
+            </nav>
+
             <SoftCta
               playPlacement={playPlacement}
-              title={`More free ${cls.name} worksheets, then unlimited in the app`}
-              body="Browse free samples on this site first. When favourites feel stale, generate unlimited class + theme PDFs in Homework Buddy."
+              classLevel={cls.slug}
+              {...appCtaCopy({ className: cls.name, classSlug: cls.slug })}
             />
             <FaqSection faqs={cls.faqs} />
             <p className="mt-8 text-xs font-semibold text-[#7D7788]">

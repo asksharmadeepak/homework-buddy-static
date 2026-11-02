@@ -1087,4 +1087,41 @@ export const worksheetGuideExtras: Record<string, WorksheetGuideExtra> = {
       },
     ],
   },
+
+  "class-2/hindi-sentences": {
+    howTo: [
+      "Say one familiar word, then a full sentence that uses it.",
+      "Finish the printed starter together before your child writes alone.",
+      "Ask them to read their sentence back aloud.",
+      "Fix one or two spellings after the sentence is complete.",
+      "Stop after two or three sentences if the hand looks tired.",
+    ],
+    sheetContents: [
+      "Sentence starter lines",
+      "Space to finish a short Hindi sentence",
+      "Optional draw-what-you-wrote prompt",
+    ],
+    extraIntro: [
+      "Sentence formation is the jump from naming a word to saying a complete thought. Class 2 children often know the word सेब and still freeze when the line is blank. A starter plus one example removes that freeze.",
+      "Try this order: word, then sentence, then writing. सेब → सेब लाल है. माँ → माँ खाना बनाती है. स्कूल → मैं स्कूल जाता हूँ. Change the ending if your child has a different idea — a true sentence matters more than copying the model.",
+      "Parent guidance: sit beside them for the first sentence, then move back for the second. Praise a full sentence even when matras are missing. One calm page is enough for a school night.",
+    ],
+    extraFaqs: [
+      {
+        question: "What counts as a sentence for Class 2 Hindi?",
+        answer:
+          "A short line with a person or thing and what it does or is, such as सेब लाल है. It does not need a comma or a long clause.",
+      },
+      {
+        question: "Should I correct every word?",
+        answer:
+          "No. Let them finish the sentence, then choose one or two words to fix together.",
+      },
+      {
+        question: "Can we do this orally first?",
+        answer:
+          "Yes. Saying the sentence before writing makes the written line shorter and calmer.",
+      },
+    ],
+  },
 };

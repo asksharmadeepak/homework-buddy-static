@@ -1,14 +1,27 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { SmartStoreLink } from "@/components/PlayStoreLink";
 import { ShareAppButton } from "@/components/ShareAppButton";
 
+const DISMISS_KEY = "hb_ribbon_dismissed";
+
 export function AppDownloadRibbon() {
   const pathname = usePathname();
+  const [hidden, setHidden] = useState(false);
 
-  if (pathname === "/download") return null;
+  useEffect(() => {
+    setHidden(sessionStorage.getItem(DISMISS_KEY) === "1");
+  }, []);
+
+  if (pathname === "/download" || hidden) return null;
+
+  function dismiss() {
+    sessionStorage.setItem(DISMISS_KEY, "1");
+    setHidden(true);
+  }
 
   return (
     <aside
@@ -37,6 +50,14 @@ export function AppDownloadRibbon() {
         >
           Get App
         </SmartStoreLink>
+        <button
+          type="button"
+          onClick={dismiss}
+          aria-label="Dismiss app banner"
+          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-lg font-black text-white hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        >
+          ×
+        </button>
       </div>
     </aside>
   );

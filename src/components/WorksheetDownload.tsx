@@ -40,6 +40,7 @@ export function WorksheetDownload({
             alt={previewImageAlt || `${worksheetName} printable worksheet preview`}
             width={previewImageWidth}
             height={previewImageHeight}
+            sizes="(max-width: 512px) 100vw, 512px"
             className="mx-auto h-auto w-full max-w-lg object-contain"
             priority
           />

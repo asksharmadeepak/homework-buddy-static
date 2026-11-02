@@ -36,7 +36,16 @@ export type StoreKind = "play" | "app_store";
  * - GA4: `play_store_click` or `app_store_click`
  * - Meta Pixel custom: `PlayStoreClick` or `AppStoreClick`
  */
-export function trackStoreClick(store: StoreKind, placement: StoreClickPlacement) {
+export type StoreClickContext = {
+  class_level?: string;
+  subject?: string;
+};
+
+export function trackStoreClick(
+  store: StoreKind,
+  placement: StoreClickPlacement,
+  context?: StoreClickContext,
+) {
   if (typeof window === "undefined") return;
 
   const pagePath = window.location.pathname;
@@ -50,6 +59,8 @@ export function trackStoreClick(store: StoreKind, placement: StoreClickPlacement
       placement,
       store,
       page_path: pagePath,
+      ...(context?.class_level ? { class_level: context.class_level } : {}),
+      ...(context?.subject ? { subject: context.subject } : {}),
       transport_type: "beacon",
     });
   } catch {
@@ -68,13 +79,13 @@ export function trackStoreClick(store: StoreKind, placement: StoreClickPlacement
 }
 
 /** Fires when a user taps a Google Play / Get the app link. */
-export function trackPlayStoreClick(placement: StoreClickPlacement) {
-  trackStoreClick("play", placement);
+export function trackPlayStoreClick(placement: StoreClickPlacement, context?: StoreClickContext) {
+  trackStoreClick("play", placement, context);
 }
 
 /** Fires when a user taps an App Store / Get the app link. */
-export function trackAppStoreClick(placement: StoreClickPlacement) {
-  trackStoreClick("app_store", placement);
+export function trackAppStoreClick(placement: StoreClickPlacement, context?: StoreClickContext) {
+  trackStoreClick("app_store", placement, context);
 }
 
 /**

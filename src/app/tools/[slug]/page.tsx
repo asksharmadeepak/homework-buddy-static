@@ -153,6 +153,34 @@ export default async function ToolPage({ params }: Props) {
         </section>
       ) : null}
 
+      {slug === "math-worksheet-generator" ? (
+        <section className="mt-8 rounded-3xl border border-[#ebe4f7] bg-white p-5">
+          <h2 className="text-2xl font-black text-[#24212C]">Sample maths PDF</h2>
+          <p className="mt-3 text-base font-semibold leading-relaxed text-[#3d3848]">
+            Supported activities: counting, shapes, addition within 10, number bonds, and word
+            problems. Preview a real Class 2 sheet, or open the live generator to make one sheet in
+            the browser.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Link
+              href="/worksheets/class-2/transport-maths"
+              className="rounded-full bg-[#7B5CD6] px-5 py-2.5 text-sm font-extrabold text-white"
+            >
+              Class 2 transport maths PDF
+            </Link>
+            <Link
+              href="/tools/free-printable-worksheet-generator"
+              className="rounded-full border-2 border-[#7B5CD6] px-5 py-2.5 text-sm font-extrabold text-[#7B5CD6]"
+            >
+              Open the live generator
+            </Link>
+            <Link href="/worksheets/class-1" className="text-sm font-extrabold text-[#7B5CD6]">
+              Class 1 maths pages
+            </Link>
+          </div>
+        </section>
+      ) : null}
+
       {slug === "worksheet-generator" ? (
         <p className="mt-6 rounded-2xl border border-[#ebe4f7] bg-[#F7F4FC] px-4 py-3 text-sm font-semibold text-[#3d3848]">
           Want one free sheet right now?{" "}

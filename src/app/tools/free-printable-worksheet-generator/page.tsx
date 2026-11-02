@@ -22,7 +22,7 @@ const faqs = [
   {
     question: "How many free sheets can I generate?",
     answer:
-      "Up to three free sheets per day on this website. Browse our free sample PDF library anytime, or install Homework Buddy when you need more variety.",
+      "One free sheet per day on this website. Browse our free sample PDF library anytime, or install Homework Buddy when you need more variety.",
   },
   {
     question: "Can I save a PDF from this generator?",
@@ -162,8 +162,9 @@ export default function FreePrintableWorksheetGeneratorPage() {
         <FaqSection faqs={faqs} />
         <SoftCta
           playPlacement="worksheet_chat"
-          title="Need unlimited themed PDFs?"
-          body="Download a free sample above, generate one browser sheet when you need a quick warm-up, then get Homework Buddy for unlimited class + theme printables."
+          title="Need more worksheets for your child?"
+          body="Choose your child's class, select an activity and theme, preview your worksheet and download a printable PDF."
+          storeLabel="Get Homework Buddy"
         />
       </div>
     </div>

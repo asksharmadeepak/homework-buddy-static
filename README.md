@@ -59,7 +59,7 @@ Open the URL Netlify prints (often `http://localhost:8888/tools/free-printable-w
 
 3. After deploy: generate one sheet, print, confirm Play CTA `utm_content=worksheet_chat`, confirm static pages still publish from `out/`.
 
-**Limits:** 3 free generations / visitor / day. Output is browser-printable HTML (not app PDFs).
+**Limits:** 1 free generation / visitor / day (`DAILY_LIMIT` in `generate-worksheet.js`). Output is browser-printable HTML (not app PDFs).
 
 **Get the app:** `/download` shows Google Play + App Store badges. In-content “Get the app” CTAs use `SmartStoreLink`: iPhone → App Store, Android → Play, desktop → `/download`. Legacy `/beta` **301 → `/download`**.
 

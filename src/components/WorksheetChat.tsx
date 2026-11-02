@@ -34,6 +34,7 @@ export function WorksheetChat() {
 
     setLoading(true);
     setStatusMsg(null);
+    trackChatEvent("chat_generate_start", { class_slug: classSlug });
 
     try {
       const res = await fetch(GENERATE_WORKSHEET_PATH, {
