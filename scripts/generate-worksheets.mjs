@@ -2,7 +2,7 @@
  * Branded Homework Buddy worksheets with illustrations + quizzes.
  * Run: node scripts/generate-worksheets.mjs
  */
-import { mkdirSync, readFileSync, writeFileSync } from "fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
@@ -32,8 +32,79 @@ const C = {
   line: rgb(0.82, 0.78, 0.9),
 };
 
-function loadArt(name) {
+/** Outline the child colours. */
+function loadLine(name) {
   return readFileSync(join(artDir, name));
+}
+
+/** Coloured illustration. Cutouts use the small filled sample when one exists. */
+function loadArt(name) {
+  if (name.startsWith("cut_")) {
+    const filled = join(artDir, "filled", name);
+    if (existsSync(filled)) return readFileSync(filled);
+  }
+  return readFileSync(join(artDir, name));
+}
+
+function drawDiyaOutline(page, x, y) {
+  const ink = { borderColor: C.text, borderWidth: 1.7 };
+  page.drawSvgPath("M 18 36 C 28 14 92 14 102 36 C 94 64 26 64 18 36 Z", { x, y, ...ink });
+  page.drawSvgPath("M 60 34 C 46 16 50 0 60 -14 C 70 0 74 16 60 34 Z", { x, y, ...ink });
+}
+
+/** Big outline to colour, plus a small coloured picture to copy. */
+async function drawColourPanel(doc, page, fontBold, { x, y, w, h, lineName, label, sampleName, diya }) {
+  page.drawRectangle({
+    x,
+    y,
+    width: w,
+    height: h,
+    borderColor: C.purple,
+    borderWidth: 1.5,
+    color: C.white,
+  });
+  const sampleSize = 48;
+  if (diya) {
+    drawDiyaOutline(page, x + 18, y + 78);
+  } else if (lineName) {
+    const line = await doc.embedPng(loadLine(lineName));
+    page.drawImage(line, {
+      x: x + 12,
+      y: y + 34,
+      width: w - sampleSize - 36,
+      height: h - 52,
+    });
+  }
+  const sampleBytes = sampleName ? readFileSync(join(artDir, sampleName)) : loadArt(lineName);
+  const sample = await doc.embedPng(sampleBytes);
+  page.drawRectangle({
+    x: x + w - sampleSize - 12,
+    y: y + h - sampleSize - 26,
+    width: sampleSize + 4,
+    height: sampleSize + 14,
+    color: C.peach,
+    borderWidth: 0,
+  });
+  page.drawImage(sample, {
+    x: x + w - sampleSize - 10,
+    y: y + h - sampleSize - 22,
+    width: sampleSize,
+    height: sampleSize,
+  });
+  page.drawText("Like this", {
+    x: x + w - sampleSize - 4,
+    y: y + h - 14,
+    size: 7,
+    font: fontBold,
+    color: C.purple,
+  });
+  page.drawText(label, {
+    x: x + 12,
+    y: y + 14,
+    size: 10,
+    font: fontBold,
+    color: C.purple,
+  });
 }
 
 function wrap(page, text, font, size, x, y, maxWidth, color, lh = 15) {
@@ -303,17 +374,11 @@ async function buildFestivalColoring() {
   });
   y -= 20;
 
-  const festival = await doc.embedPng(loadArt("theme-festival.png"));
-  const star = await doc.embedPng(loadArt("cut_star.png"));
-  const parrot = await doc.embedPng(loadArt("cut_parrot.png"));
-  const moon = await doc.embedPng(loadArt("cut_moon.png"));
-
-  // Big colour panels
   const panels = [
-    { img: festival, label: "1. Festival lights — colour me!" },
-    { img: star, label: "2. Bright star — colour me!" },
-    { img: parrot, label: "3. Happy bird — colour me!" },
-    { img: moon, label: "4. Night moon — colour me!" },
+    { label: "1. Diya — colour me!", sampleName: "theme-festival.png", diya: true },
+    { label: "2. Bright star — colour me!", lineName: "cut_star.png" },
+    { label: "3. Happy bird — colour me!", lineName: "cut_parrot.png" },
+    { label: "4. Night moon — colour me!", lineName: "cut_moon.png" },
   ];
 
   const positions = [
@@ -325,27 +390,12 @@ async function buildFestivalColoring() {
 
   for (let i = 0; i < 4; i++) {
     const [x, by] = positions[i];
-    page.drawRectangle({
+    await drawColourPanel(doc, page, fontBold, {
       x,
       y: by,
-      width: 240,
-      height: 210,
-      borderColor: C.purple,
-      borderWidth: 1.5,
-      color: C.white,
-    });
-    page.drawImage(panels[i].img, {
-      x: x + 45,
-      y: by + 55,
-      width: 150,
-      height: 150,
-    });
-    page.drawText(panels[i].label, {
-      x: x + 12,
-      y: by + 18,
-      size: 10,
-      font: fontBold,
-      color: C.purple,
+      w: 240,
+      h: 210,
+      ...panels[i],
     });
   }
 
@@ -970,7 +1020,8 @@ async function buildHindiSwarTracing() {
   y -= 44;
 
   y = sectionTitle(page, "Part 3 — Colour the star when you finish!", margin, y, fontBold);
-  const star = await doc.embedPng(loadArt("cut_star.png"));
+  const starLine = await doc.embedPng(loadLine("cut_star.png"));
+  const starSample = await doc.embedPng(loadArt("cut_star.png"));
   page.drawRectangle({
     x: margin,
     y: Math.max(88, y - 78),
@@ -980,17 +1031,25 @@ async function buildHindiSwarTracing() {
     borderWidth: 1.5,
     color: C.white,
   });
-  page.drawImage(star, { x: margin + 20, y: Math.max(94, y - 72), width: 62, height: 62 });
+  page.drawImage(starLine, { x: margin + 16, y: Math.max(94, y - 72), width: 62, height: 62 });
+  page.drawImage(starSample, { x: margin + 86, y: Math.max(108, y - 58), width: 34, height: 34 });
+  page.drawText("Like this", {
+    x: margin + 84,
+    y: Math.max(96, y - 70),
+    size: 7,
+    font: fontBold,
+    color: C.purple,
+  });
   const cheerY = Math.max(118, y - 46);
   page.drawText("शाबाश!", {
-    x: margin + 100,
+    x: margin + 132,
     y: cheerY,
     size: 14,
     font: deva,
     color: C.purple,
   });
   page.drawText("Well done! Say all ten swars once more to a grown-up.", {
-    x: margin + 100 + deva.widthOfTextAtSize("शाबाश!", 14) + 10,
+    x: margin + 132 + deva.widthOfTextAtSize("शाबाश!", 14) + 10,
     y: cheerY,
     size: 11,
     font,
@@ -1747,23 +1806,13 @@ async function buildSrKgAnimalsColoring() {
   ];
   for (let i = 0; i < 4; i++) {
     const [x, by] = positions[i];
-    const img = await doc.embedPng(loadArt(panels[i].art));
-    page.drawRectangle({
+    await drawColourPanel(doc, page, fontBold, {
       x,
       y: by,
-      width: 240,
-      height: 190,
-      borderColor: C.purple,
-      borderWidth: 1.5,
-      color: C.white,
-    });
-    page.drawImage(img, { x: x + 50, y: by + 45, width: 140, height: 140 });
-    page.drawText(panels[i].label, {
-      x: x + 16,
-      y: by + 16,
-      size: 12,
-      font: fontBold,
-      color: C.purple,
+      w: 240,
+      h: 190,
+      lineName: panels[i].art,
+      label: panels[i].label,
     });
   }
   drawTipBox(page, margin, font, fontBold, "Ask: Which animal is biggest? Which can fly? Talk while colouring.");
