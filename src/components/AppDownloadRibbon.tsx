@@ -38,15 +38,17 @@ export function AppDownloadRibbon() {
           className="hidden shrink-0 rounded-lg sm:block"
         />
         <p className="min-w-0 flex-1 text-sm font-extrabold">
-          <span className="sm:hidden">Free worksheets in minutes</span>
+          <span className="whitespace-nowrap sm:hidden">Free worksheets</span>
           <span className="hidden sm:inline">
             Create printable worksheets in minutes with Homework Buddy
           </span>
         </p>
-        <ShareAppButton placement="ribbon" variant="ribbon" />
+        <span className="hidden sm:inline-flex">
+          <ShareAppButton placement="ribbon" variant="ribbon" />
+        </span>
         <SmartStoreLink
           placement="ribbon"
-          className="inline-flex min-h-11 shrink-0 items-center rounded-full bg-white px-4 text-sm font-black text-[#6A4EC4] shadow-sm transition hover:bg-[#FFF3D6] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          className="inline-flex min-h-9 shrink-0 items-center whitespace-nowrap rounded-full bg-white px-3 text-xs font-black text-[#6A4EC4] shadow-sm transition hover:bg-[#FFF3D6] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:min-h-11 sm:px-4 sm:text-sm"
         >
           Get App
         </SmartStoreLink>
@@ -54,7 +56,7 @@ export function AppDownloadRibbon() {
           type="button"
           onClick={dismiss}
           aria-label="Dismiss app banner"
-          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-lg font-black text-white hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-lg font-black text-white hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:h-11 sm:w-11"
         >
           ×
         </button>
